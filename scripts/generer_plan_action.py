@@ -12,9 +12,10 @@ Rendu : HTML + CSS imprimé par Chromium (paquet Python « playwright »).
 """
 import base64
 import html
+import json
 
-from commun import (DONNEES, GABARITS, SORTIE, lire_json, prive_disponible,
-                    remplacer_jetons, table_des_noms)
+from commun import (DONNEES, GABARITS, SORTIE, ligne_version, lire_json, nom_versionne,
+                    prive_disponible, remplacer_jetons, table_des_noms)
 
 COULEURS = {"p1": "#C01B1A", "p2": "#B97900", "p3": "#2E6C4F", "navy": "#1F3864"}
 
@@ -72,6 +73,7 @@ h2 small { font-size: 8.6px; font-weight: 400; color: #666; margin-left: 4px }
 .pied .sq { width: 8px; height: 8px; display: inline-block; margin-left: 10px }
 .pied .rd { margin-left: auto; font-style: italic }
 .pied .l2 { font-style: italic; margin-top: 2px }
+.pied .l3 { margin-top: 2px; color: #777; font-size: 6.9px }
 .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex: 0 0 7px; margin-top: 2px }
 /* page 2 */
 .cartes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px 11px }
@@ -96,6 +98,7 @@ table.vol td.n { text-align: center; width: 36px }
 table.vol td.tot { font-weight: 700; color: #1F3864; text-align: center; width: 40px }
 table.vol td.lib { font-weight: 700; width: 245px }
 table.vol td.lec { color: #444; font-size: 7.8px }
+.reserve { margin: 5px 0 0; font-size: 7.8px; color: #C01B1A; font-weight: 700 }
 .axes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px }
 .axe { border: 1px solid #D9DDE3; border-radius: 4px; padding: 6px 10px; height: 97px }
 .axe .t { display: flex; gap: 6px; align-items: baseline }
@@ -162,7 +165,7 @@ def page1(p, prio, logo):
     out.append("</div></div></div>")
     pd = p["pied"]
     leg = "".join(f'<span class="sq" style="background:{COULEURS[c]}"></span>{e(t)}' for c, t in pd["legende"])
-    out.append(f'<div class="pied"><div class="l1">Priorité :{leg}<span class="rd">{e(pd["droite"])}</span></div><div class="l2">{e(pd["note"])}</div></div>')
+    out.append(f'<div class="pied"><div class="l1">Priorité :{leg}<span class="rd">{e(pd["droite"])}</span></div><div class="l2">{e(pd["note"])}</div><div class="l3">{e(VERSION)}</div></div>')
     return "".join(out)
 
 
@@ -187,7 +190,7 @@ def page2(p, logo):
     out.append("</div></div>")
     pd = p["pied"]
     leg = "".join(f'<span class="dot" style="background:{COULEURS[c]};margin:0 3px 0 12px"></span>{e(t)}' for c, t in pd["legende_etat"])
-    out.append(f'<div class="pied"><div class="l1">État du document :{leg}<span class="rd">{e(pd["droite"])}</span></div></div>')
+    out.append(f'<div class="pied"><div class="l1">État du document :{leg}<span class="rd">{e(pd["droite"])}</span></div><div class="l3">{e(VERSION)}</div></div>')
     return "".join(out)
 
 
@@ -200,6 +203,8 @@ def page3(p, logo):
         out.append(f'<tr><td class="lib">{e(lib)}</td>' + "".join(f'<td class="n">{"—" if x is None else x}</td>' for x in vals)
                    + f'<td class="tot">{tot}</td><td class="lec">{e(lec)}</td></tr>')
     out.append("</table>")
+    if v.get("reserve"):
+        out.append(f'<p class="reserve">{e(v["reserve"])}</p>')
     a = p["axes"]
     out.append(f'<h2 style="margin-top:10px">{e(a["titre"])}<small>{e(a["legende"])}</small></h2><div class="axes">')
     for n, t, x in a["cartes"]:
@@ -210,13 +215,19 @@ def page3(p, logo):
     for t, x, c in r["cartes"]:
         out.append(f'<div class="reco"><h4>{e(t)}</h4><p>{e(x)}</p><p class="c">{e(c)}</p></div>')
     out.append("</div></div>")
-    out.append(f'<div class="pied"><div class="l2" style="text-align:right">{e(p["pied"]["droite"])}</div></div>')
+    out.append(f'<div class="pied"><div class="l2" style="text-align:right">{e(p["pied"]["droite"])}</div><div class="l3">{e(VERSION)}</div></div>')
     return "".join(out)
+
+
+VERSION = ligne_version("PDF — pièce de référence, à joindre au procès-verbal")
 
 
 def construire_html(avec_prive=True):
     avec_prive = avec_prive and prive_disponible()
     plan = remplacer_jetons(lire_json(DONNEES / "plan_action.json"), table_des_noms(avec_prive))
+    v = lire_json(DONNEES / "version.json")
+    entete_version = f"{v['etat']} — {v['date_longue']}, version {v['version']}"
+    plan = json.loads(json.dumps(plan).replace("__VERSION__", entete_version))
     prio = {r["ref"]: r["prio"] for r in lire_json(DONNEES / "registre_html.json")["risques"]}
     logo = base64.b64encode((GABARITS / "assets" / "logo_telecon.png").read_bytes()).decode("ascii")
     p1, p2, p3 = plan["pages"]
@@ -227,7 +238,7 @@ def construire_html(avec_prive=True):
 
 def generer(avec_prive=True, sortie=None):
     from playwright.sync_api import sync_playwright
-    sortie = sortie or SORTIE / "Plan_action_SST_comite_Infra_QC.pdf"
+    sortie = sortie or SORTIE / nom_versionne("Plan_action_SST_comite_Infra_QC", ".pdf")
     sortie.parent.mkdir(parents=True, exist_ok=True)
     source = sortie.with_suffix(".html")
     source.write_text(construire_html(avec_prive), encoding="utf-8")

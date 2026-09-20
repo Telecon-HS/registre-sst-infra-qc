@@ -1,7 +1,7 @@
 {
  "_note": "Contenu du plan d’action PDF, version 7 du 19 septembre 2026. Les priorités (couleurs) viennent de registre_html.json. Texte reconstitué à partir du PDF v7.",
- "version": "7",
- "date": "19 septembre 2026",
+ "version": "8",
+ "date": "20 septembre 2026",
  "pages": [
   {
    "entete": {
@@ -13,7 +13,7 @@
     "droite": [
      "COMITÉ SST — INFRA QUÉBEC",
      "⟦P01⟧, Partenaire d’affaires SST",
-     "Document préparatoire — 19 septembre 2026, version 7"
+     "__VERSION__"
     ]
    },
    "chiffres": [
@@ -426,7 +426,8 @@
      ]
     ],
     "droite": "Document préparatoire — priorités, porteurs et échéances proposés, relevant de la décision du comité. Aucun verdict de conformité.",
-    "note": "Références vérifiées au manuel agrégé les 18 et 19 septembre 2026. R-01, R-22 et R-30 ne viennent d’aucune fiche d’inspection : stand down des échelles, évaluation SST-2026-PARASOL-001, registre des incidents. R-34 à R-38 viennent de la visite du dépôt Grenache."
+    "note": "Références vérifiées au manuel agrégé les 18 et 19 septembre 2026. R-01, R-22 et R-30 ne viennent d’aucune fiche d’inspection : stand down des échelles, évaluation SST-2026-PARASOL-001, registre des incidents. R-34 à R-38 viennent de la visite du dépôt Grenache.",
+    "version": "__VERSION__"
    }
   },
   {
@@ -658,14 +659,15 @@
       "absent"
      ]
     ],
-    "droite": "Le détail de chaque dossier et de chaque document figure au classeur du registre, onglets Initiatives et Documents du comité."
+    "droite": "Le détail de chaque dossier et de chaque document figure au classeur du registre, onglets Initiatives et Documents du comité.",
+    "version": "__VERSION__"
    }
   },
   {
    "entete": {
     "titre": "ACTIVITÉS DE PRÉVENTION ET RECONNAISSANCE",
     "sous_titre": [
-     "Ce que les équipes d’Infra Québec ont réellement fait, du 19 mai au 17 septembre 2026",
+     "Relevé partiel du 19 mai au 17 septembre 2026, mis en regard du tableau de bord Safety Intelligence 2026",
      "Structure inspirée des indicateurs proactifs du plan stratégique et de la clause 9.1 d’ISO 45001"
     ],
     "droite": [
@@ -675,29 +677,29 @@
    },
    "chiffres": [
     [
-     "51",
-     "inspections verrouillées"
+     "1 837",
+     "fiches d’inspection<br>versées en 2026"
     ],
     [
-     "11",
-     "personnes contributrices"
+     "113",
+     "personnes<br>contributrices"
+    ],
+    [
+     "409",
+     "rapports de visite<br>de chantier en 2026"
     ],
     [
      "10",
-     "visites SST en six semaines"
+     "visites SST<br>en six semaines"
     ],
     [
-     "42",
-     "rondes avant départ et pelle"
-    ],
-    [
-     "3",
-     "inspections mensuelles de véhicule"
+     "165",
+     "fiches dans l’export<br>ayant servi au tableau"
     ]
    ],
    "volume": {
-    "titre": "VOLUME DES ACTIVITÉS PAR TYPE ET PAR MOIS",
-    "legende": "— inspections verrouillées dans eCompliance; les visites du partenaire d’affaires restées « Submitted » n’y figurent pas",
+    "titre": "VOLUME DES ACTIVITÉS PAR TYPE ET PAR MOIS — RELEVÉ PARTIEL",
+    "legende": "— export « Public Inspections » du 19 mai au 17 septembre 2026, 165 fiches. Le tableau de bord Safety Intelligence en compte 1 837 pour 2026 : l’écart n’est pas expliqué.",
     "mois": [
      "05/26",
      "06/26",
@@ -716,7 +718,7 @@
        1
       ],
       28,
-      "Le volume est réel et régulier. Le taux d’atteinte reste incalculable tant que le nombre de véhicules légers affectés à Infra Québec n’est pas connu : sans dénominateur, 28 inspections ne se comparent à rien."
+      "Le volume est réel et régulier. Le taux d’atteinte reste incalculable tant que le nombre de véhicules légers affectés à Infra Québec n’est pas connu : sans dénominateur, 28 inspections ne se comparent à rien. Tableau de bord : 581 pour 2026."
      ],
      [
       "Inspection quotidienne avant utilisation — pelle mécanique",
@@ -728,7 +730,7 @@
        1
       ],
       14,
-      "Quatorze inspections sur quatre mois, toutes sauf deux par la même personne. À rapprocher du nombre de jours d’utilisation réelle des pelles avant d’en tirer une conclusion."
+      "Quatorze inspections sur quatre mois, toutes sauf deux par la même personne. À rapprocher du nombre de jours d’utilisation réelle des pelles avant d’en tirer une conclusion. Tableau de bord : 231 pour 2026."
      ],
      [
       "Inspection mensuelle du véhicule",
@@ -740,7 +742,7 @@
        null
       ],
       3,
-      "Trois en quatre mois, toutes par le même préparateur, et plus aucune depuis le 16 juillet. C’est la donnée chiffrée qui appuie le risque R-15."
+      "Trois fiches verrouillées dans l’export, aucune après le 16 juillet. Le tableau de bord en compte 58 pour 2026, par treize personnes, et deux fiches d’août et de septembre sont restées non verrouillées. Les sources ne concordent pas : c’est l’objet de R-15."
      ],
      [
       "Visite ou inspection SST de site",
@@ -752,9 +754,10 @@
        2
       ],
       6,
-      "Le programme démarre réellement le 5 août. Onze visites au dossier, dont dix terminées entre le 5 août et le 17 septembre."
+      "Le programme démarre réellement le 5 août. Onze visites au dossier, dont dix terminées entre le 5 août et le 17 septembre. Le tableau de bord compte 409 rapports de visite de chantier en 2026, non versés au registre."
      ]
-    ]
+    ],
+    "reserve": "Ces volumes sont un relevé partiel : l’export utilisé ne montre qu’une partie des fiches et le tableau de bord n’offre ni dates ni statuts. À refaire quand la liste complète sera obtenue."
    },
    "axes": {
     "titre": "ALIGNEMENT SUR LE PLAN STRATÉGIQUE SANTÉ ET SÉCURITÉ",
@@ -768,7 +771,7 @@
      [
       "02",
       "Passer d’une approche réactive à une approche proactive",
-      "Vingt-huit rondes avant départ et quatorze inspections de pelle en quatre mois sont des activités préventives déjà tenues, pas à créer."
+      "Vingt-huit rondes avant départ et quatorze inspections de pelle figurent à l’export, et le tableau de bord en compte 581 et 231 pour 2026. Ce sont des activités préventives déjà tenues, pas à créer."
      ],
      [
       "03",
@@ -778,7 +781,7 @@
      [
       "04",
       "Mesurer efficacement les résultats des activités",
-      "Les volumes existent. Ce qui manque pour en faire des taux : le nombre de véhicules, de pelles et de véhicules lourds affectés à Infra Québec."
+      "Les volumes existent, mais deux sources les chiffrent différemment. Ce qui manque pour en faire des taux : une extraction complète, avec dates et statuts, et le nombre de véhicules, de pelles et de véhicules lourds affectés à Infra Québec."
      ],
      [
       "05",
@@ -814,7 +817,8 @@
     ]
    },
    "pied": {
-    "droite": "Trois autres constats de reconnaissance et la correspondance avec ISO 45001 figurent au classeur du registre, onglet Activités de prévention. Les cibles du plan stratégique sont mondiales : elles ne deviennent des taux pour Infra Québec qu’une fois connus les effectifs de parc."
+    "droite": "Trois autres constats de reconnaissance et la correspondance avec ISO 45001 figurent au classeur du registre, onglet Activités de prévention. Les cibles du plan stratégique sont mondiales : elles ne deviennent des taux pour Infra Québec qu’une fois connus les effectifs de parc.",
+    "version": "__VERSION__"
    }
   }
  ]

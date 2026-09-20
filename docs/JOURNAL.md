@@ -1,5 +1,20 @@
 # Journal
 
+## 20 septembre 2026 — version 8 et règles de diffusion
+
+- `donnees/version.json` devient la seule source de la version et de la date.
+- Les quatre livrables portent une ligne de version en pied : version, date, rôle du support, pièce de référence, avis de péremption et adresse du dépôt.
+- Les fichiers produits sont nommés avec leur version : `..._v8_2026-09-20`.
+- `docs/DIFFUSION.md` fixe ce qui fait foi, qui reçoit quoi et ce qui se conserve.
+
+## 20 septembre 2026 — corrections de contenu
+
+- **R-15 reformulé.** Le constat n'est plus « plus aucune inspection depuis le 16 juillet », mais l'écart entre deux sources : trois fiches à l'export « Public Inspections », 58 au tableau de bord pour 2026, plus deux fiches d'août et de septembre restées non verrouillées (29444070, 29719434). La décision demandée comprend maintenant la question à poser à l'administrateur eCompliance.
+- **Page 3 et vue Prévention refaites.** Les volumes sont présentés comme un relevé partiel, avec une réserve visible : 165 fiches à l'export contre 1 837 au tableau de bord, écart non expliqué. Chaque ligne porte le chiffre du tableau de bord en regard. Les indicateurs du haut passent aux chiffres 2026 : 1 837 fiches, 113 personnes, 409 rapports de visite de chantier, 165 fiches à l'export.
+- **Chiffres rendus cohérents** : trente-neuf risques et douze priorités 1 dans la lecture Direction.
+
+Le tableau mois par mois ne peut pas être refait pour l'instant : le tableau de bord ne donne ni dates ni statuts.
+
 ## 20 septembre 2026 — audit UX/UI, points 6 à 17
 
 Interface seulement ; aucune donnée modifiée.

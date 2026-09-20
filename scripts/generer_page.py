@@ -13,8 +13,9 @@ ne contient que les consignes (décision du 20 septembre 2026).
 import base64
 import json
 
-from commun import (DONNEES, GABARITS, PRIVE, SORTIE, incidents_prives, lire_json,
-                    mode, prive_disponible, remplacer_jetons, table_des_noms)
+from commun import (DONNEES, GABARITS, PRIVE, SORTIE, incidents_prives, ligne_version,
+                    lire_json, mode, nom_versionne, prive_disponible, remplacer_jetons,
+                    table_des_noms)
 
 ORDRE_INCIDENT = ["id", "date", "titre", "type", "stky", "prepare", "lieu", "gest", "ref", "lecture"]
 REPLI_INCIDENT = {"type": "", "stky": "", "prepare": "", "lieu": "", "gest": "",
@@ -49,9 +50,10 @@ def generer(avec_prive=True, sortie=None):
     gabarit = remplacer_jetons((GABARITS / "page_registre.html").read_text(encoding="utf-8"), table)
     logo = base64.b64encode((GABARITS / "assets" / "logo_telecon.png").read_bytes()).decode("ascii")
     page = (gabarit.replace("__LOGO__", "data:image/png;base64," + logo)
+                   .replace("__VERSION__", ligne_version("page Comité — contient des noms, des photographies et le détail des incidents ; à diffuser au comité seulement"))
                    .replace("__DATA__", json.dumps(data, ensure_ascii=False)))
 
-    sortie = sortie or SORTIE / "registre_risques_sst_falcon.html"
+    sortie = sortie or SORTIE / nom_versionne("registre_risques_sst_falcon", ".html")
     sortie.parent.mkdir(parents=True, exist_ok=True)
     sortie.write_text(page, encoding="utf-8")
     print(f"page → {sortie} [{mode() if avec_prive else 'sans données privées'}]")
@@ -71,6 +73,7 @@ def generer_terrain(sortie=None):
     page = ((GABARITS / "page_terrain.html").read_text(encoding="utf-8")
             .replace("__CSS__", css)
             .replace("__LOGO__", "data:image/png;base64," + logo)
+            .replace("__VERSION__", ligne_version("page Terrain — aucune donnée nominative ; peut circuler sur le terrain"))
             .replace("__DATA__", json.dumps(data, ensure_ascii=False)))
 
     # garde-fou : aucun nom connu, aucune photo, aucun jeton dans la page Terrain
@@ -81,7 +84,7 @@ def generer_terrain(sortie=None):
     if trouves or "⟦" in page or "/9j/" in page:
         raise SystemExit(f"Page Terrain refusée : données privées détectées {trouves[:3]}")
 
-    sortie = sortie or SORTIE / "consignes_terrain_falcon.html"
+    sortie = sortie or SORTIE / nom_versionne("consignes_terrain_falcon", ".html")
     sortie.parent.mkdir(parents=True, exist_ok=True)
     sortie.write_text(page, encoding="utf-8")
     print(f"page terrain → {sortie} [sans aucune donnée privée]")

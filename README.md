@@ -52,6 +52,7 @@ Les livrables sont écrits dans `sortie/`, qui n'est jamais versé au dépôt. L
 | un risque, un incident rattaché, un site, une vue de la page | `donnees/registre_html.json` |
 | une cellule du classeur | `donnees/classeur/NN_Onglet.json` (coordonnée, valeur, style) |
 | le texte du plan d'action PDF | `donnees/plan_action.json` |
+| la version et la date des livrables | `donnees/version.json` (elles apparaissent dans les quatre livrables et dans les noms de fichiers) |
 | la priorité d'un risque dans le PDF | `donnees/registre_html.json` (le PDF la lit là) |
 | l'apparence des pages HTML | `gabarits/page_registre.html` (son CSS sert aussi à la page Terrain) |
 | la structure de la page Terrain | `gabarits/page_terrain.html` |
@@ -78,5 +79,6 @@ docs/           doctrine, note de transfert, journal, constats à appliquer
 
 - [`docs/DOCTRINE.md`](docs/DOCTRINE.md) — les règles qui rendent le dossier défendable, et les corrections à ne pas défaire
 - [`docs/A_CORRIGER.md`](docs/A_CORRIGER.md) — constats du 20 septembre 2026, pas encore appliqués
+- [`docs/DIFFUSION.md`](docs/DIFFUSION.md) — quelle forme fait foi, qui reçoit quoi, ce qui se conserve
 - [`docs/JOURNAL.md`](docs/JOURNAL.md) — historique et vérifications
 - [`docs/NOTE_TRANSFERT_2026-09-19.md`](docs/NOTE_TRANSFERT_2026-09-19.md) — note de reprise du dossier

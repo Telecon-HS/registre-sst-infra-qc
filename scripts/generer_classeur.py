@@ -10,14 +10,15 @@ quelles : ouvrir le fichier dans Excel ou LibreOffice les recalcule.
 Pour modifier le contenu : éditer la valeur de la cellule dans le JSON de l'onglet.
 """
 import datetime as dt
+from copy import copy
 
 from openpyxl import Workbook
 from openpyxl.drawing.image import Image
 from openpyxl.styles import Alignment, Border, Color, Font, PatternFill, Side
 from openpyxl.worksheet.datavalidation import DataValidation
 
-from commun import (DONNEES, PRIVE, RACINE, SORTIE, lire_json, prive_disponible,
-                    remplacer_jetons, table_des_noms)
+from commun import (DONNEES, PRIVE, RACINE, SORTIE, ligne_version, lire_json,
+                    nom_versionne, prive_disponible, remplacer_jetons, table_des_noms)
 
 CLASSEUR = DONNEES / "classeur"
 
@@ -89,7 +90,13 @@ def generer(avec_prive=True, sortie=None):
             img.width, img.height = im["largeur"], im["hauteur"]
             ws.add_image(img, im["ancre"])
 
-    sortie = sortie or SORTIE / "Registre_risques_SST_Falcon_Infra_QC.xlsx"
+    garde = wb["Garde"]
+    modele = garde["B34"]            # note de bas de page de la garde
+    garde.merge_cells("B38:C39")
+    garde["B38"].value = ligne_version("classeur — source de travail")
+    garde["B38"]._style = copy(modele._style)
+
+    sortie = sortie or SORTIE / nom_versionne("Registre_risques_SST_Falcon_Infra_QC", ".xlsx")
     sortie.parent.mkdir(parents=True, exist_ok=True)
     wb.save(sortie)
     print(f"classeur → {sortie} [{'complet' if avec_prive else 'sans données privées'}]")

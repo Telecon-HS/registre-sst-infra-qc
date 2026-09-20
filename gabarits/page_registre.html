@@ -232,6 +232,7 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 .hidden{display:none !important}
 
 /* ---------- téléphone : premier écran compact ---------- */
+.version{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 .apropos{display:none}
 /* 7 — le nom de l'auteur disparaît des lectures terrain */
 body[data-role="superviseurs"] .who-nom, body[data-role="travailleurs"] .who-nom{display:none}
@@ -382,6 +383,8 @@ header.top{position:relative}
 <footer>
   Document préparatoire. Les priorités, porteurs et échéances sont proposés et relèvent de la décision du comité. Ce registre ne porte aucun verdict de conformité et ne se prononce pas sur l’aptitude d’un véhicule ou d’un travailleur. Les références au manuel agrégé SSE-00-TEL-PRG sont à revérifier avant usage réglementaire.
   Les données d’incidents, de visites et d’inspections proviennent d’exports eCompliance de type « Public », possiblement filtrés : une absence peut être un effet de filtre plutôt qu’une absence réelle.
+
+  <p class="version">__VERSION__</p>
 </footer>
 
 <button id="haut" type="button" aria-label="Revenir en haut de la page">↑</button>
@@ -695,7 +698,8 @@ const volRows = P.types.map(t=>`<tr>
   <td style="color:var(--muted)">${esc(t.lecture)}</td></tr>`).join('');
 const contribRows = P.contrib.map(c=>`<tr><td><b>${esc(c.nom)}</b></td><td class="num">${c.n}</td><td style="color:var(--muted)">${esc(c.detail)}</td></tr>`).join('');
 document.getElementById('prev').innerHTML = `
-<div class="panel"><h3>Volume des activités par type et par mois</h3>
+<div class="panel"><h3>Volume des activités par type et par mois — relevé partiel</h3>
+  ${P.reserve?`<p class="intro" style="color:var(--p1)"><b>${esc(P.reserve)}</b></p>`:''}
   <p class="intro">Inspections verrouillées dans eCompliance du 19 mai au 17 septembre 2026. Les quatre visites du partenaire d’affaires restées au statut « Submitted » n’y figurent pas, ce qui explique l’écart avec l’onglet Sources.</p>
   <div class="tablewrap"><table><thead><tr><th>Type d’activité et cible au plan stratégique</th>${P.mois.map(m=>`<th class="num">${m.slice(5)}/${m.slice(2,4)}</th>`).join('')}<th class="num">Total</th><th>Lecture</th></tr></thead><tbody>${volRows}</tbody></table></div></div>
 
@@ -722,7 +726,7 @@ document.getElementById('prev').innerHTML = `
 /* vue direction */
 document.getElementById('pdirection').innerHTML = `
 <div class="panel"><h3>Ce qui appelle une décision</h3>
-  <p class="intro">Six décisions tirées de trente-huit risques consolidés sur dix visites. Chacune est présentée par ce qu’elle engage, pas par la procédure qui la fonde.</p>
+  <p class="intro">Six décisions tirées des trente-neuf risques consolidés sur dix visites. Chacune est présentée par ce qu’elle engage, pas par la procédure qui la fonde.</p>
   <div style="padding:12px 16px 0"><div class="dirn">${DATA.roles.dirchiffres.map(d=>`<div><b>${esc(d.n)}</b><span>${esc(d.lab)}</span><em>${esc(d.sub)}</em></div>`).join('')}</div></div>
   <div style="padding:0 16px 18px">${DATA.roles.dirdecisions.map(d=>`<div class="dec">
     <div class="refs">${esc(d.refs)}</div><h4>${esc(d.titre)}</h4>

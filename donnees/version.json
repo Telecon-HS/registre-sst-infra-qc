@@ -1,0 +1,10 @@
+{
+ "_note": "Version des livrables. Une seule source : les générateurs l'inscrivent dans le classeur, le PDF et les deux pages, et l'ajoutent au nom des fichiers.",
+ "version": "8",
+ "date": "2026-09-20",
+ "date_longue": "20 septembre 2026",
+ "etat": "Document préparatoire",
+ "depot": "github.com/Telecon-HS/registre-sst-infra-qc",
+ "reference": "Pièce de référence : le PDF du plan d'action. Les pages web servent à consulter ; le classeur est la source de travail.",
+ "avis": "État au 20 septembre 2026. Une copie enregistrée peut être périmée : vérifier la version courante avant usage."
+}

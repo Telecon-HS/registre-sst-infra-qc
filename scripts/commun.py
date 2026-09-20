@@ -59,5 +59,23 @@ def incidents_prives():
     return lire_json(f) if f.exists() else {}
 
 
+def version():
+    """Version et date des livrables : donnees/version.json fait foi."""
+    return lire_json(DONNEES / "version.json")
+
+
+def ligne_version(support):
+    """Ligne de version affichée en pied de chaque livrable."""
+    v = version()
+    return (f"{v['etat']} — version {v['version']}, {v['date_longue']} · {support} · "
+            f"{v['reference']} {v['avis']} Dépôt : {v['depot']}")
+
+
+def nom_versionne(base, extension):
+    """registre_risques_sst_falcon → registre_risques_sst_falcon_v8_2026-09-20.html"""
+    v = version()
+    return f"{base}_v{v['version']}_{v['date']}{extension}"
+
+
 def mode():
     return "complet (dossier privé trouvé)" if prive_disponible() else "sans données privées"
