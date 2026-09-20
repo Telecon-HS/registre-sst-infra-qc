@@ -1,5 +1,15 @@
 # Journal
 
+## 20 septembre 2026 — contrôle des citations, jonction avec ANCRAGE
+
+`scripts/verifier_citations.py` croise les champs « norme » des 39 risques avec `corpus/index-procedures.csv` du dépôt Telecon-SST-Agents (ANCRAGE). Les préfixes SSE- et HSE- sont traités comme équivalents : seul le numéro compte. Cinq tests (`pytest -q`).
+
+Premier passage, 67 citations : 33 confirmées, 19 partielles, 6 absentes de l'index, 1 hors index (CSTC et décret), 8 risques sans procédure Telecon citée.
+
+Quatre procédures citées par le registre n'existent pas à l'index d'ANCRAGE : 403 (Poteaux et torons), 501 (lignes directrices de sauvetage), 601 (liste des EPI approuvés) et, indirectement, les formulaires F01. À remonter côté ANCRAGE.
+
+Limite assumée : l'index ne descend pas au niveau des sections. Les § restent à vérifier au manuel, comme les 18 et 19 septembre 2026.
+
 ## 20 septembre 2026 — page Terrain en ligne
 
 Page Terrain v8 déployée sur Cloudflare Workers, protégée par mot de passe (utilisateur `terrain`, secret `MOT_DE_PASSE`), sans cache et non indexable. Adresse : sst-terrain-infra-qc.mario-deshaies.workers.dev. Le projet de déploiement vit hors du dépôt. Règles et procédure de mise à jour : `DIFFUSION.md`.

@@ -63,14 +63,19 @@ Une même information peut figurer dans plusieurs fichiers (par exemple un risqu
 
 ```bash
 python scripts/verifier_confidentialite.py
+python scripts/verifier_citations.py    # citations normatives contre l'index ANCRAGE
+pytest -q
 ```
+
+Le contrôle des citations lit `corpus/index-procedures.csv` du dépôt **Telecon-SST-Agents (ANCRAGE)**. Donnez son chemin par la variable `ANCRAGE_INDEX`, ou placez les deux dépôts côte à côte. L'index confirme l'existence d'une procédure et son niveau de confiance ; il ne confirme jamais le contenu d'une section.
 
 ## Structure
 
 ```
 donnees/        données du registre, sans noms (jetons ⟦Pnn⟧)
 gabarits/       gabarit de la page HTML et logo
-scripts/        générateurs, contrôle de confidentialité
+scripts/        générateurs, contrôles (confidentialité, citations)
+tests/          tests des contrôles (pytest)
 outils/         extraction ayant servi à reconstruire le dépôt le 20 septembre 2026
 docs/           doctrine, note de transfert, journal, constats à appliquer
 ```
