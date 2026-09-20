@@ -27,3 +27,32 @@ Rien ne se signe sur une page web. Les décisions se consignent au procès-verba
 ## Points d'entrée
 
 Pour le terrain, viser un lien stable — bibliothèque SharePoint, ou code QR affiché au dépôt — plutôt qu'un fichier envoyé par courriel : une copie enregistrée devient périmée sans prévenir. Chaque page porte l'avis correspondant en pied.
+
+## Page Terrain en ligne — Cloudflare
+
+**Adresse** : https://sst-terrain-infra-qc.mario-deshaies.workers.dev
+**Accès** : mot de passe, utilisateur `terrain`. Le mot de passe se transmet de vive voix ou par un canal interne. **Jamais dans ce dépôt.**
+**Mise en ligne le** : 20 septembre 2026, version 8.
+
+### Ce qui peut y aller, et ce qui n'y va jamais
+
+Seule la page Terrain est hébergée là. Le compte Cloudflare est un compte personnel ouvert pour les projets Telecon : **la page Comité, le classeur et les PDF n'y vont jamais**, parce qu'ils contiennent des noms, des blessures et des photographies. Les y déposer reviendrait à sortir des renseignements personnels du locataire Telecon.
+
+### Mettre la page à jour
+
+Dans `C:\Dev\terrain-site`, hors du dépôt Git :
+
+```
+copier la nouvelle page dans public\index.html
+npx.cmd wrangler deploy
+```
+
+Changer le mot de passe : `npx.cmd wrangler secret put MOT_DE_PASSE`
+
+### Points de vigilance
+
+- Le projet Cloudflare (`worker.js`, `wrangler.jsonc`) vit **hors du dépôt**, pour éviter que la page publiée y soit versée par mégarde.
+- Le compte est au nom d'une seule personne : ajouter un second administrateur, ou prévenir les TI de l'existence du site.
+- L'adresse reste stable ; seul le contenu change. Un code QR affiché au dépôt et dans les fourgons suffit à la diffusion.
+- La page est servie sans mise en cache et avec `noindex` : elle n'est pas indexée par les moteurs de recherche.
+

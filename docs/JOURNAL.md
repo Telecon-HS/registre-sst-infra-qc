@@ -1,5 +1,9 @@
 # Journal
 
+## 20 septembre 2026 — page Terrain en ligne
+
+Page Terrain v8 déployée sur Cloudflare Workers, protégée par mot de passe (utilisateur `terrain`, secret `MOT_DE_PASSE`), sans cache et non indexable. Adresse : sst-terrain-infra-qc.mario-deshaies.workers.dev. Le projet de déploiement vit hors du dépôt. Règles et procédure de mise à jour : `DIFFUSION.md`.
+
 ## 20 septembre 2026 — volumes et tendances
 
 Graphiques ajoutés à la vue Prévention de la page Comité : courbe de tendance mensuelle (six types les plus fréquents, février à septembre) et histogramme des trois relevés. SVG produit par la page, sans bibliothèque, adapté au téléphone et au mode sombre. Le classeur garde ses propres graphiques Excel.
