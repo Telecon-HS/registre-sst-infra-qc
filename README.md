@@ -1,12 +1,13 @@
 # Registre des risques SST — Infra Québec (projet Falcon)
 
-Ce dépôt sert à produire les trois livrables du comité SST d'Infra Québec à partir d'une seule source de données :
+Ce dépôt sert à produire les livrables du comité SST d'Infra Québec à partir d'une seule source de données :
 
 | Livrable | Script | Contenu |
 |---|---|---|
 | Classeur Excel, 15 onglets | `scripts/generer_classeur.py` | Registre de 39 risques, traçabilité, incidents, visites, inspections, initiatives, documents du comité, prévention, photos, dossier du comité, projets, CAPA, synthèse, lecture |
 | Plan d'action PDF, 3 pages | `scripts/generer_plan_action.py` | Risques et calendrier · dossiers et documents du comité · prévention et reconnaissance |
-| Page HTML autonome | `scripts/generer_page.py` | Sélecteur de rôle (Comité, Direction, Superviseurs, Travailleurs) et neuf vues |
+| Page HTML **Comité** | `scripts/generer_page.py` | Sélecteur de rôle et neuf vues. Contient noms, photos et incidents : à partager **au comité seulement** |
+| Page HTML **Terrain** | `scripts/generer_page.py` | Consignes Superviseurs et Travailleurs seulement. Aucun nom, aucune photo, aucun incident : peut être partagée sur le terrain |
 
 **État actuel : version 7 du 19 septembre 2026, reconstruite le 20 septembre.** Des constats relevés depuis ne sont pas encore appliqués : voir [`docs/A_CORRIGER.md`](docs/A_CORRIGER.md).
 
@@ -38,7 +39,7 @@ playwright install chromium            # une seule fois, pour le PDF
 # placer le dossier privé à côté du dépôt : ../prive
 # (ou indiquer son chemin : export REGISTRE_PRIVE=/chemin/vers/prive)
 
-python scripts/tout_generer.py                 # les trois livrables → sortie/
+python scripts/tout_generer.py                 # les quatre livrables → sortie/
 python scripts/tout_generer.py --sans-prive    # version sans données privées
 ```
 
@@ -52,6 +53,8 @@ Les livrables sont écrits dans `sortie/`, qui n'est jamais versé au dépôt. L
 | une cellule du classeur | `donnees/classeur/NN_Onglet.json` (coordonnée, valeur, style) |
 | le texte du plan d'action PDF | `donnees/plan_action.json` |
 | la priorité d'un risque dans le PDF | `donnees/registre_html.json` (le PDF la lit là) |
+| l'apparence des pages HTML | `gabarits/page_registre.html` (son CSS sert aussi à la page Terrain) |
+| la structure de la page Terrain | `gabarits/page_terrain.html` |
 
 Une même information peut figurer dans plusieurs fichiers (par exemple un risque dans la page, le classeur et le PDF). **Une correction doit être faite partout où l'information apparaît**, dans un même dépôt daté.
 

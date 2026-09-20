@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consignes SST terrain — Falcon, Infra Québec</title>
+__CSS__
+<style>
+/* propre à la page Terrain : texte plus grand, lecture dehors sur téléphone */
+.trav h4,.sup h4{font-size:18px}
+.trav .quoi,.trav .pourquoi,.sup p{font-size:15.5px;line-height:1.55}
+.sup .reftxt{display:block;font-size:12px;color:var(--muted);margin-top:4px;font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <img class="logo" src="__LOGO__" alt="Telecon">
+  <h1>Sécurité sur le terrain — projet Falcon</h1>
+  <button class="apropos" type="button" aria-expanded="false">À propos de ce document</button>
+  <p class="sub">Infra Québec. Consignes tirées des visites SST du 5 août au 17 septembre 2026. Rien ici ne vise quelqu’un en particulier : les constats visent des unités et des pratiques, pas des personnes.</p>
+  <p class="who">Partenaire d’affaires Santé et Sécurité — 19 septembre 2026</p>
+  <div class="roles" role="tablist" aria-label="Choisir une lecture">
+    <button role="tab" id="r-travailleurs" aria-selected="true">Travailleurs</button>
+    <button role="tab" id="r-superviseurs" aria-selected="false">Superviseurs</button>
+  </div>
+</header>
+
+<main>
+  <section id="v-travailleurs"><div class="panels" id="ptravailleurs"></div></section>
+  <section id="v-superviseurs" class="hidden"><div class="panels" id="psuperviseurs"></div></section>
+</main>
+
+<footer>
+  Document préparatoire. Ces consignes reprennent des exigences écrites qui existent déjà ; elles ne portent aucun verdict de conformité et ne visent personne en particulier.
+  Une question ou un doute sur le terrain : arrêter, en parler à son superviseur ou au partenaire d’affaires SST.
+</footer>
+
+<script>
+const DATA = __DATA__;
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.getElementById('ptravailleurs').innerHTML = `
+<div class="panel"><h3>Ce qui change pour toi</h3>
+  <p class="intro">${esc(DATA.travailleurs.length)} choses tirées des visites de l’été et de l’automne. Rien ici ne vise quelqu’un en particulier.</p>
+  <div style="padding:10px 16px 20px">${DATA.travailleurs.map(x=>`<div class="trav">
+    <h4>${esc(x.titre)}</h4><div class="quoi">${esc(x.texte)}</div>
+    <div class="pourquoi">${esc(x.pourquoi)}</div></div>`).join('')}</div></div>`;
+
+document.getElementById('psuperviseurs').innerHTML = `
+<div class="panel"><h3>À faire sur le terrain</h3>
+  <p class="intro">${esc(DATA.superviseurs.length)} consignes tirées des visites. Chacune s’appuie sur une exigence écrite qui existe déjà. Aucun nom de travailleur n’apparaît : les constats visent des unités et des pratiques, pas des personnes.</p>
+  <div style="padding:10px 16px 18px">${DATA.superviseurs.map(x=>`<div class="sup">
+    <div><h4>${esc(x.titre)}</h4><p>${esc(x.faire)}</p><div class="exige">${esc(x.exige)}</div></div>
+    <div class="when">${esc(x.delai)}<span class="reftxt">${esc(x.ref)}</span></div></div>`).join('')}</div></div>`;
+
+function setRole(r){
+  for(const k of ['travailleurs','superviseurs']){
+    document.getElementById('r-'+k).setAttribute('aria-selected', k===r);
+    document.getElementById('v-'+k).classList.toggle('hidden', k!==r);
+  }
+  window.scrollTo({top:0});
+}
+document.querySelector('.roles').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(b) setRole(b.id.slice(2));
+});
+document.querySelector('.apropos').addEventListener('click',e=>{
+  const h=document.querySelector('header.top'); const o=h.classList.toggle('ouvert');
+  e.currentTarget.setAttribute('aria-expanded',o); e.currentTarget.textContent=o?'Masquer':'À propos de ce document';
+});
+</script>
+</body>
+</html>

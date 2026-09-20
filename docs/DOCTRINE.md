@@ -15,6 +15,7 @@ Ces règles font que le dossier tient en séance. Elles s'appliquent à toute mo
 8. **Aucune donnée nominative, aucune photo, aucun détail d'incident dans le dépôt.** Les personnes y sont des jetons (`⟦P01⟧`). Les noms, les photos et le détail des incidents vivent dans le dossier privé, sur SharePoint.
 9. **Une correction = un dépôt (commit) daté**, avec la source qui la justifie. On ne réécrit pas l'historique.
 10. **Lancer `python scripts/verifier_confidentialite.py` avant chaque dépôt.**
+11. **Le sélecteur de rôle n'est pas une protection.** Tout ce qui est dans un fichier HTML peut être lu. Le terrain reçoit uniquement la page Terrain, générée à part, qui ne contient que les consignes. La page Comité ne se partage qu'au comité.
 
 ## Corrections à ne pas défaire (vérifiées au manuel les 18 et 19 septembre 2026)
 

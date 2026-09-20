@@ -19,5 +19,6 @@ if avec_prive and not prive_disponible():
     print("Dossier privé introuvable : livrables produits sans noms ni photos.")
 generer_classeur.generer(avec_prive)
 generer_page.generer(avec_prive)
+generer_page.generer_terrain()
 generer_plan_action.generer(avec_prive)
 verifier_confidentialite.main()

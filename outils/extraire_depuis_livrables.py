@@ -13,6 +13,7 @@ Sorties  : donnees/registre_html.json, donnees/classeur/*.json,
     python outils/extraire_depuis_livrables.py CLASSEUR.xlsx PAGE.html
 """
 import base64
+import unicodedata
 import json
 import sys
 from pathlib import Path
@@ -151,7 +152,8 @@ def extraire_classeur(chemin, paires):
         }
         if ws._images:
             feuille["images"] = [{"fichier": "gabarits/assets/logo_telecon.png", "ancre": "B2", "largeur": 156, "hauteur": 51}]
-        nom_fichier = f"{n:02d}_{ws.title}.json"
+        # noms de fichiers sans accents : Windows et Git les gèrent mal dans une archive
+        nom_fichier = unicodedata.normalize("NFKD", f"{n:02d}_{ws.title}.json").encode("ascii", "ignore").decode()
         (dossier / nom_fichier).write_text(json.dumps(feuille, ensure_ascii=False, indent=0), encoding="utf-8")
         ordre.append(nom_fichier)
     (dossier / "_styles.json").write_text(json.dumps(styles, ensure_ascii=False, indent=0), encoding="utf-8")

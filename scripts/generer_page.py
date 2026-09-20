@@ -1,10 +1,14 @@
-"""Génère la page HTML autonome du registre (sélecteur de rôle, neuf vues).
+"""Génère les deux pages HTML autonomes.
 
-    python scripts/generer_page.py            → sortie/registre_risques_sst_falcon.html
+    python scripts/generer_page.py
+      → sortie/registre_risques_sst_falcon.html   page COMITÉ : toutes les vues, noms,
+                                                   photos et incidents (avec le dossier privé)
+      → sortie/consignes_terrain_falcon.html      page TERRAIN : superviseurs et travailleurs
+                                                   seulement, jamais de nom, de photo ni d'incident
 
-Avec le dossier privé, la page est identique à celle publiée le 19 septembre 2026
-(noms, photos et détail des incidents compris). Sans lui, elle est produite sans
-noms, sans photos et sans le détail des incidents.
+Le sélecteur de rôle d'une page n'est pas une protection : tout ce qui est dans le
+fichier peut être lu. C'est pourquoi la page Terrain est un fichier distinct qui
+ne contient que les consignes (décision du 20 septembre 2026).
 """
 import base64
 import json
@@ -54,6 +58,37 @@ def generer(avec_prive=True, sortie=None):
     return sortie
 
 
+def generer_terrain(sortie=None):
+    """Page Terrain : ne reçoit que les consignes superviseurs et travailleurs.
+    Les jetons de personnes sont toujours remplacés par le repli, même si le
+    dossier privé est disponible, et la page est vérifiée avant d'être écrite."""
+    roles = lire_json(DONNEES / "registre_html.json")["roles"]
+    data = remplacer_jetons({"superviseurs": roles["superviseurs"], "travailleurs": roles["travailleurs"]},
+                            table_des_noms(avec_prive=False))
+    registre = (GABARITS / "page_registre.html").read_text(encoding="utf-8")
+    css = registre[registre.index("<style>"):registre.index("</style>") + len("</style>")]
+    logo = base64.b64encode((GABARITS / "assets" / "logo_telecon.png").read_bytes()).decode("ascii")
+    page = ((GABARITS / "page_terrain.html").read_text(encoding="utf-8")
+            .replace("__CSS__", css)
+            .replace("__LOGO__", "data:image/png;base64," + logo)
+            .replace("__DATA__", json.dumps(data, ensure_ascii=False)))
+
+    # garde-fou : aucun nom connu, aucune photo, aucun jeton dans la page Terrain
+    interdits = []
+    if prive_disponible():
+        interdits = [g for gs in lire_json(PRIVE / "noms.json")["variantes"].values() for g in gs]
+    trouves = [n for n in interdits if n in page]
+    if trouves or "⟦" in page or "/9j/" in page:
+        raise SystemExit(f"Page Terrain refusée : données privées détectées {trouves[:3]}")
+
+    sortie = sortie or SORTIE / "consignes_terrain_falcon.html"
+    sortie.parent.mkdir(parents=True, exist_ok=True)
+    sortie.write_text(page, encoding="utf-8")
+    print(f"page terrain → {sortie} [sans aucune donnée privée]")
+    return sortie
+
+
 if __name__ == "__main__":
     import sys
     generer(avec_prive="--sans-prive" not in sys.argv)
+    generer_terrain()

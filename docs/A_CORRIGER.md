@@ -43,3 +43,13 @@ La liste « Public Inspections » ne montre qu'une partie des fiches. La page 3 
 
 - Nombre de visites : 12 au dossier (page 1), onze (page 3), 13 énumérées dans la note de transfert (10 versées + 3 non versées).
 - Les « quatre réserves » du PDF (citations erronées, six procédures bloquées) ne sont pas les mêmes que celles de la note (R-07 à réargumenter, saisine divergente 29721538).
+
+## 7. Incohérences relevées par l'audit UX/UI (20 septembre 2026)
+
+- La vue Direction dit « trente-huit risques » ; le registre en compte 39.
+- La vue Direction affiche « 11 risques de priorité 1 » ; le bandeau et le PDF en comptent 12.
+- Nombre de visites : 11 / 9 (bandeau de la page), 12 / 10 (PDF), 13 (note de transfert).
+
+## 8. Suite de l'audit UX/UI, non encore traitée
+
+Points 6 à 17 de l'audit : chiffres du bandeau hors du rôle Comité, nom de l'auteur dans les vues Terrain de la page Comité, libellé « 11 / 9 », « R-10Exposition » collé dans le calendrier, priorité signalée par la seule couleur, cibles tactiles sous 44 px, textes sous 12 px, pages très longues sur téléphone, impression, police chargée d'Internet, bouton clair/sombre, visionneuse de photos.

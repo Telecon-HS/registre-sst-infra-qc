@@ -14,6 +14,7 @@
   --p1:#B3261E; --p2:#96660A; --p3:#2C6B52;
   --p1-bg:#FBEAE8; --p2-bg:#FBF1DE; --p3-bg:#E6F1EC;
   --focus:#1F3864;
+  --band:#1F3864;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -22,6 +23,7 @@
     --p1:#F08A80; --p2:#DFB35A; --p3:#7BC5A3;
     --p1-bg:#2C1917; --p2-bg:#2A2214; --p3-bg:#152620;
     --focus:#9FB6DC;
+    --band:#16284A;
   }
 }
 :root[data-theme="dark"]{
@@ -30,6 +32,7 @@
   --p1:#F08A80; --p2:#DFB35A; --p3:#7BC5A3;
   --p1-bg:#2C1917; --p2-bg:#2A2214; --p3-bg:#152620;
   --focus:#9FB6DC;
+  --band:#16284A;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -44,8 +47,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
 
 /* ---------- bandeau ---------- */
-header.top{background:var(--navy);color:#fff;padding:18px 22px 16px}
-:root[data-theme="dark"] header.top, @media (prefers-color-scheme: dark){}
+/* Le bandeau garde un fond foncé dans les deux modes : le texte blanc reste lisible. */
+header.top{background:var(--band);color:#fff;padding:18px 22px 16px}
 .top .logo{height:26px;width:auto;display:block;margin-bottom:11px}
 .top h1{margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
 .top .sub{margin:5px 0 0;font-size:13px;font-weight:400;opacity:.82;max-width:78ch}
@@ -57,8 +60,10 @@ header.top{background:var(--navy);color:#fff;padding:18px 22px 16px}
 .stat b{display:block;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1}
 .stat span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}
 
-nav.views{display:flex;gap:2px;background:var(--card);border-bottom:1px solid var(--line);padding:0 14px}
-nav.views button{padding:11px 14px;font-size:13.5px;font-weight:500;color:var(--muted);border-bottom:2.5px solid transparent;margin-bottom:-1px}
+/* Les onglets défilent à l’horizontale au lieu d’élargir la page (téléphone). */
+nav.views{display:flex;gap:2px;background:var(--card);border-bottom:1px solid var(--line);padding:0 14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.views::-webkit-scrollbar{display:none}
+nav.views button{flex:0 0 auto;white-space:nowrap;padding:11px 14px;font-size:13.5px;font-weight:500;color:var(--muted);border-bottom:2.5px solid transparent;margin-bottom:-1px}
 nav.views button[aria-selected="true"]{color:var(--ink);font-weight:600;border-bottom-color:var(--navy)}
 
 /* ---------- disposition ---------- */
@@ -191,7 +196,7 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 .qa .e{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.45}
 .roles{display:flex;gap:4px;margin-top:14px;flex-wrap:wrap}
 .roles button{padding:6px 14px;font-size:13px;font-weight:500;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:#fff;opacity:.72}
-.roles button[aria-selected="true"]{background:#fff;color:var(--navy);border-color:#fff;font-weight:600;opacity:1}
+.roles button[aria-selected="true"]{background:#fff;color:#1F3864;border-color:#fff;font-weight:600;opacity:1}
 .dirn{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:3px;background:var(--card);margin:0 0 14px}
 .dirn div{flex:1 1 150px;padding:13px 16px;border-right:1px solid var(--line-soft)}
 .dirn div:last-child{border-right:0}
@@ -225,6 +230,32 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 .hist .y{font-size:15px;font-weight:700}
 .hist .q{font-size:13.5px;line-height:1.5}
 .hidden{display:none !important}
+
+/* ---------- téléphone : premier écran compact ---------- */
+.apropos{display:none}
+.retour{display:none}
+@media (max-width:700px){
+  header.top{padding:12px 14px 10px}
+  .top .logo{height:20px;margin-bottom:7px}
+  .top h1{font-size:18px}
+  .top .sub,.top .who{display:none}
+  header.top.ouvert .sub,header.top.ouvert .who{display:block}
+  .apropos{display:inline-block;margin-top:6px;font-size:12.5px;color:#fff;opacity:.85;text-decoration:underline;padding:6px 0;min-height:32px}
+  .roles{margin-top:8px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .roles::-webkit-scrollbar{display:none}
+  .roles button{flex:0 0 auto;min-height:40px;padding:8px 14px}
+  .stats{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .stats::-webkit-scrollbar{display:none}
+  .stat{flex:0 0 auto;padding:8px 14px;min-width:112px}
+  .stat b{font-size:18px}
+  .stat span{font-size:11.5px}
+  nav.views button{min-height:44px}
+}
+/* ---------- téléphone et tablette : de la liste à la fiche ---------- */
+@media (max-width:900px){
+  .record{scroll-margin-top:8px}
+  .retour{display:block;width:100%;text-align:left;padding:12px 16px;min-height:44px;font-size:14px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line-soft)}
+}
 @media (prefers-reduced-motion: no-preference){
   .record{animation:fade .18s ease-out}
   @keyframes fade{from{opacity:.4}to{opacity:1}}
@@ -236,6 +267,7 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 <header class="top">
   <img class="logo" src="__LOGO__" alt="Telecon">
   <h1>Registre des risques et plan d’action SST</h1>
+  <button class="apropos" type="button" aria-expanded="false">À propos de ce document</button>
   <p class="sub">Projet Falcon, Infra Québec. Dix visites SST consolidées du 5 août au 17 septembre 2026, complétées par le registre des incidents, le Safety Stand Down sur les échelles, l’évaluation de risque sur les parasols et le décret 63-2025. Références vérifiées au manuel agrégé SSE-00-TEL-PRG.</p>
   <p class="who">⟦P01⟧, Partenaire d’affaires Santé et Sécurité — document préparatoire du 19 septembre 2026</p>
   <div class="roles" role="tablist" aria-label="Choisir une lecture">
@@ -413,10 +445,22 @@ function drawRecord(){
     ${r.note?`<div class="block"><h3>Réserves et lecture</h3><div class="note">${esc(r.note)}</div></div>`:''}
   </div>`;
 }
+const etroit = () => matchMedia('(max-width:900px)').matches;
 function select(ref,view){
   sel=ref; drawRail(); drawRecord();
   if(view!==false) show('risques');
-  document.getElementById('record').scrollIntoView({block:'nearest'});
+  const rec=document.getElementById('record');
+  if(etroit()){
+    /* téléphone : la fiche est sous la liste ; on y descend et on offre le retour */
+    const b=document.createElement('button');
+    b.className='retour'; b.type='button'; b.textContent='← Retour à la liste des risques';
+    b.addEventListener('click',()=>{
+      const row=document.querySelector('#rail .row[data-ref="'+sel+'"]');
+      (row||document.getElementById('rail')).scrollIntoView({block:'center'});
+    });
+    rec.prepend(b);
+    rec.scrollIntoView({block:'start'});
+  } else rec.scrollIntoView({block:'nearest'});
 }
 
 /* calendrier */
@@ -686,9 +730,17 @@ function show(v){
     document.getElementById('v-'+k).classList.toggle('hidden',k!==v);
     document.getElementById('t-'+k).setAttribute('aria-selected',k===v);
   }
+  /* garder l'onglet actif visible dans la barre défilante */
+  const nav=document.querySelector('nav.views'), t=document.getElementById('t-'+v);
+  if(t && nav.scrollWidth>nav.clientWidth) nav.scrollLeft=t.offsetLeft-(nav.clientWidth-t.offsetWidth)/2;
 }
 document.querySelector('nav.views').addEventListener('click',e=>{
   const b=e.target.closest('button'); if(b) show(b.id.slice(2));
+});
+
+document.querySelector('.apropos').addEventListener('click',e=>{
+  const h=document.querySelector('header.top'); const o=h.classList.toggle('ouvert');
+  e.currentTarget.setAttribute('aria-expanded',o); e.currentTarget.textContent=o?'Masquer':'À propos de ce document';
 });
 
 drawFilters(); drawRail(); drawRecord(); setRole('comite');
