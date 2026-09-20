@@ -79,6 +79,7 @@ docs/           doctrine, note de transfert, journal, constats à appliquer
 
 - [`docs/DOCTRINE.md`](docs/DOCTRINE.md) — les règles qui rendent le dossier défendable, et les corrections à ne pas défaire
 - [`docs/A_CORRIGER.md`](docs/A_CORRIGER.md) — constats du 20 septembre 2026, pas encore appliqués
+- [`docs/PROGRAMME_PREVENTION_STRUCTURE.md`](docs/PROGRAMME_PREVENTION_STRUCTURE.md) — charpente du programme de prévention : ce qui existe, ce qui manque
 - [`docs/DIFFUSION.md`](docs/DIFFUSION.md) — quelle forme fait foi, qui reçoit quoi, ce qui se conserve
 - [`docs/JOURNAL.md`](docs/JOURNAL.md) — historique et vérifications
 - [`docs/NOTE_TRANSFERT_2026-09-19.md`](docs/NOTE_TRANSFERT_2026-09-19.md) — note de reprise du dossier

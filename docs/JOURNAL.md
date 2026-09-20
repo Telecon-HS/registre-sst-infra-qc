@@ -1,5 +1,9 @@
 # Journal
 
+## 20 septembre 2026 — charpente du programme de prévention
+
+`PROGRAMME_PREVENTION_STRUCTURE.md` : onze sections, avec pour chacune ce que le registre fournit déjà et ce qui manque. Trous principaux : couverture limitée à Falcon, risques psychosociaux absents, aucun volet de surveillance du milieu et de la santé, ni de gestion des sous-traitants, ni de formation structurée. Deux réserves commandent le reste : le découpage des établissements n'est pas tranché et le comité ne siège pas.
+
 ## 20 septembre 2026 — version 8 et règles de diffusion
 
 - `donnees/version.json` devient la seule source de la version et de la date.
