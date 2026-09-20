@@ -232,6 +232,10 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 .hidden{display:none !important}
 
 /* ---------- téléphone : premier écran compact ---------- */
+.graph{padding:6px 16px 4px}
+.legende{display:flex;flex-wrap:wrap;gap:10px 16px;padding:6px 0 10px;font-size:12px;color:var(--muted)}
+.legende .leg{display:inline-flex;align-items:center;gap:6px}
+.legende i{width:11px;height:11px;border-radius:2px;display:inline-block}
 .version{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 .apropos{display:none}
 /* 7 — le nom de l'auteur disparaît des lectures terrain */
@@ -696,12 +700,73 @@ const volRows = P.types.map(t=>`<tr>
   ${t.vals.map(v=>`<td class="num">${v||'—'}</td>`).join('')}
   <td class="num"><b>${t.vals.reduce((a,b)=>a+b,0)}</b></td>
   <td style="color:var(--muted)">${esc(t.lecture)}</td></tr>`).join('');
+/* graphiques de la vue Prévention : SVG produit ici, sans bibliothèque */
+const SERIE_COULEURS = ['#1F6FB2','#C01B1A','#2E8B57','#B97900','#6B4FA8','#0E7C86'];
+function svgTendance(T, largeur=820, hauteur=300, f=1){
+  const G={g:52*f,d:16,h:16,b:34*f}, W=largeur, H=hauteur;
+  const series=[...T.lignes].map(l=>({...l,tot:l.mois.reduce((a,b)=>a+b,0)}))
+      .sort((a,b)=>b.tot-a.tot).slice(0,6);
+  const maxi=Math.max(...series.flatMap(s=>s.mois),1);
+  const pas=Math.ceil(maxi/4), haut=pas*4;
+  const x=i=>G.g+i*(W-G.g-G.d)/(T.mois.length-1);
+  const y=v=>H-G.b-(v/haut)*(H-G.h-G.b);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Tendance mensuelle des inspections" style="width:100%;height:auto">`;
+  for(let k=0;k<=4;k++){ const v=k*pas;
+    s+=`<line x1="${G.g}" x2="${W-G.d}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/>`;
+    s+=`<text x="${G.g-8*f}" y="${y(v)+4}" text-anchor="end" font-size="${11*f}" fill="var(--muted)">${v}</text>`; }
+  T.mois.forEach((m,i)=>{ s+=`<text x="${x(i)}" y="${H-14}" text-anchor="middle" font-size="${11*f}" fill="var(--muted)">${f>1?m.slice(5):m.slice(5)+'/'+m.slice(2,4)}</text>`; });
+  series.forEach((se,k)=>{ const c=SERIE_COULEURS[k%SERIE_COULEURS.length];
+    s+=`<polyline fill="none" stroke="${c}" stroke-width="${2.2*f}" stroke-linejoin="round" points="${se.mois.map((v,i)=>x(i)+','+y(v)).join(' ')}"/>`;
+    s+=se.mois.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="${3*f}" fill="${c}"><title>${esc(se.type)} — ${m2(T.mois[i])} : ${v}</title></circle>`).join(''); });
+  s+='</svg>';
+  const leg=series.map((se,k)=>`<span class="leg"><i style="background:${SERIE_COULEURS[k%SERIE_COULEURS.length]}"></i>${esc(se.type)} <b>${se.tot}</b></span>`).join('');
+  return s+`<div class="legende">${leg}</div>`;
+}
+function m2(m){ return m.slice(5)+'/'+m.slice(2,4); }
+function svgComparaison(C, largeur=820, hauteur=300, f=1){
+  const G={g:52*f,d:16,h:18,b:56*f}, W=largeur, H=hauteur;
+  const cles=[['registre','Registre v7 · 19 mai au 17 sept.'],['export','Export daté · 2026, 165 fiches'],['tableau','Tableau de bord · 2026']];
+  const maxi=Math.max(...C.lignes.flatMap(l=>cles.map(([k])=>l[k])),1);
+  const pas=Math.ceil(maxi/4/50)*50, haut=pas*4;
+  const y=v=>H-G.b-(v/haut)*(H-G.h-G.b);
+  const bloc=(W-G.g-G.d)/C.lignes.length, lb=bloc*0.72/3;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Comparaison des trois relevés" style="width:100%;height:auto">`;
+  for(let k=0;k<=4;k++){ const v=k*pas;
+    s+=`<line x1="${G.g}" x2="${W-G.d}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/>`;
+    s+=`<text x="${G.g-8*f}" y="${y(v)+4}" text-anchor="end" font-size="${11*f}" fill="var(--muted)">${v}</text>`; }
+  C.lignes.forEach((l,i)=>{ const x0=G.g+i*bloc+bloc*0.14;
+    cles.forEach(([k,lab],j)=>{ const v=l[k], x=x0+j*lb;
+      s+=`<rect x="${x}" y="${y(v)}" width="${lb-3}" height="${Math.max(1,H-G.b-y(v))}" fill="${SERIE_COULEURS[j]}"><title>${esc(lab)} — ${esc(l.type)} : ${v}</title></rect>`;
+      s+=`<text x="${x+(lb-3)/2}" y="${y(v)-4}" text-anchor="middle" font-size="${10*f}" fill="var(--muted)">${v}</text>`; });
+    const mots=(f>1?(l.court||l.type):l.type.split(' — ')[0]).split(' ');
+    s+=`<text x="${G.g+i*bloc+bloc/2}" y="${H-32}" text-anchor="middle" font-size="${9.4*f}" fill="var(--muted)">${esc(mots.slice(0,2).join(' '))}</text>`;
+    s+=`<text x="${G.g+i*bloc+bloc/2}" y="${H-20}" text-anchor="middle" font-size="${9.4*f}" fill="var(--muted)">${esc(mots.slice(2).join(' '))}</text>`; });
+  s+='</svg>';
+  const leg=cles.map(([k,lab],j)=>`<span class="leg"><i style="background:${SERIE_COULEURS[j]}"></i>${esc(lab)}</span>`).join('');
+  return s+`<div class="legende">${leg}</div>`;
+}
+
 const contribRows = P.contrib.map(c=>`<tr><td><b>${esc(c.nom)}</b></td><td class="num">${c.n}</td><td style="color:var(--muted)">${esc(c.detail)}</td></tr>`).join('');
 document.getElementById('prev').innerHTML = `
 <div class="panel"><h3>Volume des activités par type et par mois — relevé partiel</h3>
   ${P.reserve?`<p class="intro" style="color:var(--p1)"><b>${esc(P.reserve)}</b></p>`:''}
   <p class="intro">Inspections verrouillées dans eCompliance du 19 mai au 17 septembre 2026. Les quatre visites du partenaire d’affaires restées au statut « Submitted » n’y figurent pas, ce qui explique l’écart avec l’onglet Sources.</p>
   <div class="tablewrap"><table><thead><tr><th>Type d’activité et cible au plan stratégique</th>${P.mois.map(m=>`<th class="num">${m.slice(5)}/${m.slice(2,4)}</th>`).join('')}<th class="num">Total</th><th>Lecture</th></tr></thead><tbody>${volRows}</tbody></table></div></div>
+
+${P.tendances?`<div class="panel"><h3>Tendance mensuelle — export daté de 165 fiches</h3>
+  <p class="intro">Février à septembre 2026, six types les plus fréquents. Toucher un point donne le détail.</p>
+  <div class="graph">${etroit()?svgTendance(P.tendances,430,330,1.7):svgTendance(P.tendances)}</div>
+  <p class="intro" style="color:var(--p1)"><b>${esc(P.tendances.reserve)}</b></p></div>`:''}
+
+${P.comparaison?`<div class="panel"><h3>Écart entre les trois relevés</h3>
+  <div class="graph">${etroit()?svgComparaison(P.comparaison,430,360,1.7):svgComparaison(P.comparaison)}</div></div>`:''}
+
+${P.comparaison?`<div class="panel"><h3>Le même volume, vu par trois relevés</h3>
+  <p class="intro">${Object.values(P.comparaison.sources).map(x=>esc(x)).join(' · ')}</p>
+  <div class="tablewrap"><table><thead><tr><th>Type d’activité</th><th class="num">Registre v7<br>19 mai au 17 sept.</th><th class="num">Export daté<br>2026, 165 fiches</th><th class="num">Tableau de bord<br>2026</th></tr></thead><tbody>
+  ${P.comparaison.lignes.map(l=>`<tr><td><b>${esc(l.type)}</b></td><td class="num">${l.registre}</td><td class="num">${l.export}</td><td class="num">${l.tableau}</td></tr>`).join('')}
+  </tbody></table></div>
+  <p class="intro">${esc(P.comparaison.lecture)} Le détail mensuel et les courbes figurent au classeur, onglet « Volumes et tendances ».</p></div>`:''}
 
 <div class="panel"><h3>Qui a contribué</h3>
   <p class="intro">Onze personnes ont produit au moins une inspection verrouillée sur la période.</p>

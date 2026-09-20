@@ -1,5 +1,17 @@
 # Journal
 
+## 20 septembre 2026 — volumes et tendances
+
+Graphiques ajoutés à la vue Prévention de la page Comité : courbe de tendance mensuelle (six types les plus fréquents, février à septembre) et histogramme des trois relevés. SVG produit par la page, sans bibliothèque, adapté au téléphone et au mode sombre. Le classeur garde ses propres graphiques Excel.
+
+`donnees/volumes.json` réunit les trois relevés du même volume d'activité : registre v7 (51 fiches verrouillées du 19 mai au 17 septembre), export daté « Public Inspections » (165 fiches, février à septembre 2026, tous statuts) et tableau de bord Safety Intelligence (1 837 fiches, année 2026, sans dates ni statuts).
+
+- Nouvel onglet **« Volumes et tendances »** au classeur : volumes mensuels par type, courbe de tendance, comparaison des trois relevés en histogramme, lecture et réserve.
+- La vue Prévention de la page Comité porte le tableau des trois relevés.
+- Le PDF renvoie à l'onglet du classeur.
+
+Point relevé au passage : sur l'export daté, l'inspection mensuelle du véhicule ne s'interrompt pas après le 16 juillet — une ou deux fiches par mois de mars à septembre. C'est un argument de plus pour la reformulation de R-15.
+
 ## 20 septembre 2026 — charpente du programme de prévention
 
 `PROGRAMME_PREVENTION_STRUCTURE.md` : onze sections, avec pour chacune ce que le registre fournit déjà et ce qui manque. Trous principaux : couverture limitée à Falcon, risques psychosociaux absents, aucun volet de surveillance du milieu et de la santé, ni de gestion des sous-traitants, ni de formation structurée. Deux réserves commandent le reste : le découpage des établissements n'est pas tranché et le comité ne siège pas.

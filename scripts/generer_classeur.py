@@ -13,6 +13,7 @@ import datetime as dt
 from copy import copy
 
 from openpyxl import Workbook
+from openpyxl.chart import BarChart, LineChart, Reference
 from openpyxl.drawing.image import Image
 from openpyxl.styles import Alignment, Border, Color, Font, PatternFill, Side
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -53,6 +54,80 @@ def valeur(v):
     return v
 
 
+def onglet_volumes(wb, styles):
+    """Onglet « Volumes et tendances » : les trois relevés du même volume,
+    avec une courbe par type de formulaire et une comparaison des sources."""
+    V = lire_json(DONNEES / "volumes.json")
+    ws = wb.create_sheet("Volumes et tendances")
+    ws.sheet_view.showGridLines = False
+    titre, gras, normal, petit = styles
+
+    ws["B2"] = "Volumes d’activité — trois relevés, trois portées"
+    ws["B2"]._style = copy(titre._style)
+    ws["B3"] = V["_note"]
+    ws["B3"]._style = copy(petit._style)
+    for i, (k, t) in enumerate(V["sources"].items(), start=4):
+        ws[f"B{i}"] = t
+        ws[f"B{i}"]._style = copy(petit._style)
+
+    # --- tableau mensuel (export daté)
+    d = 9
+    ws[f"B{d}"] = "Volumes mensuels — export daté de 165 fiches"
+    ws[f"B{d}"]._style = copy(gras._style)
+    ws.cell(d + 1, 2, "Type de formulaire")._style = copy(gras._style)
+    for j, m in enumerate(V["mois"]):
+        c = ws.cell(d + 1, 3 + j, m[5:] + "/" + m[2:4])
+        c._style = copy(gras._style)
+    ws.cell(d + 1, 3 + len(V["mois"]), "Total")._style = copy(gras._style)
+    for i, l in enumerate(V["lignes"]):
+        r = d + 2 + i
+        ws.cell(r, 2, l["type"])._style = copy(normal._style)
+        for j, n in enumerate(l["mois"]):
+            ws.cell(r, 3 + j, n)._style = copy(normal._style)
+        ws.cell(r, 3 + len(V["mois"]), f"=SUM(C{r}:{chr(66 + len(V['mois']))}{r})")._style = copy(gras._style)
+    fin = d + 1 + len(V["lignes"])
+
+    courbe = LineChart()
+    courbe.title = "Tendance mensuelle par type de formulaire — export daté"
+    courbe.y_axis.title = "Fiches"
+    courbe.height, courbe.width = 9, 26
+    courbe.add_data(Reference(ws, min_col=2, max_col=2 + len(V["mois"]), min_row=d + 2, max_row=fin), from_rows=True, titles_from_data=True)
+    courbe.set_categories(Reference(ws, min_col=3, max_col=2 + len(V["mois"]), min_row=d + 1))
+    for serie in courbe.series:
+        serie.smooth = False
+    ws.add_chart(courbe, f"B{fin + 2}")
+
+    # --- comparaison des trois relevés
+    c0 = fin + 22
+    ws[f"B{c0}"] = "Le même volume, vu par trois relevés"
+    ws[f"B{c0}"]._style = copy(gras._style)
+    entetes = ["Type d’activité", "Registre v7 (19 mai – 17 sept.)", "Export daté (2026, 165 fiches)", "Tableau de bord (2026)"]
+    for j, t in enumerate(entetes):
+        ws.cell(c0 + 1, 2 + j, t)._style = copy(gras._style)
+    for i, l in enumerate(V["comparaison"]):
+        r = c0 + 2 + i
+        ws.cell(r, 2, l["type"])._style = copy(normal._style)
+        for j, k in enumerate(["registre", "export", "tableau"]):
+            ws.cell(r, 3 + j, l[k])._style = copy(normal._style)
+
+    barres = BarChart()
+    barres.type, barres.title = "col", "Écart entre les trois relevés"
+    barres.height, barres.width = 9, 26
+    barres.add_data(Reference(ws, min_col=3, max_col=5, min_row=c0 + 1, max_row=c0 + 1 + len(V["comparaison"])), titles_from_data=True)
+    barres.set_categories(Reference(ws, min_col=2, min_row=c0 + 2, max_row=c0 + 1 + len(V["comparaison"])))
+    ws.add_chart(barres, f"B{c0 + 3 + len(V['comparaison'])}")
+
+    bas = c0 + 23
+    ws[f"B{bas}"] = "Lecture — " + V["lecture"]
+    ws[f"B{bas}"]._style = copy(normal._style)
+    ws[f"B{bas + 2}"] = "Réserve — " + V["reserve"]
+    ws[f"B{bas + 2}"]._style = copy(petit._style)
+    for lettre, largeur in [("A", 2.5), ("B", 52)]:
+        ws.column_dimensions[lettre].width = largeur
+    for j in range(len(V["mois"])):
+        ws.column_dimensions[chr(67 + j)].width = 9
+
+
 def generer(avec_prive=True, sortie=None):
     avec_prive = avec_prive and prive_disponible()
     table = table_des_noms(avec_prive)
@@ -89,6 +164,9 @@ def generer(avec_prive=True, sortie=None):
             img = Image(str(RACINE / im["fichier"]))
             img.width, img.height = im["largeur"], im["hauteur"]
             ws.add_image(img, im["ancre"])
+
+    g = wb["Garde"]
+    onglet_volumes(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]))
 
     garde = wb["Garde"]
     modele = garde["B34"]            # note de bas de page de la garde

@@ -1,0 +1,192 @@
+{
+ "_note": "Trois relevés du même volume d’activité, à trois portées différentes. Aucun n’est faux : ils ne mesurent pas la même chose. Établi le 20 septembre 2026.",
+ "mois": [
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09"
+ ],
+ "sources": {
+  "registre": "Registre v7 — fiches verrouillées du 19 mai au 17 septembre 2026, 51 fiches",
+  "export": "Export « Public Inspections » — 165 fiches datées, février à septembre 2026, tous statuts",
+  "tableau": "Tableau de bord Safety Intelligence — 1 837 fiches, année 2026, 113 personnes, sans dates ni statuts"
+ },
+ "lignes": [
+  {
+   "type": "Inspection avant départ — véhicule léger",
+   "mois": [
+    3,
+    11,
+    19,
+    12,
+    14,
+    9,
+    12,
+    11
+   ],
+   "annee_tableau": 581
+  },
+  {
+   "type": "Inspection quotidienne — pelle mécanique",
+   "mois": [
+    0,
+    5,
+    7,
+    6,
+    5,
+    2,
+    4,
+    1
+   ],
+   "annee_tableau": 231
+  },
+  {
+   "type": "Inspection mensuelle du véhicule",
+   "mois": [
+    0,
+    2,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "annee_tableau": 58
+  },
+  {
+   "type": "Rapport d’inspection ou de visite de chantier",
+   "mois": [
+    0,
+    1,
+    2,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "annee_tableau": 409
+  },
+  {
+   "type": "Rapport d’inspection ou de visite de sites de travail",
+   "mois": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4,
+    5
+   ],
+   "annee_tableau": 9
+  },
+  {
+   "type": "Inspection — superviseurs",
+   "mois": [
+    2,
+    3,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "annee_tableau": 306
+  },
+  {
+   "type": "Inspection — chefs d’entreprise",
+   "mois": [
+    4,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "annee_tableau": 55
+  },
+  {
+   "type": "Inspection quotidienne — camion-nacelle et de ligne",
+   "mois": [
+    0,
+    0,
+    0,
+    6,
+    1,
+    0,
+    0,
+    0
+   ],
+   "annee_tableau": 9
+  },
+  {
+   "type": "Évaluation des risques liés au travail en hauteur",
+   "mois": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "annee_tableau": 57
+  },
+  {
+   "type": "Inspection — chariot élévateur",
+   "mois": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "annee_tableau": 22
+  }
+ ],
+ "comparaison": [
+  {
+   "type": "Inspection avant départ — véhicule léger",
+   "registre": 28,
+   "export": 91,
+   "tableau": 581,
+   "court": "Avant départ"
+  },
+  {
+   "type": "Inspection quotidienne — pelle mécanique",
+   "registre": 14,
+   "export": 30,
+   "tableau": 231,
+   "court": "Pelle"
+  },
+  {
+   "type": "Inspection mensuelle du véhicule",
+   "registre": 3,
+   "export": 9,
+   "tableau": 58,
+   "court": "Mensuelle"
+  },
+  {
+   "type": "Visite ou inspection SST de site",
+   "registre": 6,
+   "export": 14,
+   "tableau": 418,
+   "court": "Visite SST"
+  }
+ ],
+ "reserve": "Les courbes ne portent que sur l’export daté de 165 fiches : c’est le seul relevé qui donne des dates. Le tableau de bord en compte 1 837 pour 2026 mais n’offre ni dates ni statuts, donc aucune tendance ne peut en être tirée. L’écart entre les trois relevés n’est pas expliqué : question posée à l’administrateur eCompliance. À ne pas lire comme le volume réel d’activité.",
+ "lecture": "Sur l’export daté, l’activité culmine en avril (30 fiches) et creuse en juillet (12). Les inspections avant départ portent le volume; l’inspection mensuelle du véhicule tient une ou deux fiches par mois de mars à septembre, sans interruption après le 16 juillet, contrairement à ce que laissait croire le relevé du registre v7."
+}

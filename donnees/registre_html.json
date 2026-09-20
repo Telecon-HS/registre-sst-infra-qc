@@ -177,7 +177,7 @@
   ],
   "dirchiffres": [
    {
-    "n": "11",
+    "n": "12",
     "lab": "risques de priorité 1",
     "sub": "sécurité immédiate"
    },
@@ -953,7 +953,7 @@
      1
     ],
     "cible": "Hebdomadaire par véhicule · 40 000/an ou 3 333/mois pour le parc mondial",
-    "lecture": "Le volume est réel et régulier. Le taux d’atteinte reste incalculable tant que le nombre de véhicules légers affectés à Infra Québec n’est pas connu : sans dénominateur, 28 inspections ne se comparent à rien."
+    "lecture": "Le volume est réel et régulier. Le taux d’atteinte reste incalculable tant que le nombre de véhicules légers affectés à Infra Québec n’est pas connu : sans dénominateur, 28 inspections ne se comparent à rien. Le tableau de bord en compte 581 pour l’année 2026 : l’export utilisé ici ne montre qu’une partie des fiches."
    },
    {
     "type": "Inspection quotidienne avant utilisation — pelle mécanique",
@@ -965,7 +965,7 @@
      1
     ],
     "cible": "Quotidienne par équipement lourd · 74 400/an ou 6 200/mois pour le parc mondial",
-    "lecture": "Quatorze inspections sur quatre mois, toutes sauf deux par la même personne. À rapprocher du nombre de jours d’utilisation réelle des pelles avant d’en tirer une conclusion."
+    "lecture": "Quatorze inspections sur quatre mois, toutes sauf deux par la même personne. À rapprocher du nombre de jours d’utilisation réelle des pelles avant d’en tirer une conclusion. Le tableau de bord en compte 231 pour l’année 2026."
    },
    {
     "type": "Inspection mensuelle du véhicule",
@@ -977,7 +977,7 @@
      0
     ],
     "cible": "Mensuelle par véhicule",
-    "lecture": "Trois en quatre mois, toutes par le même préparateur, et plus aucune depuis le 16 juillet. C’est la donnée chiffrée qui appuie le risque R-15."
+    "lecture": "Trois fiches verrouillées dans l’export, aucune après le 16 juillet. Le tableau de bord en compte 58 pour 2026, par treize personnes, et deux fiches d’août et de septembre sont restées non verrouillées. Les sources ne concordent pas : c’est l’objet de R-15."
    },
    {
     "type": "Visite ou inspection SST de site",
@@ -989,7 +989,7 @@
      2
     ],
     "cible": "Aucune cible chiffrée au plan stratégique · axe 05, présence terrain du partenaire d’affaires",
-    "lecture": "Le programme démarre réellement le 5 août. Onze visites au dossier, dont dix terminées entre le 5 août et le 17 septembre."
+    "lecture": "Le programme démarre réellement le 5 août. Onze visites au dossier, dont dix terminées entre le 5 août et le 17 septembre. Le tableau de bord compte par ailleurs 409 rapports d’inspection ou de visite de chantier pour 2026, qui ne sont pas versés au registre."
    }
   ],
   "contrib": [
@@ -1139,7 +1139,191 @@
     "constat": "Onze personnes ont produit au moins une inspection verrouillée entre le 19 mai et le 17 septembre. ⟦P14⟧ tient à lui seul douze inspections quotidiennes de pelle mécanique, ⟦P07⟧ neuf rondes avant départ, ⟦P24⟧ sept.",
     "pourquoi": "Ces activités alimentent directement l’axe 02 du plan stratégique et les indicateurs proactifs de l’axe 04."
    }
-  ]
+  ],
+  "reserve": "Réserve du 20 septembre 2026 — les volumes de ce tableau viennent de l’export « Public Inspections » du 19 mai au 17 septembre 2026, qui ne contient que 165 fiches. Le tableau de bord Safety Intelligence en compte 1 837 pour Infra Québec en 2026, par 113 personnes. L’écart n’est pas expliqué ; le tableau de bord n’offre ni dates ni statuts, et ne permet donc pas de refaire ce tableau mois par mois. Ces chiffres sont donc un relevé partiel, à ne pas lire comme le volume réel d’activité.",
+  "comparaison": {
+   "sources": {
+    "registre": "Registre v7 — fiches verrouillées du 19 mai au 17 septembre 2026, 51 fiches",
+    "export": "Export « Public Inspections » — 165 fiches datées, février à septembre 2026, tous statuts",
+    "tableau": "Tableau de bord Safety Intelligence — 1 837 fiches, année 2026, 113 personnes, sans dates ni statuts"
+   },
+   "lignes": [
+    {
+     "type": "Inspection avant départ — véhicule léger",
+     "registre": 28,
+     "export": 91,
+     "tableau": 581,
+     "court": "Avant départ"
+    },
+    {
+     "type": "Inspection quotidienne — pelle mécanique",
+     "registre": 14,
+     "export": 30,
+     "tableau": 231,
+     "court": "Pelle"
+    },
+    {
+     "type": "Inspection mensuelle du véhicule",
+     "registre": 3,
+     "export": 9,
+     "tableau": 58,
+     "court": "Mensuelle"
+    },
+    {
+     "type": "Visite ou inspection SST de site",
+     "registre": 6,
+     "export": 14,
+     "tableau": 418,
+     "court": "Visite SST"
+    }
+   ],
+   "lecture": "Sur l’export daté, l’activité culmine en avril (30 fiches) et creuse en juillet (12). Les inspections avant départ portent le volume; l’inspection mensuelle du véhicule tient une ou deux fiches par mois de mars à septembre, sans interruption après le 16 juillet, contrairement à ce que laissait croire le relevé du registre v7."
+  },
+  "tendances": {
+   "mois": [
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+   ],
+   "lignes": [
+    {
+     "type": "Inspection avant départ — véhicule léger",
+     "mois": [
+      3,
+      11,
+      19,
+      12,
+      14,
+      9,
+      12,
+      11
+     ]
+    },
+    {
+     "type": "Inspection quotidienne — pelle mécanique",
+     "mois": [
+      0,
+      5,
+      7,
+      6,
+      5,
+      2,
+      4,
+      1
+     ]
+    },
+    {
+     "type": "Inspection mensuelle du véhicule",
+     "mois": [
+      0,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "type": "Rapport d’inspection ou de visite de chantier",
+     "mois": [
+      0,
+      1,
+      2,
+      0,
+      1,
+      0,
+      1,
+      0
+     ]
+    },
+    {
+     "type": "Rapport d’inspection ou de visite de sites de travail",
+     "mois": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      5
+     ]
+    },
+    {
+     "type": "Inspection — superviseurs",
+     "mois": [
+      2,
+      3,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "type": "Inspection — chefs d’entreprise",
+     "mois": [
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "type": "Inspection quotidienne — camion-nacelle et de ligne",
+     "mois": [
+      0,
+      0,
+      0,
+      6,
+      1,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "type": "Évaluation des risques liés au travail en hauteur",
+     "mois": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "type": "Inspection — chariot élévateur",
+     "mois": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "reserve": "Les courbes ne portent que sur l’export daté de 165 fiches : c’est le seul relevé qui donne des dates. Le tableau de bord en compte 1 837 pour 2026 mais n’offre ni dates ni statuts, donc aucune tendance ne peut en être tirée. L’écart entre les trois relevés n’est pas expliqué : question posée à l’administrateur eCompliance. À ne pas lire comme le volume réel d’activité."
+  }
  },
  "initiatives": [
   {
@@ -1857,11 +2041,11 @@
    "titre": "Inspection mensuelle du véhicule et registre de la flotte",
    "prio": 2,
    "constat": "Inspection déclarée faite alors que la trousse de premiers soins portait une dernière inspection de 2024 et que l’extincteur ne semblait pas inspecté. Le formulaire permet donc de conclure sans ces vérifications. Par ailleurs, la tenue du registre d’inspection des véhicules et remorques n’est pas confirmée.",
-   "decision": "Configurer l’application d’inspection pour rendre chaque étape obligatoire avant validation, dont la date d’inspection de la trousse et de l’extincteur. Confirmer l’existence et la tenue à jour du registre d’inspection des véhicules et remorques d’Infra Québec, et préciser comment il est accessible sur le terrain.",
+   "decision": "Configurer l’application d’inspection pour rendre chaque étape obligatoire avant validation, dont la date d’inspection de la trousse et de l’extincteur. Confirmer l’existence et la tenue à jour du registre d’inspection des véhicules et remorques d’Infra Québec, et préciser comment il est accessible sur le terrain. Établir d’abord quelle source fait foi : demander à l’administrateur eCompliance ce que couvre l’export « Public Inspections » et comment obtenir la liste complète avec dates et statuts.",
    "porteur": "Service de la flotte, avec l’équipe eCompliance",
    "echeance": "60 jours",
    "norme": "SSE-2101 §6.5 · SSE-1003 · SSE-2000 §6.4",
-   "note": "Trois autres écarts de même nature : trousse de premiers soins à regarnir sur l’unité 104139 le 17 septembre, indicateur de noix de roue manquant sur l’unité 105311 le 26 août, et trousse inspectée en 2024 le 15 septembre. Modèle cité : l’application d’inspection de Bell. L’export du 19 mai au 17 septembre 2026 compte 28 inspections avant départ et 14 de pelle mécanique, mais seulement trois « Inspection mensuelle du véhicule » — 25 mai, 2 juin et 16 juillet, toutes par le même préparateur. Rien depuis le 16 juillet.",
+   "note": "Trois autres écarts de même nature : trousse de premiers soins à regarnir sur l’unité 104139 le 17 septembre, indicateur de noix de roue manquant sur l’unité 105311 le 26 août, et trousse inspectée en 2024 le 15 septembre. Modèle cité : l’application d’inspection de Bell. Deux sources ne concordent pas sur le volume. L’export « Public Inspections » du 19 mai au 17 septembre 2026 ne montre que trois « Inspection mensuelle du véhicule » — 25 mai, 2 juin et 16 juillet, toutes par le même préparateur — alors que le tableau de bord Safety Intelligence en compte 58 pour l’année 2026, par treize personnes. Deux fiches postérieures au 16 juillet existent sans être verrouillées : 29444070 du 24 août et 29719434 du 16 septembre. L’écart entre les deux sources n’est pas expliqué : l’export ne donne que 165 fiches là où le tableau de bord en compte 1 837 pour Infra Québec en 2026. Le constat vérifiable n’est donc pas que l’inspection mensuelle ne se fait plus, mais que les fiches restent ouvertes et que les deux sources ne disent pas la même chose. Relevé du 20 septembre 2026.",
    "bucket": "j60",
    "sources": [
     {
