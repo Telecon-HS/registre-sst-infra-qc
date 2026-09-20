@@ -15,6 +15,7 @@ __CSS__
 <body>
 
 <header class="top">
+  <button class="theme" type="button" aria-pressed="false">Mode sombre</button>
   <img class="logo" src="__LOGO__" alt="Telecon">
   <h1>Sécurité sur le terrain — projet Falcon</h1>
   <button class="apropos" type="button" aria-expanded="false">À propos de ce document</button>
@@ -35,6 +36,8 @@ __CSS__
   Document préparatoire. Ces consignes reprennent des exigences écrites qui existent déjà ; elles ne portent aucun verdict de conformité et ne visent personne en particulier.
   Une question ou un doute sur le terrain : arrêter, en parler à son superviseur ou au partenaire d’affaires SST.
 </footer>
+
+<button id="haut" type="button" aria-label="Revenir en haut de la page">↑</button>
 
 <script>
 const DATA = __DATA__;
@@ -64,6 +67,18 @@ function setRole(r){
 document.querySelector('.roles').addEventListener('click',e=>{
   const b=e.target.closest('button'); if(b) setRole(b.id.slice(2));
 });
+const btheme=document.querySelector('.theme');
+function appliquerTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  btheme.textContent = t==='dark' ? 'Mode clair' : 'Mode sombre';
+  btheme.setAttribute('aria-pressed', t==='dark');
+  try{ localStorage.setItem('theme',t); }catch(e){}
+}
+let tInit=null; try{ tInit=localStorage.getItem('theme'); }catch(e){}
+appliquerTheme(tInit || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+btheme.addEventListener('click',()=>appliquerTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'));
+document.getElementById('haut').addEventListener('click',()=>window.scrollTo({top:0}));
+
 document.querySelector('.apropos').addEventListener('click',e=>{
   const h=document.querySelector('header.top'); const o=h.classList.toggle('ouvert');
   e.currentTarget.setAttribute('aria-expanded',o); e.currentTarget.textContent=o?'Masquer':'À propos de ce document';

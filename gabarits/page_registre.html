@@ -38,7 +38,7 @@
 html,body{margin:0;padding:0}
 body{
   background:var(--paper); color:var(--ink);
-  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
   font-variant-numeric:tabular-nums;
 }
@@ -87,7 +87,7 @@ main{max-width:1500px;margin:0 auto;padding:0 14px 40px}
 .row .rtit{font-size:13px;font-weight:500;line-height:1.3;margin-top:1px}
 .row .rmeta{display:flex;gap:5px;margin-top:4px;align-items:center;flex-wrap:wrap}
 .dot{width:7px;height:7px;border-radius:50%;display:inline-block;flex:0 0 auto}
-.tagn{font-size:10px;font-weight:600;padding:1px 5px;border-radius:3px;border:1px solid var(--line)}
+.tagn{font-size:11px;font-weight:600;padding:1px 5px;border-radius:3px;border:1px solid var(--line)}
 .tagn.inc{color:var(--p1);border-color:var(--p1)}
 .tagn.occ{color:var(--muted)}
 
@@ -135,8 +135,8 @@ main{max-width:1500px;margin:0 auto;padding:0 14px 40px}
 .bucket .list{padding:8px;display:flex;flex-direction:column;gap:5px}
 .bcard{text-align:left;border:1px solid var(--line);border-left-width:3px;border-radius:3px;padding:7px 9px}
 .bcard:hover{background:var(--line-soft)}
-.bcard .br{font-size:11px;font-weight:700;color:var(--muted)}
-.bcard .bl{font-size:12.5px;line-height:1.3;margin-top:1px}
+.bcard .br{display:block;font-size:11px;font-weight:700;color:var(--muted)}
+.bcard .bl{display:block;font-size:12.5px;line-height:1.3;margin-top:1px}
 .bnote{padding:10px 14px 13px;font-size:12px;color:var(--muted);border-top:1px solid var(--line-soft);line-height:1.5}
 
 /* ---------- sources ---------- */
@@ -233,6 +233,23 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 
 /* ---------- téléphone : premier écran compact ---------- */
 .apropos{display:none}
+/* 7 — le nom de l'auteur disparaît des lectures terrain */
+body[data-role="superviseurs"] .who-nom, body[data-role="travailleurs"] .who-nom{display:none}
+/* 10 — la priorité est aussi écrite, pas seulement en couleur */
+.pnum{font-size:11.5px;font-weight:700;color:var(--muted)}
+/* 16 — bouton clair / sombre */
+.theme{position:absolute;top:14px;right:16px;font-size:12.5px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:6px 12px;min-height:34px}
+header.top{position:relative}
+/* 13 — retour en haut sur téléphone */
+#haut{display:none;position:fixed;right:14px;bottom:14px;z-index:40;min-width:48px;min-height:48px;border-radius:50%;background:var(--band);color:#fff;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+/* 13 — les photographies d'un site se replient */
+.shots-det>summary{cursor:pointer;padding:10px 16px;font-size:13.5px;font-weight:600;color:var(--navy);min-height:44px;display:flex;align-items:center}
+/* 17 — visionneuse de photographies */
+#loupe{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.92);padding:12px;flex-direction:column;align-items:center;justify-content:center}
+#loupe.on{display:flex}
+#loupe img{max-width:100%;max-height:82vh;object-fit:contain}
+#loupe figcaption{color:#fff;font-size:13px;margin-top:10px;max-width:70ch;text-align:center}
+#loupe .fermer{position:absolute;top:10px;right:12px;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:8px 14px;min-height:44px;font-size:14px}
 .retour{display:none}
 @media (max-width:700px){
   header.top{padding:12px 14px 10px}
@@ -250,11 +267,32 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
   .stat b{font-size:18px}
   .stat span{font-size:11.5px}
   nav.views button{min-height:44px}
+  /* 11 — cibles d'au moins 44 px */
+  .chip{min-height:44px;display:inline-flex;align-items:center}
+  .row{min-height:44px}
+  .linkref{min-height:44px;padding:6px 8px}
+  .bcard{min-height:48px}
+  /* 12 — plus rien sous 12 px */
+  .fam,.tagn,.badge,.stat span,.row .rref,.bcard .br,.sup .when small,.pnum,.pill{font-size:12px}
+  .chip{font-size:12.5px}
+  footer{font-size:12.5px}
+  #haut{display:block}
 }
 /* ---------- téléphone et tablette : de la liste à la fiche ---------- */
 @media (max-width:900px){
   .record{scroll-margin-top:8px}
   .retour{display:block;width:100%;text-align:left;padding:12px 16px;min-height:44px;font-size:14px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line-soft)}
+}
+/* ---------- impression ---------- */
+@media print{
+  @page{size:letter landscape;margin:12mm}
+  .roles,nav.views,.filters,.retour,.apropos,.theme,#haut,#loupe{display:none !important}
+  .rail{display:none}
+  .split{grid-template-columns:1fr}
+  main{max-width:none;padding:0}
+  header.top{background:#1F3864 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .panel,.record,.bucket,.shot{break-inside:avoid}
+  body{background:#fff}
 }
 @media (prefers-reduced-motion: no-preference){
   .record{animation:fade .18s ease-out}
@@ -265,11 +303,12 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 <body>
 
 <header class="top">
+  <button class="theme" type="button" aria-pressed="false">Mode sombre</button>
   <img class="logo" src="__LOGO__" alt="Telecon">
   <h1>Registre des risques et plan d’action SST</h1>
   <button class="apropos" type="button" aria-expanded="false">À propos de ce document</button>
   <p class="sub">Projet Falcon, Infra Québec. Dix visites SST consolidées du 5 août au 17 septembre 2026, complétées par le registre des incidents, le Safety Stand Down sur les échelles, l’évaluation de risque sur les parasols et le décret 63-2025. Références vérifiées au manuel agrégé SSE-00-TEL-PRG.</p>
-  <p class="who">⟦P01⟧, Partenaire d’affaires Santé et Sécurité — document préparatoire du 19 septembre 2026</p>
+  <p class="who"><span class="who-nom">⟦P01⟧, </span>Partenaire d’affaires Santé et Sécurité — document préparatoire du 19 septembre 2026</p>
   <div class="roles" role="tablist" aria-label="Choisir une lecture">
     <button role="tab" id="r-comite" aria-selected="true">Comité</button>
     <button role="tab" id="r-direction" aria-selected="false">Direction</button>
@@ -345,6 +384,10 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
   Les données d’incidents, de visites et d’inspections proviennent d’exports eCompliance de type « Public », possiblement filtrés : une absence peut être un effet de filtre plutôt qu’une absence réelle.
 </footer>
 
+<button id="haut" type="button" aria-label="Revenir en haut de la page">↑</button>
+<div id="loupe" role="dialog" aria-modal="true" aria-label="Photographie agrandie">
+  <button class="fermer" type="button">Fermer</button><img alt=""><figcaption></figcaption></div>
+
 <script>
 const DATA = __DATA__;
 const R = DATA.risques;
@@ -369,7 +412,7 @@ const nSrc = R.reduce((a,r)=>a+r.sources.length,0);
 const nP1 = R.filter(r=>r.prio===1).length;
 document.getElementById('stats').innerHTML = [
  [R.length,'risques distincts'],[nSrc,'éléments source'],[nP1,'de priorité 1'],
- [nInc,'incidents et quasi-accidents'],[nVis+' / '+nCons,'visites SST au dossier, consolidées']
+ [nInc,'incidents et quasi-accidents'],[nVis,'visites SST au dossier, dont '+nCons+' consolidées']
 ].map(([b,s])=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
 
 /* filtres */
@@ -402,7 +445,7 @@ function drawRail(){
     out+=`<button class="row" data-ref="${r.ref}" aria-current="${r.ref===sel}" style="border-left-color:${r.ref===sel?'var(--navy)':'transparent'}">
       <span class="rref">${r.ref}</span>
       <span class="rtit">${esc(r.titre)}</span>
-      <span class="rmeta"><i class="dot" style="background:${cvar(r.prio)}"></i>${badges}</span></button>`;
+      <span class="rmeta"><i class="dot" style="background:${cvar(r.prio)}"></i><span class="pnum">P${r.prio}</span>${badges}</span></button>`;
   }
   rail.innerHTML=out;
 }
@@ -550,11 +593,12 @@ document.getElementById('docs').innerHTML = `<div class="panel">
 document.getElementById('photos').innerHTML = DATA.sites.map(g=>`
 <div class="panel"><h3>${esc(g.site)}</h3>
   <p class="intro"><b>${esc(g.date)}</b> · fiche ${esc(g.fiche)} · ${g.photos.length} photographies. ${esc(g.note)}</p>
+  <details class="shots-det"><summary>Voir les ${g.photos.length} photographies</summary>
   <div class="shots">${g.photos.map(p=>`<div class="shot"><figure>
      <img loading="lazy" src="data:image/jpeg;base64,${p.src}" alt="${esc(p.leg)}">
      <figcaption>${esc(p.leg)}</figcaption>
      <div class="lnk">${p.refs.split(' · ').map(r=>r.startsWith('R-')?`<button class="linkref" data-ref="${r}">${r}</button>`:`<span style="color:var(--muted)">${esc(r)}</span>`).join(' ')}</div>
-   </figure></div>`).join('')}</div></div>`).join('') + `
+   </figure></div>`).join('')}</div></details></div>`).join('') + `
 <div class="panel"><h3>Photographies au dossier eCompliance, non versées ici</h3>
   <p class="intro">Ces clichés sont joints aux fiches mais n’ont pas été exportés. Les obtenir compléterait la couverture visuelle des sites.</p>
   <div class="tablewrap"><table><thead><tr><th>Fiche</th><th>Date</th><th>Lieu</th><th>Ce qui est joint</th></tr></thead><tbody>
@@ -713,6 +757,8 @@ const VUES = {comite:['risques','cal','init','doc','photos','comite','proj','pre
 let role='comite';
 function setRole(r){
   role=r;
+  document.body.dataset.role=r;
+  document.getElementById('stats').classList.toggle('hidden', r!=='comite');
   for(const k of Object.keys(VUES)) document.getElementById('r-'+k).setAttribute('aria-selected', k===r);
   document.querySelector('nav.views').classList.toggle('hidden', r!=='comite');
   for(const k of ['risques','cal','init','doc','photos','comite','proj','prev','src','direction','superviseurs','travailleurs'])
@@ -742,6 +788,36 @@ document.querySelector('.apropos').addEventListener('click',e=>{
   const h=document.querySelector('header.top'); const o=h.classList.toggle('ouvert');
   e.currentTarget.setAttribute('aria-expanded',o); e.currentTarget.textContent=o?'Masquer':'À propos de ce document';
 });
+
+/* 16 — bouton clair / sombre, mémorisé si le navigateur le permet */
+const btheme=document.querySelector('.theme');
+function appliquerTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  btheme.textContent = t==='dark' ? 'Mode clair' : 'Mode sombre';
+  btheme.setAttribute('aria-pressed', t==='dark');
+  try{ localStorage.setItem('theme',t); }catch(e){}
+}
+let tInit=null; try{ tInit=localStorage.getItem('theme'); }catch(e){}
+appliquerTheme(tInit || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+btheme.addEventListener('click',()=>appliquerTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'));
+
+/* 13 — retour en haut */
+document.getElementById('haut').addEventListener('click',()=>window.scrollTo({top:0}));
+
+/* 13 — photographies dépliées sur grand écran */
+if(!etroit()) document.querySelectorAll('.shots-det').forEach(d=>d.open=true);
+
+/* 17 — visionneuse de photographies */
+const loupe=document.getElementById('loupe');
+function fermerLoupe(){ loupe.classList.remove('on'); loupe.querySelector('img').src=''; }
+document.getElementById('photos').addEventListener('click',e=>{
+  const img=e.target.closest('.shot img'); if(!img) return;
+  loupe.querySelector('img').src=img.src;
+  loupe.querySelector('figcaption').textContent=img.alt;
+  loupe.classList.add('on'); loupe.querySelector('.fermer').focus();
+});
+loupe.addEventListener('click',e=>{ if(e.target===loupe||e.target.closest('.fermer')) fermerLoupe(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') fermerLoupe(); });
 
 drawFilters(); drawRail(); drawRecord(); setRole('comite');
 </script>

@@ -50,6 +50,6 @@ La liste « Public Inspections » ne montre qu'une partie des fiches. La page 3 
 - La vue Direction affiche « 11 risques de priorité 1 » ; le bandeau et le PDF en comptent 12.
 - Nombre de visites : 11 / 9 (bandeau de la page), 12 / 10 (PDF), 13 (note de transfert).
 
-## 8. Suite de l'audit UX/UI, non encore traitée
+## 8. Suite de l'audit UX/UI
 
-Points 6 à 17 de l'audit : chiffres du bandeau hors du rôle Comité, nom de l'auteur dans les vues Terrain de la page Comité, libellé « 11 / 9 », « R-10Exposition » collé dans le calendrier, priorité signalée par la seule couleur, cibles tactiles sous 44 px, textes sous 12 px, pages très longues sur téléphone, impression, police chargée d'Internet, bouton clair/sombre, visionneuse de photos.
+Points 6 à 17 : traités le 20 septembre 2026. Voir `JOURNAL.md`. Il ne reste rien d'ouvert du côté de l'interface.

@@ -1,5 +1,24 @@
 # Journal
 
+## 20 septembre 2026 — audit UX/UI, points 6 à 17
+
+Interface seulement ; aucune donnée modifiée.
+
+- **6** Les chiffres du comité ne s'affichent plus hors de la lecture Comité.
+- **7** Le nom de l'auteur disparaît des lectures Superviseurs et Travailleurs.
+- **8** « 11 / 9 » devient « 11 visites SST au dossier, dont 9 consolidées ».
+- **9** Le numéro et le titre ne sont plus collés dans le calendrier.
+- **10** La priorité est écrite (P1, P2, P3) à côté de la pastille de couleur.
+- **11** Cibles tactiles d'au moins 44 px sur téléphone.
+- **12** Plus aucun texte sous 12 px sur téléphone ; plus rien à 10 px ailleurs.
+- **13** Photographies repliées par site et bouton « retour en haut » sur téléphone.
+- **14** Mise en page d'impression : lettre paysage, sans navigation.
+- **15** Repli de police complété pour la lecture hors ligne.
+- **16** Bouton clair / sombre, mémorisé quand le navigateur le permet.
+- **17** Visionneuse plein écran pour les photographies, fermeture par Échap.
+
+La page Terrain reçoit les mêmes corrections : elle partage le CSS de la page Comité.
+
 ## 20 septembre 2026 — page Terrain séparée et corrections d'affichage
 
 Décision : l'audit UX/UI a montré qu'un travailleur pouvait cliquer sur « Comité » et lire les noms et le détail des incidents. Le sélecteur de rôle n'est pas une protection.
