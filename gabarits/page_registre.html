@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registre des risques SST — Falcon, Infra Québec</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101C26; --navy:#1F3864; --paper:#F2F4F7; --card:#FFFFFF;
+  --line:#D6DBE3; --line-soft:#E7EAF0; --muted:#5C6878; --muted-2:#8894A4;
+  --p1:#B3261E; --p2:#96660A; --p3:#2C6B52;
+  --p1-bg:#FBEAE8; --p2-bg:#FBF1DE; --p3-bg:#E6F1EC;
+  --focus:#1F3864;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#E9EDF3; --navy:#9FB6DC; --paper:#0C1218; --card:#141C24;
+    --line:#2A3540; --line-soft:#1E2730; --muted:#9AA7B6; --muted-2:#76838F;
+    --p1:#F08A80; --p2:#DFB35A; --p3:#7BC5A3;
+    --p1-bg:#2C1917; --p2-bg:#2A2214; --p3-bg:#152620;
+    --focus:#9FB6DC;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E9EDF3; --navy:#9FB6DC; --paper:#0C1218; --card:#141C24;
+  --line:#2A3540; --line-soft:#1E2730; --muted:#9AA7B6; --muted-2:#76838F;
+  --p1:#F08A80; --p2:#DFB35A; --p3:#7BC5A3;
+  --p1-bg:#2C1917; --p2-bg:#2A2214; --p3-bg:#152620;
+  --focus:#9FB6DC;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+}
+img{max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+
+/* ---------- bandeau ---------- */
+header.top{background:var(--navy);color:#fff;padding:18px 22px 16px}
+:root[data-theme="dark"] header.top, @media (prefers-color-scheme: dark){}
+.top .logo{height:26px;width:auto;display:block;margin-bottom:11px}
+.top h1{margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.top .sub{margin:5px 0 0;font-size:13px;font-weight:400;opacity:.82;max-width:78ch}
+.top .who{margin-top:9px;font-size:12px;opacity:.68}
+
+.stats{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--line);background:var(--card)}
+.stat{flex:1 1 150px;padding:12px 18px;border-right:1px solid var(--line-soft)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1}
+.stat span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}
+
+nav.views{display:flex;gap:2px;background:var(--card);border-bottom:1px solid var(--line);padding:0 14px}
+nav.views button{padding:11px 14px;font-size:13.5px;font-weight:500;color:var(--muted);border-bottom:2.5px solid transparent;margin-bottom:-1px}
+nav.views button[aria-selected="true"]{color:var(--ink);font-weight:600;border-bottom-color:var(--navy)}
+
+/* ---------- disposition ---------- */
+main{max-width:1500px;margin:0 auto;padding:0 14px 40px}
+.split{display:grid;grid-template-columns:325px minmax(0,1fr);gap:14px;padding-top:14px;align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+
+/* ---------- rail ---------- */
+.rail{background:var(--card);border:1px solid var(--line);border-radius:3px;position:sticky;top:12px;max-height:calc(100vh - 26px);display:flex;flex-direction:column}
+@media (max-width:900px){.rail{position:static;max-height:none}}
+.filters{padding:10px 11px;border-bottom:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:11.5px;padding:3.5px 9px;border:1px solid var(--line);border-radius:11px;color:var(--muted);font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.railscroll{overflow-y:auto;padding:4px 0 8px}
+.fam{font-size:11px;font-weight:600;color:var(--muted-2);padding:11px 12px 4px}
+.row{display:block;width:100%;text-align:left;padding:7px 11px 7px 13px;border-left:3px solid transparent;position:relative}
+.row:hover{background:var(--line-soft)}
+.row[aria-current="true"]{background:var(--line-soft);border-left-color:var(--navy)}
+.row .rref{font-size:11.5px;font-weight:700;color:var(--muted)}
+.row[aria-current="true"] .rref{color:var(--navy)}
+.row .rtit{font-size:13px;font-weight:500;line-height:1.3;margin-top:1px}
+.row .rmeta{display:flex;gap:5px;margin-top:4px;align-items:center;flex-wrap:wrap}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;flex:0 0 auto}
+.tagn{font-size:10px;font-weight:600;padding:1px 5px;border-radius:3px;border:1px solid var(--line)}
+.tagn.inc{color:var(--p1);border-color:var(--p1)}
+.tagn.occ{color:var(--muted)}
+
+/* ---------- dossier ---------- */
+.record{background:var(--card);border:1px solid var(--line);border-radius:3px;min-height:60vh}
+.rechead{padding:20px 24px 16px;border-bottom:1px solid var(--line)}
+.recref{font-size:12.5px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.rechead h2{margin:3px 0 0;font-size:25px;font-weight:700;letter-spacing:-.02em;line-height:1.16;max-width:26ch}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.pill{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:3px}
+.pill.pr1{background:var(--p1-bg);color:var(--p1)}
+.pill.pr2{background:var(--p2-bg);color:var(--p2)}
+.pill.pr3{background:var(--p3-bg);color:var(--p3)}
+.pill.neutral{background:var(--line-soft);color:var(--muted)}
+
+.body{padding:6px 24px 26px}
+.block{padding:16px 0;border-bottom:1px solid var(--line-soft)}
+.block:last-child{border-bottom:0}
+.block h3{margin:0 0 6px;font-size:12px;font-weight:600;color:var(--muted-2)}
+.block p{margin:0;max-width:74ch;font-size:14.5px;line-height:1.62}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
+.field .k{font-size:12px;color:var(--muted-2);font-weight:600;margin-bottom:2px}
+.field .v{font-size:14px;line-height:1.45}
+
+/* provenance = chaîne */
+.chain{list-style:none;margin:8px 0 0;padding:0}
+.chain li{position:relative;padding:0 0 14px 22px;border-left:1.5px solid var(--line);margin-left:5px}
+.chain li:last-child{border-left-color:transparent;padding-bottom:0}
+.chain li::before{content:"";position:absolute;left:-5.5px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--card);border:2px solid var(--navy)}
+.chain .src{font-size:12.5px;font-weight:600;color:var(--navy)}
+.chain .obj{font-size:13.5px;margin-top:1px}
+.chain .nat{font-size:12px;color:var(--muted);margin-top:2px}
+
+.inc{border:1px solid var(--p1);border-left-width:3px;border-radius:3px;padding:10px 12px;margin-top:8px;background:var(--p1-bg)}
+.inc .h{font-size:12.5px;font-weight:700;color:var(--p1)}
+.inc .d{font-size:13px;margin-top:3px}
+.note{background:var(--line-soft);border-radius:3px;padding:12px 14px;font-size:13.5px;line-height:1.55;max-width:80ch}
+
+/* ---------- calendrier ---------- */
+.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding-top:14px}
+.bucket{background:var(--card);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column}
+.bhead{padding:11px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+.bhead .bt{font-size:14px;font-weight:700}
+.bhead .bn{font-size:12px;color:var(--muted)}
+.bucket .list{padding:8px;display:flex;flex-direction:column;gap:5px}
+.bcard{text-align:left;border:1px solid var(--line);border-left-width:3px;border-radius:3px;padding:7px 9px}
+.bcard:hover{background:var(--line-soft)}
+.bcard .br{font-size:11px;font-weight:700;color:var(--muted)}
+.bcard .bl{font-size:12.5px;line-height:1.3;margin-top:1px}
+.bnote{padding:10px 14px 13px;font-size:12px;color:var(--muted);border-top:1px solid var(--line-soft);line-height:1.5}
+
+/* ---------- sources ---------- */
+.panels{display:flex;flex-direction:column;gap:14px;padding-top:14px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:3px}
+.panel > h3{margin:0;padding:13px 16px;border-bottom:1px solid var(--line);font-size:15px;font-weight:700}
+.panel .intro{padding:12px 16px 0;font-size:13.5px;color:var(--muted);max-width:90ch;line-height:1.55}
+.tablewrap{overflow-x:auto;padding:12px 16px 16px}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:640px}
+th{text-align:left;font-weight:600;font-size:11.5px;color:var(--muted-2);padding:0 10px 7px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.4}
+td.num,th.num{text-align:right;padding-right:14px}
+tr.hl td{background:var(--p2-bg)}
+.badge{font-size:11px;font-weight:600;padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.badge.ok{background:var(--p3-bg);color:var(--p3)}
+.badge.no{background:var(--p1-bg);color:var(--p1)}
+.linkref{font-weight:700;color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+
+footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;color:var(--muted);line-height:1.6;max-width:96ch}
+.init{border:1px solid var(--line);border-left-width:3px;border-radius:3px;background:var(--card);padding:15px 18px}
+.init h4{margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.init .iref{font-size:11.5px;font-weight:700;color:var(--muted)}
+.init .irow{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin-top:12px}
+.init .k{font-size:11.5px;color:var(--muted-2);font-weight:600}
+.init .v{font-size:13.5px;line-height:1.45;margin-top:1px}
+.init .inote{margin-top:12px;padding:11px 13px;background:var(--line-soft);border-radius:3px;font-size:13px;line-height:1.55;max-width:88ch}
+.docgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;padding:14px 16px 16px}
+.docsec h4{margin:0 0 8px;font-size:13px;font-weight:700}
+.docitem{display:flex;gap:9px;padding:8px 0;border-bottom:1px solid var(--line-soft)}
+.docitem:last-child{border-bottom:0}
+.docitem .sig{width:9px;height:9px;border-radius:50%;margin-top:5px;flex:0 0 auto}
+.docitem .dn{font-size:13.5px;font-weight:600;line-height:1.3}
+.docitem .de{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.docitem .dx{font-size:12px;color:var(--muted-2);margin-top:3px;line-height:1.45}
+.reco{border:1px solid var(--p3);border-left-width:3px;border-radius:3px;background:var(--p3-bg);padding:13px 15px;margin-bottom:10px}
+.reco h5{margin:0;font-size:14px;font-weight:700;color:var(--p3)}
+.reco p{margin:6px 0 0;font-size:13.5px;line-height:1.55;max-width:88ch}
+.reco .why{margin-top:7px;font-size:12.5px;font-style:italic;color:var(--muted)}
+.axe{border:1px solid var(--line);border-radius:3px;padding:12px 14px}
+.axe .n{font-size:19px;font-weight:700;color:var(--navy);line-height:1}
+.axe h5{margin:3px 0 5px;font-size:13.5px;font-weight:700;line-height:1.3}
+.axe p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.5}
+.axegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px;padding:14px 16px 16px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;padding:14px 16px 18px}
+.shot figure{margin:0}
+.shot img{width:100%;height:auto;border-radius:3px;border:1px solid var(--line);display:block;background:var(--line-soft)}
+.shot figcaption{font-size:12px;line-height:1.45;margin-top:6px;color:var(--ink)}
+.shot .lnk{margin-top:4px;font-size:11.5px}
+.bar{display:flex;gap:0;align-items:stretch;margin:12px 16px 0;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.bar div{padding:9px 12px;border-right:1px solid var(--line-soft);flex:1}
+.bar div:last-child{border-right:0}
+.bar b{display:block;font-size:19px;font-weight:700;line-height:1}
+.bar span{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+.qa{padding:10px 0;border-bottom:1px solid var(--line-soft)}
+.qa:last-child{border-bottom:0}
+.qa .q{font-size:13.5px;font-weight:600}
+.qa .e{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.45}
+.roles{display:flex;gap:4px;margin-top:14px;flex-wrap:wrap}
+.roles button{padding:6px 14px;font-size:13px;font-weight:500;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:#fff;opacity:.72}
+.roles button[aria-selected="true"]{background:#fff;color:var(--navy);border-color:#fff;font-weight:600;opacity:1}
+.dirn{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:3px;background:var(--card);margin:0 0 14px}
+.dirn div{flex:1 1 150px;padding:13px 16px;border-right:1px solid var(--line-soft)}
+.dirn div:last-child{border-right:0}
+.dirn b{display:block;font-size:23px;font-weight:700;line-height:1;color:var(--p1)}
+.dirn span{display:block;font-size:12.5px;font-weight:600;margin-top:4px}
+.dirn em{display:block;font-size:11.5px;color:var(--muted);font-style:normal;margin-top:2px}
+.dec{border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:3px;background:var(--card);padding:15px 18px;margin-bottom:10px}
+.dec h4{margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.dec .refs{font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:3px}
+.dec p{margin:8px 0 0;font-size:14px;line-height:1.55;max-width:88ch}
+.dec .ask{margin-top:10px;padding:9px 12px;background:var(--p1-bg);border-radius:3px;font-size:13.5px;font-weight:600;color:var(--p1)}
+.sup{border:1px solid var(--line);border-radius:3px;background:var(--card);padding:13px 16px;margin-bottom:9px;display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:10px;align-items:start}
+.sup h4{margin:0;font-size:15.5px;font-weight:700}
+.sup p{margin:5px 0 0;font-size:13.5px;line-height:1.5}
+.sup .exige{margin-top:7px;font-size:12.5px;color:var(--muted);border-left:2px solid var(--line);padding-left:9px;line-height:1.45}
+.sup .when{font-size:11.5px;font-weight:700;text-align:right;color:var(--p1)}
+.sup .when small{display:block;font-weight:600;color:var(--muted);margin-top:4px;font-size:11px}
+.trav{border:1px solid var(--line);border-radius:4px;background:var(--card);padding:20px 22px;margin-bottom:12px}
+.trav h4{margin:0;font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.02em;max-width:24ch}
+.trav .quoi{margin:10px 0 0;font-size:17px;line-height:1.5;max-width:60ch}
+.trav .pourquoi{margin:14px 0 0;padding:12px 14px;background:var(--line-soft);border-radius:3px;font-size:14.5px;line-height:1.55;max-width:70ch}
+.mail{display:grid;grid-template-columns:82px minmax(0,1fr) 110px;gap:10px;padding:10px 0;border-bottom:1px solid var(--line-soft);align-items:start}
+.mail:last-child{border-bottom:0}
+.mail .d{font-size:12px;color:var(--muted)}
+.mail .o{font-size:13.5px;font-weight:600;line-height:1.35}
+.mail .l{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+.mail .r{text-align:right;font-size:11.5px}
+.unread{background:var(--p1-bg);border-radius:3px;padding:10px 12px}
+.hist{display:grid;grid-template-columns:70px minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px solid var(--line-soft)}
+.hist:last-child{border-bottom:0}
+.hist .y{font-size:15px;font-weight:700}
+.hist .q{font-size:13.5px;line-height:1.5}
+.hidden{display:none !important}
+@media (prefers-reduced-motion: no-preference){
+  .record{animation:fade .18s ease-out}
+  @keyframes fade{from{opacity:.4}to{opacity:1}}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <img class="logo" src="__LOGO__" alt="Telecon">
+  <h1>Registre des risques et plan d’action SST</h1>
+  <p class="sub">Projet Falcon, Infra Québec. Dix visites SST consolidées du 5 août au 17 septembre 2026, complétées par le registre des incidents, le Safety Stand Down sur les échelles, l’évaluation de risque sur les parasols et le décret 63-2025. Références vérifiées au manuel agrégé SSE-00-TEL-PRG.</p>
+  <p class="who">⟦P01⟧, Partenaire d’affaires Santé et Sécurité — document préparatoire du 19 septembre 2026</p>
+  <div class="roles" role="tablist" aria-label="Choisir une lecture">
+    <button role="tab" id="r-comite" aria-selected="true">Comité</button>
+    <button role="tab" id="r-direction" aria-selected="false">Direction</button>
+    <button role="tab" id="r-superviseurs" aria-selected="false">Superviseurs</button>
+    <button role="tab" id="r-travailleurs" aria-selected="false">Travailleurs</button>
+  </div>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<nav class="views" role="tablist">
+  <button role="tab" id="t-risques" aria-selected="true" aria-controls="v-risques">Risques</button>
+  <button role="tab" id="t-cal" aria-selected="false" aria-controls="v-cal">Calendrier</button>
+  <button role="tab" id="t-init" aria-selected="false" aria-controls="v-init">Dossiers en cours</button>
+  <button role="tab" id="t-doc" aria-selected="false" aria-controls="v-doc">Documents du comité</button>
+  <button role="tab" id="t-photos" aria-selected="false" aria-controls="v-photos">Photos par site</button>
+  <button role="tab" id="t-comite" aria-selected="false" aria-controls="v-comite">Dossier du comité</button>
+  <button role="tab" id="t-proj" aria-selected="false" aria-controls="v-proj">Projets en cours</button>
+  <button role="tab" id="t-prev" aria-selected="false" aria-controls="v-prev">Prévention</button>
+  <button role="tab" id="t-src" aria-selected="false" aria-controls="v-src">Sources</button>
+</nav>
+
+<main>
+  <section id="v-risques" role="tabpanel" aria-labelledby="t-risques">
+    <div class="split">
+      <aside class="rail">
+        <div class="filters" id="filters"></div>
+        <div class="railscroll" id="rail"></div>
+      </aside>
+      <article class="record" id="record"></article>
+    </div>
+  </section>
+
+  <section id="v-cal" role="tabpanel" aria-labelledby="t-cal" class="hidden">
+    <div class="cal" id="cal"></div>
+  </section>
+
+  <section id="v-init" role="tabpanel" aria-labelledby="t-init" class="hidden">
+    <div class="panels" id="inits"></div>
+  </section>
+
+  <section id="v-doc" role="tabpanel" aria-labelledby="t-doc" class="hidden">
+    <div class="panels" id="docs"></div>
+  </section>
+
+  <section id="v-direction" class="hidden"><div class="panels" id="pdirection"></div></section>
+  <section id="v-superviseurs" class="hidden"><div class="panels" id="psuperviseurs"></div></section>
+  <section id="v-travailleurs" class="hidden"><div class="panels" id="ptravailleurs"></div></section>
+
+  <section id="v-photos" role="tabpanel" aria-labelledby="t-photos" class="hidden">
+    <div class="panels" id="photos"></div>
+  </section>
+
+  <section id="v-comite" role="tabpanel" aria-labelledby="t-comite" class="hidden">
+    <div class="panels" id="comite"></div>
+  </section>
+
+  <section id="v-proj" role="tabpanel" aria-labelledby="t-proj" class="hidden">
+    <div class="panels" id="proj"></div>
+  </section>
+
+  <section id="v-prev" role="tabpanel" aria-labelledby="t-prev" class="hidden">
+    <div class="panels" id="prev"></div>
+  </section>
+
+  <section id="v-src" role="tabpanel" aria-labelledby="t-src" class="hidden">
+    <div class="panels" id="panels"></div>
+  </section>
+</main>
+
+<footer>
+  Document préparatoire. Les priorités, porteurs et échéances sont proposés et relèvent de la décision du comité. Ce registre ne porte aucun verdict de conformité et ne se prononce pas sur l’aptitude d’un véhicule ou d’un travailleur. Les références au manuel agrégé SSE-00-TEL-PRG sont à revérifier avant usage réglementaire.
+  Les données d’incidents, de visites et d’inspections proviennent d’exports eCompliance de type « Public », possiblement filtrés : une absence peut être un effet de filtre plutôt qu’une absence réelle.
+</footer>
+
+<script>
+const DATA = __DATA__;
+const R = DATA.risques;
+const PRIO = {1:'Priorité 1 — sécurité immédiate',2:'Priorité 2 — standard ou règle manquante',3:'Priorité 3 — amélioration d’équipement ou de processus'};
+const BK = [
+ ['immediat','Immédiat','Mesure sur les unités et les équipes visées, sans attendre la séance.'],
+ ['j30','30 jours','États de situation et vérifications de parc. R-16 exige en outre le remplacement complet avant le 1er décembre.'],
+ ['j60','60 jours','Le gros du volume : positions écrites, formulaires à publier, demandes d’essai terrain.'],
+ ['j90','90 jours','Études de dotation et ajout au parcours d’intégration.'],
+ ['seance','Prochaine séance','Sujets qui se tranchent en comité, sans travail préalable requis.']
+];
+const cvar = p => p===1?'var(--p1)':p===2?'var(--p2)':'var(--p3)';
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let sel = R[0].ref, fPrio = 0, fBucket = '';
+
+/* indicateurs */
+const nInc = DATA.incidents.length;
+const nVis = DATA.visites.length;
+const nCons = DATA.visites.filter(v=>v.consolidee).length;
+const nSrc = R.reduce((a,r)=>a+r.sources.length,0);
+const nP1 = R.filter(r=>r.prio===1).length;
+document.getElementById('stats').innerHTML = [
+ [R.length,'risques distincts'],[nSrc,'éléments source'],[nP1,'de priorité 1'],
+ [nInc,'incidents et quasi-accidents'],[nVis+' / '+nCons,'visites SST au dossier, consolidées']
+].map(([b,s])=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
+
+/* filtres */
+const filters = document.getElementById('filters');
+function drawFilters(){
+  const bk = BK.map(([k,l])=>`<button class="chip" data-bk="${k}" aria-pressed="${fBucket===k}">${l}</button>`).join('');
+  filters.innerHTML =
+    [1,2,3].map(p=>`<button class="chip" data-prio="${p}" aria-pressed="${fPrio===p}">Priorité ${p}</button>`).join('')
+    + bk
+    + `<button class="chip" data-reset="1" aria-pressed="false">Tout</button>`;
+}
+filters.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  if(b.dataset.reset){fPrio=0;fBucket='';}
+  else if(b.dataset.prio){const p=+b.dataset.prio; fPrio = fPrio===p?0:p;}
+  else if(b.dataset.bk){fBucket = fBucket===b.dataset.bk?'':b.dataset.bk;}
+  drawFilters(); drawRail();
+});
+
+/* rail */
+function visible(){return R.filter(r=>(!fPrio||r.prio===fPrio)&&(!fBucket||r.bucket===fBucket));}
+function drawRail(){
+  const v = visible(); const rail = document.getElementById('rail');
+  if(!v.length){rail.innerHTML='<p class="fam" style="padding:18px 12px">Aucun risque ne correspond à ce filtre. Choisissez « Tout » pour revenir à la liste complète.</p>';return;}
+  let out='',last='';
+  for(const r of v){
+    if(r.famille!==last){out+=`<div class="fam">${esc(r.famille)}</div>`;last=r.famille;}
+    const badges = (r.sources.length>1?`<span class="tagn occ">${r.sources.length} visites</span>`:'')
+                 + (r.incidents.length?`<span class="tagn inc">${r.incidents.length} incidents</span>`:'');
+    out+=`<button class="row" data-ref="${r.ref}" aria-current="${r.ref===sel}" style="border-left-color:${r.ref===sel?'var(--navy)':'transparent'}">
+      <span class="rref">${r.ref}</span>
+      <span class="rtit">${esc(r.titre)}</span>
+      <span class="rmeta"><i class="dot" style="background:${cvar(r.prio)}"></i>${badges}</span></button>`;
+  }
+  rail.innerHTML=out;
+}
+document.getElementById('rail').addEventListener('click',e=>{
+  const b=e.target.closest('.row'); if(b) select(b.dataset.ref);
+});
+
+/* dossier */
+function drawRecord(){
+  const r = R.find(x=>x.ref===sel);
+  const bkLabel = BK.find(b=>b[0]===r.bucket)[1];
+  const chain = r.sources.map(s=>`<li>
+      <div class="src">${s.fiche==='Stand down'||s.fiche==='Incidents'?esc(s.fiche):'Fiche '+esc(s.fiche)}${s.ref!=='—'?' · élément '+esc(s.ref):''} — ${esc(s.date)}</div>
+      <div class="obj">${esc(s.objet)}</div>
+      <div class="nat">${esc(s.nature)}</div></li>`).join('');
+  const incs = r.incidents.map(i=>`<div class="inc">
+      <div class="h">Incident ${esc(i.id)} — ${esc(i.date)} · ${esc(i.type)}</div>
+      <div class="d">${esc(i.lecture)}. Travail visé : ${esc(i.stky)}. Lieu : ${esc(i.lieu)}. Déclaré par ${esc(i.prepare)}.</div></div>`).join('');
+  document.getElementById('record').innerHTML = `
+  <div class="rechead">
+    <div class="recref">${r.ref} · ${esc(r.famille)}</div>
+    <h2>${esc(r.titre)}</h2>
+    <div class="pills">
+      <span class="pill pr${r.prio}">${PRIO[r.prio]}</span>
+      <span class="pill neutral">Échéance : ${bkLabel}</span>
+      ${r.sources.length>1?`<span class="pill neutral">Revenu sur ${r.sources.length} visites</span>`:''}
+      ${r.incidents.length?`<span class="pill pr1">${r.incidents.length} incidents déclarés</span>`:''}
+    </div>
+  </div>
+  <div class="body">
+    <div class="block"><h3>Ce qui a été constaté</h3><p>${esc(r.constat)}</p></div>
+    <div class="block"><h3>Décision demandée au comité</h3><p>${esc(r.decision)}</p></div>
+    <div class="block"><div class="grid2">
+      <div class="field"><div class="k">Porteur proposé</div><div class="v">${esc(r.porteur)}</div></div>
+      <div class="field"><div class="k">Échéance proposée</div><div class="v">${esc(r.echeance)}</div></div>
+      <div class="field"><div class="k">Référence normative</div><div class="v">${esc(r.norme)}</div></div>
+    </div></div>
+    <div class="block"><h3>D’où vient ce risque</h3><ul class="chain">${chain}</ul></div>
+    ${incs?`<div class="block"><h3>Incidents rattachés</h3>${incs}</div>`:''}
+    ${r.note?`<div class="block"><h3>Réserves et lecture</h3><div class="note">${esc(r.note)}</div></div>`:''}
+  </div>`;
+}
+function select(ref,view){
+  sel=ref; drawRail(); drawRecord();
+  if(view!==false) show('risques');
+  document.getElementById('record').scrollIntoView({block:'nearest'});
+}
+
+/* calendrier */
+document.getElementById('cal').innerHTML = BK.map(([k,l,note])=>{
+  const list = R.filter(r=>r.bucket===k);
+  return `<div class="bucket">
+    <div class="bhead"><span class="bt">${l}</span><span class="bn">${list.length} risques</span></div>
+    <div class="list">${list.map(r=>`<button class="bcard" data-ref="${r.ref}" style="border-left-color:${cvar(r.prio)}">
+       <span class="br">${r.ref}</span><span class="bl">${esc(r.titre)}</span></button>`).join('')}</div>
+    <div class="bnote">${esc(note)}</div></div>`;
+}).join('');
+document.getElementById('cal').addEventListener('click',e=>{
+  const b=e.target.closest('.bcard'); if(b) select(b.dataset.ref);
+});
+
+/* sources */
+const incRows = DATA.incidents.map(i=>`<tr>
+  <td>${esc(i.id)}</td><td>${esc(i.date)}</td><td>${esc(i.type)}</td>
+  <td>${esc(i.stky)}</td><td>${esc(i.lieu)}</td><td>${esc(i.prepare)}</td>
+  <td>${i.ref?`<button class="linkref" data-ref="${i.ref}">${i.ref}</button>`:'<span style="color:var(--muted)">non rattaché</span>'}</td></tr>`).join('');
+const visRows = DATA.visites.map(v=>`<tr>
+  <td>${esc(v.id)}</td><td>${esc(v.date)}</td><td>${esc(v.statut)}</td>
+  <td>${esc(v.prepare)}</td><td>${esc(v.lieu)}</td>
+  <td><span class="badge ${v.consolidee?'ok':'no'}">${v.consolidee?'consolidée':'à verser'}</span></td></tr>`).join('');
+const gRows = DATA.grille.map(g=>`<tr class="${g.type.indexOf('Mensuelle')>=0?'hl':''}">
+  <td>${esc(g.type)}</td>${g.mois.map(n=>`<td class="num">${n||'—'}</td>`).join('')}<td class="num"><b>${g.total}</b></td></tr>`).join('');
+document.getElementById('panels').innerHTML = `
+<div class="panel"><h3>Incidents et quasi-accidents</h3>
+  <p class="intro">Neuf événements déclarés du 15 juillet au 15 septembre 2026. Le rattachement au registre est une proposition, pas une donnée du système. Trois événements portent la mention « Travailler seul » et alimentent R-07; trois relèvent de la conduite pour le travail et ont fait créer R-30, absent des fiches d’inspection. Aucun n’est typé chute de hauteur.</p>
+  <div class="tablewrap"><table><thead><tr><th>Fiche</th><th>Date</th><th>Type</th><th>Travail visé</th><th>Lieu</th><th>Déclaré par</th><th>Risque</th></tr></thead><tbody>${incRows}</tbody></table></div></div>
+<div class="panel"><h3>Visites SST au dossier</h3>
+  <p class="intro">Onze rapports d’inspection ou de visite de site. Dix sont consolidés au registre. Le contenu des deux autres n’est pas disponible ici : seules les métadonnées le sont, il faut obtenir les fiches pour savoir si elles produisent des éléments d’action.</p>
+  <div class="tablewrap"><table><thead><tr><th>Fiche</th><th>Date</th><th>Statut</th><th>Préparé par</th><th>Lieu</th><th>Au registre</th></tr></thead><tbody>${visRows}</tbody></table></div></div>
+<div class="panel"><h3>Inspections d’équipement et de véhicule</h3>
+  <p class="intro">Volume par type et par mois, du 19 mai au 17 septembre 2026. L’inspection mensuelle du véhicule, surlignée, n’apparaît que trois fois en quatre mois et plus du tout après le 16 juillet. C’est la donnée chiffrée qui appuie R-15.</p>
+  <div class="tablewrap"><table><thead><tr><th>Type d’inspection</th>${DATA.mois.map(m=>`<th class="num">${m}</th>`).join('')}<th class="num">Total</th></tr></thead><tbody>${gRows}</tbody></table></div></div>`;
+document.getElementById('panels').addEventListener('click',e=>{
+  const b=e.target.closest('.linkref'); if(b) select(b.dataset.ref);
+});
+
+/* dossiers en cours */
+const urg = e => /Avant la séance|séance|décembre|120 jours/.test(e) ? (/Avant la séance/.test(e)?1:2) : 3;
+document.getElementById('inits').innerHTML = DATA.initiatives.map(i=>{
+  const col = cvar(urg(i.echeance));
+  const liens = i.risques==='—' ? '<span style="color:var(--muted)">aucun risque du registre</span>'
+    : i.risques.split(',').map(x=>`<button class="linkref" data-ref="${x.trim()}">${x.trim()}</button>`).join(' ');
+  return `<div class="init" style="border-left-color:${col}">
+    <div class="iref">${i.ref} · ${esc(i.type)}</div>
+    <h4>${esc(i.titre)}</h4>
+    <div class="irow">
+      <div><div class="k">Porteur</div><div class="v">${esc(i.porteur)}</div></div>
+      <div><div class="k">État actuel</div><div class="v">${esc(i.etat)}</div></div>
+      <div><div class="k">Prochain jalon</div><div class="v">${esc(i.jalon)}</div></div>
+      <div><div class="k">Échéance</div><div class="v">${esc(i.echeance)}</div></div>
+      <div><div class="k">Risques liés</div><div class="v">${liens}</div></div>
+      <div><div class="k">Origine</div><div class="v">${esc(i.origine)}</div></div>
+    </div>
+    <div class="inote">${esc(i.note)}</div></div>`;
+}).join('');
+document.getElementById('inits').addEventListener('click',e=>{
+  const b=e.target.closest('.linkref'); if(b) select(b.dataset.ref);
+});
+
+/* documents du comité */
+function docCol(e){
+  if(/À créer|Non produit|Absent/.test(e)) return 'var(--p1)';
+  if(/confirmer|planifier|produire|adopté|Partiel|abarit|Non versés/.test(e)) return 'var(--p2)';
+  return 'var(--p3)';
+}
+const secs=[];
+for(const d of DATA.documents){
+  if(!secs.length||secs[secs.length-1].n!==d.section) secs.push({n:d.section,items:[]});
+  secs[secs.length-1].items.push(d);
+}
+document.getElementById('docs').innerHTML = `<div class="panel">
+  <h3>Ce que le comité doit tenir, et ce qui existe</h3>
+  <p class="intro">Relevé des documents exigés d’un comité de santé et de sécurité au Québec, d’après la LSST, la LMRSST et le Règlement sur les mécanismes de prévention et de participation en établissement, en vigueur depuis le 1<sup>er</sup> octobre 2025. Ce relevé est indicatif et ne constitue pas un avis juridique : les délais, les seuils et les durées de conservation sont à confirmer auprès de la CNESST avant tout usage réglementaire.</p>
+  <div class="docgrid">${secs.map(s=>`<div class="docsec"><h4>${esc(s.n)}</h4>${s.items.map(d=>`
+    <div class="docitem"><span class="sig" style="background:${docCol(d.etat)}"></span>
+      <div><div class="dn">${esc(d.doc)}</div>
+        <div class="de">${esc(d.etat)}${d.ou&&d.ou!=='—'?' — '+esc(d.ou):''}</div>
+        <div class="dx">${esc(d.exigence)}</div>
+        ${d.remarque?`<div class="dx">${esc(d.remarque)}</div>`:''}</div></div>`).join('')}</div>`).join('')}</div>
+  <p class="intro" style="padding-bottom:16px">Point vert : le document est tenu. Point ambre : il existe en gabarit, ou son état demande confirmation. Point rouge : il est absent.</p></div>`;
+
+/* photos par site */
+document.getElementById('photos').innerHTML = DATA.sites.map(g=>`
+<div class="panel"><h3>${esc(g.site)}</h3>
+  <p class="intro"><b>${esc(g.date)}</b> · fiche ${esc(g.fiche)} · ${g.photos.length} photographies. ${esc(g.note)}</p>
+  <div class="shots">${g.photos.map(p=>`<div class="shot"><figure>
+     <img loading="lazy" src="data:image/jpeg;base64,${p.src}" alt="${esc(p.leg)}">
+     <figcaption>${esc(p.leg)}</figcaption>
+     <div class="lnk">${p.refs.split(' · ').map(r=>r.startsWith('R-')?`<button class="linkref" data-ref="${r}">${r}</button>`:`<span style="color:var(--muted)">${esc(r)}</span>`).join(' ')}</div>
+   </figure></div>`).join('')}</div></div>`).join('') + `
+<div class="panel"><h3>Photographies au dossier eCompliance, non versées ici</h3>
+  <p class="intro">Ces clichés sont joints aux fiches mais n’ont pas été exportés. Les obtenir compléterait la couverture visuelle des sites.</p>
+  <div class="tablewrap"><table><thead><tr><th>Fiche</th><th>Date</th><th>Lieu</th><th>Ce qui est joint</th></tr></thead><tbody>
+  ${DATA.ailleurs.map(a=>`<tr><td>${esc(a.fiche)}</td><td>${esc(a.date)}</td><td>${esc(a.lieu)}</td><td style="color:var(--muted)">${esc(a.quoi)}</td></tr>`).join('')}
+  </tbody></table></div></div>`;
+document.getElementById('photos').addEventListener('click',e=>{
+  const b=e.target.closest('.linkref'); if(b) select(b.dataset.ref);
+});
+
+/* dossier du comité */
+const CO = DATA.comite;
+const totEff = CO.portrait.reduce((a,p)=>a+p.n,0);
+document.getElementById('comite').innerHTML = `
+<div class="panel"><h3>Le portrait — 189 travailleurs, 5 régions</h3>
+  <p class="intro">Aucun comité n’existe encore. Montréal et Québec regroupent 91 % de l’effectif et franchissent le seuil de vingt travailleurs; les trois autres sites relèvent d’un agent de liaison et d’un plan d’action.</p>
+  <div class="bar"><div><b>${totEff}</b><span>travailleurs</span></div>
+   <div><b>2</b><span>comités à former</span></div>
+   <div><b>2</b><span>représentants en santé et sécurité</span></div>
+   <div><b>3</b><span>agents de liaison</span></div>
+   <div><b>11 à 17</b><span>postes à pourvoir</span></div></div>
+  <div class="tablewrap"><table><thead><tr><th>Région</th><th class="num">Effectif</th><th>Seuil de 20</th><th>Mécanisme de participation</th><th>Mécanisme de prévention</th></tr></thead><tbody>
+  ${CO.portrait.map(p=>`<tr><td><b>${esc(p.region)}</b></td><td class="num">${p.n}</td>
+    <td><span class="badge ${p.seuil==='Atteint'?'no':'ok'}">${esc(p.seuil)}</span></td>
+    <td>${esc(p.part)}</td><td>${esc(p.prev)}</td></tr>`).join('')}
+  </tbody></table></div></div>
+
+<div class="panel"><h3>Les échéances</h3>
+  <p class="intro">La contrainte est de séquence, pas de volume : le programme de prévention s’élabore en collaboration avec le comité, et aucun comité n’existe. Il faut constituer, désigner, tenir une première réunion, puis élaborer — avant le 1<sup>er</sup> octobre.</p>
+  <div class="tablewrap"><table><thead><tr><th>Date</th><th>Ce qui est dû</th><th>Portée</th></tr></thead><tbody>
+  ${CO.echeances.map(e=>`<tr><td><b style="color:${e.urg===1?'var(--p1)':e.urg===2?'var(--p2)':'var(--p3)'}">${esc(e.date)}</b></td><td>${esc(e.quoi)}</td><td style="color:var(--muted)">${esc(e.portee)}</td></tr>`).join('')}
+  </tbody></table></div></div>
+
+<div class="panel"><h3>Ce qui bloque encore</h3>
+  <p class="intro">Cinq questions dont la réponse conditionne toute désignation. Le questionnaire de cadrage en compte neuf au total.</p>
+  <div style="padding:6px 16px 16px">${CO.bloquantes.map((b,i)=>`<div class="qa"><div class="q">${i+1}. ${esc(b.q)}</div><div class="e">${esc(b.enjeu)}</div></div>`).join('')}</div></div>
+
+<div class="panel"><h3>Les décisions à prendre en rencontre</h3>
+  <div class="tablewrap"><table><thead><tr><th>Décision</th><th>Options</th><th>Retenu</th></tr></thead><tbody>
+  ${CO.decisions.map((d,i)=>`<tr><td><b>${i+1}. ${esc(d.d)}</b></td><td>${esc(d.options)}</td><td style="color:var(--muted)">à consigner en séance</td></tr>`).join('')}
+  </tbody></table></div></div>
+
+<div class="panel"><h3>Le chemin d’un constat — processus CAPA</h3>
+  <p class="intro">Selon la politique SSE-200-TEL-POL. Cinq étapes, trois portes exclusives. Le comité n’y décide pas : il examine, priorise et recommande par écrit — et c’est cette forme écrite qui crée l’obligation de réponse.</p>
+  <div class="tablewrap"><table><thead><tr><th>Étape</th><th>Acteur et article</th><th>Ce qui s’y fait</th></tr></thead><tbody>
+  ${DATA.capa.etapes.map(e=>`<tr><td><b style="color:var(--navy)">${esc(e.etape)}</b></td><td>${esc(e.acteur)}</td><td style="color:var(--muted)">${esc(e.quoi)}</td></tr>`).join('')}
+  </tbody></table></div>
+  <div style="padding:6px 16px 10px">${DATA.capa.portes.map((p,i)=>`<div class="dec" style="border-left-color:var(--p2)">
+    <div class="refs">Porte ${i+1}</div><h4>${esc(p.porte)}</h4><p>${esc(p.quoi)}</p>
+    <div class="ask" style="background:var(--line-soft);color:var(--ink)">${esc(p.ou)}</div></div>`).join('')}</div>
+  <div style="padding:0 16px 18px"><div class="reco" style="border-color:var(--p1);background:var(--p1-bg)">
+    <h5 style="color:var(--p1)">${esc(DATA.capa.etat.titre)}</h5><p>${esc(DATA.capa.etat.texte)}</p></div></div></div>
+
+<div class="panel"><h3>L’historique du comité</h3>
+  <p class="intro">Reconstitué depuis la bibliothèque SharePoint du comité le 19 septembre 2026. Le comité a siégé; il s’est arrêté. La question posée au comité n’est donc pas de se constituer mais d’expliquer l’interruption et de reprendre.</p>
+  <div style="padding:8px 16px 16px">${CO.hist.map(h=>`<div class="hist"><div class="y" style="color:${h.etat==='trou'?'var(--p1)':'var(--p3)'}">${esc(h.annee)}</div><div class="q">${esc(h.quoi)}</div></div>`).join('')}</div></div>
+
+<div class="panel"><h3>La boîte du comité</h3>
+  <p class="intro">Douze messages, du 17 au 18 septembre 2026. La boîte a été créée le 17 septembre et sert déjà de registre de saisines, mais les éléments d’action y sont assignés à une adresse plutôt qu’à des personnes. Trois messages ne sont pas lus.</p>
+  <div style="padding:8px 16px 16px">${DATA.roles.courriels.map(m=>`<div class="mail${m.lu?'':' unread'}">
+    <div class="d">${esc(m.date)}${m.lu?'':'<br><b style="color:var(--p1)">non lu</b>'}</div>
+    <div><div class="o">${esc(m.objet)}</div><div class="l">${esc(m.exp)} — ${esc(m.lecture)}</div></div>
+    <div class="r">${m.refs? m.refs.split(' · ').map(r=>`<button class="linkref" data-ref="${r}">${r}</button>`).join(' ') : '<span style="color:var(--muted)">—</span>'}</div></div>`).join('')}</div></div>
+
+<div class="panel"><h3>Six procédures corporatives inapplicables faute de comité</h3>
+  <p class="intro">Vérifié au manuel agrégé le 19 septembre 2026. Ces obligations sont internes : elles ne dépendent d’aucune interprétation de la CNESST, et aucune ne peut être satisfaite tant qu’Infra Québec n’a pas de comité.</p>
+  <div style="padding:6px 16px 16px">${CO.proc.map(p=>`<div class="qa"><div class="q">${esc(p.ref)}</div><div class="e">${esc(p.quoi)}</div></div>`).join('')}</div></div>
+
+<div class="panel"><h3>La trousse HSE-701 — ce qui est prêt</h3>
+  <div class="tablewrap"><table><thead><tr><th>Référence</th><th>Document</th><th>Contenu</th><th>Version</th></tr></thead><tbody>
+  ${CO.trousse.map(t=>`<tr><td><b>${esc(t.ref)}</b></td><td>${esc(t.nom)}</td><td style="color:var(--muted)">${esc(t.contenu)}</td><td>${esc(t.version)}</td></tr>`).join('')}
+  </tbody></table></div>
+  <p class="intro" style="padding-bottom:16px;color:var(--p1)">Recommandation du breffage : retenir le scénario A, un comité par établissement, pour la mise en place immédiate. Le regroupement Infra QC exigerait une analyse préalable que l’échéance du 1<sup>er</sup> octobre ne laisse pas le temps de monter.</p></div>`;
+
+/* projets en cours */
+document.getElementById('proj').innerHTML = `
+<div class="panel"><h3>Processus et projets en cours</h3>
+  <p class="intro">Ce qui tourne en parallèle du registre. Les modules d’agents sont des outils de travail internes : ils préparent et structurent, ils ne décident pas et ne certifient rien. Chacun porte la mention « à revérifier avant usage réglementaire ».</p>
+  <div style="padding:8px 16px 18px">${DATA.projets.map(p=>`<div class="init" style="border-left-color:var(--navy);margin-bottom:10px">
+    <div class="iref">${esc(p.ref)} · ${esc(p.nature)}</div>
+    <h4>${esc(p.nom)}</h4>
+    <div class="irow">
+      <div><div class="k">État</div><div class="v">${esc(p.etat)}</div></div>
+      <div><div class="k">Ce que ça produit</div><div class="v">${esc(p.produit)}</div></div>
+      <div><div class="k">Lien avec le registre</div><div class="v">${esc(p.lien)}</div></div>
+    </div></div>`).join('')}</div>
+  <p class="intro" style="padding-bottom:16px">Réserve — cette liste est reconstituée à partir des outils présents dans l’espace de travail. Le périmètre de P-05 et de P-06 n’est pas confirmé comme relevant d’Infra Québec : à trancher avant de les porter au comité.</p></div>`;
+
+/* prévention */
+const P = DATA.prevention;
+const volRows = P.types.map(t=>`<tr>
+  <td><b>${esc(t.type)}</b><div style="color:var(--muted);font-size:12px;margin-top:2px">${esc(t.cible)}</div></td>
+  ${t.vals.map(v=>`<td class="num">${v||'—'}</td>`).join('')}
+  <td class="num"><b>${t.vals.reduce((a,b)=>a+b,0)}</b></td>
+  <td style="color:var(--muted)">${esc(t.lecture)}</td></tr>`).join('');
+const contribRows = P.contrib.map(c=>`<tr><td><b>${esc(c.nom)}</b></td><td class="num">${c.n}</td><td style="color:var(--muted)">${esc(c.detail)}</td></tr>`).join('');
+document.getElementById('prev').innerHTML = `
+<div class="panel"><h3>Volume des activités par type et par mois</h3>
+  <p class="intro">Inspections verrouillées dans eCompliance du 19 mai au 17 septembre 2026. Les quatre visites du partenaire d’affaires restées au statut « Submitted » n’y figurent pas, ce qui explique l’écart avec l’onglet Sources.</p>
+  <div class="tablewrap"><table><thead><tr><th>Type d’activité et cible au plan stratégique</th>${P.mois.map(m=>`<th class="num">${m.slice(5)}/${m.slice(2,4)}</th>`).join('')}<th class="num">Total</th><th>Lecture</th></tr></thead><tbody>${volRows}</tbody></table></div></div>
+
+<div class="panel"><h3>Qui a contribué</h3>
+  <p class="intro">Onze personnes ont produit au moins une inspection verrouillée sur la période.</p>
+  <div class="tablewrap"><table><thead><tr><th>Personne</th><th class="num">Inspections</th><th>Détail</th></tr></thead><tbody>${contribRows}</tbody></table></div></div>
+
+<div class="panel"><h3>Alignement sur le plan stratégique santé et sécurité</h3>
+  <p class="intro">Les six axes de la stratégie corporative, et ce que le dossier d’Infra Québec apporte à chacun.</p>
+  <div class="axegrid">${P.align.map(a=>`<div class="axe"><div class="n">${a.num}</div>
+    <h5>${esc(a.titre.split(' — ')[0])}</h5><p>${esc(a.apport)}</p></div>`).join('')}</div></div>
+
+<div class="panel"><h3>Correspondance avec ISO 45001</h3>
+  <p class="intro">Correspondance indicative établie par l’auteur. Les intitulés de clauses sont à vérifier contre le texte de la norme avant tout usage formel : ce dossier n’est pas un document de certification.</p>
+  <div class="tablewrap"><table><thead><tr><th>Clause</th><th>Intitulé</th><th>Apport du dossier</th></tr></thead><tbody>
+  ${P.iso.map(i=>`<tr><td><b>${esc(i.clause)}</b></td><td>${esc(i.titre)}</td><td style="color:var(--muted)">${esc(i.apport)}</td></tr>`).join('')}
+  </tbody></table></div></div>
+
+<div class="panel"><h3>Reconnaissance — ce qui mérite d’être dit en séance</h3>
+  <p class="intro">Axe 06 du plan stratégique. Constats positifs relevés aux visites, documentés au même titre que les écarts.</p>
+  <div style="padding:12px 16px 16px">${P.reco.map(r=>`<div class="reco"><h5>${esc(r.quoi)}</h5>
+     <p>${esc(r.constat)}</p><div class="why">${esc(r.pourquoi)}</div></div>`).join('')}</div></div>`;
+
+/* vue direction */
+document.getElementById('pdirection').innerHTML = `
+<div class="panel"><h3>Ce qui appelle une décision</h3>
+  <p class="intro">Six décisions tirées de trente-huit risques consolidés sur dix visites. Chacune est présentée par ce qu’elle engage, pas par la procédure qui la fonde.</p>
+  <div style="padding:12px 16px 0"><div class="dirn">${DATA.roles.dirchiffres.map(d=>`<div><b>${esc(d.n)}</b><span>${esc(d.lab)}</span><em>${esc(d.sub)}</em></div>`).join('')}</div></div>
+  <div style="padding:0 16px 18px">${DATA.roles.dirdecisions.map(d=>`<div class="dec">
+    <div class="refs">${esc(d.refs)}</div><h4>${esc(d.titre)}</h4>
+    <p>${esc(d.contexte)}</p><div class="ask">${esc(d.decision)}</div></div>`).join('')}</div></div>
+
+<div class="panel"><h3>Six procédures corporatives sans instance</h3>
+  <p class="intro">Ces obligations sont internes et ne dépendent d’aucune interprétation réglementaire. Aucune n’est satisfaite depuis que le comité a cessé de siéger.</p>
+  <div style="padding:6px 16px 16px">${CO.proc.map(p=>`<div class="qa"><div class="q">${esc(p.ref)}</div><div class="e">${esc(p.quoi)}</div></div>`).join('')}</div></div>`;
+
+/* vue superviseurs */
+document.getElementById('psuperviseurs').innerHTML = `
+<div class="panel"><h3>À faire sur le terrain</h3>
+  <p class="intro">Dix consignes tirées des visites. Chacune s’appuie sur une exigence écrite qui existe déjà. Aucun nom de travailleur n’apparaît dans cette vue : les constats visent des unités et des pratiques, pas des personnes.</p>
+  <div style="padding:10px 16px 18px">${DATA.roles.superviseurs.map(x=>`<div class="sup">
+    <div><h4>${esc(x.titre)}</h4><p>${esc(x.faire)}</p><div class="exige">${esc(x.exige)}</div></div>
+    <div class="when">${esc(x.delai)}<small><button class="linkref" data-ref="${x.ref}">${x.ref}</button></small></div></div>`).join('')}</div></div>`;
+document.getElementById('psuperviseurs').addEventListener('click',e=>{
+  const b=e.target.closest('.linkref'); if(b){ setRole('comite'); select(b.dataset.ref); }
+});
+
+/* vue travailleurs */
+document.getElementById('ptravailleurs').innerHTML = `
+<div class="panel"><h3>Ce qui change pour toi</h3>
+  <p class="intro">Neuf choses tirées des visites de l’été et de l’automne. Rien ici ne vise quelqu’un en particulier.</p>
+  <div style="padding:10px 16px 20px">${DATA.roles.travailleurs.map(x=>`<div class="trav">
+    <h4>${esc(x.titre)}</h4><div class="quoi">${esc(x.texte)}</div>
+    <div class="pourquoi">${esc(x.pourquoi)}</div></div>`).join('')}</div></div>`;
+
+/* rôles */
+const VUES = {comite:['risques','cal','init','doc','photos','comite','proj','prev','src'],
+              direction:['direction'], superviseurs:['superviseurs'], travailleurs:['travailleurs']};
+let role='comite';
+function setRole(r){
+  role=r;
+  for(const k of Object.keys(VUES)) document.getElementById('r-'+k).setAttribute('aria-selected', k===r);
+  document.querySelector('nav.views').classList.toggle('hidden', r!=='comite');
+  for(const k of ['risques','cal','init','doc','photos','comite','proj','prev','src','direction','superviseurs','travailleurs'])
+    document.getElementById('v-'+k).classList.add('hidden');
+  if(r==='comite') show('risques'); else document.getElementById('v-'+r).classList.remove('hidden');
+  window.scrollTo({top:0});
+}
+document.querySelector('.roles').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(b) setRole(b.id.slice(2));
+});
+
+/* onglets */
+function show(v){
+  for(const k of ['risques','cal','init','doc','photos','comite','proj','prev','src']){
+    document.getElementById('v-'+k).classList.toggle('hidden',k!==v);
+    document.getElementById('t-'+k).setAttribute('aria-selected',k===v);
+  }
+}
+document.querySelector('nav.views').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(b) show(b.id.slice(2));
+});
+
+drawFilters(); drawRail(); drawRecord(); setRole('comite');
+</script>
+</body>
+</html>

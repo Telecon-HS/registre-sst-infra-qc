@@ -1,0 +1,432 @@
+{
+"titre": "Synthèse",
+"grille": true,
+"figer": null,
+"filtre": null,
+"fusions": [],
+"colonnes": {
+"A": 36.0,
+"B": 12.0
+},
+"lignes": {
+"1": 16.15,
+"3": 15.0,
+"4": 15.0,
+"5": 15.0,
+"6": 15.0,
+"8": 15.0,
+"9": 15.0,
+"10": 15.0,
+"11": 15.0,
+"12": 15.0,
+"13": 15.0,
+"14": 15.0,
+"15": 15.0,
+"16": 15.0,
+"17": 15.0,
+"18": 15.0,
+"19": 15.0,
+"20": 15.0,
+"22": 15.0,
+"23": 15.0,
+"24": 15.0,
+"25": 15.0,
+"26": 15.0,
+"27": 15.0,
+"28": 15.0,
+"29": 15.0,
+"30": 15.0,
+"31": 15.0,
+"32": 15.0,
+"33": 15.0,
+"34": 15.0,
+"35": 15.0,
+"36": 15.0,
+"38": 15.0,
+"39": 15.0,
+"40": 15.0,
+"41": 15.0,
+"42": 15.0,
+"43": 15.0,
+"44": 15.0
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"SYNTHÈSE",
+40
+],
+[
+"A3",
+"Risques consolidés par priorité",
+41
+],
+[
+"A4",
+"Priorité 1",
+3
+],
+[
+"B4",
+"=COUNTIF(Registre!$D$6:$D$44,1)",
+26
+],
+[
+"A5",
+"Priorité 2",
+3
+],
+[
+"B5",
+"=COUNTIF(Registre!$D$6:$D$44,2)",
+26
+],
+[
+"A6",
+"Priorité 3",
+3
+],
+[
+"B6",
+"=COUNTIF(Registre!$D$6:$D$44,3)",
+26
+],
+[
+"A8",
+"Risques consolidés par famille",
+41
+],
+[
+"A9",
+"Travail en hauteur — échelles",
+3
+],
+[
+"B9",
+"=COUNTIF(Registre!$B$6:$B$44,\"Travail en hauteur — échelles\")",
+26
+],
+[
+"A10",
+"Protection individuelle",
+3
+],
+[
+"B10",
+"=COUNTIF(Registre!$B$6:$B$44,\"Protection individuelle\")",
+26
+],
+[
+"A11",
+"Sauvetage en hauteur",
+3
+],
+[
+"B11",
+"=COUNTIF(Registre!$B$6:$B$44,\"Sauvetage en hauteur\")",
+26
+],
+[
+"A12",
+"Travail isolé",
+3
+],
+[
+"B12",
+"=COUNTIF(Registre!$B$6:$B$44,\"Travail isolé\")",
+26
+],
+[
+"A13",
+"Risque électrique",
+3
+],
+[
+"B13",
+"=COUNTIF(Registre!$B$6:$B$44,\"Risque électrique\")",
+26
+],
+[
+"A14",
+"Atmosphère et exposition",
+3
+],
+[
+"B14",
+"=COUNTIF(Registre!$B$6:$B$44,\"Atmosphère et exposition\")",
+26
+],
+[
+"A15",
+"Analyse de risque au travail",
+3
+],
+[
+"B15",
+"=COUNTIF(Registre!$B$6:$B$44,\"Analyse de risque au travail\")",
+26
+],
+[
+"A16",
+"Compétences et affectation",
+3
+],
+[
+"B16",
+"=COUNTIF(Registre!$B$6:$B$44,\"Compétences et affectation\")",
+26
+],
+[
+"A17",
+"Véhicules et flotte",
+3
+],
+[
+"B17",
+"=COUNTIF(Registre!$B$6:$B$44,\"Véhicules et flotte\")",
+26
+],
+[
+"A18",
+"Balisage et circulation",
+3
+],
+[
+"B18",
+"=COUNTIF(Registre!$B$6:$B$44,\"Balisage et circulation\")",
+26
+],
+[
+"A19",
+"Conditions de travail",
+3
+],
+[
+"B19",
+"=COUNTIF(Registre!$B$6:$B$44,\"Conditions de travail\")",
+26
+],
+[
+"A20",
+"Gouvernance et outils",
+3
+],
+[
+"B20",
+"=COUNTIF(Registre!$B$6:$B$44,\"Gouvernance et outils\")",
+26
+],
+[
+"A22",
+"Éléments source par origine",
+41
+],
+[
+"A23",
+"29182326",
+3
+],
+[
+"B23",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29182326\")",
+26
+],
+[
+"A24",
+"29363929",
+3
+],
+[
+"B24",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29363929\")",
+26
+],
+[
+"A25",
+"29456212",
+3
+],
+[
+"B25",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29456212\")",
+26
+],
+[
+"A26",
+"29489650",
+3
+],
+[
+"B26",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29489650\")",
+26
+],
+[
+"A27",
+"29580646",
+3
+],
+[
+"B27",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29580646\")",
+26
+],
+[
+"A28",
+"29632342",
+3
+],
+[
+"B28",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29632342\")",
+26
+],
+[
+"A29",
+"29721538",
+3
+],
+[
+"B29",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29721538\")",
+26
+],
+[
+"A30",
+"29722866",
+3
+],
+[
+"B30",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29722866\")",
+26
+],
+[
+"A31",
+"29751529",
+3
+],
+[
+"B31",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29751529\")",
+26
+],
+[
+"A32",
+"29754404",
+3
+],
+[
+"B32",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"29754404\")",
+26
+],
+[
+"A33",
+"Stand down",
+3
+],
+[
+"B33",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"Stand down\")",
+26
+],
+[
+"A34",
+"Incidents",
+3
+],
+[
+"B34",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"Incidents\")",
+26
+],
+[
+"A35",
+"Parasols",
+3
+],
+[
+"B35",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"Parasols\")",
+26
+],
+[
+"A36",
+"Décret 63-2025",
+3
+],
+[
+"B36",
+"=COUNTIF(Traçabilité!$A$5:$A$67,\"Décret 63-2025\")",
+26
+],
+[
+"A38",
+"Volumétrie du dossier",
+41
+],
+[
+"A39",
+"Risques consolidés",
+3
+],
+[
+"B39",
+"=COUNTA(Registre!$A$6:$A$44)",
+26
+],
+[
+"A40",
+"Éléments source",
+3
+],
+[
+"B40",
+"=COUNTA(Traçabilité!$A$5:$A$67)",
+26
+],
+[
+"A41",
+"Incidents et quasi-accidents",
+3
+],
+[
+"B41",
+"=COUNTA(Incidents!$A$5:$A$13)",
+26
+],
+[
+"A42",
+"Visites SST au dossier",
+3
+],
+[
+"B42",
+"=COUNTA('Visites SST'!$A$5:$A$15)",
+26
+],
+[
+"A43",
+"Visites consolidées",
+3
+],
+[
+"B43",
+"=COUNTIF('Visites SST'!$G$5:$G$15,\"Oui\")",
+26
+],
+[
+"A44",
+"Inspections d’équipement",
+3
+],
+[
+"B44",
+"=COUNTA('Inspections équipement'!$A$5:$A$49)",
+26
+]
+]
+}

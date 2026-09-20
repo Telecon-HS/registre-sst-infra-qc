@@ -1,0 +1,821 @@
+{
+ "_note": "Contenu du plan d’action PDF, version 7 du 19 septembre 2026. Les priorités (couleurs) viennent de registre_html.json. Texte reconstitué à partir du PDF v7.",
+ "version": "7",
+ "date": "19 septembre 2026",
+ "pages": [
+  {
+   "entete": {
+    "titre": "REGISTRE DES RISQUES ET PLAN D’ACTION SST",
+    "sous_titre": [
+     "Infra Québec — dix visites consolidées, références vérifiées au manuel agrégé et au décret 63-2025",
+     "Fiches 29182326, 29363929, 29456212, 29489650, 29580646, 29632342, 29721538, 29722866, 29751529, 29754404"
+    ],
+    "droite": [
+     "COMITÉ SST — INFRA QUÉBEC",
+     "⟦P01⟧, Partenaire d’affaires SST",
+     "Document préparatoire — 19 septembre 2026, version 7"
+    ]
+   },
+   "chiffres": [
+    [
+     "12",
+     "visites SST au dossier<br>dont 10 consolidées"
+    ],
+    [
+     "63",
+     "éléments<br>source"
+    ],
+    [
+     "39",
+     "risques<br>distincts"
+    ],
+    [
+     "9",
+     "incidents et<br>quasi-accidents"
+    ],
+    [
+     "12",
+     "risques de<br>priorité 1"
+    ]
+   ],
+   "risques": {
+    "titre": "LES 39 RISQUES SOUMIS AU COMITÉ",
+    "legende": "— barre de gauche : priorité · pastille bleue : visites où le risque est revenu · pastille rouge : incidents déclarés rattachés",
+    "colonnes": [
+     {
+      "titre": "HAUTEUR, SAUVETAGE ET EPI",
+      "risques": [
+       {
+        "ref": "R-01",
+        "titre": "Porte-échelles et arrimage improvisé",
+        "echeance": "Immédiat"
+       },
+       {
+        "ref": "R-06",
+        "titre": "Sauvetage en hauteur : dotation et exercices",
+        "echeance": "Immédiat",
+        "visites": 4
+       },
+       {
+        "ref": "R-39",
+        "titre": "Intervenant en sauvetage et maître d’œuvre",
+        "echeance": "Immédiat"
+       },
+       {
+        "ref": "R-05",
+        "titre": "Certification des EPI antichute et gants",
+        "echeance": "Immédiat",
+        "visites": 3
+       },
+       {
+        "ref": "R-22",
+        "titre": "Parasols conducteurs en hauteur",
+        "echeance": "Immédiat",
+        "visites": 3
+       },
+       {
+        "ref": "R-35",
+        "titre": "Entreposage sur toits de conteneurs",
+        "echeance": "Immédiat"
+       },
+       {
+        "ref": "R-02",
+        "titre": "Poids et longueur des échelles",
+        "echeance": "60 j",
+        "visites": 3
+       },
+       {
+        "ref": "R-03",
+        "titre": "Formulaire d’inspection avant usage",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-04",
+        "titre": "Appui d’échelle sur poteaux",
+        "echeance": "60 j"
+       }
+      ]
+     },
+     {
+      "titre": "TRAVAIL ISOLÉ ET EXPOSITIONS",
+      "risques": [
+       {
+        "ref": "R-07",
+        "titre": "Travail isolé : plan et appels",
+        "echeance": "Immédiat",
+        "incidents": 3
+       },
+       {
+        "ref": "R-09",
+        "titre": "Tension et limite d’approche",
+        "echeance": "Immédiat",
+        "visites": 2
+       },
+       {
+        "ref": "R-10",
+        "titre": "Monoxyde de carbone en fourgon",
+        "echeance": "30 j"
+       },
+       {
+        "ref": "R-12",
+        "titre": "AST : formation et gabarits",
+        "echeance": "30 j",
+        "visites": 3
+       },
+       {
+        "ref": "R-13",
+        "titre": "Formations avant affectation",
+        "echeance": "30 j"
+       },
+       {
+        "ref": "R-08",
+        "titre": "Chantiers par sentier : accès et secours",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-11",
+        "titre": "Alimentation sans moteur au ralenti",
+        "echeance": "90 j"
+       },
+       {
+        "ref": "R-26",
+        "titre": "Formation au logbook à l’intégration",
+        "echeance": "90 j"
+       }
+      ]
+     },
+     {
+      "titre": "VÉHICULES ET FLOTTE",
+      "risques": [
+       {
+        "ref": "R-14",
+        "titre": "Véhicules de remplacement",
+        "echeance": "30 j"
+       },
+       {
+        "ref": "R-16",
+        "titre": "Cales de roue hivernales",
+        "echeance": "30 j"
+       },
+       {
+        "ref": "R-15",
+        "titre": "Inspection mensuelle et registre",
+        "echeance": "60 j",
+        "visites": 4
+       },
+       {
+        "ref": "R-17",
+        "titre": "Capacités de levage et étiquetage",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-18",
+        "titre": "Camion-nacelle déplacé bras levé",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-24",
+        "titre": "Rangement et propreté des véhicules",
+        "echeance": "Séance",
+        "visites": 2
+       },
+       {
+        "ref": "R-30",
+        "titre": "Sécurité routière : conduire au travail",
+        "echeance": "Séance",
+        "incidents": 3
+       }
+      ]
+     },
+     {
+      "titre": "CIRCULATION, COURS ET CHANTIERS",
+      "risques": [
+       {
+        "ref": "R-34",
+        "titre": "Circulation piéton-véhicule en cour",
+        "echeance": "Immédiat"
+       },
+       {
+        "ref": "R-37",
+        "titre": "Fixation des extincteurs en cour",
+        "echeance": "Immédiat"
+       },
+       {
+        "ref": "R-20",
+        "titre": "Câbles déployés en zone publique",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-21",
+        "titre": "Travaux en propriété privée",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-31",
+        "titre": "Autorisation d’accès aux puits",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-33",
+        "titre": "Localisation avant excavation",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-38",
+        "titre": "Aire de manœuvre, zonage et éclairage",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-19",
+        "titre": "Balisage des véhicules et des zones",
+        "echeance": "Séance",
+        "visites": 4
+       }
+      ]
+     },
+     {
+      "titre": "CONDITIONS ET GOUVERNANCE",
+      "risques": [
+       {
+        "ref": "R-32",
+        "titre": "Qualité de la saisie et de la révision",
+        "echeance": "30 j",
+        "visites": 2
+       },
+       {
+        "ref": "R-36",
+        "titre": "Identification et étiquetage en cour",
+        "echeance": "60 j",
+        "visites": 2
+       },
+       {
+        "ref": "R-28",
+        "titre": "Formulaire eCompliance : option N/A",
+        "echeance": "60 j"
+       },
+       {
+        "ref": "R-23",
+        "titre": "Trousses de fusion : rebuts et gants",
+        "echeance": "Séance"
+       },
+       {
+        "ref": "R-25",
+        "titre": "Accès aux installations sanitaires",
+        "echeance": "Séance",
+        "visites": 3
+       },
+       {
+        "ref": "R-27",
+        "titre": "Référentiel de 79 points",
+        "echeance": "Séance"
+       },
+       {
+        "ref": "R-29",
+        "titre": "Délais de réponse et escalade",
+        "echeance": "Séance"
+       }
+      ]
+     }
+    ]
+   },
+   "calendrier": {
+    "titre": "CALENDRIER DES ÉCHÉANCES PROPOSÉES",
+    "legende": "— toutes les échéances courent à compter de la décision du comité",
+    "groupes": [
+     {
+      "titre": "IMMÉDIAT",
+      "couleur": "p1",
+      "refs": [
+       "R-01",
+       "R-05",
+       "R-06",
+       "R-07",
+       "R-09",
+       "R-22",
+       "R-34",
+       "R-35",
+       "R-37",
+       "R-39"
+      ],
+      "note": "Mesure sur les unités et les équipes visées, sans attendre la séance."
+     },
+     {
+      "titre": "30 JOURS",
+      "couleur": "p1",
+      "refs": [
+       "R-10",
+       "R-12",
+       "R-13",
+       "R-14",
+       "R-16",
+       "R-32"
+      ],
+      "note": "États de situation et vérifications de parc. R-16 : remplacement avant le 1er décembre."
+     },
+     {
+      "titre": "60 JOURS",
+      "couleur": "p2",
+      "refs": [
+       "R-02",
+       "R-03",
+       "R-04",
+       "R-08",
+       "R-15",
+       "R-17",
+       "R-18",
+       "R-20",
+       "R-21",
+       "R-28",
+       "R-31",
+       "R-33",
+       "R-36",
+       "R-38"
+      ],
+      "note": "Positions écrites, formulaires à publier, demandes d’essai terrain."
+     },
+     {
+      "titre": "90 JOURS",
+      "couleur": "p3",
+      "refs": [
+       "R-11",
+       "R-26"
+      ],
+      "note": "Études de dotation et ajout au parcours d’intégration."
+     },
+     {
+      "titre": "PROCHAINE SÉANCE",
+      "couleur": "navy",
+      "refs": [
+       "R-19",
+       "R-23",
+       "R-24",
+       "R-25",
+       "R-27",
+       "R-29",
+       "R-30"
+      ],
+      "note": "Sujets qui se tranchent en comité, sans travail préalable requis."
+     }
+    ]
+   },
+   "recurrences": {
+    "titre": "CE QUI REVIENT D’UNE VISITE À L’AUTRE",
+    "intro": "Relevés sur trois ou quatre visites distinctes. La répétition relève du contrôle, pas des équipes.",
+    "lignes": [
+     [
+      4,
+      "R-15",
+      "Inspection du véhicule : trousse, extincteur, écrous"
+     ],
+     [
+      4,
+      "R-19",
+      "Balisage des véhicules et des zones de travail"
+     ],
+     [
+      3,
+      "R-05",
+      "Certification des EPI antichute et gants"
+     ],
+     [
+      3,
+      "R-12",
+      "AST : formation, gabarits et contrôle quotidien"
+     ],
+     [
+      3,
+      "R-06",
+      "Dotation de sauvetage en hauteur"
+     ]
+    ]
+   },
+   "reserves": {
+    "titre": "QUATRE RÉSERVES À TRANCHER AVANT LA SÉANCE",
+    "lignes": [
+     [
+      "Deux citations erronées",
+      "La distance de repli en tension inconnue n’existe pas à l’annexe Québec de 1801. La règle des cônes n’est pas au §6.6.1 de 2000. Corrigées; sources à établir."
+     ],
+     [
+      "Exercices semestriels",
+      "L’obligation d’exercices de sauvetage tous les six mois n’a pas été retrouvée aux articles 2.9.5 à 2.9.5.2 du décret. À confirmer avant le procès-verbal."
+     ],
+     [
+      "Six procédures bloquées",
+      "SSE-600 trois fois, 1309, 1700 et 2001 assignent un rôle au comité. Aucun comité n’existe chez Infra Québec."
+     ],
+     [
+      "Deux visites non versées",
+      "La fiche 29397984 du 20 août reste à obtenir. La 28365250 est ouverte et jamais terminée depuis le 3 juin."
+     ]
+    ]
+   },
+   "pied": {
+    "legende": [
+     [
+      "p1",
+      "Sécurité immédiate"
+     ],
+     [
+      "p2",
+      "Standard ou règle manquante"
+     ],
+     [
+      "p3",
+      "Amélioration d’équipement ou de processus"
+     ]
+    ],
+    "droite": "Document préparatoire — priorités, porteurs et échéances proposés, relevant de la décision du comité. Aucun verdict de conformité.",
+    "note": "Références vérifiées au manuel agrégé les 18 et 19 septembre 2026. R-01, R-22 et R-30 ne viennent d’aucune fiche d’inspection : stand down des échelles, évaluation SST-2026-PARASOL-001, registre des incidents. R-34 à R-38 viennent de la visite du dépôt Grenache."
+   }
+  },
+  {
+   "entete": {
+    "titre": "DOSSIERS EN COURS ET DOCUMENTS DU COMITÉ",
+    "sous_titre": [
+     "Ce qu’un registre de risques ne sait pas décrire : les initiatives qui ont un porteur",
+     "et un jalon, et les documents que le comité doit tenir."
+    ],
+    "droite": [
+     "COMITÉ SST — INFRA QUÉBEC",
+     "Page 2 de 3"
+    ]
+   },
+   "dossiers": {
+    "titre": "DOSSIERS EN COURS",
+    "legende": "— barre de gauche : urgence du jalon, pas priorité du risque",
+    "cartes": [
+     {
+      "id": "I-01",
+      "jalon": "Avant la séance",
+      "couleur": "p1",
+      "titre": "Travail isolé — Argenteuil nord",
+      "porteur": "Partenaire d’affaires SST",
+      "etat": "Trousse SSE-1700 v1.0, à valider",
+      "prochaine": "Triage des tâches, puis test terrain à 6 sites",
+      "refs": "R-07 · R-08"
+     },
+     {
+      "id": "I-03",
+      "jalon": "Avant la séance",
+      "couleur": "p1",
+      "titre": "Détecteurs de gaz ALTAIR io",
+      "porteur": "Service de la flotte",
+      "etat": "131 appareils déjà déployés au Canada, ~65 au Québec",
+      "prochaine": "Confirmer la détection du CO, puis réaffecter",
+      "refs": "R-10"
+     },
+     {
+      "id": "I-06",
+      "jalon": "À fixer par le HSE",
+      "couleur": "p1",
+      "titre": "Stand down échelles et porte-échelles",
+      "porteur": "Département HSE",
+      "etat": "Trousse produite, portée et date à fixer",
+      "prochaine": "Vérifier chaque véhicule, une ligne par unité",
+      "refs": "R-01 · R-02"
+     },
+     {
+      "id": "I-05",
+      "jalon": "1er décembre 2026",
+      "couleur": "p2",
+      "titre": "Cale de roue hivernale",
+      "porteur": "Service de la flotte",
+      "etat": "Aucune exigence écrite pour la flotte",
+      "prochaine": "Arrêter le modèle et planifier le remplacement",
+      "refs": "R-16"
+     },
+     {
+      "id": "I-07",
+      "jalon": "120 jours après désignation",
+      "couleur": "p2",
+      "titre": "Constitution du comité SST",
+      "porteur": "Coprésidences à désigner",
+      "etat": "Trousse rédigée, coprésidence employeur à pourvoir",
+      "prochaine": "Composition, charte, RSS, formation CNESST",
+      "refs": "R-29"
+     },
+     {
+      "id": "I-04",
+      "jalon": "Prochaine séance",
+      "couleur": "p2",
+      "titre": "Projet camion et standardisation",
+      "porteur": "Porteur de la démarche",
+      "etat": "Référentiel de 79 points, 26 sans source",
+      "prochaine": "Verser le référentiel et désigner le contact",
+      "refs": "R-27 · R-24"
+     },
+     {
+      "id": "I-09",
+      "jalon": "Immédiat",
+      "couleur": "p1",
+      "titre": "Protection solaire des fusionneurs",
+      "porteur": "⟦P02⟧, SST",
+      "etat": "Évaluation complétée, achat à décider",
+      "prochaine": "Fiches techniques, puis essai terrain",
+      "refs": "R-22"
+     },
+     {
+      "id": "I-10",
+      "jalon": "Prochaine séance",
+      "couleur": "p1",
+      "titre": "Dossier comité — sauvetage en hauteur",
+      "porteur": "Partenaire d’affaires SST",
+      "etat": "Quatre points rédigés, prêt à présenter",
+      "prochaine": "Relayer le recensement, calendrier des exercices",
+      "refs": "R-06 · R-39"
+     }
+    ]
+   },
+   "documents": {
+    "titre": "DOCUMENTS DU COMITÉ",
+    "legende": "— exigé par la LSST, la LMRSST et le RMPPE. Relevé indicatif, à confirmer auprès de la CNESST : ce n’est pas un avis juridique.",
+    "groupes": [
+     {
+      "titre": "A · Fonctionnement du comité",
+      "docs": [
+       [
+        "p2",
+        "Charte et règles de fonctionnement",
+        "Gabarit rédigé, non adopté"
+       ],
+       [
+        "p2",
+        "Ordre du jour de chaque réunion",
+        "À produire"
+       ],
+       [
+        "p2",
+        "Procès-verbal de chaque réunion",
+        "Procès-verbal de constitution en gabarit, non daté"
+       ],
+       [
+        "p2",
+        "Registre des recommandations écrites à l’employeur",
+        "Gabarit prêt, vide"
+       ],
+       [
+        "p1",
+        "Registre des plaintes et suggestions",
+        "À créer"
+       ],
+       [
+        "p3",
+        "Tableau de suivi des actions",
+        "Tenu par le présent classeur"
+       ],
+       [
+        "p1",
+        "Rapport annuel d’activités",
+        "Non produit"
+       ]
+      ]
+     },
+     {
+      "titre": "B · Prévention",
+      "docs": [
+       [
+        "p2",
+        "Programme de prévention",
+        "À confirmer"
+       ],
+       [
+        "p2",
+        "Identification et analyse des risques",
+        "Partiel"
+       ],
+       [
+        "p3",
+        "Registre des risques",
+        "Ce classeur en tient lieu pour Falcon"
+       ],
+       [
+        "p1",
+        "Risques psychosociaux",
+        "Absent du registre"
+       ]
+      ]
+     },
+     {
+      "titre": "C · Formation et désignations",
+      "docs": [
+       [
+        "p2",
+        "Attestation de formation CNESST des membres et du RSS",
+        "À planifier"
+       ],
+       [
+        "p2",
+        "Désignation du représentant en santé et sécurité",
+        "À confirmer"
+       ],
+       [
+        "p2",
+        "Registre de formation et de certifications",
+        "Gabarit prêt"
+       ]
+      ]
+     },
+     {
+      "titre": "D · Événements",
+      "docs": [
+       [
+        "p3",
+        "Registre des accidents, incidents et situations dangereuses",
+        "Tenu dans eCompliance"
+       ],
+       [
+        "p2",
+        "Rapports d’enquête et d’analyse d’accident",
+        "Non versés ici"
+       ],
+       [
+        "p2",
+        "Avis d’accident grave à la CNESST",
+        "Sans objet pour la période, à confirmer"
+       ],
+       [
+        "p2",
+        "Registre des premiers soins et liste des secouristes",
+        "À confirmer"
+       ]
+      ]
+     }
+    ]
+   },
+   "pied": {
+    "legende_etat": [
+     [
+      "p3",
+      "tenu"
+     ],
+     [
+      "p2",
+      "en gabarit ou à confirmer"
+     ],
+     [
+      "p1",
+      "absent"
+     ]
+    ],
+    "droite": "Le détail de chaque dossier et de chaque document figure au classeur du registre, onglets Initiatives et Documents du comité."
+   }
+  },
+  {
+   "entete": {
+    "titre": "ACTIVITÉS DE PRÉVENTION ET RECONNAISSANCE",
+    "sous_titre": [
+     "Ce que les équipes d’Infra Québec ont réellement fait, du 19 mai au 17 septembre 2026",
+     "Structure inspirée des indicateurs proactifs du plan stratégique et de la clause 9.1 d’ISO 45001"
+    ],
+    "droite": [
+     "COMITÉ SST — INFRA QUÉBEC",
+     "Page 3 de 3"
+    ]
+   },
+   "chiffres": [
+    [
+     "51",
+     "inspections verrouillées"
+    ],
+    [
+     "11",
+     "personnes contributrices"
+    ],
+    [
+     "10",
+     "visites SST en six semaines"
+    ],
+    [
+     "42",
+     "rondes avant départ et pelle"
+    ],
+    [
+     "3",
+     "inspections mensuelles de véhicule"
+    ]
+   ],
+   "volume": {
+    "titre": "VOLUME DES ACTIVITÉS PAR TYPE ET PAR MOIS",
+    "legende": "— inspections verrouillées dans eCompliance; les visites du partenaire d’affaires restées « Submitted » n’y figurent pas",
+    "mois": [
+     "05/26",
+     "06/26",
+     "07/26",
+     "08/26",
+     "09/26"
+    ],
+    "lignes": [
+     [
+      "Inspection avant départ — véhicule léger",
+      [
+       5,
+       10,
+       5,
+       7,
+       1
+      ],
+      28,
+      "Le volume est réel et régulier. Le taux d’atteinte reste incalculable tant que le nombre de véhicules légers affectés à Infra Québec n’est pas connu : sans dénominateur, 28 inspections ne se comparent à rien."
+     ],
+     [
+      "Inspection quotidienne avant utilisation — pelle mécanique",
+      [
+       3,
+       5,
+       1,
+       4,
+       1
+      ],
+      14,
+      "Quatorze inspections sur quatre mois, toutes sauf deux par la même personne. À rapprocher du nombre de jours d’utilisation réelle des pelles avant d’en tirer une conclusion."
+     ],
+     [
+      "Inspection mensuelle du véhicule",
+      [
+       1,
+       1,
+       1,
+       null,
+       null
+      ],
+      3,
+      "Trois en quatre mois, toutes par le même préparateur, et plus aucune depuis le 16 juillet. C’est la donnée chiffrée qui appuie le risque R-15."
+     ],
+     [
+      "Visite ou inspection SST de site",
+      [
+       null,
+       null,
+       null,
+       4,
+       2
+      ],
+      6,
+      "Le programme démarre réellement le 5 août. Onze visites au dossier, dont dix terminées entre le 5 août et le 17 septembre."
+     ]
+    ]
+   },
+   "axes": {
+    "titre": "ALIGNEMENT SUR LE PLAN STRATÉGIQUE SANTÉ ET SÉCURITÉ",
+    "legende": "— six axes de la stratégie corporative, et ce que le dossier Infra Québec apporte à chacun",
+    "cartes": [
+     [
+      "01",
+      "Se concentrer sur des sujets précis",
+      "Le thème véhicules est le plus représenté du registre : huit risques de flotte, plus R-30 né de trois événements déclarés. Le thème chutes est porté par R-01, R-02, R-04 et R-06."
+     ],
+     [
+      "02",
+      "Passer d’une approche réactive à une approche proactive",
+      "Vingt-huit rondes avant départ et quatorze inspections de pelle en quatre mois sont des activités préventives déjà tenues, pas à créer."
+     ],
+     [
+      "03",
+      "Développer une culture d’apprentissage",
+      "Neuf incidents au dossier, dont trois portant la mention « Travailler seul ». La revue mensuelle est le véhicule naturel pour R-07."
+     ],
+     [
+      "04",
+      "Mesurer efficacement les résultats des activités",
+      "Les volumes existent. Ce qui manque pour en faire des taux : le nombre de véhicules, de pelles et de véhicules lourds affectés à Infra Québec."
+     ],
+     [
+      "05",
+      "Aligner la communication et les actions",
+      "Dix visites terminées en six semaines par deux partenaires d’affaires. Le comité SST est le comité paritaire visé par cet axe."
+     ],
+     [
+      "06",
+      "Célébrer les succès pour nourrir une culture préventive positive",
+      "La bande ci-dessous. Un registre qui n’énumère que des manquements se fait écarter en séance."
+     ]
+    ]
+   },
+   "reconnaissance": {
+    "titre": "RECONNAISSANCE — CE QUI MÉRITE D’ÊTRE DIT EN SÉANCE",
+    "legende": "— axe 06 du plan stratégique. Constats positifs relevés aux visites, documentés au même titre que les écarts.",
+    "cartes": [
+     [
+      "16 septembre — 936 avenue Laurier, Montréal",
+      "Balisage jugé conforme sur les trois sous-questions de la section 9 : chemin piéton sûr contournant la zone, accès public empêché, signaleur présent lors des manœuvres, pistes cyclables laissées ouvertes. Sur un chantier d’excavation avec sous-traitant et excavatrice à proximité des travailleurs.",
+      "C’est le contre-exemple utile à R-19 : l’exigence de balisage est applicable avec les moyens actuels."
+     ],
+     [
+      "28 août — épissure en armoire de rue",
+      "Carte AST/PIRAT complétée et signée par les deux travailleurs, avec les risques et les moyens de contrôle. Trousse de premiers soins et extincteur présents avec leurs étiquettes d’inspection. Harnais et équipements antichute avec jetons et étiquettes. Échelle certifiée, inspectée mensuellement et arrimée. Cônes autour de la zone.",
+      "Cette équipe démontre que les exigences en défaut ailleurs — certification de l’antichute, AST complète, dotation du véhicule — sont atteignables avec les moyens actuels. Sa pratique peut servir de référence aux autres équipes."
+     ],
+     [
+      "16 septembre — rue du Pontmain, Laval",
+      "L’ensemble des EPI requis portés de façon constante, à tous les moments observés. Le travailleur en nacelle attaché en tout temps, y compris pendant le déplacement du camion — précisément le moment où le risque d’éjection est le plus élevé.",
+      "Trois des douze éléments soumis au comité proviennent des travailleurs eux-mêmes. Une équipe qui signale spontanément ce qui ne va pas est le meilleur indicateur avancé d’un programme de santé et sécurité."
+     ]
+    ]
+   },
+   "pied": {
+    "droite": "Trois autres constats de reconnaissance et la correspondance avec ISO 45001 figurent au classeur du registre, onglet Activités de prévention. Les cibles du plan stratégique sont mondiales : elles ne deviennent des taux pour Infra Québec qu’une fois connus les effectifs de parc."
+   }
+  }
+ ]
+}

@@ -1,0 +1,549 @@
+{
+"titre": "Visites SST",
+"grille": true,
+"figer": "A5",
+"filtre": "A4:H15",
+"fusions": [],
+"colonnes": {
+"A": 11.0,
+"B": 12.0,
+"C": 14.0,
+"D": 22.0,
+"E": 46.0,
+"F": 24.0,
+"G": 20.0,
+"H": 52.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"4": 31.5,
+"5": 31.5,
+"6": 31.5,
+"7": 31.5,
+"8": 31.5,
+"9": 31.5,
+"10": 31.5,
+"11": 31.5,
+"12": 31.5,
+"13": 31.5,
+"14": 31.5,
+"15": 31.5,
+"17": 15.0,
+"18": 15.0
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"RAPPORTS D’INSPECTION ET DE VISITE DE SITE — INFRA QUÉBEC",
+6
+],
+[
+"A2",
+"Toutes les visites SST au dossier eCompliance. Quatre sont consolidées au registre; les autres n’ont pas encore été versées.",
+7
+],
+[
+"A4",
+"Id",
+8
+],
+[
+"B4",
+"Date",
+8
+],
+[
+"C4",
+"Statut",
+8
+],
+[
+"D4",
+"Préparé par",
+8
+],
+[
+"E4",
+"Lieu",
+8
+],
+[
+"F4",
+"Gestionnaire",
+8
+],
+[
+"G4",
+"Consolidée au registre",
+8
+],
+[
+"H4",
+"Suite à donner",
+8
+],
+[
+"A5",
+28365250,
+15
+],
+[
+"B5",
+"2026-06-03",
+15
+],
+[
+"C5",
+"In Progress",
+15
+],
+[
+"D5",
+"⟦P18⟧",
+3
+],
+[
+"E5",
+null,
+3
+],
+[
+"F5",
+null,
+3
+],
+[
+"G5",
+"Non",
+19
+],
+[
+"H5",
+"Fiche ouverte et jamais terminée. Statuer sur sa clôture ou sa reprise.",
+3
+],
+[
+"A6",
+29182326,
+15
+],
+[
+"B6",
+"2026-08-05",
+15
+],
+[
+"C6",
+"Locked",
+15
+],
+[
+"D6",
+"⟦P01⟧",
+3
+],
+[
+"E6",
+"3406 boul Métropolitain est ",
+3
+],
+[
+"F6",
+"⟦P06⟧",
+3
+],
+[
+"G6",
+"Oui",
+20
+],
+[
+"H6",
+"Déjà versée au registre.",
+3
+],
+[
+"A7",
+29363929,
+15
+],
+[
+"B7",
+"2026-08-19",
+15
+],
+[
+"C7",
+"Locked",
+15
+],
+[
+"D7",
+"⟦P15⟧",
+3
+],
+[
+"E7",
+"81e Avenue Laval, QC H7V 3M3, Canada\n\n",
+3
+],
+[
+"F7",
+"⟦P03⟧",
+3
+],
+[
+"G7",
+"Oui",
+20
+],
+[
+"H7",
+"Déjà versée au registre.",
+3
+],
+[
+"A8",
+29397984,
+15
+],
+[
+"B8",
+"2026-08-20",
+15
+],
+[
+"C8",
+"Locked",
+15
+],
+[
+"D8",
+"⟦P15⟧",
+3
+],
+[
+"E8",
+"936 avenue laurier montréal",
+3
+],
+[
+"F8",
+"⟦P06⟧",
+3
+],
+[
+"G8",
+"Non",
+19
+],
+[
+"H8",
+"Contenu non versé au registre. Obtenir la fiche et vérifier si elle produit des éléments d’action à portée organisationnelle.",
+3
+],
+[
+"A9",
+29456212,
+15
+],
+[
+"B9",
+"2026-08-26",
+15
+],
+[
+"C9",
+"Locked",
+15
+],
+[
+"D9",
+"⟦P15⟧",
+3
+],
+[
+"E9",
+"5305 Rue Forester, Longueuil, QC J3Y 1X2",
+3
+],
+[
+"F9",
+"⟦P22⟧",
+3
+],
+[
+"G9",
+"Oui",
+20
+],
+[
+"H9",
+"Déjà versée au registre.",
+3
+],
+[
+"A10",
+29489650,
+15
+],
+[
+"B10",
+"2026-08-28",
+15
+],
+[
+"C10",
+"Submitted",
+15
+],
+[
+"D10",
+"⟦P01⟧",
+3
+],
+[
+"E10",
+null,
+3
+],
+[
+"F10",
+"⟦P04⟧",
+3
+],
+[
+"G10",
+"Oui",
+20
+],
+[
+"H10",
+"Déjà versée au registre.",
+3
+],
+[
+"A11",
+29580646,
+15
+],
+[
+"B11",
+"2026-09-04",
+15
+],
+[
+"C11",
+"Submitted",
+15
+],
+[
+"D11",
+"⟦P01⟧",
+3
+],
+[
+"E11",
+null,
+3
+],
+[
+"F11",
+"⟦P03⟧",
+3
+],
+[
+"G11",
+"Oui",
+20
+],
+[
+"H11",
+"Déjà versée au registre.",
+3
+],
+[
+"A12",
+29754404,
+15
+],
+[
+"B12",
+"2026-09-15",
+15
+],
+[
+"C12",
+"Submitted",
+15
+],
+[
+"D12",
+"⟦P01⟧",
+3
+],
+[
+"E12",
+"2148 Jessop, Laval (projet Falcon, zone 0001A)",
+3
+],
+[
+"F12",
+"⟦P04⟧",
+3
+],
+[
+"G12",
+"Oui",
+20
+],
+[
+"H12",
+"Déjà versée au registre.",
+3
+],
+[
+"A13",
+29721538,
+15
+],
+[
+"B13",
+"2026-09-16",
+15
+],
+[
+"C13",
+"Submitted",
+15
+],
+[
+"D13",
+"⟦P01⟧",
+3
+],
+[
+"E13",
+"Chantier Falcon, rue du Pontmain et boulevard des Prairies Laval",
+3
+],
+[
+"F13",
+"⟦P03⟧",
+3
+],
+[
+"G13",
+"Oui",
+20
+],
+[
+"H13",
+"Déjà versée au registre.",
+3
+],
+[
+"A14",
+29722866,
+15
+],
+[
+"B14",
+"2026-09-16",
+15
+],
+[
+"C14",
+"Locked",
+15
+],
+[
+"D14",
+"⟦P15⟧",
+3
+],
+[
+"E14",
+"936 avenue Laurier Montréal\n",
+3
+],
+[
+"F14",
+"⟦P06⟧",
+3
+],
+[
+"G14",
+"Oui",
+20
+],
+[
+"H14",
+"Déjà versée au registre.",
+3
+],
+[
+"A15",
+29751529,
+15
+],
+[
+"B15",
+"2026-09-17",
+15
+],
+[
+"C15",
+"Locked",
+15
+],
+[
+"D15",
+"⟦P15⟧",
+3
+],
+[
+"E15",
+"4481 R Gatineau, Laval, QC H7T 1G8",
+3
+],
+[
+"F15",
+"⟦P04⟧",
+3
+],
+[
+"G15",
+"Oui",
+20
+],
+[
+"H15",
+"Déjà versée au registre.",
+3
+],
+[
+"A17",
+"Consolidées",
+21
+],
+[
+"B17",
+"=COUNTIF(G5:G15,\"Oui\")",
+21
+],
+[
+"A18",
+"À verser",
+21
+],
+[
+"B18",
+"=COUNTIF(G5:G15,\"Non\")",
+21
+]
+]
+}

@@ -1,0 +1,1412 @@
+{
+"titre": "Activités de prévention",
+"grille": false,
+"figer": null,
+"filtre": null,
+"fusions": [
+"H53:I53",
+"H35:I35",
+"B42:G42",
+"H54:I54",
+"H43:I43",
+"B57:G57",
+"H55:I55",
+"H31:I31",
+"H44:I44",
+"B44:G44",
+"B53:G53",
+"H56:I56",
+"B34:G34",
+"H34:I34",
+"A59:I62",
+"H46:I46",
+"H36:I36",
+"H52:I52",
+"B33:G33",
+"B55:G55",
+"B36:G36",
+"H32:I32",
+"H45:I45",
+"B45:G45",
+"B32:G32",
+"B35:G35",
+"H57:I57",
+"B54:G54",
+"B46:G46",
+"B31:G31",
+"H42:I42",
+"H33:I33",
+"B43:G43",
+"B56:G56",
+"B52:G52"
+],
+"colonnes": {
+"A": 34.0,
+"B": 10.0,
+"H": 44.0,
+"I": 60.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"4": 15.0,
+"5": 30.0,
+"6": 54.0,
+"7": 54.0,
+"8": 54.0,
+"9": 54.0,
+"10": 15.0,
+"13": 15.0,
+"14": 15.0,
+"15": 15.0,
+"16": 18.0,
+"17": 18.0,
+"18": 18.0,
+"19": 18.0,
+"20": 18.0,
+"21": 18.0,
+"22": 18.0,
+"23": 18.0,
+"24": 18.0,
+"25": 18.0,
+"26": 18.0,
+"29": 15.0,
+"30": 15.0,
+"31": 61.5,
+"32": 61.5,
+"33": 61.5,
+"34": 61.5,
+"35": 61.5,
+"36": 61.5,
+"39": 15.0,
+"40": 15.0,
+"41": 15.0,
+"42": 51.75,
+"43": 51.75,
+"44": 51.75,
+"45": 51.75,
+"46": 51.75,
+"49": 15.0,
+"50": 15.0,
+"51": 15.0,
+"52": 75.75,
+"53": 75.75,
+"54": 75.75,
+"55": 75.75,
+"56": 75.75,
+"57": 75.75,
+"59": 15.0,
+"60": 15.0,
+"61": 15.0,
+"62": 15.0
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"ACTIVITÉS DE PRÉVENTION — INDICATEURS PROACTIFS D’INFRA QUÉBEC",
+6
+],
+[
+"A2",
+"Ce que les équipes ont réellement fait, du 19 mai au 17 septembre 2026. Volumes tirés des inspections verrouillées dans eCompliance. Structure inspirée des indicateurs proactifs du plan stratégique santé et sécurité et de la clause 9.1 d’ISO 45001.",
+7
+],
+[
+"A4",
+"VOLUME PAR TYPE ET PAR MOIS",
+23
+],
+[
+"A5",
+"Type d’activité",
+8
+],
+[
+"B5",
+"2026-05",
+8
+],
+[
+"C5",
+"2026-06",
+8
+],
+[
+"D5",
+"2026-07",
+8
+],
+[
+"E5",
+"2026-08",
+8
+],
+[
+"F5",
+"2026-09",
+8
+],
+[
+"G5",
+"Total",
+8
+],
+[
+"H5",
+"Cible au plan stratégique",
+8
+],
+[
+"I5",
+"Lecture",
+8
+],
+[
+"A6",
+"Inspection avant départ — véhicule léger",
+2
+],
+[
+"B6",
+5,
+15
+],
+[
+"C6",
+10,
+15
+],
+[
+"D6",
+5,
+15
+],
+[
+"E6",
+7,
+15
+],
+[
+"F6",
+1,
+15
+],
+[
+"G6",
+"=SUM(B6:F6)",
+26
+],
+[
+"H6",
+"Hebdomadaire par véhicule · 40 000/an ou 3 333/mois pour le parc mondial",
+3
+],
+[
+"I6",
+"Le volume est réel et régulier. Le taux d’atteinte reste incalculable tant que le nombre de véhicules légers affectés à Infra Québec n’est pas connu : sans dénominateur, 28 inspections ne se comparent à rien.",
+3
+],
+[
+"A7",
+"Inspection quotidienne avant utilisation — pelle mécanique",
+2
+],
+[
+"B7",
+3,
+15
+],
+[
+"C7",
+5,
+15
+],
+[
+"D7",
+1,
+15
+],
+[
+"E7",
+4,
+15
+],
+[
+"F7",
+1,
+15
+],
+[
+"G7",
+"=SUM(B7:F7)",
+26
+],
+[
+"H7",
+"Quotidienne par équipement lourd · 74 400/an ou 6 200/mois pour le parc mondial",
+3
+],
+[
+"I7",
+"Quatorze inspections sur quatre mois, toutes sauf deux par la même personne. À rapprocher du nombre de jours d’utilisation réelle des pelles avant d’en tirer une conclusion.",
+3
+],
+[
+"A8",
+"Inspection mensuelle du véhicule",
+2
+],
+[
+"B8",
+1,
+15
+],
+[
+"C8",
+1,
+15
+],
+[
+"D8",
+1,
+15
+],
+[
+"E8",
+null,
+15
+],
+[
+"F8",
+null,
+15
+],
+[
+"G8",
+"=SUM(B8:F8)",
+26
+],
+[
+"H8",
+"Mensuelle par véhicule",
+3
+],
+[
+"I8",
+"Trois en quatre mois, toutes par le même préparateur, et plus aucune depuis le 16 juillet. C’est la donnée chiffrée qui appuie le risque R-15.",
+3
+],
+[
+"A9",
+"Visite ou inspection SST de site",
+2
+],
+[
+"B9",
+null,
+15
+],
+[
+"C9",
+null,
+15
+],
+[
+"D9",
+null,
+15
+],
+[
+"E9",
+4,
+15
+],
+[
+"F9",
+2,
+15
+],
+[
+"G9",
+"=SUM(B9:F9)",
+26
+],
+[
+"H9",
+"Aucune cible chiffrée au plan stratégique · axe 05, présence terrain du partenaire d’affaires",
+3
+],
+[
+"I9",
+"Le programme démarre réellement le 5 août. Onze visites au dossier, dont dix terminées entre le 5 août et le 17 septembre.",
+3
+],
+[
+"A10",
+"Total",
+2
+],
+[
+"B10",
+"=SUM(B6:B9)",
+26
+],
+[
+"C10",
+"=SUM(C6:C9)",
+26
+],
+[
+"D10",
+"=SUM(D6:D9)",
+26
+],
+[
+"E10",
+"=SUM(E6:E9)",
+26
+],
+[
+"F10",
+"=SUM(F6:F9)",
+26
+],
+[
+"G10",
+"=SUM(G6:G9)",
+26
+],
+[
+"A13",
+"QUI A CONTRIBUÉ",
+23
+],
+[
+"A14",
+"Onze personnes ont produit au moins une inspection verrouillée sur la période.",
+7
+],
+[
+"A15",
+"Personne",
+29
+],
+[
+"B15",
+"Inspections",
+29
+],
+[
+"H15",
+"Détail",
+29
+],
+[
+"A16",
+"⟦P14⟧",
+2
+],
+[
+"B16",
+12,
+15
+],
+[
+"H16",
+"12 inspections quotidiennes de pelle mécanique",
+3
+],
+[
+"A17",
+"⟦P07⟧",
+2
+],
+[
+"B17",
+9,
+15
+],
+[
+"H17",
+"9 inspections avant départ de véhicule léger",
+3
+],
+[
+"A18",
+"⟦P24⟧",
+2
+],
+[
+"B18",
+7,
+15
+],
+[
+"H18",
+"7 inspections avant départ de véhicule léger",
+3
+],
+[
+"A19",
+"⟦P15⟧",
+2
+],
+[
+"B19",
+5,
+15
+],
+[
+"H19",
+"5 visites SST de sites de travail",
+3
+],
+[
+"A20",
+"⟦P10⟧",
+2
+],
+[
+"B20",
+5,
+15
+],
+[
+"H20",
+"5 inspections avant départ de véhicule léger",
+3
+],
+[
+"A21",
+"⟦P27⟧",
+2
+],
+[
+"B21",
+5,
+15
+],
+[
+"H21",
+"3 inspections mensuelles de véhicule, 2 de pelle mécanique",
+3
+],
+[
+"A22",
+"⟦P13⟧",
+2
+],
+[
+"B22",
+3,
+15
+],
+[
+"H22",
+"3 inspections avant départ de véhicule léger",
+3
+],
+[
+"A23",
+"⟦P20⟧",
+2
+],
+[
+"B23",
+2,
+15
+],
+[
+"H23",
+"2 inspections avant départ de véhicule léger",
+3
+],
+[
+"A24",
+"⟦P01⟧",
+2
+],
+[
+"B24",
+1,
+15
+],
+[
+"H24",
+"1 visite de chantier (plus 4 visites de sites non verrouillées)",
+3
+],
+[
+"A25",
+"⟦P19⟧",
+2
+],
+[
+"B25",
+1,
+15
+],
+[
+"H25",
+"1 inspection avant départ de véhicule léger",
+3
+],
+[
+"A26",
+"⟦P12⟧",
+2
+],
+[
+"B26",
+1,
+15
+],
+[
+"H26",
+"1 inspection avant départ de véhicule léger",
+3
+],
+[
+"A29",
+"ALIGNEMENT SUR LE PLAN STRATÉGIQUE SANTÉ ET SÉCURITÉ",
+23
+],
+[
+"A30",
+"Axe",
+29
+],
+[
+"B30",
+"Intitulé",
+29
+],
+[
+"H30",
+"Ce que le dossier Infra Québec y apporte",
+29
+],
+[
+"A31",
+"01",
+26
+],
+[
+"B31",
+"Se concentrer sur des sujets précis — TRIR : glissades, trébuchements, chutes · STCKY : véhicules",
+3
+],
+[
+"C31",
+null,
+30
+],
+[
+"D31",
+null,
+30
+],
+[
+"E31",
+null,
+30
+],
+[
+"F31",
+null,
+30
+],
+[
+"G31",
+null,
+31
+],
+[
+"H31",
+"Le thème véhicules est le plus représenté du registre : huit risques dans la famille Véhicules et flotte, plus R-30 sur la sécurité routière, créé à partir de trois événements déclarés. Le thème chutes est porté par R-01, R-02, R-04 et R-06.",
+3
+],
+[
+"I31",
+null,
+31
+],
+[
+"A32",
+"02",
+26
+],
+[
+"B32",
+"Passer d’une approche réactive à une approche proactive — Drive Smart Challenge",
+3
+],
+[
+"C32",
+null,
+30
+],
+[
+"D32",
+null,
+30
+],
+[
+"E32",
+null,
+30
+],
+[
+"F32",
+null,
+30
+],
+[
+"G32",
+null,
+31
+],
+[
+"H32",
+"Vingt-huit inspections avant départ et quatorze de pelle mécanique en quatre mois sont des activités préventives déjà tenues. R-30 et le volet Parking / Backing Up du Drive Smart Challenge visent le même risque.",
+3
+],
+[
+"I32",
+null,
+31
+],
+[
+"A33",
+"03",
+26
+],
+[
+"B33",
+"Développer une culture d’apprentissage — revue mensuelle des incidents SIF avec la direction",
+3
+],
+[
+"C33",
+null,
+30
+],
+[
+"D33",
+null,
+30
+],
+[
+"E33",
+null,
+30
+],
+[
+"F33",
+null,
+30
+],
+[
+"G33",
+null,
+31
+],
+[
+"H33",
+"Le registre fournit la matière : neuf incidents, dont trois portant la mention « Travailler seul ». La revue mensuelle est le véhicule naturel pour R-07, et pour clarifier le typage de l’incident du 2 septembre.",
+3
+],
+[
+"I33",
+null,
+31
+],
+[
+"A34",
+"04",
+26
+],
+[
+"B34",
+"Mesurer efficacement les résultats des activités — indicateurs proactifs actionnables",
+3
+],
+[
+"C34",
+null,
+30
+],
+[
+"D34",
+null,
+30
+],
+[
+"E34",
+null,
+30
+],
+[
+"F34",
+null,
+30
+],
+[
+"G34",
+null,
+31
+],
+[
+"H34",
+"C’est l’objet de cet onglet. Les volumes sont disponibles; ce qui manque pour en faire un indicateur est le dénominateur : nombre de véhicules légers, de pelles et de véhicules lourds affectés à Infra Québec.",
+3
+],
+[
+"I34",
+null,
+31
+],
+[
+"A35",
+"05",
+26
+],
+[
+"B35",
+"Aligner la communication et les actions — causeries, comité SST, présence terrain du partenaire d’affaires",
+3
+],
+[
+"C35",
+null,
+30
+],
+[
+"D35",
+null,
+30
+],
+[
+"E35",
+null,
+30
+],
+[
+"F35",
+null,
+30
+],
+[
+"G35",
+null,
+31
+],
+[
+"H35",
+"Dix visites terminées en six semaines, du 5 août au 17 septembre, par deux partenaires d’affaires. Le comité SST Infra Québec est le comité paritaire visé par cet axe : c’est lui qui reçoit les trente-trois risques.",
+3
+],
+[
+"I35",
+null,
+31
+],
+[
+"A36",
+"06",
+26
+],
+[
+"B36",
+"Célébrer les succès pour nourrir une culture préventive positive",
+3
+],
+[
+"C36",
+null,
+30
+],
+[
+"D36",
+null,
+30
+],
+[
+"E36",
+null,
+30
+],
+[
+"F36",
+null,
+30
+],
+[
+"G36",
+null,
+31
+],
+[
+"H36",
+"La section Reconnaissance de cet onglet. Un registre qui n’énumère que des manquements se fait écarter; les constats positifs des visites sont documentés au même titre que les écarts.",
+3
+],
+[
+"I36",
+null,
+31
+],
+[
+"A39",
+"CORRESPONDANCE AVEC ISO 45001",
+23
+],
+[
+"A40",
+"Correspondance indicative établie par l’auteur. Les intitulés de clauses sont à vérifier contre le texte de la norme avant tout usage formel : ce classeur n’est pas un document de certification.",
+18
+],
+[
+"A41",
+"Clause",
+29
+],
+[
+"B41",
+"Intitulé",
+29
+],
+[
+"H41",
+"Apport du dossier",
+29
+],
+[
+"A42",
+"5.4",
+26
+],
+[
+"B42",
+"Consultation et participation des travailleurs",
+3
+],
+[
+"C42",
+null,
+30
+],
+[
+"D42",
+null,
+30
+],
+[
+"E42",
+null,
+30
+],
+[
+"F42",
+null,
+30
+],
+[
+"G42",
+null,
+31
+],
+[
+"H42",
+"Trois des douze éléments de la fiche 29721538 proviennent directement des travailleurs : le poids de l’échelle, le contenant à déchets et l’amélioration des communications avec le comité. Le dossier Argenteuil naît d’un signalement d’un délégué SST.",
+3
+],
+[
+"I42",
+null,
+31
+],
+[
+"A43",
+"6.1.2",
+26
+],
+[
+"B43",
+"Identification des dangers et évaluation des risques",
+3
+],
+[
+"C43",
+null,
+30
+],
+[
+"D43",
+null,
+30
+],
+[
+"E43",
+null,
+30
+],
+[
+"F43",
+null,
+30
+],
+[
+"G43",
+null,
+31
+],
+[
+"H43",
+"Le registre consolidé : trente-trois risques issus de neuf visites, du registre des incidents et du Safety Stand Down, chacun tracé jusqu’à sa source.",
+3
+],
+[
+"I43",
+null,
+31
+],
+[
+"A44",
+"9.1",
+26
+],
+[
+"B44",
+"Surveillance, mesure, analyse et évaluation de la performance",
+3
+],
+[
+"C44",
+null,
+30
+],
+[
+"D44",
+null,
+30
+],
+[
+"E44",
+null,
+30
+],
+[
+"F44",
+null,
+30
+],
+[
+"G44",
+null,
+31
+],
+[
+"H44",
+"Les volumes d’inspection de cet onglet, à compléter par les dénominateurs de parc pour devenir des taux.",
+3
+],
+[
+"I44",
+null,
+31
+],
+[
+"A45",
+"9.3",
+26
+],
+[
+"B45",
+"Revue de direction",
+3
+],
+[
+"C45",
+null,
+30
+],
+[
+"D45",
+null,
+30
+],
+[
+"E45",
+null,
+30
+],
+[
+"F45",
+null,
+30
+],
+[
+"G45",
+null,
+31
+],
+[
+"H45",
+"La revue mensuelle des incidents prévue au plan stratégique, et la séance du comité qui statuera sur les trente-trois risques.",
+3
+],
+[
+"I45",
+null,
+31
+],
+[
+"A46",
+"10.2",
+26
+],
+[
+"B46",
+"Événement, non-conformité et action corrective",
+3
+],
+[
+"C46",
+null,
+30
+],
+[
+"D46",
+null,
+30
+],
+[
+"E46",
+null,
+30
+],
+[
+"F46",
+null,
+30
+],
+[
+"G46",
+null,
+31
+],
+[
+"H46",
+"Les éléments d’action de chantier suivis dans eCompliance, distincts des risques organisationnels soumis au comité.",
+3
+],
+[
+"I46",
+null,
+31
+],
+[
+"A49",
+"RECONNAISSANCE — À DIRE EN SÉANCE",
+23
+],
+[
+"A50",
+"Axe 06 du plan stratégique. Constats positifs relevés aux visites, documentés au même titre que les écarts.",
+7
+],
+[
+"A51",
+"Visite ou activité",
+29
+],
+[
+"B51",
+"Ce qui a été constaté",
+29
+],
+[
+"H51",
+"Pourquoi le dire",
+29
+],
+[
+"A52",
+"16 septembre — 936 avenue Laurier, Montréal",
+2
+],
+[
+"B52",
+"Balisage jugé conforme sur les trois sous-questions de la section 9 : chemin piéton sûr contournant la zone, accès public empêché, signaleur présent lors des manœuvres, pistes cyclables laissées ouvertes. Sur un chantier d’excavation avec sous-traitant et excavatrice à proximité des travailleurs.",
+3
+],
+[
+"C52",
+null,
+30
+],
+[
+"D52",
+null,
+30
+],
+[
+"E52",
+null,
+30
+],
+[
+"F52",
+null,
+30
+],
+[
+"G52",
+null,
+31
+],
+[
+"H52",
+"C’est le contre-exemple utile à R-19 : l’exigence de balisage est applicable avec les moyens actuels.",
+3
+],
+[
+"I52",
+null,
+31
+],
+[
+"A53",
+"28 août — épissure en armoire de rue",
+2
+],
+[
+"B53",
+"Carte AST/PIRAT complétée et signée par les deux travailleurs, avec les risques et les moyens de contrôle. Trousse de premiers soins et extincteur présents avec leurs étiquettes d’inspection. Harnais et équipements antichute avec jetons et étiquettes. Échelle certifiée, inspectée mensuellement et arrimée. Cônes autour de la zone.",
+3
+],
+[
+"C53",
+null,
+30
+],
+[
+"D53",
+null,
+30
+],
+[
+"E53",
+null,
+30
+],
+[
+"F53",
+null,
+30
+],
+[
+"G53",
+null,
+31
+],
+[
+"H53",
+"Cette équipe démontre que les exigences en défaut ailleurs — certification de l’antichute, AST complète, dotation du véhicule — sont atteignables avec les moyens actuels. Sa pratique peut servir de référence aux autres équipes.",
+3
+],
+[
+"I53",
+null,
+31
+],
+[
+"A54",
+"16 septembre — rue du Pontmain, Laval",
+2
+],
+[
+"B54",
+"L’ensemble des EPI requis portés de façon constante, à tous les moments observés. Le travailleur en nacelle attaché en tout temps, y compris pendant le déplacement du camion — précisément le moment où le risque d’éjection est le plus élevé.",
+3
+],
+[
+"C54",
+null,
+30
+],
+[
+"D54",
+null,
+30
+],
+[
+"E54",
+null,
+30
+],
+[
+"F54",
+null,
+30
+],
+[
+"G54",
+null,
+31
+],
+[
+"H54",
+"Trois des douze éléments soumis au comité proviennent des travailleurs eux-mêmes. Une équipe qui signale spontanément ce qui ne va pas est le meilleur indicateur avancé d’un programme de santé et sécurité.",
+3
+],
+[
+"I54",
+null,
+31
+],
+[
+"A55",
+"15 septembre — 2148 Jessop, Laval",
+2
+],
+[
+"B55",
+"Lunettes et bottes de sécurité portées, gilet et casque disponibles dans le fourgon. Harnais SALA inspecté et en bon état. Détecteur de tension Fluke C9970 fourni. Élagage réalisé avant le début des travaux, distance d’accès de cinq pieds respectée, échelle arrimée, poste d’épissure ordonné.",
+3
+],
+[
+"C55",
+null,
+30
+],
+[
+"D55",
+null,
+30
+],
+[
+"E55",
+null,
+30
+],
+[
+"F55",
+null,
+30
+],
+[
+"G55",
+null,
+31
+],
+[
+"H55",
+"Les écarts de cette visite portent sur ce qui dépend de l’organisation, pas sur les gestes du travailleur rencontré.",
+3
+],
+[
+"I55",
+null,
+31
+],
+[
+"A56",
+"4 septembre — cour arrière résidentielle",
+2
+],
+[
+"B56",
+"Casque, dossard et harnais portés pendant le travail en hauteur. Manutention du touret et du câble effectuée à deux, avec appui mécanique. Sur la remorque, indicateurs d’écrous de roue, attelage, béquille et chaînes de sécurité en place.",
+3
+],
+[
+"C56",
+null,
+30
+],
+[
+"D56",
+null,
+30
+],
+[
+"E56",
+null,
+30
+],
+[
+"F56",
+null,
+30
+],
+[
+"G56",
+null,
+31
+],
+[
+"H56",
+"L’écart relevé à R-05 porte sur la certification de l’équipement, non sur son port.",
+3
+],
+[
+"I56",
+null,
+31
+],
+[
+"A57",
+"Volume soutenu des rondes avant départ",
+2
+],
+[
+"B57",
+"Onze personnes ont produit au moins une inspection verrouillée entre le 19 mai et le 17 septembre. ⟦P14⟧ tient à lui seul douze inspections quotidiennes de pelle mécanique, ⟦P07⟧ neuf rondes avant départ, ⟦P24⟧ sept.",
+3
+],
+[
+"C57",
+null,
+30
+],
+[
+"D57",
+null,
+30
+],
+[
+"E57",
+null,
+30
+],
+[
+"F57",
+null,
+30
+],
+[
+"G57",
+null,
+31
+],
+[
+"H57",
+"Ces activités alimentent directement l’axe 02 du plan stratégique et les indicateurs proactifs de l’axe 04.",
+3
+],
+[
+"I57",
+null,
+31
+],
+[
+"A59",
+"Réserve — Les volumes ci-dessus proviennent d’une vue « Public » limitée aux inspections verrouillées. Les quatre visites du partenaire d’affaires restées au statut « Submitted » n’y figurent pas, ce qui explique l’écart avec l’onglet Visites SST. Les cibles du plan stratégique sont mondiales : elles ne deviennent des taux pour Infra Québec qu’une fois connus le nombre de véhicules légers, de véhicules lourds et de pelles affectés à la division.",
+32
+]
+]
+}

@@ -1,0 +1,3305 @@
+{
+"titre": "Registre",
+"grille": true,
+"figer": "D6",
+"filtre": "A5:P44",
+"fusions": [],
+"colonnes": {
+"A": 7.0,
+"B": 23.0,
+"C": 34.0,
+"D": 6.0,
+"E": 7.0,
+"G": 24.0,
+"I": 62.0,
+"J": 60.0,
+"K": 29.0,
+"M": 33.0,
+"N": 20.0,
+"O": 16.0,
+"P": 56.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"3": 15.0,
+"5": 31.5,
+"6": 93.75,
+"7": 93.75,
+"8": 93.75,
+"9": 93.75,
+"10": 93.75,
+"11": 93.75,
+"12": 93.75,
+"13": 93.75,
+"14": 93.75,
+"15": 93.75,
+"16": 93.75,
+"17": 93.75,
+"18": 93.75,
+"19": 93.75,
+"20": 93.75,
+"21": 93.75,
+"22": 93.75,
+"23": 93.75,
+"24": 93.75,
+"25": 93.75,
+"26": 93.75,
+"27": 93.75,
+"28": 93.75,
+"29": 93.75,
+"30": 93.75,
+"31": 93.75,
+"32": 93.75,
+"33": 93.75,
+"34": 93.75,
+"35": 93.75,
+"36": 93.75,
+"37": 93.75,
+"38": 93.75,
+"39": 93.75,
+"40": 93.75,
+"41": 93.75,
+"42": 93.75,
+"43": 93.75,
+"44": 93.75,
+"46": 15.0,
+"47": 15.0
+},
+"validations": [
+{
+"type": "list",
+"formula1": "\"À soumettre au comité,Soumis,En attente de décision,Accepté,Refusé,En cours,Fermé\"",
+"sqref": "N6:N44",
+"allow_blank": true
+}
+],
+"images": [],
+"cellules": [
+[
+"A1",
+"REGISTRE DES RISQUES SST — PROJET FALCON, INFRA QUÉBEC",
+6
+],
+[
+"A2",
+"Dix visites consolidées du 5 août au 17 septembre 2026, complétées par le registre des incidents et le Safety Stand Down · 63 éléments source ramenés à 39 risques · Préparé par ⟦P01⟧, Partenaire d’affaires SST",
+7
+],
+[
+"A3",
+"Les priorités, porteurs et échéances sont proposés et relèvent de la décision du comité. Ce registre ne porte aucun verdict de conformité. Les références au manuel agrégé SSE-00-TEL-PRG sont à revérifier avant usage réglementaire.",
+7
+],
+[
+"A5",
+"Réf.",
+8
+],
+[
+"B5",
+"Famille de risque",
+8
+],
+[
+"C5",
+"Risque",
+8
+],
+[
+"D5",
+"Prio.",
+8
+],
+[
+"E5",
+"Occur.",
+8
+],
+[
+"F5",
+"Incid.",
+8
+],
+[
+"G5",
+"Visites concernées",
+8
+],
+[
+"H5",
+"Éléments d’origine",
+8
+],
+[
+"I5",
+"Constat consolidé",
+8
+],
+[
+"J5",
+"Décision demandée au comité",
+8
+],
+[
+"K5",
+"Porteur proposé",
+8
+],
+[
+"L5",
+"Échéance proposée",
+8
+],
+[
+"M5",
+"Référence normative",
+8
+],
+[
+"N5",
+"Statut",
+8
+],
+[
+"O5",
+"Date de réponse reçue",
+8
+],
+[
+"P5",
+"Notes et réserves",
+8
+],
+[
+"A6",
+"R-01",
+9
+],
+[
+"B6",
+"Travail en hauteur — échelles",
+3
+],
+[
+"C6",
+"Porte-échelles inadaptés et arrimage improvisé",
+2
+],
+[
+"D6",
+1,
+10
+],
+[
+"E6",
+"=COUNTIF(Traçabilité!$G:$G,$A6)",
+10
+],
+[
+"F6",
+"=COUNTIF(Incidents!$I:$I,$A6)",
+10
+],
+[
+"G6",
+"Septembre 2026",
+3
+],
+[
+"H6",
+"Stand down",
+3
+],
+[
+"I6",
+"Au début de septembre 2026, la section supérieure d’une échelle a cédé pendant l’ascension : chute de 12 à 15 pi, blessure au dos et fractures. L’échelle avait été inspectée avant usage sans défaut trouvé. Le porte-échelle, ajouté après livraison, ne recevait pas l’échelle sur toute sa longueur; l’équipe l’arrimait par preforms en quatre points depuis près de deux ans. Ni le porte-échelle ni l’arrimage improvisé n’avaient été signalés.",
+3
+],
+[
+"J6",
+"Étendre la vérification du stand down à toutes les unités Falcon d’Infra Québec, une ligne par véhicule. Statuer sur le point de contrôle qui empêche la mise en service d’un porte-échelle non adapté ou d’un arrimage improvisé, et sur la façon dont un défaut de ce type remonte.",
+3
+],
+[
+"K6",
+"Service de la flotte, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L6",
+"Immédiat pour la vérification par unité · registre au comité sous 30 jours",
+3
+],
+[
+"M6",
+"HSE.TEL-PRO-1302 §6.7 · Safety Stand Down — échelles et porte-échelles, septembre 2026",
+3
+],
+[
+"N6",
+"À soumettre au comité",
+3
+],
+[
+"O6",
+null,
+3
+],
+[
+"P6",
+"VÉRIFIÉ AU MANUEL. La règle existe déjà : HSE.TEL-PRO-1302 §6.7 impose de « fixer toujours l’échelle pendant le transport (véhicule) » et d’« utiliser le support de véhicule approprié », après inspection du mécanisme de verrouillage. Écrite en 2018, révisée en août 2024. Le stand down fait donc appliquer une exigence existante, il ne comble pas un vide — même profil que R-19. Aucun élément d’action des quatre visites ne porte sur l’adéquation des porte-échelles. À vérifier : la photo 99 du dossier du 3 septembre montre une échelle arrimée par une corde nouée. Aucun incident du registre n’est typé chute de hauteur; le seul candidat de la période est le 29552548 du 2 septembre, typé « Autre » avec STKY « sans objet ».",
+3
+],
+[
+"A7",
+"R-02",
+11
+],
+[
+"B7",
+"Travail en hauteur — échelles",
+3
+],
+[
+"C7",
+"Poids, longueur et manutention d’une échelle par un travailleur seul",
+2
+],
+[
+"D7",
+2,
+12
+],
+[
+"E7",
+"=COUNTIF(Traçabilité!$G:$G,$A7)",
+12
+],
+[
+"F7",
+"=COUNTIF(Incidents!$I:$I,$A7)",
+12
+],
+[
+"G7",
+"28 août 2026\n16 septembre 2026\n15 septembre 2026",
+3
+],
+[
+"H7",
+"29489650 A-03 · 29721538 A-07 · 29754404 A-07",
+3
+],
+[
+"I7",
+"Échelles de 24 et 28 pi signalées comme trop lourdes, sans coussinet d’appui d’épaule, difficiles à ériger seul. Un fourgon d’épissure affecté à un travailleur isolé est doté d’une échelle de 28 pi, alors que la procédure exige de l’aide pour ériger une échelle longue ou lourde.",
+3
+],
+[
+"J7",
+"Réunir en une seule demande d’essai terrain le poids, le moyen de portage et la longueur des échelles, en y traitant explicitement le cas du travailleur isolé. Établir une position écrite pour les épisseurs seuls.",
+3
+],
+[
+"K7",
+"Approvisionnement et outillage, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L7",
+"Demande d’essai soumise dans les 60 jours",
+3
+],
+[
+"M7",
+"SSE-1302 §6.7 · SSE.TEL-PRG-600 §6.3 · HSE-600-F01-TEL-PPE",
+3
+],
+[
+"N7",
+"À soumettre au comité",
+3
+],
+[
+"O7",
+null,
+3
+],
+[
+"P7",
+"Constat formulé spontanément par les équipes lors de trois visites.",
+3
+],
+[
+"A8",
+"R-03",
+11
+],
+[
+"B8",
+"Travail en hauteur — échelles",
+3
+],
+[
+"C8",
+"Formulaire d’inspection avant usage des échelles et de l’antichute",
+2
+],
+[
+"D8",
+2,
+12
+],
+[
+"E8",
+"=COUNTIF(Traçabilité!$G:$G,$A8)",
+12
+],
+[
+"F8",
+"=COUNTIF(Incidents!$I:$I,$A8)",
+12
+],
+[
+"G8",
+"4 septembre 2026",
+3
+],
+[
+"H8",
+"29580646 A-04",
+3
+],
+[
+"I8",
+"Aucun registre d’inspection avant usage n’a pu être présenté pour l’échelle ni pour l’équipement antichute. Le formulaire auquel renvoie la procédure est indiqué en révision.",
+3
+],
+[
+"J8",
+"Publier dans eCompliance un formulaire d’inspection avant usage des échelles et de l’équipement antichute, et fixer où la preuve est conservée.",
+3
+],
+[
+"K8",
+"Partenaire d’affaires SST, vers le propriétaire des formulaires",
+3
+],
+[
+"L8",
+"60 jours",
+3
+],
+[
+"M8",
+"HSE-1302 §6.3 · HSE-1301",
+3
+],
+[
+"N8",
+"À soumettre au comité",
+3
+],
+[
+"O8",
+null,
+3
+],
+[
+"P8",
+"On ne peut exiger un registre dont l’outil n’est pas publié.",
+3
+],
+[
+"A9",
+"R-04",
+11
+],
+[
+"B9",
+"Travail en hauteur — échelles",
+3
+],
+[
+"C9",
+"Appui d’échelle sur poteaux en cour arrière et solution de rechange",
+2
+],
+[
+"D9",
+2,
+12
+],
+[
+"E9",
+"=COUNTIF(Traçabilité!$G:$G,$A9)",
+12
+],
+[
+"F9",
+"=COUNTIF(Incidents!$I:$I,$A9)",
+12
+],
+[
+"G9",
+"4 septembre 2026",
+3
+],
+[
+"H9",
+"29580646 A-05",
+3
+],
+[
+"I9",
+"Échelle à coulisse de 24 pi appuyée sur un poteau et sur un tronc d’arbre, en terrain meuble et en dénivelé; stabilisation et arrimage non démontrés. La nacelle n’a généralement pas accès en cour arrière et la procédure ne précise pas quelle solution de rechange est disponible.",
+3
+],
+[
+"J9",
+"Établir une position écrite pour les poteaux en cour arrière : moyens d’arrimage fournis, stabilisateur d’échelle, équipement de rechange et critère pour y recourir. La diffuser aux équipes.",
+3
+],
+[
+"K9",
+"Opérations et Partenaire d’affaires SST",
+3
+],
+[
+"L9",
+"60 jours",
+3
+],
+[
+"M9",
+"HSE-1302 §6.4 et §6.6 · HSE.TEL-PRO-403 (Poteaux et torons) §8, §9.1 à §9.4",
+3
+],
+[
+"N9",
+"À soumettre au comité",
+3
+],
+[
+"O9",
+null,
+3
+],
+[
+"P9",
+null,
+3
+],
+[
+"A10",
+"R-05",
+9
+],
+[
+"B10",
+"Protection individuelle",
+3
+],
+[
+"C10",
+"Certification et traçabilité des EPI antichute",
+2
+],
+[
+"D10",
+1,
+10
+],
+[
+"E10",
+"=COUNTIF(Traçabilité!$G:$G,$A10)",
+10
+],
+[
+"F10",
+"=COUNTIF(Incidents!$I:$I,$A10)",
+10
+],
+[
+"G10",
+"4 septembre 2026\n26 août 2026\n19 août 2026",
+3
+],
+[
+"H10",
+"29580646 A-01 · 29456212 9.5 · 29363929 2.1",
+3
+],
+[
+"I10",
+"Harnais en usage non certifiés, aucun processus d’inspection des EPI démontrable, harnais et longe déposés à même le gazon. L’équipement antichute est classé équipement critique, dont le statut d’inspection doit être à jour et consigné dans Hilti ON!Track.",
+3
+],
+[
+"J10",
+"Vérifier le statut Hilti ON!Track de l’ensemble des harnais et cordons des équipes Falcon d’Infra Québec, statuer sur le point de contrôle qui empêche la remise d’un équipement non certifié, et doter chaque harnais d’un sac de rangement.",
+3
+],
+[
+"K10",
+"Coordonnateur d’équipement (Approvisionnement), avec les Opérations",
+3
+],
+[
+"L10",
+"Immédiat pour l’équipe visitée · 30 jours pour la vérification d’inventaire",
+3
+],
+[
+"M10",
+"SSE-602 §5.2, §5.5, §5.5.2 · SSE.TEL-PRG-600 §6.4 · SSE.TEL-NOR-601",
+3
+],
+[
+"N10",
+"À soumettre au comité",
+3
+],
+[
+"O10",
+null,
+3
+],
+[
+"P10",
+"Un EPI critique passe par l’entrepôt et Hilti ON!Track : c’est le point de contrôle à la remise qui a cédé. La certification des harnais faisait déjà l’objet de discussions sur le terrain les 19 et 26 août, soit plus d’une semaine avant le constat du 4 septembre. La visite du 26 août ajoute les gants diélectriques, qui sont eux aussi des EPI critiques à recertification périodique et que l’inventaire doit couvrir.",
+3
+],
+[
+"A11",
+"R-06",
+9
+],
+[
+"B11",
+"Sauvetage en hauteur",
+3
+],
+[
+"C11",
+"Sauvetage en hauteur : dotation, procédure réglementaire et exercices",
+2
+],
+[
+"D11",
+1,
+10
+],
+[
+"E11",
+"=COUNTIF(Traçabilité!$G:$G,$A11)",
+10
+],
+[
+"F11",
+"=COUNTIF(Incidents!$I:$I,$A11)",
+10
+],
+[
+"G11",
+"4 septembre 2026\n16 septembre 2026\n15 septembre 2026\n20 février 2025",
+3
+],
+[
+"H11",
+"29580646 A-03 · 29721538 A-01 · 29754404 A-08 · Décret 63-2025 2.9.5",
+3
+],
+[
+"I11",
+"Trois visites, trois types d’unité, même absence. Ni trousse ni dispositif de descente contrôlée sur l’unité 104478. Aucun équipement de sauvetage en cour arrière avec accès véhicule restreint et piscine creusée. Ni trousse ni plan de sauvetage dans le fourgon d’épissure, qui transporte pourtant harnais et échelle. Depuis le décret 63-2025, ce n’est plus seulement une exigence interne : l’article 2.9.5 du Code de sécurité pour les travaux de construction impose le dégagement d’un travailleur suspendu en 15 minutes au plus, des méthodes qui priorisent les appareils de levage de personnes, et une procédure de sauvetage élaborée avant le début des travaux et tenue à jour. L’article 2.9.5.1 y ajoute la formation des travailleurs qui auront à l’appliquer.",
+3
+],
+[
+"J11",
+"Statuer sur la dotation de sauvetage exigée par type d’unité et rendre accessible la ligne directrice de sauvetage sur échelle, introuvable sous ses deux codes. Prévoir au formulaire F01 les cas d’accès restreint, de plan d’eau et de travailleur isolé. Documenter la pompe d’urgence actionnable du sol, moyen en service qu’aucune ligne directrice ne mentionne. Confirmer la fréquence d’exercices exigée par le décret et créer le formulaire d’enregistrement des exercices, celui du système ne couvrant que l’évacuation incendie. Verser le tout à la refonte de la section 1300, prévue cette année.",
+3
+],
+[
+"K11",
+"Partenaire d’affaires SST et Opérations, avec le Service de la flotte",
+3
+],
+[
+"L11",
+"Immédiat pour les unités visées · 30 jours",
+3
+],
+[
+"M11",
+"CSTC art. 2.9.5 et 2.9.5.1, décret 63-2025 · SSE-1309 §6.1 et §7 · SSE-501.1/.2/.3-TEL-LDI, également citées HSE-1309.1/.2/.3-TEL-GDL à HSE-1801 §9",
+3
+],
+[
+"N11",
+"À soumettre au comité",
+3
+],
+[
+"O11",
+null,
+3
+],
+[
+"P11",
+"VÉRIFIÉ AU MANUEL. Le délai de cinq minutes est exact : SSE-1309 §6.1 exige que le plan précise « la façon dont les sauveteurs peuvent atteindre le travailleur en moins de 5 minutes », consigné au formulaire SSE.TEL-FOR-1309-F01 et communiqué à l’AST chaque jour. Le guide de sauvetage sur échelle est cité sous DEUX codes différents dans le même manuel — SSE-501.2-TEL-LDI au §7 de 1309, HSE-1309.2-TEL-GDL au §9 de 1801 — et n’apparaît à la table des matières sous aucun des deux. Un travailleur isolé ne peut par ailleurs être secouru par un collègue dans le délai exigé. La cible interne de 5 minutes est maintenue et demeure plus stricte que les 15 minutes du règlement — « descendre en 5 pour rester en vie ». À CONFIRMER : l’obligation d’exercices semestriels n’a pas été retrouvée aux articles 2.9.5 à 2.9.5.2; elle vient peut-être d’un autre article du même décret. La date d’entrée en vigueur diverge aussi selon les sources, entre le 5 et le 20 février 2025.",
+3
+],
+[
+"A12",
+"R-07",
+9
+],
+[
+"B12",
+"Travail isolé",
+3
+],
+[
+"C12",
+"Travail isolé des épisseurs : plan, personne-ressource et appels de vérification",
+2
+],
+[
+"D12",
+1,
+10
+],
+[
+"E12",
+"=COUNTIF(Traçabilité!$G:$G,$A12)",
+10
+],
+[
+"F12",
+"=COUNTIF(Incidents!$I:$I,$A12)",
+10
+],
+[
+"G12",
+"15 septembre 2026",
+3
+],
+[
+"H12",
+"29754404 A-01",
+3
+],
+[
+"I12",
+"Un épisseur travaillait seul sans formulaire SSE-1700-F02, sans personne-ressource désignée et sans fréquence d’appels. Les conditions n’étant pas remplies, les travaux devaient cesser; ils se sont poursuivis. Trois incidents déclarés entre le 17 et le 26 août 2026 portent la mention « Travailler seul ».",
+3
+],
+[
+"J12",
+"Statuer sur le mécanisme qui garantit, avant toute affectation d’un épisseur seul sur Falcon, un formulaire F02 signé, une personne-ressource désignée et une fréquence d’appels. Dresser l’état de situation pour toutes les équipes d’épissure isolées d’Infra Québec.",
+3
+],
+[
+"K12",
+"Opérations (superviseurs), avec le Partenaire d’affaires SST",
+3
+],
+[
+"L12",
+"Immédiat pour le travailleur visité · 30 jours pour l’état de situation",
+3
+],
+[
+"M12",
+"SSE-1700 §14.5 et annexe 1, tableau Réseaux extérieurs · SSE-2000 §6.8.1.2 pour les intervalles d’appel · SSE.TEL-FOR-1700-F01",
+3
+],
+[
+"N12",
+"À soumettre au comité",
+3
+],
+[
+"O12",
+null,
+3
+],
+[
+"P12",
+"L’affectation se décide à la planification : c’est le processus d’affectation qui laisse passer. Trois incidents des 17, 20 et 26 août 2026 portent la mention « Travailler seul », dont deux typés blessure. ARGUMENT À REFAIRE AVANT LA SÉANCE : le tableau « Telecon Infra — Réseaux extérieurs » de l’annexe 1 de SSE-1700 classe « épissure sous une tente au sol (ou depuis le camion) » comme risque FAIBLE, contrôle prescrit : téléphone cellulaire. Le raisonnement de la fiche, qui conclut à l’arrêt des travaux en invoquant SSE-401 §5.11, se heurte à cette classification. L’obligation du formulaire F02 demeure — SSE-1700 §14.5 l’impose chaque jour quel que soit le niveau — mais c’est sur le §14.5 qu’il faut appuyer, pas sur le niveau de risque.",
+3
+],
+[
+"A13",
+"R-08",
+11
+],
+[
+"B13",
+"Travail isolé",
+3
+],
+[
+"C13",
+"Chantiers accessibles par sentier : accès, manœuvre et secours",
+2
+],
+[
+"D13",
+2,
+12
+],
+[
+"E13",
+"=COUNTIF(Traçabilité!$G:$G,$A13)",
+12
+],
+[
+"F13",
+"=COUNTIF(Incidents!$I:$I,$A13)",
+12
+],
+[
+"G13",
+"15 septembre 2026",
+3
+],
+[
+"H13",
+"29754404 A-10",
+3
+],
+[
+"I13",
+"Fourgon amené par un sentier boisé étroit. La sortie semble imposer une marche arrière sans aide et l’accès des secours est allongé pour un travailleur isolé. Le manuel ne traite pas de l’accès aux chantiers par sentier.",
+3
+],
+[
+"J13",
+"Établir une position écrite : reconnaissance préalable, aire de demi-tour, point de rencontre des secours avec adresse et coordonnées, inscrit à l’AST et au formulaire F02.",
+3
+],
+[
+"K13",
+"Gestion du projet Falcon et Opérations",
+3
+],
+[
+"L13",
+"60 jours",
+3
+],
+[
+"M13",
+"SSE-2000 §6.6.2 · SSE-1700 §9 et §12",
+3
+],
+[
+"N13",
+"À soumettre au comité",
+3
+],
+[
+"O13",
+null,
+3
+],
+[
+"P13",
+"L’accès se connaît dès la planification de zone et peut être transmis avant l’arrivée de l’équipe.",
+3
+],
+[
+"A14",
+"R-09",
+9
+],
+[
+"B14",
+"Risque électrique",
+3
+],
+[
+"C14",
+"Tension des conducteurs aériens et limite d’approche",
+2
+],
+[
+"D14",
+1,
+10
+],
+[
+"E14",
+"=COUNTIF(Traçabilité!$G:$G,$A14)",
+10
+],
+[
+"F14",
+"=COUNTIF(Incidents!$I:$I,$A14)",
+10
+],
+[
+"G14",
+"4 septembre 2026\n17 septembre 2026",
+3
+],
+[
+"H14",
+"29580646 A-02 · 29751529 9.5",
+3
+],
+[
+"I14",
+"Échelle et travailleur très près des conducteurs aériens. La tension du réseau n’était pas connue sur place et aucune mesure de contrôle n’était consignée à l’AST. L’annexe G — Québec de HSE-1801 fixe les distances minimales à 3 m sous 125 kV, 5 m de 125 à 250 kV, 8 m de 250 à 550 kV et 12 m au-delà. Elle ne prévoit AUCUNE distance pour une tension inconnue, contrairement aux annexes Alberta (≥ 7 m), Colombie-Britannique (3 m distribution, 6 m transport) et Nouvelle-Écosse (≥ 6 m). Par ailleurs, la visite du 17 septembre relève un détecteur de tension non étalonné depuis le 2 novembre 2022.",
+3
+],
+[
+"J14",
+"Statuer sur la façon dont la tension et la limite d’approche sont transmises aux équipes Falcon. Demander l’ajout d’une distance par défaut pour tension inconnue à l’annexe G de HSE-1801, seule annexe canadienne du manuel à en être dépourvue. Faire l’état du parc de détecteurs de tension et de leurs dates d’étalonnage dans Hilti ON!Track. Confirmer l’état de la pratique de travail sécuritaire applicable à l’épissure aérienne sur échelle.",
+3
+],
+[
+"K14",
+"Gestion du projet Falcon et Opérations, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L14",
+"Immédiat pour le chantier visité · 30 jours pour le mécanisme de transmission",
+3
+],
+[
+"M14",
+"HSE-1801 §6, §7.2 et annexe G — Québec · SSE-602 §5.5.3 (étalonnage des détecteurs de tension sans contact) · détecteur Fluke C9970",
+3
+],
+[
+"N14",
+"À soumettre au comité",
+3
+],
+[
+"O14",
+null,
+3
+],
+[
+"P14",
+"VÉRIFIÉ AU MANUEL. Le « au moins 6 m si la tension est inconnue » que portait ce registre ne figure pas à l’annexe Québec : c’est une erreur de citation, corrigée le 19 septembre. Le détecteur non étalonné n’appelle par ailleurs aucune décision du comité : SSE-602 §5.5.3 nomme expressément les détecteurs de tension sans contact parmi les appareils à étalonnage périodique, et §5.5 impose la mise hors service avec étiquette NE PAS UTILISER dès l’expiration. La règle et le processus existent; c’est leur application qui a manqué. HSE-1801 §7.2 exige en outre l’usage du détecteur pour tester torons et poteaux en construction aérienne.",
+3
+],
+[
+"A15",
+"R-10",
+9
+],
+[
+"B15",
+"Atmosphère et exposition",
+3
+],
+[
+"C15",
+"Exposition au monoxyde de carbone en fourgon d’épissure",
+2
+],
+[
+"D15",
+1,
+10
+],
+[
+"E15",
+"=COUNTIF(Traçabilité!$G:$G,$A15)",
+10
+],
+[
+"F15",
+"=COUNTIF(Incidents!$I:$I,$A15)",
+10
+],
+[
+"G15",
+"15 septembre 2026",
+3
+],
+[
+"H15",
+"29754404 A-02",
+3
+],
+[
+"I15",
+"Le moteur du fourgon tourne pendant tout le quart pour alimenter le poste d’épissure. Aucun détecteur de CO, exposition ni évaluée ni consignée. Le manuel agrégé ne contient aucune exigence pour ce scénario.",
+3
+],
+[
+"J15",
+"Faire mesurer l’exposition au CO dans un fourgon type en conditions réelles. Statuer sur la dotation en détecteurs, fixes ou personnels. Ajouter le CO au registre des risques HSE-300.1 pour l’épissure en fourgon.",
+3
+],
+[
+"K15",
+"Service de la flotte, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L15",
+"30 jours",
+3
+],
+[
+"M15",
+"SSE-300 §6 · HSE-600-F01 si ajout à la liste HSE-601",
+3
+],
+[
+"N15",
+"À soumettre au comité",
+3
+],
+[
+"O15",
+null,
+3
+],
+[
+"P15",
+"Le CO est inodore et le travailleur est seul : personne ne peut remarquer ses symptômes.",
+3
+],
+[
+"A16",
+"R-11",
+13
+],
+[
+"B16",
+"Atmosphère et exposition",
+3
+],
+[
+"C16",
+"Alimentation du poste d’épissure sans moteur au ralenti",
+2
+],
+[
+"D16",
+3,
+14
+],
+[
+"E16",
+"=COUNTIF(Traçabilité!$G:$G,$A16)",
+14
+],
+[
+"F16",
+"=COUNTIF(Incidents!$I:$I,$A16)",
+14
+],
+[
+"G16",
+"15 septembre 2026",
+3
+],
+[
+"H16",
+"29754404 A-03",
+3
+],
+[
+"I16",
+"Le fourgon n’a pas de génératrice : le moteur au ralenti est la seule source d’alimentation du poste pendant le quart, avec impact environnemental et usure du véhicule.",
+3
+],
+[
+"J16",
+"Évaluer une source d’alimentation indépendante du moteur pour les fourgons d’épissure, avec coûts et calendrier.",
+3
+],
+[
+"K16",
+"Service de la flotte",
+3
+],
+[
+"L16",
+"90 jours pour l’étude",
+3
+],
+[
+"M16",
+"SSE.TEL.FOR-103.2 si une procédure doit changer",
+3
+],
+[
+"N16",
+"À soumettre au comité",
+3
+],
+[
+"O16",
+null,
+3
+],
+[
+"P16",
+"R-10 détecte le danger; celui-ci l’élimine à la source.",
+3
+],
+[
+"A17",
+"R-12",
+9
+],
+[
+"B17",
+"Analyse de risque au travail",
+3
+],
+[
+"C17",
+"AST : formation, couverture du gabarit et contrôle quotidien",
+2
+],
+[
+"D17",
+1,
+10
+],
+[
+"E17",
+"=COUNTIF(Traçabilité!$G:$G,$A17)",
+10
+],
+[
+"F17",
+"=COUNTIF(Incidents!$I:$I,$A17)",
+10
+],
+[
+"G17",
+"4 septembre 2026\n16 septembre 2026\n15 septembre 2026",
+3
+],
+[
+"H17",
+"29580646 A-08 · 29721538 A-03 · 29754404 A-06",
+3
+],
+[
+"I17",
+"Trois visites, trois écarts de nature différente : équipe non formée à l’AST, gabarit ne couvrant pas les énergies en présence pour l’épissure aérienne, AST absente au démarrage des travaux. L’AST conditionne huit questions du formulaire d’inspection et l’ensemble des contrôles en hauteur et près des conducteurs.",
+3
+],
+[
+"J17",
+"Présenter l’état de situation sur la formation AST dans Infra Québec — qui l’a suivie, quand, comment on le vérifie avant affectation. Réviser les gabarits d’AST et le registre HSE-300.1 pour l’épissure aérienne et en fourgon, afin qu’ils sollicitent conducteurs aériens, plan d’eau, énergie emmagasinée, CO, travail isolé, accès des secours et secouriste. Statuer sur le contrôle quotidien par les superviseurs.",
+3
+],
+[
+"K17",
+"Partenaire d’affaires SST, avec les Opérations",
+3
+],
+[
+"L17",
+"30 jours pour l’état de situation · 60 jours pour les gabarits",
+3
+],
+[
+"M17",
+"SSE-300 §8 · HSE-1801 · SSE-2101 · HSE-300.1",
+3
+],
+[
+"N17",
+"À soumettre au comité",
+3
+],
+[
+"O17",
+null,
+3
+],
+[
+"P17",
+"La répétition sur trois visites relève du contrôle, pas d’une équipe.",
+3
+],
+[
+"A18",
+"R-13",
+11
+],
+[
+"B18",
+"Compétences et affectation",
+3
+],
+[
+"C18",
+"Vérification de l’identité et des formations avant affectation",
+2
+],
+[
+"D18",
+2,
+12
+],
+[
+"E18",
+"=COUNTIF(Traçabilité!$G:$G,$A18)",
+12
+],
+[
+"F18",
+"=COUNTIF(Incidents!$I:$I,$A18)",
+12
+],
+[
+"G18",
+"4 septembre 2026",
+3
+],
+[
+"H18",
+"29580646 A-09",
+3
+],
+[
+"I18",
+"Formation au travail en hauteur « à confirmer » et second travailleur non identifiable par son nom. Un travailleur non identifié ne peut être vérifié.",
+3
+],
+[
+"J18",
+"Statuer sur le mécanisme qui confirme, avant affectation, l’identité et les formations — hauteur, sauvetage, sécurité électrique — de chaque membre d’équipe Falcon, sous-traitants compris.",
+3
+],
+[
+"K18",
+"Opérations, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L18",
+"30 jours pour l’état de situation",
+3
+],
+[
+"M18",
+"HSE-1301 · HSE-1801",
+3
+],
+[
+"N18",
+"À soumettre au comité",
+3
+],
+[
+"O18",
+null,
+3
+],
+[
+"P18",
+null,
+3
+],
+[
+"A19",
+"R-14",
+9
+],
+[
+"B19",
+"Véhicules et flotte",
+3
+],
+[
+"C19",
+"Mise en service des véhicules de remplacement",
+2
+],
+[
+"D19",
+1,
+10
+],
+[
+"E19",
+"=COUNTIF(Traçabilité!$G:$G,$A19)",
+10
+],
+[
+"F19",
+"=COUNTIF(Incidents!$I:$I,$A19)",
+10
+],
+[
+"G19",
+"16 septembre 2026",
+3
+],
+[
+"H19",
+"29721538 A-02",
+3
+],
+[
+"I19",
+"Le véhicule en service était un camion de remplacement. Aucun extincteur visible, aucune trousse de premiers soins constatée à bord. L’autocollant de trousse d’une autre unité ne correspondait pas au véhicule utilisé.",
+3
+],
+[
+"J19",
+"Définir la vérification obligatoire avant la mise en service d’un véhicule de remplacement, et désigner qui l’exécute et qui l’atteste.",
+3
+],
+[
+"K19",
+"Service de la flotte",
+3
+],
+[
+"L19",
+"30 jours",
+3
+],
+[
+"M19",
+"SSE-1003-TEL-PRG §18",
+3
+],
+[
+"N19",
+"À soumettre au comité",
+3
+],
+[
+"O19",
+null,
+3
+],
+[
+"P19",
+"Un véhicule de remplacement entre en service sans passer par les mêmes vérifications qu’un véhicule attitré.",
+3
+],
+[
+"A20",
+"R-15",
+11
+],
+[
+"B20",
+"Véhicules et flotte",
+3
+],
+[
+"C20",
+"Inspection mensuelle du véhicule et registre de la flotte",
+2
+],
+[
+"D20",
+2,
+12
+],
+[
+"E20",
+"=COUNTIF(Traçabilité!$G:$G,$A20)",
+12
+],
+[
+"F20",
+"=COUNTIF(Incidents!$I:$I,$A20)",
+12
+],
+[
+"G20",
+"4 septembre 2026\n15 septembre 2026\n17 septembre 2026\n26 août 2026",
+3
+],
+[
+"H20",
+"29580646 A-07 · 29754404 A-04 · 29751529 9.5 · 29456212 9.5",
+3
+],
+[
+"I20",
+"Inspection déclarée faite alors que la trousse de premiers soins portait une dernière inspection de 2024 et que l’extincteur ne semblait pas inspecté. Le formulaire permet donc de conclure sans ces vérifications. Par ailleurs, la tenue du registre d’inspection des véhicules et remorques n’est pas confirmée.",
+3
+],
+[
+"J20",
+"Configurer l’application d’inspection pour rendre chaque étape obligatoire avant validation, dont la date d’inspection de la trousse et de l’extincteur. Confirmer l’existence et la tenue à jour du registre d’inspection des véhicules et remorques d’Infra Québec, et préciser comment il est accessible sur le terrain.",
+3
+],
+[
+"K20",
+"Service de la flotte, avec l’équipe eCompliance",
+3
+],
+[
+"L20",
+"60 jours",
+3
+],
+[
+"M20",
+"SSE-2101 §6.5 · SSE-1003 · SSE-2000 §6.4",
+3
+],
+[
+"N20",
+"À soumettre au comité",
+3
+],
+[
+"O20",
+null,
+3
+],
+[
+"P20",
+"Trois autres écarts de même nature : trousse de premiers soins à regarnir sur l’unité 104139 le 17 septembre, indicateur de noix de roue manquant sur l’unité 105311 le 26 août, et trousse inspectée en 2024 le 15 septembre. Modèle cité : l’application d’inspection de Bell. L’export du 19 mai au 17 septembre 2026 compte 28 inspections avant départ et 14 de pelle mécanique, mais seulement trois « Inspection mensuelle du véhicule » — 25 mai, 2 juin et 16 juillet, toutes par le même préparateur. Rien depuis le 16 juillet.",
+3
+],
+[
+"A21",
+"R-16",
+11
+],
+[
+"B21",
+"Véhicules et flotte",
+3
+],
+[
+"C21",
+"Cales de roue en période hivernale",
+2
+],
+[
+"D21",
+2,
+12
+],
+[
+"E21",
+"=COUNTIF(Traçabilité!$G:$G,$A21)",
+12
+],
+[
+"F21",
+"=COUNTIF(Incidents!$I:$I,$A21)",
+12
+],
+[
+"G21",
+"28 août 2026",
+3
+],
+[
+"H21",
+"29489650 A-01",
+3
+],
+[
+"I21",
+"Cale à surface nervurée jugée non conforme pour l’hiver; le modèle attendu est en acier à bordure dentelée. Le manuel ne mentionne les cales que pour les chariots élévateurs : aucune exigence pour les véhicules de la flotte ni pour l’hiver.",
+3
+],
+[
+"J21",
+"Statuer sur le modèle de cale exigé en période hivernale, l’inscrire dans un standard de flotte et planifier le remplacement dans tous les véhicules d’Infra Québec.",
+3
+],
+[
+"K21",
+"Service de la flotte, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L21",
+"30 jours pour la position · remplacement complété avant le 1er décembre 2026",
+3
+],
+[
+"M21",
+"SSE.TEL-PRG-2103 (chariots élévateurs seulement)",
+3
+],
+[
+"N21",
+"À soumettre au comité",
+3
+],
+[
+"O21",
+null,
+3
+],
+[
+"P21",
+"Si une cale est jugée non conforme sans que la règle soit écrite, l’équipe ne peut pas le savoir.",
+3
+],
+[
+"A22",
+"R-17",
+11
+],
+[
+"B22",
+"Véhicules et flotte",
+3
+],
+[
+"C22",
+"Capacités de levage et étiquetage des équipements",
+2
+],
+[
+"D22",
+2,
+12
+],
+[
+"E22",
+"=COUNTIF(Traçabilité!$G:$G,$A22)",
+12
+],
+[
+"F22",
+"=COUNTIF(Incidents!$I:$I,$A22)",
+12
+],
+[
+"G22",
+"16 septembre 2026",
+3
+],
+[
+"H22",
+"29721538 A-06",
+3
+],
+[
+"I22",
+"Les capacités de la corde de service et de l’appareil de lashing hissé au câble porteur ne sont pas documentées, alors que la question d’inspection exige qu’elles soient connues et suffisantes.",
+3
+],
+[
+"J22",
+"Définir comment les capacités des équipements de levage et des cordes de service sont étiquetées et rendues accessibles sur le terrain.",
+3
+],
+[
+"K22",
+"Coordonnateur d’équipement",
+3
+],
+[
+"L22",
+"60 jours",
+3
+],
+[
+"M22",
+"SSE-1309.1-TEL-LDI",
+3
+],
+[
+"N22",
+"À soumettre au comité",
+3
+],
+[
+"O22",
+null,
+3
+],
+[
+"P22",
+"La capacité de la nacelle conditionne la faisabilité d’un sauvetage assisté.",
+3
+],
+[
+"A23",
+"R-18",
+11
+],
+[
+"B23",
+"Véhicules et flotte",
+3
+],
+[
+"C23",
+"Déplacement d’un camion-nacelle bras levé",
+2
+],
+[
+"D23",
+2,
+12
+],
+[
+"E23",
+"=COUNTIF(Traçabilité!$G:$G,$A23)",
+12
+],
+[
+"F23",
+"=COUNTIF(Incidents!$I:$I,$A23)",
+12
+],
+[
+"G23",
+"16 septembre 2026",
+3
+],
+[
+"H23",
+"29721538 A-05",
+3
+],
+[
+"I23",
+"Déplacement du camion à basse vitesse observé, nacelle en position supérieure et travailleur attaché à bord. Certaines unités le permettent à vitesse réduite, d’autres l’interdisent formellement. Aucune position écrite de Telecon n’a été trouvée.",
+3
+],
+[
+"J23",
+"Établir une position écrite, par modèle d’appareil, adossée au manuel de l’opérateur, et la diffuser.",
+3
+],
+[
+"K23",
+"Service de la flotte et Partenaire d’affaires SST",
+3
+],
+[
+"L23",
+"60 jours",
+3
+],
+[
+"M23",
+"Manuels d’opérateur Altec",
+3
+],
+[
+"N23",
+"À soumettre au comité",
+3
+],
+[
+"O23",
+null,
+3
+],
+[
+"P23",
+null,
+3
+],
+[
+"A24",
+"R-19",
+11
+],
+[
+"B24",
+"Balisage et circulation",
+3
+],
+[
+"C24",
+"Balisage des véhicules stationnés et des zones de travail",
+2
+],
+[
+"D24",
+2,
+12
+],
+[
+"E24",
+"=COUNTIF(Traçabilité!$G:$G,$A24)",
+12
+],
+[
+"F24",
+"=COUNTIF(Incidents!$I:$I,$A24)",
+12
+],
+[
+"G24",
+"4 septembre 2026\n16 septembre 2026\n15 septembre 2026\n19 août 2026",
+3
+],
+[
+"H24",
+"29580646 A-06 · 29721538 A-04 · 29754404 A-09 · 29363929 9.3a",
+3
+],
+[
+"I24",
+"Trois visites, même écart. Un seul cône à l’avant du camion en rue résidentielle bordée d’une école active; aucun balisage côté rue ni sous le travailleur en hauteur, au-dessus d’un aménagement paysager et d’une piscine; cône arrière non observé sur le fourgon. L’exigence d’un cône à l’avant et à l’arrière est écrite.",
+3
+],
+[
+"J24",
+"Décider du moyen de rappel — carte de poche, point de ronde de sécurité, vérification au tour de sécurité — et de la façon de le contrôler. Fixer le contenu minimal de balisage pour les chantiers mobiles résidentiels, y compris la délimitation sous un travailleur en hauteur.",
+3
+],
+[
+"K24",
+"Comité SST, en lien avec les superviseurs",
+3
+],
+[
+"L24",
+"Prochaine réunion",
+3
+],
+[
+"M24",
+"HSE-2109 · SSE-2001 §5.2 · HSE.TEL-PRO-403 §9.3 · référence SSE-2000 §6.6.1 à corriger",
+3
+],
+[
+"N24",
+"À soumettre au comité",
+3
+],
+[
+"O24",
+null,
+3
+],
+[
+"P24",
+"RÉFÉRENCE À CORRIGER. Le §6.6 de SSE-2000 traite de la conduite préventive selon le système Smith, et son §6.6.4 de la façon de conduire à travers une zone de cônes, non d’en poser. La règle « un cône à l’avant et un à l’arrière de tout véhicule stationné » n’a été retrouvée ni dans SSE-2000 §6.6, ni dans SSE-2001 §1 à §5.4, ni par recherche de contenu : la source doit être établie avant la séance. Deux exigences écrites restent toutefois acquises : HSE.TEL-PRO-403 §9.3 impose de délimiter une zone sous l’échelle et d’en garder le contrôle, et SSE-2001 §5.2 impose des bandes de grade 3 aux bras et aux jambes du crépuscule à l’aube. Le cône arrière de la visite du 15 septembre reste à confirmer avec le superviseur. Le 19 août, le plan de circulation n’a pas pu être présenté à la visite. À l’inverse, le chantier du 16 septembre à Montréal présente un balisage jugé conforme, avec signaleur, chemin piéton protégé et accès public empêché : la mesure est donc applicable avec les moyens actuels.",
+3
+],
+[
+"A25",
+"R-20",
+11
+],
+[
+"B25",
+"Balisage et circulation",
+3
+],
+[
+"C25",
+"Protection des câbles déployés en zone accessible au public",
+2
+],
+[
+"D25",
+2,
+12
+],
+[
+"E25",
+"=COUNTIF(Traçabilité!$G:$G,$A25)",
+12
+],
+[
+"F25",
+"=COUNTIF(Incidents!$I:$I,$A25)",
+12
+],
+[
+"G25",
+"28 août 2026",
+3
+],
+[
+"H25",
+"29489650 A-02",
+3
+],
+[
+"I25",
+"Câble de fibre déployé au sol traversant une zone accessible aux piétons et aux résidents, sans protecteur ni balisage. Le même risque est revenu une semaine plus tard sous forme de câble en boucles au sol. Aucune consigne trouvée sur la protection des câbles temporaires.",
+3
+],
+[
+"J25",
+"Établir une consigne sur la protection des câbles temporaires en zone accessible au public et statuer sur la dotation de protecteurs de câble aux équipes d’épissure.",
+3
+],
+[
+"K25",
+"Approvisionnement et outillage, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L25",
+"60 jours",
+3
+],
+[
+"M25",
+"HSE-2109",
+3
+],
+[
+"N25",
+"À soumettre au comité",
+3
+],
+[
+"O25",
+null,
+3
+],
+[
+"P25",
+"Sans protecteur fourni, l’équipe n’a pas de moyen de corriger la situation.",
+3
+],
+[
+"A26",
+"R-21",
+11
+],
+[
+"B26",
+"Conditions de travail",
+3
+],
+[
+"C26",
+"Travaux en propriété privée résidentielle",
+2
+],
+[
+"D26",
+2,
+12
+],
+[
+"E26",
+"=COUNTIF(Traçabilité!$G:$G,$A26)",
+12
+],
+[
+"F26",
+"=COUNTIF(Incidents!$I:$I,$A26)",
+12
+],
+[
+"G26",
+"4 septembre 2026",
+3
+],
+[
+"H26",
+"29580646 A-10",
+3
+],
+[
+"I26",
+"Zone de travail principale en cour arrière privée, avec piscine creusée. Autorisation du propriétaire et contrôle de l’accès des occupants et des animaux non documentés. Le manuel n’en traite que sous l’angle des dommages matériels.",
+3
+],
+[
+"J26",
+"Établir une position écrite : autorisation du propriétaire, avis aux occupants, contrôle de l’accès des enfants et des animaux, protection des plans d’eau.",
+3
+],
+[
+"K26",
+"Gestion du projet Falcon et Partenaire d’affaires SST",
+3
+],
+[
+"L26",
+"60 jours",
+3
+],
+[
+"M26",
+"Aucune consigne au manuel agrégé",
+3
+],
+[
+"N26",
+"À soumettre au comité",
+3
+],
+[
+"O26",
+null,
+3
+],
+[
+"P26",
+null,
+3
+],
+[
+"A27",
+"R-22",
+9
+],
+[
+"B27",
+"Protection individuelle",
+3
+],
+[
+"C27",
+"Parasols conducteurs en hauteur et protection solaire des fusionneurs",
+2
+],
+[
+"D27",
+1,
+10
+],
+[
+"E27",
+"=COUNTIF(Traçabilité!$G:$G,$A27)",
+10
+],
+[
+"F27",
+"=COUNTIF(Incidents!$I:$I,$A27)",
+10
+],
+[
+"G27",
+"28 août 2026\n4 septembre 2026\n10 août 2026",
+3
+],
+[
+"H27",
+"29489650 A-04 · 29580646 A-11 · Parasols",
+3
+],
+[
+"I27",
+"Les équipes se protègent du soleil au moyen de parasols personnels non certifiés. Lorsque la structure est métallique et tenue en hauteur à proximité de lignes sous tension, le travailleur corrige un risque réel — la contrainte thermique — en en introduisant un plus grave. L’évaluation SST-2026-PARASOL-001 du 10 août 2026 cote ce scénario 12 sur 16, CRITIQUE, seul danger du rapport à atteindre ce niveau; la contrainte thermique et le rayonnement UV y sont cotés 9, élevés. Sur le chantier du 26 août, l’ombre était assurée par un parasol posé sur l’armoire, au sol.",
+3
+],
+[
+"J27",
+"Interdire formellement tout parasol non certifié en hauteur et à proximité des lignes, et retirer les parasols conducteurs en circulation. Approuver la dotation en couvre-nuque hi-vis non conducteur fixé au casque, solution retenue par l’évaluation, et n’autoriser au sol que des parasols diélectriques certifiés fibre de verre. Amorcer la demande d’essai terrain HSE-600-F01-TEL-PPE et l’ajout à SSE-601, dont la mise à jour relève du Partenaire d’affaires SST.",
+3
+],
+[
+"K27",
+"Approvisionnement et outillage, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L27",
+"60 jours · demande d’essai soumise dans les 60 jours",
+3
+],
+[
+"M27",
+"SST-2026-PARASOL-001 du 10 août 2026 · SSE-602 §5.1 · SSE.TEL-NOR-601 · HSE-600-F01-TEL-PPE · HSE-1903",
+3
+],
+[
+"N27",
+"À soumettre au comité",
+3
+],
+[
+"O27",
+null,
+3
+],
+[
+"P27",
+"Requalifié de priorité 3 à priorité 1 le 19 septembre, sur la foi de l’évaluation de risque signalée par ⟦P08⟧ le 7 août et pilotée par ⟦P02⟧. Six fournisseurs canadiens et américains sont déjà identifiés, dont MSA, marque de casque déjà répandue chez Telecon. À valider : les couvre-nuques en tissu ne sont généralement pas certifiés ANSI comme accessoire — exiger la fiche technique confirmant le matériau non conducteur et la compatibilité avec le casque homologué.",
+3
+],
+[
+"A28",
+"R-23",
+13
+],
+[
+"B28",
+"Conditions de travail",
+3
+],
+[
+"C28",
+"Dotation des trousses de fusion : rebuts de fibre et gants",
+2
+],
+[
+"D28",
+3,
+14
+],
+[
+"E28",
+"=COUNTIF(Traçabilité!$G:$G,$A28)",
+14
+],
+[
+"F28",
+"=COUNTIF(Incidents!$I:$I,$A28)",
+14
+],
+[
+"G28",
+"4 septembre 2026",
+3
+],
+[
+"H28",
+"29580646 A-12",
+3
+],
+[
+"I28",
+"La disponibilité de gants adaptés et d’un contenant à rebuts de fibre n’a pas pu être confirmée sur place.",
+3
+],
+[
+"J28",
+"Statuer sur la dotation standard de chaque trousse de fusion : contenant à rebuts de fibre et gants adaptés.",
+3
+],
+[
+"K28",
+"Approvisionnement et outillage",
+3
+],
+[
+"L28",
+"Prochaine réunion",
+3
+],
+[
+"M28",
+"—",
+3
+],
+[
+"N28",
+"À soumettre au comité",
+3
+],
+[
+"O28",
+null,
+3
+],
+[
+"P28",
+"Mesure peu coûteuse qui touche toutes les équipes de fusion.",
+3
+],
+[
+"A29",
+"R-24",
+13
+],
+[
+"B29",
+"Véhicules et flotte",
+3
+],
+[
+"C29",
+"Rangement, arrimage et propreté des véhicules",
+2
+],
+[
+"D29",
+3,
+14
+],
+[
+"E29",
+"=COUNTIF(Traçabilité!$G:$G,$A29)",
+14
+],
+[
+"F29",
+"=COUNTIF(Incidents!$I:$I,$A29)",
+14
+],
+[
+"G29",
+"28 août 2026\n16 septembre 2026",
+3
+],
+[
+"H29",
+"29489650 A-05 · 29721538 A-08",
+3
+],
+[
+"I29",
+"Matériel entreposé en vrac à l’arrière d’un fourgon. Accumulation de débris au plancher des cabines de deux véhicules, jusqu’à encombrer l’espace des pédales; le carnet de ronde de sécurité a été retrouvé au sol sous des déchets. Les travailleurs ont eux-mêmes recommandé un contenant à déchets.",
+3
+],
+[
+"J29",
+"Statuer sur la dotation d’un contenant à déchets dans chaque véhicule. Verser le constat de rangement au projet camion plutôt que de créer un correctif isolé.",
+3
+],
+[
+"K29",
+"Approvisionnement et outillage · porteur du projet camion",
+3
+],
+[
+"L29",
+"Prochaine réunion",
+3
+],
+[
+"M29",
+"—",
+3
+],
+[
+"N29",
+"À soumettre au comité",
+3
+],
+[
+"O29",
+null,
+3
+],
+[
+"P29",
+"Un correctif isolé créerait un standard parallèle à la démarche de standardisation.",
+3
+],
+[
+"A30",
+"R-25",
+13
+],
+[
+"B30",
+"Conditions de travail",
+3
+],
+[
+"C30",
+"Accès aux installations sanitaires",
+2
+],
+[
+"D30",
+3,
+14
+],
+[
+"E30",
+"=COUNTIF(Traçabilité!$G:$G,$A30)",
+14
+],
+[
+"F30",
+"=COUNTIF(Incidents!$I:$I,$A30)",
+14
+],
+[
+"G30",
+"4 septembre 2026\n16 septembre 2026\n15 septembre 2026",
+3
+],
+[
+"H30",
+"29580646 A-13 · 29721538 A-09 · 29754404 A-11",
+3
+],
+[
+"I30",
+"Trois visites, même question non résolue : travaux linéaires de rue, chantier résidentiel, travailleur isolé en sentier boisé. Le manuel agrégé ne contient pas d’exigence précise pour les chantiers terrain.",
+3
+],
+[
+"J30",
+"Établir la position d’Infra Québec sur l’accès aux installations sanitaires en travaux linéaires et en chantier terrain, et les moyens qui l’accompagnent, en incluant le cas du travailleur isolé en sentier ou en zone boisée.",
+3
+],
+[
+"K30",
+"Opérations, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L30",
+"Prochaine réunion",
+3
+],
+[
+"M30",
+"À valider selon la réglementation applicable",
+3
+],
+[
+"N30",
+"À soumettre au comité",
+3
+],
+[
+"O30",
+null,
+3
+],
+[
+"P30",
+"Un traitement unique évite trois réponses divergentes.",
+3
+],
+[
+"A31",
+"R-26",
+13
+],
+[
+"B31",
+"Compétences et affectation",
+3
+],
+[
+"C31",
+"Formation au logbook et aux inspections de véhicule à l’intégration",
+2
+],
+[
+"D31",
+3,
+14
+],
+[
+"E31",
+"=COUNTIF(Traçabilité!$G:$G,$A31)",
+14
+],
+[
+"F31",
+"=COUNTIF(Incidents!$I:$I,$A31)",
+14
+],
+[
+"G31",
+"15 septembre 2026",
+3
+],
+[
+"H31",
+"29754404 A-05",
+3
+],
+[
+"I31",
+"Écarts relevés dans la tenue du logbook et des inspections du véhicule. Un formulaire plus strict ne suffit pas si son usage n’est pas enseigné dès l’embauche.",
+3
+],
+[
+"J31",
+"Ajouter au parcours d’intégration, dans le volet formation flotte, un module pratique sur le logbook et les inspections du véhicule.",
+3
+],
+[
+"K31",
+"Service de la flotte, avec la formation",
+3
+],
+[
+"L31",
+"90 jours",
+3
+],
+[
+"M31",
+"SSE-800",
+3
+],
+[
+"N31",
+"À soumettre au comité",
+3
+],
+[
+"O31",
+null,
+3
+],
+[
+"P31",
+null,
+3
+],
+[
+"A32",
+"R-27",
+11
+],
+[
+"B32",
+"Gouvernance et outils",
+3
+],
+[
+"C32",
+"Référentiel de 79 points et projet camion",
+2
+],
+[
+"D32",
+2,
+12
+],
+[
+"E32",
+"=COUNTIF(Traçabilité!$G:$G,$A32)",
+12
+],
+[
+"F32",
+"=COUNTIF(Incidents!$I:$I,$A32)",
+12
+],
+[
+"G32",
+"16 septembre 2026",
+3
+],
+[
+"H32",
+"29721538 A-10",
+3
+],
+[
+"I32",
+"En rattachant chaque point d’inspection d’un camion de monteur de lignes et d’épisseur aux procédures Telecon, 26 points sur 79 ne citent aucune source écrite. Ils se concentrent sur le plateau et l’arrimage, le roulement et les stabilisateurs, l’outillage de pose aérienne et le matériel de fusion.",
+3
+],
+[
+"J32",
+"Verser le référentiel de 79 points comme intrant documenté au projet camion et à la démarche de standardisation. Désigner le point de contact entre le comité et le porteur. Convenir du moment où les points retenus reviendront au comité pour validation du volet santé et sécurité.",
+3
+],
+[
+"K32",
+"Porteur de la démarche de standardisation et du projet camion, avec le comité SST comme instance de validation",
+3
+],
+[
+"L32",
+"Prochaine séance pour le versement",
+3
+],
+[
+"M32",
+"—",
+3
+],
+[
+"N32",
+"À soumettre au comité",
+3
+],
+[
+"O32",
+null,
+3
+],
+[
+"P32",
+"DIVERGENCE À TRANCHER : deux versions de la saisine 29721538 circulent. L’une demande de verser le référentiel comme intrant, l’autre de statuer sur les 26 points. Le document détaillé déconseille explicitement la seconde.",
+3
+],
+[
+"A33",
+"R-28",
+13
+],
+[
+"B33",
+"Gouvernance et outils",
+3
+],
+[
+"C33",
+"Défauts de conception du formulaire d’inspection eCompliance",
+2
+],
+[
+"D33",
+3,
+14
+],
+[
+"E33",
+"=COUNTIF(Traçabilité!$G:$G,$A33)",
+14
+],
+[
+"F33",
+"=COUNTIF(Incidents!$I:$I,$A33)",
+14
+],
+[
+"G33",
+"16 septembre 2026",
+3
+],
+[
+"H33",
+"29721538 A-11",
+3
+],
+[
+"I33",
+"Six questions n’offrent que Réussite ou Échec, sans option N/A. Saisir Réussite fausse le dossier, saisir Échec fabrique une non-conformité. Plusieurs de ces questions sont marquées obligatoires, ce qui bloque la soumission.",
+3
+],
+[
+"J33",
+"Transmettre la demande de correction au propriétaire du formulaire : ajouter l’option N/A à ces questions, ou lever leur caractère obligatoire lorsque la section parente est sans objet.",
+3
+],
+[
+"K33",
+"Partenaire d’affaires SST, vers le propriétaire du formulaire",
+3
+],
+[
+"L33",
+"60 jours",
+3
+],
+[
+"M33",
+"Questions 10.2, 10.3, 12.2, 13.1, 14.3",
+3
+],
+[
+"N33",
+"À soumettre au comité",
+3
+],
+[
+"O33",
+null,
+3
+],
+[
+"P33",
+null,
+3
+],
+[
+"A34",
+"R-29",
+11
+],
+[
+"B34",
+"Gouvernance et outils",
+3
+],
+[
+"C34",
+"Délais de réponse aux recommandations et mécanisme d’escalade",
+2
+],
+[
+"D34",
+2,
+12
+],
+[
+"E34",
+"=COUNTIF(Traçabilité!$G:$G,$A34)",
+12
+],
+[
+"F34",
+"=COUNTIF(Incidents!$I:$I,$A34)",
+12
+],
+[
+"G34",
+"16 septembre 2026",
+3
+],
+[
+"H34",
+"29721538 A-12",
+3
+],
+[
+"I34",
+"La politique exige une réponse « en temps opportun » aux recommandations du comité, sans jamais la chiffrer, et ne prévoit aucun mécanisme si la réponse ne vient pas. Tous les autres éléments du registre dépendent d’une réponse de la direction.",
+3
+],
+[
+"J34",
+"Adopter un délai de réponse écrite de 21 jours civils, ramené à 7 jours pour les recommandations liées à un déclencheur d’arrêt de travail, et un mécanisme d’escalade à trois jalons : rappel du coprésident au jour 21, escalade au vice-président de division au jour 30, inscription au registre des risques comme risque connu non traité au jour 45.",
+3
+],
+[
+"K34",
+"Comité SST, par recommandation écrite à la direction Infra Québec",
+3
+],
+[
+"L34",
+"Prochaine séance du comité",
+3
+],
+[
+"M34",
+"SSE-200-TEL-POL art. 4.3 h) · comparaison Ontario 21 j, fédéral 30 j",
+3
+],
+[
+"N34",
+"À soumettre au comité",
+3
+],
+[
+"O34",
+null,
+3
+],
+[
+"P34",
+"Aucun délai équivalent n’est prescrit au Québec, ce qui reste à confirmer. La procédure retient l’exigence de la législation la plus stricte.",
+3
+],
+[
+"A35",
+"R-30",
+11
+],
+[
+"B35",
+"Véhicules et flotte",
+3
+],
+[
+"C35",
+"Sécurité routière — conduire pour le travail",
+2
+],
+[
+"D35",
+2,
+12
+],
+[
+"E35",
+"=COUNTIF(Traçabilité!$G:$G,$A35)",
+12
+],
+[
+"F35",
+"=COUNTIF(Incidents!$I:$I,$A35)",
+12
+],
+[
+"G35",
+"Août-septembre 2026",
+3
+],
+[
+"H35",
+"Incidents",
+3
+],
+[
+"I35",
+"Trois événements déclarés entre le 13 août et le 15 septembre 2026 relèvent de la conduite pour le travail : une collision avec dommages matériels sur l’autoroute 25 à la hauteur de Terrebonne, un quasi-accident rue Grenache à Montréal, et un incident de type véhicule rue de la Visitation. Aucun des 41 éléments d’action des quatre visites ne porte sur la conduite.",
+3
+],
+[
+"J35",
+"Constater le volume d’événements routiers et statuer sur la suite : analyse des causes communes, rappel de conduite défensive, ou versement au programme de sécurité routière existant s’il y en a un.",
+3
+],
+[
+"K35",
+"Opérations, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L35",
+"Prochaine séance pour l’orientation",
+3
+],
+[
+"M35",
+"STKY « Sécurité routière – Conduire pour le travail »",
+3
+],
+[
+"N35",
+"À soumettre au comité",
+3
+],
+[
+"O35",
+null,
+3
+],
+[
+"P35",
+"Ce risque ne provient d’aucune fiche d’inspection : il est tiré du registre des incidents. Trois événements en cinq semaines, tous au statut Submitted.",
+3
+],
+[
+"A36",
+"R-31",
+11
+],
+[
+"B36",
+"Balisage et circulation",
+3
+],
+[
+"C36",
+"Délais d’autorisation d’accès aux puits",
+2
+],
+[
+"D36",
+2,
+12
+],
+[
+"E36",
+"=COUNTIF(Traçabilité!$G:$G,$A36)",
+12
+],
+[
+"F36",
+"=COUNTIF(Incidents!$I:$I,$A36)",
+12
+],
+[
+"G36",
+"19 août 2026",
+3
+],
+[
+"H36",
+"29363929 2.1",
+3
+],
+[
+"I36",
+"Le 19 août, l’équipe a attendu très longtemps la confirmation d’autorisation d’accès au puits, sur un chantier de rue à Laval. Pendant l’attente, les travailleurs et le véhicule demeurent en place dans la zone de circulation, avec la signalisation déployée, sans que le travail avance.",
+3
+],
+[
+"J36",
+"Documenter le délai type d’obtention de l’autorisation d’accès aux puits chez le donneur d’ordre, et statuer sur la conduite à tenir pendant l’attente : maintien ou retrait de la signalisation, repli de l’équipe, seuil de temps au-delà duquel le chantier est reporté.",
+3
+],
+[
+"K36",
+"Gestion du projet Falcon et Opérations, avec le donneur d’ordre",
+3
+],
+[
+"L36",
+"60 jours",
+3
+],
+[
+"M36",
+"SSE-2000 · SSE-2001-F02 pour la signalisation maintenue pendant l’attente",
+3
+],
+[
+"N36",
+"À soumettre au comité",
+3
+],
+[
+"O36",
+null,
+3
+],
+[
+"P36",
+"L’exposition au trafic pendant une attente improductive n’est pas couverte par le registre. Constat rapporté une seule fois : vérifier s’il est récurrent avant d’en faire une demande au donneur d’ordre.",
+3
+],
+[
+"A37",
+"R-32",
+11
+],
+[
+"B37",
+"Gouvernance et outils",
+3
+],
+[
+"C37",
+"Qualité de la saisie et de la révision des formulaires d’inspection",
+2
+],
+[
+"D37",
+2,
+12
+],
+[
+"E37",
+"=COUNTIF(Traçabilité!$G:$G,$A37)",
+12
+],
+[
+"F37",
+"=COUNTIF(Incidents!$I:$I,$A37)",
+12
+],
+[
+"G37",
+"17 septembre 2026\n16 septembre 2026\n5 août 2026",
+3
+],
+[
+"H37",
+"29751529 18.1 · 29722866 9.4c · 29182326 3 à 18",
+3
+],
+[
+"I37",
+"La fiche du 17 septembre est attestée complète et notée « Réussite » à la question 18.1, alors que les sections 3 à 8 et 10 à 16 ne comportent aucune réponse. La fiche du 16 septembre déclare un sous-traitant présent à la question 1.4 mais laisse vide la question 9.4c sur la coordination inter-entrepreneurs. Plusieurs fiches portent un score de 0 % et restent au statut « Submitted » plutôt que verrouillées.",
+3
+],
+[
+"J37",
+"Statuer sur ce que la révision du formulaire atteste réellement, et sur les contrôles à mettre en place : sections obligatoires selon le type de rapport, blocage de l’attestation d’exhaustivité tant que les sections déclenchées sont vides, et règle de verrouillage des fiches transmises au comité.",
+3
+],
+[
+"K37",
+"Partenaire d’affaires SST, avec l’équipe eCompliance",
+3
+],
+[
+"L37",
+"30 jours",
+3
+],
+[
+"M37",
+"—",
+3
+],
+[
+"N37",
+"À soumettre au comité",
+3
+],
+[
+"O37",
+null,
+3
+],
+[
+"P37",
+"Constat de processus, pas de personne : le formulaire permet aujourd’hui d’attester l’exhaustivité d’une fiche majoritairement vide. Recoupe R-28 sur la conception du formulaire et R-15 sur l’inspection de véhicule validée malgré des éléments en retard.",
+3
+],
+[
+"A38",
+"R-33",
+11
+],
+[
+"B38",
+"Balisage et circulation",
+3
+],
+[
+"C38",
+"Localisation des réseaux souterrains avant excavation",
+2
+],
+[
+"D38",
+2,
+12
+],
+[
+"E38",
+"=COUNTIF(Traçabilité!$G:$G,$A38)",
+12
+],
+[
+"F38",
+"=COUNTIF(Incidents!$I:$I,$A38)",
+12
+],
+[
+"G38",
+"5 août 2026",
+3
+],
+[
+"H38",
+"29182326 2.1",
+3
+],
+[
+"I38",
+"Sur le chantier de creusage et de tranchées du 5 août, boulevard Métropolitain est, la fiche indique la localisation des réseaux souterrains par Info-Excavation comme étant « en cours ». La formulation ne permet pas de savoir si la localisation était terminée avant le début du creusage. Le reste de la fiche, dont la section 11 sur l’excavation, n’a pas été renseigné.",
+3
+],
+[
+"J38",
+"Confirmer avec le responsable de chantier si le creusage avait débuté avant la fin de la localisation. Selon la réponse, statuer sur la règle : aucune excavation avant que les services publics enterrés soient localisés et exposés, et sur la façon dont cette condition est consignée à la fiche.",
+3
+],
+[
+"K38",
+"Gestion de projet et Opérations, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L38",
+"60 jours · confirmation du constat avant la séance",
+3
+],
+[
+"M38",
+"SSE-1500-TEL-PRO §5.1 · question 11.1 du formulaire · SSE-300 §8 pour l’AST",
+3
+],
+[
+"N38",
+"À soumettre au comité",
+3
+],
+[
+"O38",
+null,
+3
+],
+[
+"P38",
+"VÉRIFIÉ AU MANUEL. SSE-1500 §5.1 est sans ambiguïté : les localisations « doivent être obtenues, à jour et vérifiées pour leur exactitude » et « aucun travail n’est autorisé à l’extérieur des limites de localisation ». Il n’y a donc plus de question de règle, seulement une question de fait : le creusage avait-il débuté avant la fin de la localisation. La même section exige aussi un plan de contrôle de la circulation avant le début des travaux, et impose de consulter le propriétaire du réseau pour toute excavation à moins de 1 m d’un poteau électrique. La mention « en cours » reste ambiguë et la section 11 de la fiche est vide. Ce chantier est aussi le seul du dossier réalisé pour un tiers, Eurovia, avec un contremaître externe — le périmètre de responsabilité y est différent de celui des chantiers Falcon.",
+3
+],
+[
+"A39",
+"R-34",
+9
+],
+[
+"B39",
+"Balisage et circulation",
+3
+],
+[
+"C39",
+"Circulation piéton-véhicule dans les cours et les dépôts",
+2
+],
+[
+"D39",
+1,
+10
+],
+[
+"E39",
+"=COUNTIF(Traçabilité!$G:$G,$A39)",
+10
+],
+[
+"F39",
+"=COUNTIF(Incidents!$I:$I,$A39)",
+10
+],
+[
+"G39",
+"9 septembre 2026",
+3
+],
+[
+"H39",
+"29632342 Cour",
+3
+],
+[
+"I39",
+"Le dépôt de la rue Grenache n’a ni passage piéton, ni sens de priorité, ni marquage au sol. Des travailleurs y circulent à pied en tout temps, y compris avant le lever du jour, une partie d’entre eux sans veste réfléchissante, pendant que le volume de véhicules au départ des équipes est important. Le rapport de visite du 9 septembre qualifie le heurt piéton-véhicule d’événement mortel le plus probable de l’ensemble du dossier.",
+3
+],
+[
+"J39",
+"Statuer sur l’obligation d’un plan de circulation interne pour les cours et dépôts d’Infra Québec : voies piétonnes marquées, sens de circulation, points d’entrée et de sortie, aires de manœuvre et de stockage, et règle de port du haute-visibilité à bandes de grade 3 du crépuscule à l’aube.",
+3
+],
+[
+"K39",
+"Direction de l’entrepôt et Opérations, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L39",
+"Mesures immédiates au dépôt visité · position sous 30 jours pour l’ensemble des cours",
+3
+],
+[
+"M39",
+"SSE-2001 §4 (plan de contrôle de la circulation interne) et §5.2 (bandes de grade 3 du crépuscule à l’aube)",
+3
+],
+[
+"N39",
+"À soumettre au comité",
+3
+],
+[
+"O39",
+null,
+3
+],
+[
+"P39",
+"SSE-2001 définit exactement ce qui manque — voies des véhicules et des travailleurs, points d’entrée et de sortie, zones de stockage, aires de manœuvre — mais s’applique aux chantiers, pas aux dépôts. Aucune procédure Telecon ne couvre la circulation dans une cour. C’est le seul risque du registre dont l’auteur de la visite écrit lui-même qu’il est l’événement mortel le plus probable.",
+3
+],
+[
+"A40",
+"R-35",
+9
+],
+[
+"B40",
+"Travail en hauteur — échelles",
+3
+],
+[
+"C40",
+"Entreposage en hauteur sur les toits de conteneurs",
+2
+],
+[
+"D40",
+1,
+10
+],
+[
+"E40",
+"=COUNTIF(Traçabilité!$G:$G,$A40)",
+10
+],
+[
+"F40",
+"=COUNTIF(Incidents!$I:$I,$A40)",
+10
+],
+[
+"G40",
+"9 septembre 2026",
+3
+],
+[
+"H40",
+"29632342 09:31",
+3
+],
+[
+"I40",
+"Des paniers de nacelle sont entreposés sur le toit du conteneur TRJ-CONT-08, à environ 2,6 m. Aucun moyen d’accès fixe ni garde-corps n’est visible sur le pourtour. Le rapport du 9 septembre classe le constat urgent, avec interdiction et balisage de l’accès sous 24 heures.",
+3
+],
+[
+"J40",
+"Confirmer d’abord si l’on monte sur le toit ou si les charges y sont déposées au chariot élévateur : sans exposition, l’interdiction devient une simple consigne d’entreposage. Si l’on y monte, statuer sur le moyen d’accès et la protection contre les chutes, ou sur le retrait définitif de l’entreposage en toiture.",
+3
+],
+[
+"K40",
+"Direction de l’entrepôt, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L40",
+"Interdiction et balisage sous 24 heures · décision sous 30 jours",
+3
+],
+[
+"M40",
+"SSE-1309 (travail en hauteur à partir de 2,4 m) · HSE-1300-TEL-PRO",
+3
+],
+[
+"N40",
+"À soumettre au comité",
+3
+],
+[
+"O40",
+null,
+3
+],
+[
+"P40",
+"La hauteur de 2,6 m dépasse le seuil de 2,4 m à partir duquel SSE-1309 qualifie le travail en hauteur. Une question au responsable d’entrepôt suffit à trancher.",
+3
+],
+[
+"A41",
+"R-36",
+11
+],
+[
+"B41",
+"Gouvernance et outils",
+3
+],
+[
+"C41",
+"Identification des contenants et étiquetage des équipements hors service",
+2
+],
+[
+"D41",
+2,
+12
+],
+[
+"E41",
+"=COUNTIF(Traçabilité!$G:$G,$A41)",
+12
+],
+[
+"F41",
+"=COUNTIF(Incidents!$I:$I,$A41)",
+12
+],
+[
+"G41",
+"9 septembre 2026",
+3
+],
+[
+"H41",
+"29632342 09:30 · 29632342 10:20",
+3
+],
+[
+"I41",
+"La plaque d’identification de la cage à bidons d’essence est entièrement vierge : le contenu n’est signalé nulle part. La pompe 1 de la station de ravitaillement, hors service, est signalée par une note manuscrite plutôt que par une étiquette normalisée. Du matériel est par ailleurs entreposé sur le toit de la cage à bouteilles de gaz, au-dessus des bouteilles.",
+3
+],
+[
+"J41",
+"Statuer sur l’identification obligatoire des cages et réservoirs de produits inflammables, et sur l’étiquetage normalisé de tout équipement hors service, en cour comme sur les chantiers.",
+3
+],
+[
+"K41",
+"Direction de l’entrepôt, avec le Partenaire d’affaires SST",
+3
+],
+[
+"L41",
+"48 heures pour les corrections au dépôt visité · 60 jours pour la règle",
+3
+],
+[
+"M41",
+"SSE-1601 (SIMDUT) · SSE-2105 (cadenassage, étiquetage et test)",
+3
+],
+[
+"N41",
+"À soumettre au comité",
+3
+],
+[
+"O41",
+null,
+3
+],
+[
+"P41",
+"Une note manuscrite ne survit ni à la pluie ni à un changement d’équipe. À rapprocher de R-32 : c’est la même famille de constats, l’information existe mais n’est pas portée sous une forme durable.",
+3
+],
+[
+"A42",
+"R-37",
+11
+],
+[
+"B42",
+"Conditions de travail",
+3
+],
+[
+"C42",
+"Fixation et emplacement des extincteurs en cour",
+2
+],
+[
+"D42",
+2,
+12
+],
+[
+"E42",
+"=COUNTIF(Traçabilité!$G:$G,$A42)",
+12
+],
+[
+"F42",
+"=COUNTIF(Incidents!$I:$I,$A42)",
+12
+],
+[
+"G42",
+"9 septembre 2026",
+3
+],
+[
+"H42",
+"29632342 10:20",
+3
+],
+[
+"I42",
+"L’extincteur de la station de ravitaillement est retenu à une borne par un fil métallique, sans support de fixation, au point le plus inflammable du site.",
+3
+],
+[
+"J42",
+"Statuer sur l’exigence d’un support conforme pour tout extincteur fixe en cour, et sur la vérification de son emplacement par rapport aux points d’inflammabilité.",
+3
+],
+[
+"K42",
+"Direction de l’entrepôt",
+3
+],
+[
+"L42",
+"72 heures pour le dépôt visité",
+3
+],
+[
+"M42",
+"SSE-1003 · SSE-2101",
+3
+],
+[
+"N42",
+"À soumettre au comité",
+3
+],
+[
+"O42",
+null,
+3
+],
+[
+"P42",
+"Correction simple et peu coûteuse, déjà inscrite au cycle de fermeture de 72 heures du rapport de visite.",
+3
+],
+[
+"A43",
+"R-38",
+11
+],
+[
+"B43",
+"Conditions de travail",
+3
+],
+[
+"C43",
+"Aire de manœuvre, zonage des matériaux et éclairage des cours",
+2
+],
+[
+"D43",
+2,
+12
+],
+[
+"E43",
+"=COUNTIF(Traçabilité!$G:$G,$A43)",
+12
+],
+[
+"F43",
+"=COUNTIF(Incidents!$I:$I,$A43)",
+12
+],
+[
+"G43",
+"9 septembre 2026",
+3
+],
+[
+"H43",
+"29632342 09:28",
+3
+],
+[
+"I43",
+"Gravier détrempé, ornières et flaques sur l’aire de manœuvre, dont l’état conditionne la stabilité des charges roulantes. Palettes d’armatures, câbles et bois empilés le long du mur de blocs sans zonage, le nombre de niveaux d’empilage n’étant pas comptable depuis les angles de prise de vue. Des lampadaires sont visibles mais la visite s’est faite de jour, alors qu’une activité piétonne avant l’aube est documentée.",
+3
+],
+[
+"J43",
+"Faire vérifier l’éclairage entre le crépuscule et l’aube, établir un zonage de l’aire de matériaux avec une hauteur maximale d’empilage, et statuer sur l’entretien de la surface de roulement.",
+3
+],
+[
+"K43",
+"Direction de l’entrepôt et Opérations",
+3
+],
+[
+"L43",
+"60 jours",
+3
+],
+[
+"M43",
+"SSE-1500 §5.1 pour l’éclairage de 50 à 75 lux en zone de travail · aucune exigence trouvée pour les cours",
+3
+],
+[
+"N43",
+"À soumettre au comité",
+3
+],
+[
+"O43",
+null,
+3
+],
+[
+"P43",
+"Trois des points à valider du rapport du 9 septembre portent sur ce risque et aucun ne peut être tranché depuis une photographie : une seule photo de face à hauteur d’homme règle la question de l’empilage, une visite nocturne celle de l’éclairage.",
+3
+],
+[
+"A44",
+"R-39",
+9
+],
+[
+"B44",
+"Sauvetage en hauteur",
+3
+],
+[
+"C44",
+"Intervenant en sauvetage présent en tout temps, et qualité de maître d’œuvre",
+2
+],
+[
+"D44",
+1,
+10
+],
+[
+"E44",
+"=COUNTIF(Traçabilité!$G:$G,$A44)",
+10
+],
+[
+"F44",
+"=COUNTIF(Incidents!$I:$I,$A44)",
+10
+],
+[
+"G44",
+"20 février 2025",
+3
+],
+[
+"H44",
+"Décret 63-2025 2.9.5.2",
+3
+],
+[
+"I44",
+"L’article 2.9.5.2 du Code de sécurité pour les travaux de construction, modifié par le décret 63-2025, impose au maître d’œuvre de fournir les équipements de sauvetage et d’assurer en tout temps la présence d’au moins un intervenant en sauvetage formé, dont la nature du travail sur le chantier lui permet d’intervenir rapidement et efficacement. Deux conséquences n’ont pas été traitées. D’abord, un travailleur seul ne peut satisfaire cette exigence : tout travail en hauteur nécessitant un harnais devient incompatible avec le travail isolé. Ensuite, l’obligation incombe au maître d’œuvre, et cette qualité n’est établie nulle part au dossier pour les chantiers de réseau exécutés pour Bell ou Telus.",
+3
+],
+[
+"J44",
+"Faire établir qui est maître d’œuvre sur les chantiers Falcon et de réseau extérieur : le donneur d’ordre ou Telecon. Selon la réponse, statuer sur la désignation et la formation d’intervenants en sauvetage par chantier, et sur l’interdiction formelle du travail en hauteur avec harnais en solo.",
+3
+],
+[
+"K44",
+"Gestion du projet Falcon et Opérations, avec le Partenaire d’affaires SST et le service juridique",
+3
+],
+[
+"L44",
+"Qualification de maître d’œuvre sous 30 jours · désignation des intervenants avant la reprise des travaux visés",
+3
+],
+[
+"M44",
+"CSTC art. 2.9.5.2, décret 63-2025 · SSE-1700 annexe 1, travail en hauteur nécessitant un sauvetage extérieur classé ÉLEVÉ, non autorisé",
+3
+],
+[
+"N44",
+"À soumettre au comité",
+3
+],
+[
+"O44",
+null,
+3
+],
+[
+"P44",
+"Cette obligation ne figure pas au dossier de présentation du comité sur le sauvetage en hauteur, qui traite les trois autres. C’est la plus lourde des quatre, et la seule qui referme la question du travail isolé en hauteur par un texte réglementaire plutôt que par une règle interne.",
+3
+],
+[
+"A46",
+"Colonnes à tenir à jour : Statut (liste déroulante) et Date de réponse reçue. Occur. compte les éléments d’action source; Incid. compte les événements du registre des incidents rattachés.",
+7
+],
+[
+"A47",
+"Priorité 1 : sécurité immédiate · Priorité 2 : standard ou règle manquante · Priorité 3 : amélioration d’équipement ou de processus.",
+7
+]
+]
+}

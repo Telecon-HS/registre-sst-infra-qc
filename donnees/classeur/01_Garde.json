@@ -1,0 +1,288 @@
+{
+"titre": "Garde",
+"grille": false,
+"figer": null,
+"filtre": null,
+"fusions": [
+"B34:C36"
+],
+"colonnes": {
+"A": 3.0,
+"B": 46.0,
+"C": 74.0
+},
+"lignes": {
+"2": 15.75,
+"3": 15.75,
+"4": 15.75,
+"5": 15.75,
+"7": 24.45,
+"8": 15.0,
+"10": 30.0,
+"11": 30.0,
+"12": 30.0,
+"13": 30.0,
+"14": 30.0,
+"15": 30.0,
+"16": 30.0,
+"18": 15.0,
+"19": 25.5,
+"20": 25.5,
+"21": 25.5,
+"22": 25.5,
+"23": 25.5,
+"24": 25.5,
+"25": 25.5,
+"26": 25.5,
+"27": 25.5,
+"28": 25.5,
+"29": 25.5,
+"30": 25.5,
+"31": 25.5,
+"32": 25.5,
+"34": 15.0,
+"35": 15.0,
+"36": 15.0
+},
+"validations": [],
+"images": [
+{
+"fichier": "gabarits/assets/logo_telecon.png",
+"ancre": "B2",
+"largeur": 156,
+"hauteur": 51
+}
+],
+"cellules": [
+[
+"B7",
+"Registre des risques et plan d’action SST",
+0
+],
+[
+"B8",
+"Projet Falcon — Infrastructure, Infra Québec",
+1
+],
+[
+"B10",
+"Objet",
+2
+],
+[
+"C10",
+"Consolidation des visites SST, du registre des incidents et des dossiers en cours, pour saisine du comité de santé et de sécurité.",
+3
+],
+[
+"B11",
+"Périmètre",
+2
+],
+[
+"C11",
+"Infra Québec. Dix visites SST consolidées du 5 août au 17 septembre 2026, dont le projet Falcon et le dépôt de la rue Grenache.",
+3
+],
+[
+"B12",
+"Fiches eCompliance",
+2
+],
+[
+"C12",
+"29182326 · 29363929 · 29456212 · 29489650 · 29580646 · 29632342 · 29721538 · 29722866 · 29751529 · 29754404",
+3
+],
+[
+"B13",
+"Préparé par",
+2
+],
+[
+"C13",
+"⟦P01⟧, Partenaire d’affaires Santé et Sécurité",
+3
+],
+[
+"B14",
+"Destinataire",
+2
+],
+[
+"C14",
+"Comité SST Infra Québec — comite.sst.infra@telecon.ca",
+3
+],
+[
+"B15",
+"Date",
+2
+],
+[
+"C15",
+"19 septembre 2026 — version 3, références vérifiées au manuel agrégé",
+3
+],
+[
+"B16",
+"Statut",
+2
+],
+[
+"C16",
+"Document préparatoire — les priorités, porteurs et échéances relèvent de la décision du comité",
+3
+],
+[
+"B18",
+"Contenu du classeur",
+4
+],
+[
+"B19",
+"Registre",
+2
+],
+[
+"C19",
+"Trente-neuf risques consolidés, avec constat, décision demandée, porteur, échéance et référence normative.",
+3
+],
+[
+"B20",
+"Initiatives",
+2
+],
+[
+"C20",
+"Neuf dossiers en cours qui ont un porteur et un jalon plutôt qu’un écart à corriger.",
+3
+],
+[
+"B21",
+"Traçabilité",
+2
+],
+[
+"C21",
+"Chaque élément d’action source rattaché à sa ligne de registre.",
+3
+],
+[
+"B22",
+"Incidents",
+2
+],
+[
+"C22",
+"Neuf événements déclarés, avec leur rattachement proposé au registre.",
+3
+],
+[
+"B23",
+"Visites SST",
+2
+],
+[
+"C23",
+"Les onze visites au dossier, consolidées ou non.",
+3
+],
+[
+"B24",
+"Inspections équipement",
+2
+],
+[
+"C24",
+"Volume par type et par mois, du 19 mai au 17 septembre 2026.",
+3
+],
+[
+"B25",
+"Documents du comité",
+2
+],
+[
+"C25",
+"Ce qui est exigé d’un comité au Québec, et ce qui existe chez Infra Québec.",
+3
+],
+[
+"B26",
+"Activités de prévention",
+2
+],
+[
+"C26",
+"Les inspections réalisées par les équipes, leur alignement au plan stratégique, et la reconnaissance à porter en séance.",
+3
+],
+[
+"B27",
+"Photos par site",
+2
+],
+[
+"C27",
+"Index des 35 photographies retenues, par chantier, avec leur rattachement au registre.",
+3
+],
+[
+"B28",
+"Dossier du comité",
+2
+],
+[
+"C28",
+"Portrait des 5 régions, échéances, questions bloquantes, décisions à prendre et trousse HSE-701.",
+3
+],
+[
+"B29",
+"Projets en cours",
+2
+],
+[
+"C29",
+"Les dix chantiers qui tournent en parallèle du registre, dont les modules d’agents.",
+3
+],
+[
+"B30",
+"Processus CAPA",
+2
+],
+[
+"C30",
+"Le chemin d’un constat jusqu’à sa clôture selon SSE-200-TEL-POL, et l’endroit où le dossier est bloqué.",
+3
+],
+[
+"B31",
+"Synthèse",
+2
+],
+[
+"C31",
+"Décomptes par priorité, par famille et par origine.",
+3
+],
+[
+"B32",
+"Lecture",
+2
+],
+[
+"C32",
+"Mode d’emploi et réserves.",
+3
+],
+[
+"B34",
+"Ce classeur ne porte aucun verdict de conformité et ne se prononce pas sur l’aptitude d’un véhicule ou d’un travailleur. Les références au manuel agrégé SSE-00-TEL-PRG et les exigences réglementaires citées sont à revérifier avant usage réglementaire. Les données eCompliance proviennent d’exports de type « Public », possiblement filtrés.",
+5
+]
+]
+}

@@ -1,0 +1,1204 @@
+{
+"titre": "Dossier du comité",
+"grille": false,
+"figer": null,
+"filtre": null,
+"fusions": [
+"D20:E20",
+"D60:E60",
+"A41:C41",
+"B62:C62",
+"D27:F27",
+"B47:F47",
+"A37:C37",
+"D19:E19",
+"B59:C59",
+"A27:C27",
+"D40:E40",
+"D36:E36",
+"B58:C58",
+"B52:F52",
+"D28:F28",
+"B48:F48",
+"D57:E57",
+"A21:F23",
+"B61:C61",
+"B60:C60",
+"D61:E61",
+"D41:E41",
+"D30:F30",
+"A29:C29",
+"D17:E17",
+"B57:C57",
+"A38:C38",
+"A28:C28",
+"D16:E16",
+"D29:F29",
+"A31:C31",
+"D37:E37",
+"A40:C40",
+"D62:E62",
+"A30:C30",
+"A39:C39",
+"D18:E18",
+"D58:E58",
+"D39:E39",
+"B49:F49",
+"A64:F66",
+"A36:C36",
+"D31:F31",
+"B51:F51",
+"D38:E38",
+"B50:F50",
+"D59:E59"
+],
+"colonnes": {
+"A": 30.0,
+"B": 14.0,
+"C": 16.0,
+"D": 26.0,
+"E": 30.0,
+"F": 56.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"4": 15.0,
+"5": 15.0,
+"6": 15.0,
+"7": 15.0,
+"8": 15.0,
+"9": 15.0,
+"10": 15.0,
+"11": 15.0,
+"14": 15.0,
+"15": 15.0,
+"16": 15.0,
+"17": 15.0,
+"18": 15.0,
+"19": 15.0,
+"20": 15.0,
+"21": 15.0,
+"22": 15.0,
+"23": 15.0,
+"25": 15.0,
+"26": 15.0,
+"27": 31.5,
+"28": 31.5,
+"29": 31.5,
+"30": 31.5,
+"31": 31.5,
+"34": 15.0,
+"35": 15.0,
+"36": 21.75,
+"37": 21.75,
+"38": 21.75,
+"39": 21.75,
+"40": 21.75,
+"41": 21.75,
+"44": 15.0,
+"45": 15.0,
+"46": 15.0,
+"47": 27.75,
+"48": 27.75,
+"49": 27.75,
+"50": 27.75,
+"51": 27.75,
+"52": 27.75,
+"55": 15.0,
+"56": 15.0,
+"57": 25.5,
+"58": 25.5,
+"59": 25.5,
+"60": 25.5,
+"61": 25.5,
+"62": 25.5,
+"64": 15.0,
+"65": 15.0,
+"66": 15.0
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"DOSSIER DE CONSTITUTION DU COMITÉ — DIVISION INFRASTRUCTURE, QUÉBEC",
+6
+],
+[
+"A2",
+"Source : fiche de breffage HSE-701-TEL-BRF v1.0 du 1er septembre 2026. État du droit vérifié au 1er septembre 2026, à revérifier avant usage réglementaire.",
+7
+],
+[
+"A4",
+"LE PORTRAIT — 189 TRAVAILLEURS, 5 RÉGIONS",
+23
+],
+[
+"A5",
+"Région",
+29
+],
+[
+"B5",
+"Effectif",
+29
+],
+[
+"C5",
+"Seuil de 20",
+29
+],
+[
+"D5",
+"Mécanisme de participation",
+29
+],
+[
+"E5",
+"Mécanisme de prévention",
+29
+],
+[
+"A6",
+"Montréal",
+2
+],
+[
+"B6",
+133,
+15
+],
+[
+"C6",
+"Atteint",
+10
+],
+[
+"D6",
+"CSS + RSS",
+3
+],
+[
+"E6",
+"Programme de prévention",
+3
+],
+[
+"A7",
+"Québec",
+2
+],
+[
+"B7",
+40,
+15
+],
+[
+"C7",
+"Atteint",
+10
+],
+[
+"D7",
+"CSS + RSS",
+3
+],
+[
+"E7",
+"Programme de prévention",
+3
+],
+[
+"A8",
+"Trois-Rivières",
+2
+],
+[
+"B8",
+12,
+15
+],
+[
+"C8",
+"Non",
+14
+],
+[
+"D8",
+"Agent de liaison",
+3
+],
+[
+"E8",
+"Plan d’action",
+3
+],
+[
+"A9",
+"Sherbrooke",
+2
+],
+[
+"B9",
+3,
+15
+],
+[
+"C9",
+"Non",
+14
+],
+[
+"D9",
+"Agent de liaison",
+3
+],
+[
+"E9",
+"Plan d’action",
+3
+],
+[
+"A10",
+"Chicoutimi",
+2
+],
+[
+"B10",
+1,
+15
+],
+[
+"C10",
+"Non",
+14
+],
+[
+"D10",
+"Agent de liaison",
+3
+],
+[
+"E10",
+"Plan d’action",
+3
+],
+[
+"A11",
+"Total",
+2
+],
+[
+"B11",
+"=SUM(B6:B10)",
+26
+],
+[
+"C11",
+"=COUNTIF(C6:C10,\"Atteint\")&\" comités\"",
+26
+],
+[
+"A14",
+"LES ÉCHÉANCES",
+23
+],
+[
+"A15",
+"Date",
+29
+],
+[
+"D15",
+"Ce qui est dû",
+29
+],
+[
+"F15",
+"Portée",
+29
+],
+[
+"A16",
+"1er octobre 2026",
+34
+],
+[
+"D16",
+"Programmes de prévention et plans d’action en application",
+3
+],
+[
+"E16",
+null,
+31
+],
+[
+"F16",
+"Les 5 sites",
+3
+],
+[
+"A17",
+"1er octobre 2026",
+34
+],
+[
+"D17",
+"Attestations de formation si le site est de niveau 4",
+3
+],
+[
+"E17",
+null,
+31
+],
+[
+"F17",
+"Membres de CSS",
+3
+],
+[
+"A18",
+"1er avril 2027",
+35
+],
+[
+"D18",
+"Attestations de formation si le site est de niveau 3",
+3
+],
+[
+"E18",
+null,
+31
+],
+[
+"F18",
+"Membres de CSS",
+3
+],
+[
+"A19",
+"1er octobre 2027",
+36
+],
+[
+"D19",
+"Attestations de formation si le site est de niveau 2",
+3
+],
+[
+"E19",
+null,
+31
+],
+[
+"F19",
+"Membres de CSS",
+3
+],
+[
+"A20",
+"1er avril 2028",
+36
+],
+[
+"D20",
+"Attestations de formation si le site est de niveau 1",
+3
+],
+[
+"E20",
+null,
+31
+],
+[
+"F20",
+"Membres de CSS",
+3
+],
+[
+"A21",
+"Contrainte de séquence — Le programme de prévention s’élabore en collaboration avec le comité, et aucun comité n’existe. Il faut constituer, désigner, tenir une première réunion, puis élaborer, avant le 1er octobre. Si le calendrier ne tient pas, la position défendable est de documenter la démarche engagée et ses jalons.",
+32
+],
+[
+"A25",
+"CE QUI BLOQUE ENCORE",
+23
+],
+[
+"A26",
+"Question",
+29
+],
+[
+"D26",
+"Ce qui se passe sans la réponse",
+29
+],
+[
+"A27",
+"Une région équivaut-elle à un établissement ?",
+2
+],
+[
+"B27",
+null,
+30
+],
+[
+"C27",
+null,
+31
+],
+[
+"D27",
+"Si Montréal compte plusieurs dépôts, il faut plusieurs comités. Le classeur pose l’équivalence comme hypothèse, pas comme fait.",
+3
+],
+[
+"E27",
+null,
+30
+],
+[
+"F27",
+null,
+31
+],
+[
+"A28",
+"Quel est le niveau de classement de chaque site ?",
+2
+],
+[
+"B28",
+null,
+30
+],
+[
+"C28",
+null,
+31
+],
+[
+"D28",
+"Sans lui, ni la fréquence des réunions ni l’échéance de formation ne peuvent être fixées.",
+3
+],
+[
+"E28",
+null,
+30
+],
+[
+"F28",
+null,
+31
+],
+[
+"A29",
+"Un groupe non syndiqué désigne-t-il un membre à Québec ?",
+2
+],
+[
+"B29",
+null,
+30
+],
+[
+"C29",
+null,
+31
+],
+[
+"D29",
+"Deux ou trois postes. Un avis erroné fait reprendre le scrutin.",
+3
+],
+[
+"E29",
+null,
+30
+],
+[
+"F29",
+null,
+31
+],
+[
+"A30",
+"Quel effectif maximal sur douze mois glissants par site ?",
+2
+],
+[
+"B30",
+null,
+30
+],
+[
+"C30",
+null,
+31
+],
+[
+"D30",
+"Trois-Rivières à 12 n’est pas loin du seuil de 20, et la saison peut le franchir.",
+3
+],
+[
+"E30",
+null,
+30
+],
+[
+"F30",
+null,
+31
+],
+[
+"A31",
+"Le temps de libération des représentants est-il budgété ?",
+2
+],
+[
+"B31",
+null,
+30
+],
+[
+"C31",
+null,
+31
+],
+[
+"D31",
+"Un comité constitué mais incapable de siéger.",
+3
+],
+[
+"E31",
+null,
+30
+],
+[
+"F31",
+null,
+31
+],
+[
+"A34",
+"LES DÉCISIONS À PRENDRE EN RENCONTRE",
+23
+],
+[
+"A35",
+"Décision",
+29
+],
+[
+"D35",
+"Options",
+29
+],
+[
+"F35",
+"Retenu",
+29
+],
+[
+"A36",
+"Découpage des établissements",
+2
+],
+[
+"B36",
+null,
+30
+],
+[
+"C36",
+null,
+31
+],
+[
+"D36",
+"Confirmer les 5 régions, ou redécouper",
+3
+],
+[
+"E36",
+null,
+31
+],
+[
+"F36",
+null,
+37
+],
+[
+"A37",
+"Scénario de structure",
+2
+],
+[
+"B37",
+null,
+30
+],
+[
+"C37",
+null,
+31
+],
+[
+"D37",
+"A par établissement · B regroupement Infra QC",
+3
+],
+[
+"E37",
+null,
+31
+],
+[
+"F37",
+null,
+37
+],
+[
+"A38",
+"Parité côté employeur",
+2
+],
+[
+"B38",
+null,
+30
+],
+[
+"C38",
+null,
+31
+],
+[
+"D38",
+"Un représentant par comité, ou parité pleine",
+3
+],
+[
+"E38",
+null,
+31
+],
+[
+"F38",
+null,
+37
+],
+[
+"A39",
+"Postes à pourvoir à Québec",
+2
+],
+[
+"B39",
+null,
+30
+],
+[
+"C39",
+null,
+31
+],
+[
+"D39",
+"Deux ou trois",
+3
+],
+[
+"E39",
+null,
+31
+],
+[
+"F39",
+null,
+37
+],
+[
+"A40",
+"Rattachement du poste de Chicoutimi",
+2
+],
+[
+"B40",
+null,
+30
+],
+[
+"C40",
+null,
+31
+],
+[
+"D40",
+"Établissement distinct ou rattaché à Québec",
+3
+],
+[
+"E40",
+null,
+31
+],
+[
+"F40",
+null,
+37
+],
+[
+"A41",
+"Budget de libération et de formation",
+2
+],
+[
+"B41",
+null,
+30
+],
+[
+"C41",
+null,
+31
+],
+[
+"D41",
+"Confirmé ou à arbitrer",
+3
+],
+[
+"E41",
+null,
+31
+],
+[
+"F41",
+null,
+37
+],
+[
+"A44",
+"SIX PROCÉDURES CORPORATIVES INAPPLICABLES FAUTE DE COMITÉ",
+38
+],
+[
+"A45",
+"Vérifié au manuel agrégé le 19 septembre 2026. Ces obligations ne dépendent d’aucune interprétation de la CNESST : elles sont internes.",
+7
+],
+[
+"A46",
+"Référence",
+29
+],
+[
+"B46",
+"Ce que la procédure exige du comité",
+29
+],
+[
+"A47",
+"SSE.TEL-PRG-600 §6.1",
+27
+],
+[
+"B47",
+"La liste des EPI approuvés est élaborée « en collaboration avec les divers comités mixtes de santé et de sécurité ».",
+3
+],
+[
+"C47",
+null,
+30
+],
+[
+"D47",
+null,
+30
+],
+[
+"E47",
+null,
+30
+],
+[
+"F47",
+null,
+31
+],
+[
+"A48",
+"SSE.TEL-PRG-600 §6.3.1",
+27
+],
+[
+"B48",
+"Les membres du comité sont informés du résultat de chaque essai terrain d’EPI.",
+3
+],
+[
+"C48",
+null,
+30
+],
+[
+"D48",
+null,
+30
+],
+[
+"E48",
+null,
+30
+],
+[
+"F48",
+null,
+31
+],
+[
+"A49",
+"SSE.TEL-PRG-600 §6.3.2",
+27
+],
+[
+"B49",
+"Les membres du comité doivent être informés de tout changement permanent d’EPI.",
+3
+],
+[
+"C49",
+null,
+30
+],
+[
+"D49",
+null,
+30
+],
+[
+"E49",
+null,
+30
+],
+[
+"F49",
+null,
+31
+],
+[
+"A50",
+"SSE-1309 §2",
+27
+],
+[
+"B50",
+"Le partenaire d’affaires SST fait participer les membres du comité à la révision annuelle de la procédure de sauvetage en hauteur.",
+3
+],
+[
+"C50",
+null,
+30
+],
+[
+"D50",
+null,
+30
+],
+[
+"E50",
+null,
+30
+],
+[
+"F50",
+null,
+31
+],
+[
+"A51",
+"SSE-1700 §14.5",
+27
+],
+[
+"B51",
+"L’analyse des dangers d’un travail isolé absent de l’annexe 1 est transmise au comité et au partenaire d’affaires régional.",
+3
+],
+[
+"C51",
+null,
+30
+],
+[
+"D51",
+null,
+30
+],
+[
+"E51",
+null,
+30
+],
+[
+"F51",
+null,
+31
+],
+[
+"A52",
+"SSE-2001 §2",
+27
+],
+[
+"B52",
+"Le partenaire d’affaires SST fait participer les membres du comité à la révision annuelle de la procédure de gestion de la circulation.",
+3
+],
+[
+"C52",
+null,
+30
+],
+[
+"D52",
+null,
+30
+],
+[
+"E52",
+null,
+30
+],
+[
+"F52",
+null,
+31
+],
+[
+"A55",
+"LA TROUSSE HSE-701 — CE QUI EST PRÊT",
+23
+],
+[
+"A56",
+"Référence",
+29
+],
+[
+"B56",
+"Document",
+29
+],
+[
+"D56",
+"Contenu",
+29
+],
+[
+"F56",
+"Version",
+29
+],
+[
+"A57",
+"HSE-701-TEL-BRF",
+27
+],
+[
+"B57",
+"Fiche de breffage",
+3
+],
+[
+"C57",
+null,
+31
+],
+[
+"D57",
+"Portrait, postes, échéances, scénarios, décisions à prendre. 3 pages.",
+3
+],
+[
+"E57",
+null,
+31
+],
+[
+"F57",
+"v1.0 — 1er sept. 2026",
+3
+],
+[
+"A58",
+"HSE-701-TEL-PLA",
+27
+],
+[
+"B58",
+"Plan de déploiement",
+3
+],
+[
+"C58",
+null,
+31
+],
+[
+"D58",
+"Obligations par région, scénarios, calendrier, décisions.",
+3
+],
+[
+"E58",
+null,
+31
+],
+[
+"F58",
+"v1.0",
+3
+],
+[
+"A59",
+"HSE-701-TEL-LET",
+27
+],
+[
+"B59",
+"Lettres et élection",
+3
+],
+[
+"C59",
+null,
+31
+],
+[
+"D59",
+"Treize pièces, de l’annonce du scrutin à la convocation du comité.",
+3
+],
+[
+"E59",
+null,
+31
+],
+[
+"F59",
+"v1.0",
+3
+],
+[
+"A60",
+"HSE-701-TEL-REG",
+27
+],
+[
+"B60",
+"Registre de conformité",
+3
+],
+[
+"C60",
+null,
+31
+],
+[
+"D60",
+"Les cinq régions chargées, huit onglets, tableau de bord automatisé.",
+3
+],
+[
+"E60",
+null,
+31
+],
+[
+"F60",
+"v1.0 — 25 août 2026",
+3
+],
+[
+"A61",
+"HSE-701-TEL-QUE",
+27
+],
+[
+"B61",
+"Questionnaire de cadrage",
+3
+],
+[
+"C61",
+null,
+31
+],
+[
+"D61",
+"Cinquante-quatre questions, dont neuf bloquantes, avec l’enjeu de chacune.",
+3
+],
+[
+"E61",
+null,
+31
+],
+[
+"F61",
+"v1.0",
+3
+],
+[
+"A62",
+"HSE-701-TEL-F02",
+27
+],
+[
+"B62",
+"Checklist de cadrage",
+3
+],
+[
+"C62",
+null,
+31
+],
+[
+"D62",
+"PDF éditable de soixante-dix-huit points, fiche de décision à signer en séance.",
+3
+],
+[
+"E62",
+null,
+31
+],
+[
+"F62",
+"v1.0",
+3
+],
+[
+"A64",
+"Recommandation du breffage — Retenir le scénario A, un comité par établissement, pour la mise en place immédiate : il ne demande aucune démarche préalable et l’échéance du 1er octobre ne laisse pas le temps de monter un dossier de regroupement. Le scénario B pourra s’évaluer en 2027, une fois les comités rodés.",
+5
+]
+]
+}

@@ -1,0 +1,25 @@
+# Données privées : noms, détail des incidents, photos. Vivent sur SharePoint.
+prive/
+# Livrables générés : se régénèrent, ne se versent pas.
+sortie/
+# Exports bruts eCompliance et fichiers de travail
+exports/
+Public_Inspections*
+Report_On_*
+dashboard-*
+*.csv
+*.zip
+# Photos : aucune photo dans le dépôt, sauf le logo des gabarits
+*.jpg
+*.jpeg
+*.heic
+*.png
+!gabarits/assets/logo_telecon.png
+# Livrables bureautiques
+*.xlsx
+*.pdf
+*.docx
+# Python
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,142 @@
+{
+"titre": "Lecture",
+"grille": true,
+"figer": null,
+"filtre": null,
+"fusions": [],
+"colonnes": {
+"A": 140.0
+},
+"lignes": {
+"1": 16.15,
+"3": 15.0,
+"4": 61.5,
+"5": 15.0,
+"6": 15.0,
+"7": 61.5,
+"8": 61.5,
+"9": 15.0,
+"10": 15.0,
+"11": 61.5,
+"12": 61.5,
+"13": 61.5,
+"14": 15.0,
+"15": 15.0,
+"16": 61.5,
+"17": 15.0,
+"18": 15.0,
+"19": 61.5,
+"20": 15.0,
+"21": 15.0,
+"22": 61.5
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"MODE D’EMPLOI ET RÉSERVES",
+40
+],
+[
+"A3",
+"Ce que contient le classeur",
+42
+],
+[
+"A4",
+"Registre : une ligne par risque consolidé. Traçabilité : chaque élément source rattaché à sa ligne de registre, ce qui alimente le compteur Occur. Incidents : les neuf événements déclarés, avec leur rattachement proposé, ce qui alimente le compteur Incid. Visites SST : toutes les visites au dossier, consolidées ou non. Inspections équipement : les inspections de véhicule et de machinerie, avec le volume par type et par mois.",
+43
+],
+[
+"A5",
+null,
+43
+],
+[
+"A6",
+"Corrections apportées à la version précédente",
+42
+],
+[
+"A7",
+"La fiche 29746976 n’existe pas au registre des inspections eCompliance. La visite d’épissure du 15 septembre à 2148 Jessop porte le numéro 29754404. Le registre a été corrigé en conséquence; 29746976 n’apparaît que sur le document d’éléments d’action et reste à expliquer.",
+43
+],
+[
+"A8",
+"La visite de la rue du Pontmain est datée du 16 septembre à eCompliance, alors que les documents préparatoires indiquent le 15. La date du système a été retenue. La réserve sur l’unité 103118 « dans deux visites du même jour » tombe : il s’agit de deux jours consécutifs. Reste qu’un même numéro d’unité apparaît à deux adresses.",
+43
+],
+[
+"A9",
+null,
+43
+],
+[
+"A10",
+"Ce que les incidents ajoutent",
+42
+],
+[
+"A11",
+"Trois événements des 17, 20 et 26 août portent la mention « Travailler seul », dont deux typés blessure. R-07 n’est donc plus un constat d’inspection isolé : le risque est documenté par des blessures réelles, antérieures à la visite du 15 septembre qui a relevé l’absence de formulaire F02. C’est l’élément le plus lourd du dossier.",
+43
+],
+[
+"A12",
+"Trois autres événements relèvent de la conduite pour le travail. Aucun des 41 éléments d’action ne porte sur la conduite : R-30 a été créé pour combler cet écart et ne provient d’aucune fiche d’inspection.",
+43
+],
+[
+"A13",
+"Aucun incident n’est typé chute de hauteur. Le seul candidat de la période pour l’événement du Safety Stand Down est le 29552548 du 2 septembre, typé « Autre » avec STKY « sans objet ». Si le rapprochement se confirme, le typage rend l’événement introuvable par toute requête sur le travail en hauteur, ce qui est en soi un constat à porter au comité.",
+43
+],
+[
+"A14",
+null,
+43
+],
+[
+"A15",
+"Ce que les visites non consolidées appellent",
+42
+],
+[
+"A16",
+"Sept visites SST figurent au dossier sans avoir été versées au registre, du 5 août au 17 septembre, dont quatre préparées par une autre personne. Leur contenu n’est pas disponible ici : seules les métadonnées le sont. Il faut obtenir les fiches pour savoir si elles produisent des éléments d’action à portée organisationnelle. La fiche 28365250 est « In Progress » depuis le 3 juin 2026.",
+43
+],
+[
+"A17",
+null,
+43
+],
+[
+"A18",
+"Statut des fiches",
+42
+],
+[
+"A19",
+"Les quatre fiches consolidées sont au statut « Submitted » avec un score de 0 %, alors que les visites préparées par une autre personne sont « Locked ». Une fiche non verrouillée demeure modifiable après transmission au comité.",
+43
+],
+[
+"A20",
+null,
+43
+],
+[
+"A21",
+"Réserve générale sur les exports",
+42
+],
+[
+"A22",
+"Les quatre classeurs sont des vues « Public » possiblement filtrées. Les absences relevées — la fiche 29746976, les inspections mensuelles après le 16 juillet, l’incident de chute — peuvent être des effets de filtre plutôt que des absences réelles. À confirmer auprès de l’administrateur eCompliance avant toute présentation en séance.",
+43
+]
+]
+}

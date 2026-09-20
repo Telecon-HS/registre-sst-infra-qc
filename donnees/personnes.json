@@ -1,0 +1,86 @@
+{
+ "_note": "Jetons de personnes utilisés dans les données du dépôt. Le nom réel est dans prive/noms.json (hors dépôt). Sans ce fichier, les générateurs affichent le repli.",
+ "personnes": {
+  "P01": {
+   "repli": "Auteur du dossier"
+  },
+  "P02": {
+   "repli": "[nom retiré]"
+  },
+  "P03": {
+   "repli": "[nom retiré]"
+  },
+  "P04": {
+   "repli": "[nom retiré]"
+  },
+  "P05": {
+   "repli": "[nom retiré]"
+  },
+  "P06": {
+   "repli": "[nom retiré]"
+  },
+  "P07": {
+   "repli": "[nom retiré]"
+  },
+  "P08": {
+   "repli": "[nom retiré]"
+  },
+  "P09": {
+   "repli": "[nom retiré]"
+  },
+  "P10": {
+   "repli": "[nom retiré]"
+  },
+  "P11": {
+   "repli": "[nom retiré]"
+  },
+  "P12": {
+   "repli": "[nom retiré]"
+  },
+  "P13": {
+   "repli": "[nom retiré]"
+  },
+  "P14": {
+   "repli": "[nom retiré]"
+  },
+  "P15": {
+   "repli": "[nom retiré]"
+  },
+  "P16": {
+   "repli": "[nom retiré]"
+  },
+  "P17": {
+   "repli": "[nom retiré]"
+  },
+  "P18": {
+   "repli": "[nom retiré]"
+  },
+  "P19": {
+   "repli": "[nom retiré]"
+  },
+  "P20": {
+   "repli": "[nom retiré]"
+  },
+  "P21": {
+   "repli": "[nom retiré]"
+  },
+  "P22": {
+   "repli": "[nom retiré]"
+  },
+  "P23": {
+   "repli": "[nom retiré]"
+  },
+  "P24": {
+   "repli": "[nom retiré]"
+  },
+  "P25": {
+   "repli": "[nom retiré]"
+  },
+  "P26": {
+   "repli": "[nom retiré]"
+  },
+  "P27": {
+   "repli": "[nom retiré]"
+  }
+ }
+}

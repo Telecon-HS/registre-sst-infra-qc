@@ -1,0 +1,729 @@
+{
+"titre": "Documents du comité",
+"grille": true,
+"figer": "C6",
+"filtre": "A5:G23",
+"fusions": [],
+"colonnes": {
+"A": 24.0,
+"B": 40.0,
+"C": 46.0,
+"D": 30.0,
+"E": 32.0,
+"G": 56.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"5": 31.5,
+"6": 61.5,
+"7": 61.5,
+"8": 61.5,
+"9": 61.5,
+"10": 61.5,
+"11": 61.5,
+"12": 61.5,
+"13": 61.5,
+"14": 61.5,
+"15": 61.5,
+"16": 61.5,
+"17": 61.5,
+"18": 61.5,
+"19": 61.5,
+"20": 61.5,
+"21": 61.5,
+"22": 61.5,
+"23": 61.5,
+"25": 15.0,
+"26": 15.0
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"DOCUMENTS DU COMITÉ — CE QUI EST EXIGÉ, CE QUI EXISTE",
+6
+],
+[
+"A2",
+"Relevé des documents que doit tenir un comité de santé et de sécurité au Québec, et de leur état chez Infra Québec. Les exigences citées viennent de la LSST, de la LMRSST et du RMPPE en vigueur depuis le 1er octobre 2025. Ce relevé n’est pas un avis juridique : à confirmer auprès de la CNESST.",
+7
+],
+[
+"A5",
+"Section",
+8
+],
+[
+"B5",
+"Document",
+8
+],
+[
+"C5",
+"Exigence ou source",
+8
+],
+[
+"D5",
+"Qui le tient",
+8
+],
+[
+"E5",
+"État chez Infra QC",
+8
+],
+[
+"F5",
+"Où il se trouve",
+8
+],
+[
+"G5",
+"Remarque",
+8
+],
+[
+"A6",
+"A · Fonctionnement du comité",
+27
+],
+[
+"B6",
+"Charte et règles de fonctionnement",
+2
+],
+[
+"C6",
+"RMPPE, en vigueur depuis le 1er octobre 2025",
+3
+],
+[
+"D6",
+"Comité",
+3
+],
+[
+"E6",
+"Gabarit rédigé, non adopté",
+22
+],
+[
+"F6",
+"Trousse HSE-701-A02, partie 1",
+3
+],
+[
+"G6",
+"Fixe la fréquence des réunions — au moins une fois par trois mois, mensuel recommandé — le quorum, le mode de décision et le temps de libération.",
+3
+],
+[
+"A7",
+null,
+3
+],
+[
+"B7",
+"Ordre du jour de chaque réunion",
+2
+],
+[
+"C7",
+"Pratique CNESST, gabarit disponible sur son site",
+3
+],
+[
+"D7",
+"Secrétaire du comité",
+3
+],
+[
+"E7",
+"À produire",
+22
+],
+[
+"F7",
+"Gabarit CNESST",
+3
+],
+[
+"G7",
+"L’ordre du jour proposé pour les trente risques figure au plan d’action une page.",
+3
+],
+[
+"A8",
+null,
+3
+],
+[
+"B8",
+"Procès-verbal de chaque réunion",
+2
+],
+[
+"C8",
+"Les décisions du comité doivent être consignées. Sans procès-verbal, un inspecteur ne constate pas un comité mais une réunion informelle.",
+3
+],
+[
+"D8",
+"Secrétaire du comité",
+3
+],
+[
+"E8",
+"Procès-verbal de constitution en gabarit, non daté",
+28
+],
+[
+"F8",
+"Trousse HSE-701-A02, partie 2",
+3
+],
+[
+"G8",
+"Durée de conservation à confirmer : l’ancien Règlement sur les comités de santé et de sécurité imposait au moins cinq ans. Vérifier ce que le RMPPE reconduit.",
+3
+],
+[
+"A9",
+null,
+3
+],
+[
+"B9",
+"Registre des recommandations écrites à l’employeur",
+2
+],
+[
+"C9",
+"LSST — le comité soumet ses recommandations à l’employeur, qui est tenu d’y répondre par écrit",
+3
+],
+[
+"D9",
+"Comité",
+3
+],
+[
+"E9",
+"Gabarit prêt, vide",
+28
+],
+[
+"F9",
+"Trousse HSE-701-A02, partie 3",
+3
+],
+[
+"G9",
+"C’est ce registre qui déclenche l’obligation de réponse. R-29 porte précisément sur le délai de cette réponse et le mécanisme d’escalade.",
+3
+],
+[
+"A10",
+null,
+3
+],
+[
+"B10",
+"Registre des plaintes et suggestions",
+2
+],
+[
+"C10",
+"Les plaintes et suggestions reçues des travailleurs doivent être conservées par le comité et leurs réponses inscrites au procès-verbal",
+3
+],
+[
+"D10",
+"Comité",
+3
+],
+[
+"E10",
+"À créer",
+17
+],
+[
+"F10",
+"—",
+3
+],
+[
+"G10",
+"Le courriel de ⟦P25⟧ sur la couverture cellulaire est exactement le type de signalement qui devrait y figurer.",
+3
+],
+[
+"A11",
+null,
+3
+],
+[
+"B11",
+"Tableau de suivi des actions",
+2
+],
+[
+"C11",
+"Gabarit CNESST disponible",
+3
+],
+[
+"D11",
+"Comité",
+3
+],
+[
+"E11",
+"Tenu par le présent classeur",
+28
+],
+[
+"F11",
+"Onglets Registre et Initiatives",
+3
+],
+[
+"G11",
+"Les colonnes Statut et Date de réponse reçue sont prévues à cette fin.",
+3
+],
+[
+"A12",
+null,
+3
+],
+[
+"B12",
+"Rapport annuel d’activités",
+2
+],
+[
+"C12",
+"À confirmer — l’ancien règlement prévoyait un rapport avant le 31 mars, adopté en réunion avant envoi à la CNESST",
+3
+],
+[
+"D12",
+"Comité",
+3
+],
+[
+"E12",
+"Non produit",
+17
+],
+[
+"F12",
+"—",
+3
+],
+[
+"G12",
+"Vérifier si le RMPPE reconduit cette exigence et sous quelle forme.",
+3
+],
+[
+"A13",
+"B · Prévention",
+27
+],
+[
+"B13",
+"Programme de prévention",
+2
+],
+[
+"C13",
+"RMPPE — échéance de conformité annoncée au 1er octobre 2026, à confirmer auprès de la CNESST",
+3
+],
+[
+"D13",
+"Employeur, approuvé par le comité paritaire",
+3
+],
+[
+"E13",
+"À confirmer",
+22
+],
+[
+"F13",
+"—",
+3
+],
+[
+"G13",
+"Doit identifier les risques, décrire les mesures de contrôle pour chacun, définir les responsabilités et prévoir un mécanisme de suivi. Mise à jour annuelle, copie remise au comité.",
+3
+],
+[
+"A14",
+null,
+3
+],
+[
+"B14",
+"Identification et analyse des risques",
+2
+],
+[
+"C14",
+"RMPPE — le registre est le moyen d’identifier les risques du milieu de travail",
+3
+],
+[
+"D14",
+"Employeur, avec le comité et le représentant en santé et sécurité",
+3
+],
+[
+"E14",
+"Partiel",
+22
+],
+[
+"F14",
+"Ce classeur",
+3
+],
+[
+"G14",
+"Couvre le projet Falcon à partir de quatre visites. Ne couvre pas l’ensemble d’Infra Québec, ni les sept visites non consolidées.",
+3
+],
+[
+"A15",
+null,
+3
+],
+[
+"B15",
+"Registre des risques",
+2
+],
+[
+"C15",
+"HSE-300.1-TEL-STD à l’interne",
+3
+],
+[
+"D15",
+"Partenaire d’affaires SST",
+3
+],
+[
+"E15",
+"Ce classeur en tient lieu pour Falcon",
+28
+],
+[
+"F15",
+"Onglet Registre",
+3
+],
+[
+"G15",
+"Plusieurs décisions demandées prévoient d’y inscrire de nouveaux risques : le CO pour l’épissure en fourgon (R-10), et tout risque connu non traité au jour 45 (R-29).",
+3
+],
+[
+"A16",
+null,
+3
+],
+[
+"B16",
+"Risques psychosociaux",
+2
+],
+[
+"C16",
+"LMRSST — l’identification des risques couvre le psychosocial autant que le physique",
+3
+],
+[
+"D16",
+"Employeur, avec le comité",
+3
+],
+[
+"E16",
+"Absent du registre",
+17
+],
+[
+"F16",
+"—",
+3
+],
+[
+"G16",
+"Les trente risques consolidés sont tous physiques. À porter à l’ordre du jour, ne serait-ce que pour le consigner.",
+3
+],
+[
+"A17",
+"C · Formation et désignations",
+27
+],
+[
+"B17",
+"Attestation de formation CNESST des membres et du RSS",
+2
+],
+[
+"C17",
+"Obligatoire — article 31 du RMPPE, dans les 120 jours suivant la désignation",
+3
+],
+[
+"D17",
+"Employeur",
+3
+],
+[
+"E17",
+"À planifier",
+22
+],
+[
+"F17",
+"Trousse HSE-701-A02, partie 1, tableau de suivi",
+3
+],
+[
+"G17",
+"Le délai court à partir de la désignation, donc de la constitution du comité (I-07).",
+3
+],
+[
+"A18",
+null,
+3
+],
+[
+"B18",
+"Désignation du représentant en santé et sécurité",
+2
+],
+[
+"C18",
+"LMRSST — le RSS est membre d’office du comité",
+3
+],
+[
+"D18",
+"Travailleurs",
+3
+],
+[
+"E18",
+"À confirmer",
+22
+],
+[
+"F18",
+"—",
+3
+],
+[
+"G18",
+"Le comité doit tenir compte de ses recommandations et des résultats de ses inspections.",
+3
+],
+[
+"A19",
+null,
+3
+],
+[
+"B19",
+"Registre de formation et de certifications",
+2
+],
+[
+"C19",
+"Interne",
+3
+],
+[
+"D19",
+"Partenaire d’affaires SST et Opérations",
+3
+],
+[
+"E19",
+"Gabarit prêt",
+28
+],
+[
+"F19",
+"Trousse HSE-701-A02, partie 3",
+3
+],
+[
+"G19",
+"Lié à R-13 : le mécanisme qui confirme les formations avant affectation s’appuie sur ce registre.",
+3
+],
+[
+"A20",
+"D · Événements",
+27
+],
+[
+"B20",
+"Registre des accidents, incidents et situations dangereuses",
+2
+],
+[
+"C20",
+"LSST — fonction du comité",
+3
+],
+[
+"D20",
+"Employeur et comité",
+3
+],
+[
+"E20",
+"Tenu dans eCompliance",
+28
+],
+[
+"F20",
+"Onglet Incidents",
+3
+],
+[
+"G20",
+"Neuf événements pour la période. Le typage est à revoir : aucun n’est classé chute de hauteur, alors qu’un monteur est tombé de 12 à 15 pieds au début de septembre.",
+3
+],
+[
+"A21",
+null,
+3
+],
+[
+"B21",
+"Rapports d’enquête et d’analyse d’accident",
+2
+],
+[
+"C21",
+"Le comité participe aux enquêtes et consulte les rapports",
+3
+],
+[
+"D21",
+"Employeur, avec le comité",
+3
+],
+[
+"E21",
+"Non versés ici",
+28
+],
+[
+"F21",
+"—",
+3
+],
+[
+"G21",
+"Nécessaires pour statuer sur R-30 et pour confirmer le rattachement de l’incident 29552548 à R-01.",
+3
+],
+[
+"A22",
+null,
+3
+],
+[
+"B22",
+"Avis d’accident grave à la CNESST",
+2
+],
+[
+"C22",
+"LSST",
+3
+],
+[
+"D22",
+"Employeur",
+3
+],
+[
+"E22",
+"Sans objet pour la période, à confirmer",
+22
+],
+[
+"F22",
+"—",
+3
+],
+[
+"G22",
+"La chute du début de septembre a entraîné des fractures : vérifier si le seuil de déclaration était atteint.",
+3
+],
+[
+"A23",
+null,
+3
+],
+[
+"B23",
+"Registre des premiers soins et liste des secouristes",
+2
+],
+[
+"C23",
+"Règlement sur les normes minimales de premiers secours et de premiers soins",
+3
+],
+[
+"D23",
+"Employeur",
+3
+],
+[
+"E23",
+"À confirmer",
+22
+],
+[
+"F23",
+"—",
+3
+],
+[
+"G23",
+"Plusieurs fiches relèvent que le secouriste n’est pas identifié à l’AST : voir R-12.",
+3
+],
+[
+"A25",
+"Vert : le document existe et est tenu. Ambre : il existe en gabarit, ou son état demande confirmation. Rouge : il est absent.",
+7
+],
+[
+"A26",
+"Ce relevé ne constitue pas un avis juridique. Les délais, les seuils et les durées de conservation doivent être confirmés auprès de la CNESST avant tout usage réglementaire.",
+18
+]
+]
+}

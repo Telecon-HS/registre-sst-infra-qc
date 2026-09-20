@@ -1,0 +1,282 @@
+{
+"titre": "Processus CAPA",
+"grille": false,
+"figer": null,
+"filtre": null,
+"fusions": [
+"A22:D25",
+"A16:B16",
+"C6:D6",
+"C7:D7",
+"C10:D10",
+"C9:D9",
+"A17:B17",
+"A18:B18",
+"A27:D29",
+"C8:D8"
+],
+"colonnes": {
+"A": 26.0,
+"B": 38.0,
+"C": 72.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"4": 15.0,
+"5": 15.0,
+"6": 39.75,
+"7": 39.75,
+"8": 39.75,
+"9": 39.75,
+"10": 39.75,
+"13": 15.0,
+"14": 15.0,
+"15": 15.0,
+"16": 75.75,
+"17": 75.75,
+"18": 75.75,
+"21": 15.0,
+"22": 15.0,
+"23": 15.0,
+"24": 15.0,
+"25": 15.0,
+"27": 15.0,
+"28": 15.0,
+"29": 15.0
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"PROCESSUS D’ACTIONS CORRECTIVES ET PRÉVENTIVES",
+6
+],
+[
+"A2",
+"Du constat consigné dans eCompliance jusqu’à la vérification d’efficacité, selon la politique SSE-200-TEL-POL — Système de responsabilité interne chez Telecon.",
+7
+],
+[
+"A4",
+"LES CINQ ÉTAPES",
+23
+],
+[
+"A5",
+"Étape",
+29
+],
+[
+"B5",
+"Acteur et article",
+29
+],
+[
+"C5",
+"Ce qui s’y fait",
+29
+],
+[
+"A6",
+"Constat",
+27
+],
+[
+"B6",
+"Travailleur · art. 4.1",
+3
+],
+[
+"C6",
+"Signaler la condition dangereuse ou exercer le droit de refus.",
+3
+],
+[
+"D6",
+null,
+31
+],
+[
+"A7",
+"Traitement immédiat",
+27
+],
+[
+"B7",
+"Superviseur, contremaître · art. 4.2",
+3
+],
+[
+"C7",
+"Consigner dans eCompliance. Si le constat est un déclencheur d’arrêt de travail : arrêter, informer, enquêter, corriger, autoriser la reprise.",
+3
+],
+[
+"D7",
+null,
+31
+],
+[
+"A8",
+"Décision",
+27
+],
+[
+"B8",
+"Comité SST, consultatif · art. 3 et 4.1.1 · Direction · art. 4.3",
+3
+],
+[
+"C8",
+"Le comité examine, priorise et recommande par écrit. La direction répond par écrit, retient ou motive son refus.",
+3
+],
+[
+"D8",
+null,
+31
+],
+[
+"A9",
+"Mise en œuvre",
+27
+],
+[
+"B9",
+"Instances d’exécution · art. 4.3 f et 4.6",
+3
+],
+[
+"C9",
+"Action préventive, mise à jour de la procédure, communication de l’exigence.",
+3
+],
+[
+"D9",
+null,
+31
+],
+[
+"A10",
+"Vérification",
+27
+],
+[
+"B10",
+"Partenaire d’affaires SST · art. 4.5",
+3
+],
+[
+"C10",
+"Vérifier l’efficacité à l’inspection suivante, puis clore dans eCompliance.",
+3
+],
+[
+"D10",
+null,
+31
+],
+[
+"A13",
+"LES TROIS PORTES EXCLUSIVES",
+23
+],
+[
+"A14",
+"Chacune répond à une question différente et n’a qu’une seule sortie.",
+7
+],
+[
+"A15",
+"Porte",
+29
+],
+[
+"C15",
+"Ce qu’elle décide",
+29
+],
+[
+"D15",
+"Ce que le registre y place",
+29
+],
+[
+"A16",
+"Déclencheur d’arrêt de travail ?",
+2
+],
+[
+"B16",
+null,
+31
+],
+[
+"C16",
+"Elle se pose avant toute autre considération. Si oui, le superviseur arrête et enquête sans attendre le comité. Le travailleur dispose du même pouvoir par son droit de refus.",
+3
+],
+[
+"D16",
+"Quatre éléments du dossier passent par ici : le retrait de l’unité 104478 du travail en hauteur, la suspension du travail isolé du 15 septembre, l’interdiction d’accès au toit du conteneur, le retrait des parasols conducteurs.",
+3
+],
+[
+"A17",
+"Cause locale ou systémique ?",
+2
+],
+[
+"B17",
+null,
+31
+],
+[
+"C17",
+"C’est elle qui sépare l’action corrective de l’action préventive. Une cause locale se corrige sur le chantier et se clôt par une vérification. Une cause systémique — standard absent, dotation manquante sur toute une flotte, formation non couverte — remonte au comité.",
+3
+],
+[
+"D17",
+"C’est la ligne du registre : les corrections de chantier restent dans eCompliance, les trente-neuf risques sont la branche systémique.",
+3
+],
+[
+"A18",
+"Recommandation retenue ?",
+2
+],
+[
+"B18",
+null,
+31
+],
+[
+"C18",
+"Elle appartient à la direction, pas au comité. Un refus exige une réponse écrite motivée et le dossier retourne au comité plutôt que de disparaître. C’est la seule boucle du processus.",
+3
+],
+[
+"D18",
+"C’est exactement l’objet de R-29 : la politique impose une réponse « en temps opportun » sans jamais la chiffrer, et ne prévoit aucun mécanisme si elle ne vient pas.",
+3
+],
+[
+"A21",
+"OÙ LE DOSSIER EST BLOQUÉ",
+38
+],
+[
+"A22",
+"Sur les dix visites consolidées, le processus s’arrête à l’étape « saisir le comité SST ». Quatre saisines ont été émises les 17 et 18 septembre et dorment dans une boîte partagée créée le 17. Le couloir du comité est vide depuis le procès-verbal du 18 décembre 2024. Les étapes de décision, de mise en œuvre et de vérification ne sont donc atteintes par aucun des trente-neuf risques.",
+39
+],
+[
+"A27",
+"Le comité de santé et de sécurité est un organisme consultatif : son couloir ne contient qu’une activité, examiner, prioriser et recommander par écrit. Ce n’est pas une faiblesse du mécanisme. Une recommandation écrite crée une obligation de réponse écrite, ce qu’aucune action assignée à une personne ne produit.",
+5
+]
+]
+}

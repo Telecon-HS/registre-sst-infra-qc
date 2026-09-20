@@ -1,0 +1,380 @@
+{
+"titre": "Projets en cours",
+"grille": true,
+"figer": "C6",
+"filtre": "A5:F15",
+"fusions": [],
+"colonnes": {
+"A": 7.0,
+"B": 36.0,
+"C": 22.0,
+"D": 40.0,
+"E": 62.0,
+"F": 56.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"5": 31.5,
+"6": 72.0,
+"7": 72.0,
+"8": 72.0,
+"9": 72.0,
+"10": 72.0,
+"11": 72.0,
+"12": 72.0,
+"13": 72.0,
+"14": 72.0,
+"15": 72.0,
+"17": 15.0
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"PROCESSUS ET PROJETS EN COURS",
+6
+],
+[
+"A2",
+"Ce qui tourne en parallèle du registre. Les modules d’agents sont des outils de travail internes : ils préparent et structurent, ils ne décident pas et ne certifient rien.",
+7
+],
+[
+"A5",
+"Réf.",
+8
+],
+[
+"B5",
+"Projet",
+8
+],
+[
+"C5",
+"Nature",
+8
+],
+[
+"D5",
+"État",
+8
+],
+[
+"E5",
+"Ce que ça produit",
+8
+],
+[
+"F5",
+"Lien avec le registre",
+8
+],
+[
+"A6",
+"P-09",
+16
+],
+[
+"B6",
+"Protection solaire des fusionneurs — dossier parasols",
+2
+],
+[
+"C6",
+"Évaluation de risque",
+3
+],
+[
+"D6",
+"Rapport SST-2026-PARASOL-001 complété le 10 août 2026, décision d’achat à prendre",
+3
+],
+[
+"E6",
+"Appréciation du risque gravité × probabilité sur quatre dangers, hiérarchie des mesures de maîtrise, EPI de référence retenu et recherche de fournisseurs Canada et États-Unis.",
+3
+],
+[
+"F6",
+"Requalifie R-22 de priorité 3 à priorité 1 : le contact ou amorçage électrique y est coté 12 sur 16, critique.",
+3
+],
+[
+"A7",
+"P-10",
+16
+],
+[
+"B7",
+"Analyse SST-QUICK des cours et dépôts",
+2
+],
+[
+"C7",
+"Méthode de visite",
+3
+],
+[
+"D7",
+"Première application au dépôt de la rue Grenache le 9 septembre 2026, fiche 29632342",
+3
+],
+[
+"E7",
+"Visite photographique zone par zone avec horodatage, pastilles de délai à 24, 48 et 72 heures, et cycle de fermeture appuyé sur une preuve photo prise au même angle que la photo de constat.",
+3
+],
+[
+"F7",
+"A produit les risques R-34 à R-38. La règle « une consigne émise ne ferme pas une action » mériterait d’être reprise pour tout le registre.",
+3
+],
+[
+"A8",
+"P-01",
+16
+],
+[
+"B8",
+"Registre consolidé et explorateur SST",
+2
+],
+[
+"C8",
+"Chaîne documentaire",
+3
+],
+[
+"D8",
+"En service — version du 19 septembre 2026",
+3
+],
+[
+"E8",
+"Consolide les fiches eCompliance, le registre des incidents et les exports d’inspection en un registre de risques, un plan d’action une page et une page consultable.",
+3
+],
+[
+"F8",
+"C’est le présent dossier : 33 risques, 54 éléments source, 9 visites consolidées.",
+3
+],
+[
+"A9",
+"P-02",
+16
+],
+[
+"B9",
+"Chaîne d’enquête Telecon",
+2
+],
+[
+"C9",
+"Agents de travail",
+3
+],
+[
+"D9",
+"Quatre modules écrits, à revérifier avant usage réglementaire",
+3
+],
+[
+"E9",
+"Triage de gravité selon SSE-900, chronologie sourcée selon SSE-901.1, analyse SCAT et champs 15.1 à 15.14, préparation d’assignation temporaire selon le guide SSE.TEL-LDI-2200.1.",
+3
+],
+[
+"F9",
+"Alimenterait R-32 sur la qualité de la saisie et la revue mensuelle des incidents de l’axe 03.",
+3
+],
+[
+"A10",
+"P-03",
+16
+],
+[
+"B10",
+"Falcon — équipements de protection individuelle",
+2
+],
+[
+"C10",
+"Agents de travail",
+3
+],
+[
+"D10",
+"Trois modules écrits, à revérifier avant usage réglementaire",
+3
+],
+[
+"E10",
+"Recommandation de l’EPI approuvé à partir de la liste HSE-601, suivi des recertifications avec alertes à J-30 et J-7, détection d’une lacune de liste et amorce du formulaire HSE-600-F01.",
+3
+],
+[
+"F10",
+"Recoupe directement R-05 sur la certification des EPI et R-22 sur la protection solaire.",
+3
+],
+[
+"A11",
+"P-04",
+16
+],
+[
+"B11",
+"Prédicteur de risque sectoriel CNESST",
+2
+],
+[
+"C11",
+"Analyse de données",
+3
+],
+[
+"D11",
+"Moteur en place, usage zero-shot",
+3
+],
+[
+"E11",
+"Classification de la nature et du siège de lésion, caractérisation du risque dominant par secteur et par région, à partir de 697 000 enregistrements de lésions professionnelles du Québec.",
+3
+],
+[
+"F11",
+"Pourrait situer les 33 risques du registre par rapport au profil sectoriel des télécommunications.",
+3
+],
+[
+"A12",
+"P-05",
+16
+],
+[
+"B12",
+"Ontologie de conformité AX5",
+2
+],
+[
+"C12",
+"Référentiel",
+3
+],
+[
+"D12",
+"Dépôt actif, doctrine de rendu établie",
+3
+],
+[
+"E12",
+"Ontologie et explorateur de conformité, avec états de couverture vérifiables par tests automatisés.",
+3
+],
+[
+"F12",
+"Portée à confirmer : ce projet pourrait ou non couvrir le périmètre Telecon.",
+3
+],
+[
+"A13",
+"P-06",
+16
+],
+[
+"B13",
+"Sécurité fonctionnelle ISO 13849 — RobotSafetyAI",
+2
+],
+[
+"C13",
+"Outil de calcul",
+3
+],
+[
+"D13",
+"Générateur de code et de rapports en place",
+3
+],
+[
+"E13",
+"Évaluation du niveau de performance requis à partir des paramètres S/F/P, rapports de sécurité machine multijuridictions.",
+3
+],
+[
+"F13",
+"Hors périmètre Infra Québec a priori. À confirmer avant de le porter au comité.",
+3
+],
+[
+"A14",
+"P-07",
+16
+],
+[
+"B14",
+"Trousse de constitution du comité SST",
+2
+],
+[
+"C14",
+"Dossier de gouvernance",
+3
+],
+[
+"D14",
+"Six documents prêts, rencontre de cadrage à tenir",
+3
+],
+[
+"E14",
+"Breffage, plan de déploiement, lettres et élection, registre de conformité, questionnaire et checklist de cadrage.",
+3
+],
+[
+"F14",
+"C’est l’initiative I-07. Neuf questions bloquantes restent ouvertes avant toute désignation.",
+3
+],
+[
+"A15",
+"P-08",
+16
+],
+[
+"B15",
+"Travail isolé — secteur Argenteuil nord",
+2
+],
+[
+"C15",
+"Dossier terrain",
+3
+],
+[
+"D15",
+"Trousse v1.0 du 15 septembre, test terrain à conduire",
+3
+],
+[
+"E15",
+"Application de SSE-1700 au secteur : triage des tâches contre l’Annexe 1, protocole de test de connectivité à six sites, carte des points de relais.",
+3
+],
+[
+"F15",
+"C’est l’initiative I-01, liée à R-07 et R-08.",
+3
+],
+[
+"A17",
+"Réserve — Cette liste est reconstituée à partir des outils présents dans l’espace de travail. Le périmètre de P-05 et de P-06 n’est pas confirmé comme relevant d’Infra Québec : à trancher avant de les porter au comité.",
+18
+]
+]
+}

@@ -1,0 +1,2338 @@
+{
+"titre": "Traçabilité",
+"grille": true,
+"figer": "A5",
+"filtre": "A4:G67",
+"fusions": [],
+"colonnes": {
+"A": 18.0,
+"B": 20.0,
+"C": 56.0,
+"D": 12.0,
+"E": 56.0,
+"F": 12.0,
+"G": 14.0
+},
+"lignes": {
+"1": 17.35,
+"2": 15.0,
+"4": 31.5,
+"5": 25.5,
+"6": 25.5,
+"7": 25.5,
+"8": 25.5,
+"9": 25.5,
+"10": 25.5,
+"11": 25.5,
+"12": 25.5,
+"13": 25.5,
+"14": 25.5,
+"15": 25.5,
+"16": 25.5,
+"17": 25.5,
+"18": 25.5,
+"19": 25.5,
+"20": 25.5,
+"21": 25.5,
+"22": 25.5,
+"23": 25.5,
+"24": 25.5,
+"25": 25.5,
+"26": 25.5,
+"27": 25.5,
+"28": 25.5,
+"29": 25.5,
+"30": 25.5,
+"31": 25.5,
+"32": 25.5,
+"33": 25.5,
+"34": 25.5,
+"35": 25.5,
+"36": 25.5,
+"37": 25.5,
+"38": 25.5,
+"39": 25.5,
+"40": 25.5,
+"41": 25.5,
+"42": 25.5,
+"43": 25.5,
+"44": 25.5,
+"45": 25.5,
+"46": 25.5,
+"47": 25.5,
+"48": 25.5,
+"49": 25.5,
+"50": 25.5,
+"51": 25.5,
+"52": 25.5,
+"53": 25.5,
+"54": 25.5,
+"55": 25.5,
+"56": 25.5,
+"57": 25.5,
+"58": 25.5,
+"59": 25.5,
+"60": 25.5,
+"61": 25.5,
+"62": 25.5,
+"63": 25.5,
+"64": 25.5,
+"65": 25.5,
+"66": 25.5,
+"67": 25.5
+},
+"validations": [],
+"images": [],
+"cellules": [
+[
+"A1",
+"TRAÇABILITÉ — DE L’ÉLÉMENT D’ACTION AU RISQUE CONSOLIDÉ",
+6
+],
+[
+"A2",
+"Une ligne par élément source. La dernière colonne alimente le compteur d’occurrences du registre.",
+7
+],
+[
+"A4",
+"Fiche eCompliance",
+8
+],
+[
+"B4",
+"Date de la visite",
+8
+],
+[
+"C4",
+"Nature de la source",
+8
+],
+[
+"D4",
+"Réf. à la source",
+8
+],
+[
+"E4",
+"Objet tel qu’inscrit",
+8
+],
+[
+"F4",
+"Prio. source",
+8
+],
+[
+"G4",
+"Réf. au registre",
+8
+],
+[
+"A5",
+"29489650",
+15
+],
+[
+"B5",
+"28 août 2026",
+3
+],
+[
+"C5",
+"Épissure de fibre en armoire de rue, secteur résidentiel",
+3
+],
+[
+"D5",
+"A-01",
+15
+],
+[
+"E5",
+"Cales de roue pour la période hivernale",
+3
+],
+[
+"F5",
+2,
+12
+],
+[
+"G5",
+"R-16",
+16
+],
+[
+"A6",
+"29489650",
+15
+],
+[
+"B6",
+"28 août 2026",
+3
+],
+[
+"C6",
+"Épissure de fibre en armoire de rue, secteur résidentiel",
+3
+],
+[
+"D6",
+"A-02",
+15
+],
+[
+"E6",
+"Protection des câbles déployés en zone piétonne",
+3
+],
+[
+"F6",
+2,
+12
+],
+[
+"G6",
+"R-20",
+16
+],
+[
+"A7",
+"29489650",
+15
+],
+[
+"B7",
+"28 août 2026",
+3
+],
+[
+"C7",
+"Épissure de fibre en armoire de rue, secteur résidentiel",
+3
+],
+[
+"D7",
+"A-03",
+15
+],
+[
+"E7",
+"Échelle de 28 pieds difficile à manœuvrer",
+3
+],
+[
+"F7",
+3,
+14
+],
+[
+"G7",
+"R-02",
+16
+],
+[
+"A8",
+"29489650",
+15
+],
+[
+"B8",
+"28 août 2026",
+3
+],
+[
+"C8",
+"Épissure de fibre en armoire de rue, secteur résidentiel",
+3
+],
+[
+"D8",
+"A-04",
+15
+],
+[
+"E8",
+"Ombre et chaleur au poste de fusion au sol",
+3
+],
+[
+"F8",
+3,
+14
+],
+[
+"G8",
+"R-22",
+16
+],
+[
+"A9",
+"29489650",
+15
+],
+[
+"B9",
+"28 août 2026",
+3
+],
+[
+"C9",
+"Épissure de fibre en armoire de rue, secteur résidentiel",
+3
+],
+[
+"D9",
+"A-05",
+15
+],
+[
+"E9",
+"Rangement du matériel dans le fourgon",
+3
+],
+[
+"F9",
+3,
+14
+],
+[
+"G9",
+"R-24",
+16
+],
+[
+"A10",
+"29580646",
+15
+],
+[
+"B10",
+"4 septembre 2026",
+3
+],
+[
+"C10",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D10",
+"A-01",
+15
+],
+[
+"E10",
+"Certification des harnais et cordons antichute",
+3
+],
+[
+"F10",
+1,
+10
+],
+[
+"G10",
+"R-05",
+16
+],
+[
+"A11",
+"29580646",
+15
+],
+[
+"B11",
+"4 septembre 2026",
+3
+],
+[
+"C11",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D11",
+"A-02",
+15
+],
+[
+"E11",
+"Tension des conducteurs aériens et limite d’approche",
+3
+],
+[
+"F11",
+1,
+10
+],
+[
+"G11",
+"R-09",
+16
+],
+[
+"A12",
+"29580646",
+15
+],
+[
+"B12",
+"4 septembre 2026",
+3
+],
+[
+"C12",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D12",
+"A-03",
+15
+],
+[
+"E12",
+"Sauvetage lors du travail sur échelle en accès restreint",
+3
+],
+[
+"F12",
+1,
+10
+],
+[
+"G12",
+"R-06",
+16
+],
+[
+"A13",
+"29580646",
+15
+],
+[
+"B13",
+"4 septembre 2026",
+3
+],
+[
+"C13",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D13",
+"A-04",
+15
+],
+[
+"E13",
+"Formulaire d’inspection des échelles et de l’antichute",
+3
+],
+[
+"F13",
+2,
+12
+],
+[
+"G13",
+"R-03",
+16
+],
+[
+"A14",
+"29580646",
+15
+],
+[
+"B14",
+"4 septembre 2026",
+3
+],
+[
+"C14",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D14",
+"A-05",
+15
+],
+[
+"E14",
+"Poteaux en cour arrière : échelle et solution de rechange",
+3
+],
+[
+"F14",
+2,
+12
+],
+[
+"G14",
+"R-04",
+16
+],
+[
+"A15",
+"29580646",
+15
+],
+[
+"B15",
+"4 septembre 2026",
+3
+],
+[
+"C15",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D15",
+"A-06",
+15
+],
+[
+"E15",
+"Balisage côté rue et sous la zone de travail",
+3
+],
+[
+"F15",
+2,
+12
+],
+[
+"G15",
+"R-19",
+16
+],
+[
+"A16",
+"29580646",
+15
+],
+[
+"B16",
+"4 septembre 2026",
+3
+],
+[
+"C16",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D16",
+"A-07",
+15
+],
+[
+"E16",
+"Registre d’inspection de la flotte et entretien préventif",
+3
+],
+[
+"F16",
+2,
+12
+],
+[
+"G16",
+"R-15",
+16
+],
+[
+"A17",
+"29580646",
+15
+],
+[
+"B17",
+"4 septembre 2026",
+3
+],
+[
+"C17",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D17",
+"A-08",
+15
+],
+[
+"E17",
+"Couverture de l’AST pour l’épissure aérienne",
+3
+],
+[
+"F17",
+2,
+12
+],
+[
+"G17",
+"R-12",
+16
+],
+[
+"A18",
+"29580646",
+15
+],
+[
+"B18",
+"4 septembre 2026",
+3
+],
+[
+"C18",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D18",
+"A-09",
+15
+],
+[
+"E18",
+"Vérification des formations avant affectation",
+3
+],
+[
+"F18",
+2,
+12
+],
+[
+"G18",
+"R-13",
+16
+],
+[
+"A19",
+"29580646",
+15
+],
+[
+"B19",
+"4 septembre 2026",
+3
+],
+[
+"C19",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D19",
+"A-10",
+15
+],
+[
+"E19",
+"Travaux en propriété privée résidentielle",
+3
+],
+[
+"F19",
+2,
+12
+],
+[
+"G19",
+"R-21",
+16
+],
+[
+"A20",
+"29580646",
+15
+],
+[
+"B20",
+"4 septembre 2026",
+3
+],
+[
+"C20",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D20",
+"A-11",
+15
+],
+[
+"E20",
+"Protection solaire non conductrice des fusionneurs",
+3
+],
+[
+"F20",
+3,
+14
+],
+[
+"G20",
+"R-22",
+16
+],
+[
+"A21",
+"29580646",
+15
+],
+[
+"B21",
+"4 septembre 2026",
+3
+],
+[
+"C21",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D21",
+"A-12",
+15
+],
+[
+"E21",
+"Dotation des trousses de fusion : rebuts de fibre",
+3
+],
+[
+"F21",
+3,
+14
+],
+[
+"G21",
+"R-23",
+16
+],
+[
+"A22",
+"29580646",
+15
+],
+[
+"B22",
+"4 septembre 2026",
+3
+],
+[
+"C22",
+"Raccordement et fusion de fibre en aérien, cour arrière résidentielle",
+3
+],
+[
+"D22",
+"A-13",
+15
+],
+[
+"E22",
+"Accès aux installations sanitaires",
+3
+],
+[
+"F22",
+3,
+14
+],
+[
+"G22",
+"R-25",
+16
+],
+[
+"A23",
+"29721538",
+15
+],
+[
+"B23",
+"16 septembre 2026",
+3
+],
+[
+"C23",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D23",
+"A-01",
+15
+],
+[
+"E23",
+"Dotation de sauvetage des camions-nacelles",
+3
+],
+[
+"F23",
+1,
+10
+],
+[
+"G23",
+"R-06",
+16
+],
+[
+"A24",
+"29721538",
+15
+],
+[
+"B24",
+"16 septembre 2026",
+3
+],
+[
+"C24",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D24",
+"A-02",
+15
+],
+[
+"E24",
+"Camion de remplacement non conforme",
+3
+],
+[
+"F24",
+1,
+10
+],
+[
+"G24",
+"R-14",
+16
+],
+[
+"A25",
+"29721538",
+15
+],
+[
+"B25",
+"16 septembre 2026",
+3
+],
+[
+"C25",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D25",
+"A-03",
+15
+],
+[
+"E25",
+"Formation à l’AST",
+3
+],
+[
+"F25",
+1,
+10
+],
+[
+"G25",
+"R-12",
+16
+],
+[
+"A26",
+"29721538",
+15
+],
+[
+"B26",
+"16 septembre 2026",
+3
+],
+[
+"C26",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D26",
+"A-04",
+15
+],
+[
+"E26",
+"Balisage minimal d’un véhicule stationné",
+3
+],
+[
+"F26",
+2,
+12
+],
+[
+"G26",
+"R-19",
+16
+],
+[
+"A27",
+"29721538",
+15
+],
+[
+"B27",
+"16 septembre 2026",
+3
+],
+[
+"C27",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D27",
+"A-05",
+15
+],
+[
+"E27",
+"Déplacement d’un camion-nacelle bras levé",
+3
+],
+[
+"F27",
+2,
+12
+],
+[
+"G27",
+"R-18",
+16
+],
+[
+"A28",
+"29721538",
+15
+],
+[
+"B28",
+"16 septembre 2026",
+3
+],
+[
+"C28",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D28",
+"A-06",
+15
+],
+[
+"E28",
+"Capacités de levage non documentées",
+3
+],
+[
+"F28",
+2,
+12
+],
+[
+"G28",
+"R-17",
+16
+],
+[
+"A29",
+"29721538",
+15
+],
+[
+"B29",
+"16 septembre 2026",
+3
+],
+[
+"C29",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D29",
+"A-07",
+15
+],
+[
+"E29",
+"Échelle : poids et coussinet d’épaule",
+3
+],
+[
+"F29",
+3,
+14
+],
+[
+"G29",
+"R-02",
+16
+],
+[
+"A30",
+"29721538",
+15
+],
+[
+"B30",
+"16 septembre 2026",
+3
+],
+[
+"C30",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D30",
+"A-08",
+15
+],
+[
+"E30",
+"Contenant à déchets de véhicule",
+3
+],
+[
+"F30",
+3,
+14
+],
+[
+"G30",
+"R-24",
+16
+],
+[
+"A31",
+"29721538",
+15
+],
+[
+"B31",
+"16 septembre 2026",
+3
+],
+[
+"C31",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D31",
+"A-09",
+15
+],
+[
+"E31",
+"Accès aux installations sanitaires",
+3
+],
+[
+"F31",
+3,
+14
+],
+[
+"G31",
+"R-25",
+16
+],
+[
+"A32",
+"29721538",
+15
+],
+[
+"B32",
+"16 septembre 2026",
+3
+],
+[
+"C32",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D32",
+"A-10",
+15
+],
+[
+"E32",
+"Contribution au projet camion et à la standardisation",
+3
+],
+[
+"F32",
+2,
+12
+],
+[
+"G32",
+"R-27",
+16
+],
+[
+"A33",
+"29721538",
+15
+],
+[
+"B33",
+"16 septembre 2026",
+3
+],
+[
+"C33",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D33",
+"A-11",
+15
+],
+[
+"E33",
+"Défauts du formulaire eCompliance",
+3
+],
+[
+"F33",
+3,
+14
+],
+[
+"G33",
+"R-28",
+16
+],
+[
+"A34",
+"29721538",
+15
+],
+[
+"B34",
+"16 septembre 2026",
+3
+],
+[
+"C34",
+"Rue du Pontmain, Laval — monteur de lignes et épisseur",
+3
+],
+[
+"D34",
+"A-12",
+15
+],
+[
+"E34",
+"Délais de réponse et mécanisme d’escalade",
+3
+],
+[
+"F34",
+2,
+12
+],
+[
+"G34",
+"R-29",
+16
+],
+[
+"A35",
+"29754404",
+15
+],
+[
+"B35",
+"15 septembre 2026",
+3
+],
+[
+"C35",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D35",
+"A-01",
+15
+],
+[
+"E35",
+"Travail isolé des épisseurs : plan et appels de vérification",
+3
+],
+[
+"F35",
+1,
+10
+],
+[
+"G35",
+"R-07",
+16
+],
+[
+"A36",
+"29754404",
+15
+],
+[
+"B36",
+"15 septembre 2026",
+3
+],
+[
+"C36",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D36",
+"A-02",
+15
+],
+[
+"E36",
+"Exposition au monoxyde de carbone dans les fourgons",
+3
+],
+[
+"F36",
+1,
+10
+],
+[
+"G36",
+"R-10",
+16
+],
+[
+"A37",
+"29754404",
+15
+],
+[
+"B37",
+"15 septembre 2026",
+3
+],
+[
+"C37",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D37",
+"A-03",
+15
+],
+[
+"E37",
+"Alimentation du poste d’épissure sans moteur au ralenti",
+3
+],
+[
+"F37",
+3,
+14
+],
+[
+"G37",
+"R-11",
+16
+],
+[
+"A38",
+"29754404",
+15
+],
+[
+"B38",
+"15 septembre 2026",
+3
+],
+[
+"C38",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D38",
+"A-04",
+15
+],
+[
+"E38",
+"Inspection mensuelle du véhicule : trousse et extincteur",
+3
+],
+[
+"F38",
+2,
+12
+],
+[
+"G38",
+"R-15",
+16
+],
+[
+"A39",
+"29754404",
+15
+],
+[
+"B39",
+"15 septembre 2026",
+3
+],
+[
+"C39",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D39",
+"A-05",
+15
+],
+[
+"E39",
+"Formation au logbook lors de l’intégration",
+3
+],
+[
+"F39",
+3,
+14
+],
+[
+"G39",
+"R-26",
+16
+],
+[
+"A40",
+"29754404",
+15
+],
+[
+"B40",
+"15 septembre 2026",
+3
+],
+[
+"C40",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D40",
+"A-06",
+15
+],
+[
+"E40",
+"AST absente au démarrage des travaux",
+3
+],
+[
+"F40",
+2,
+12
+],
+[
+"G40",
+"R-12",
+16
+],
+[
+"A41",
+"29754404",
+15
+],
+[
+"B41",
+"15 septembre 2026",
+3
+],
+[
+"C41",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D41",
+"A-07",
+15
+],
+[
+"E41",
+"Échelle de 28 pi fournie à des travailleurs isolés",
+3
+],
+[
+"F41",
+2,
+12
+],
+[
+"G41",
+"R-02",
+16
+],
+[
+"A42",
+"29754404",
+15
+],
+[
+"B42",
+"15 septembre 2026",
+3
+],
+[
+"C42",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D42",
+"A-08",
+15
+],
+[
+"E42",
+"Dotation de sauvetage en hauteur des fourgons d’épissure",
+3
+],
+[
+"F42",
+2,
+12
+],
+[
+"G42",
+"R-06",
+16
+],
+[
+"A43",
+"29754404",
+15
+],
+[
+"B43",
+"15 septembre 2026",
+3
+],
+[
+"C43",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D43",
+"A-09",
+15
+],
+[
+"E43",
+"Balisage du véhicule stationné : cône arrière",
+3
+],
+[
+"F43",
+2,
+12
+],
+[
+"G43",
+"R-19",
+16
+],
+[
+"A44",
+"29754404",
+15
+],
+[
+"B44",
+"15 septembre 2026",
+3
+],
+[
+"C44",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D44",
+"A-10",
+15
+],
+[
+"E44",
+"Chantiers accessibles par sentier étroit",
+3
+],
+[
+"F44",
+2,
+12
+],
+[
+"G44",
+"R-08",
+16
+],
+[
+"A45",
+"29754404",
+15
+],
+[
+"B45",
+"15 septembre 2026",
+3
+],
+[
+"C45",
+"Épissure en fourgon, sentier boisé, 2148 Jessop, Laval",
+3
+],
+[
+"D45",
+"A-11",
+15
+],
+[
+"E45",
+"Accès aux installations sanitaires",
+3
+],
+[
+"F45",
+3,
+14
+],
+[
+"G45",
+"R-25",
+16
+],
+[
+"A46",
+"Stand down",
+15
+],
+[
+"B46",
+"Septembre 2026",
+3
+],
+[
+"C46",
+"Safety Stand Down — échelles et porte-échelles",
+3
+],
+[
+"D46",
+"—",
+15
+],
+[
+"E46",
+"Porte-échelle inadapté et arrimage improvisé — chute de 12 à 15 pi",
+3
+],
+[
+"F46",
+1,
+10
+],
+[
+"G46",
+"R-01",
+16
+],
+[
+"A47",
+"Incidents",
+15
+],
+[
+"B47",
+"Août-septembre 2026",
+3
+],
+[
+"C47",
+"Registre des incidents et quasi-accidents — Infra QC",
+3
+],
+[
+"D47",
+"—",
+15
+],
+[
+"E47",
+"Trois événements de conduite pour le travail, 13 août au 15 septembre 2026",
+3
+],
+[
+"F47",
+2,
+12
+],
+[
+"G47",
+"R-30",
+16
+],
+[
+"A48",
+"29751529",
+15
+],
+[
+"B48",
+"17 septembre 2026",
+3
+],
+[
+"C48",
+"Fusion de fibre optique, 4481 rue Gatineau, Laval — projet Falcon",
+3
+],
+[
+"D48",
+"9.5",
+15
+],
+[
+"E48",
+"Détecteur de tension non inspecté depuis le 2 novembre 2022",
+3
+],
+[
+"F48",
+1,
+10
+],
+[
+"G48",
+"R-09",
+16
+],
+[
+"A49",
+"29751529",
+15
+],
+[
+"B49",
+"17 septembre 2026",
+3
+],
+[
+"C49",
+"Fusion de fibre optique, 4481 rue Gatineau, Laval — projet Falcon",
+3
+],
+[
+"D49",
+"9.5",
+15
+],
+[
+"E49",
+"Trousse de premiers soins à regarnir, unité camion 104139",
+3
+],
+[
+"F49",
+2,
+12
+],
+[
+"G49",
+"R-15",
+16
+],
+[
+"A50",
+"29751529",
+15
+],
+[
+"B50",
+"17 septembre 2026",
+3
+],
+[
+"C50",
+"Fusion de fibre optique, 4481 rue Gatineau, Laval — projet Falcon",
+3
+],
+[
+"D50",
+"18.1",
+15
+],
+[
+"E50",
+"Formulaire attesté complet alors que les sections 3 à 8 et 10 à 16 sont vides",
+3
+],
+[
+"F50",
+2,
+12
+],
+[
+"G50",
+"R-32",
+16
+],
+[
+"A51",
+"29722866",
+15
+],
+[
+"B51",
+"16 septembre 2026",
+3
+],
+[
+"C51",
+"Excavation et coffrages, 936 avenue Laurier, Montréal — CSEM Laurier",
+3
+],
+[
+"D51",
+"9.4c",
+15
+],
+[
+"E51",
+"Sous-traitant sur place, coordination inter-entrepreneurs non consignée",
+3
+],
+[
+"F51",
+2,
+12
+],
+[
+"G51",
+"R-32",
+16
+],
+[
+"A52",
+"29456212",
+15
+],
+[
+"B52",
+"26 août 2026",
+3
+],
+[
+"C52",
+"Installation de câble, 5305 rue Forestier, Longueuil",
+3
+],
+[
+"D52",
+"9.5",
+15
+],
+[
+"E52",
+"Indicateur de noix de roue à faire sur l’unité 105311",
+3
+],
+[
+"F52",
+2,
+12
+],
+[
+"G52",
+"R-15",
+16
+],
+[
+"A53",
+"29456212",
+15
+],
+[
+"B53",
+"26 août 2026",
+3
+],
+[
+"C53",
+"Installation de câble, 5305 rue Forestier, Longueuil",
+3
+],
+[
+"D53",
+"9.5",
+15
+],
+[
+"E53",
+"Discussion sur la certification des harnais et sur les gants diélectriques",
+3
+],
+[
+"F53",
+2,
+12
+],
+[
+"G53",
+"R-05",
+16
+],
+[
+"A54",
+"29363929",
+15
+],
+[
+"B54",
+"19 août 2026",
+3
+],
+[
+"C54",
+"Ouverture de puits d’accès et passage de fils, 81e Avenue, Laval",
+3
+],
+[
+"D54",
+"2.1",
+15
+],
+[
+"E54",
+"Discussion sur la formation des employés et la certification des harnais",
+3
+],
+[
+"F54",
+2,
+12
+],
+[
+"G54",
+"R-05",
+16
+],
+[
+"A55",
+"29363929",
+15
+],
+[
+"B55",
+"19 août 2026",
+3
+],
+[
+"C55",
+"Ouverture de puits d’accès et passage de fils, 81e Avenue, Laval",
+3
+],
+[
+"D55",
+"2.1",
+15
+],
+[
+"E55",
+"Temps d’attente très long pour l’autorisation d’accès au puits",
+3
+],
+[
+"F55",
+2,
+12
+],
+[
+"G55",
+"R-31",
+16
+],
+[
+"A56",
+"29363929",
+15
+],
+[
+"B56",
+"19 août 2026",
+3
+],
+[
+"C56",
+"Ouverture de puits d’accès et passage de fils, 81e Avenue, Laval",
+3
+],
+[
+"D56",
+"9.3a",
+15
+],
+[
+"E56",
+"Plan de circulation non présenté lors de la visite",
+3
+],
+[
+"F56",
+2,
+12
+],
+[
+"G56",
+"R-19",
+16
+],
+[
+"A57",
+"29182326",
+15
+],
+[
+"B57",
+"5 août 2026",
+3
+],
+[
+"C57",
+"Creusage et tranchées, 3406 boul. Métropolitain est — chantier Eurovia",
+3
+],
+[
+"D57",
+"2.1",
+15
+],
+[
+"E57",
+"Localisation des réseaux souterrains (Info-Excavation) indiquée « en cours »",
+3
+],
+[
+"F57",
+2,
+12
+],
+[
+"G57",
+"R-33",
+16
+],
+[
+"A58",
+"29182326",
+15
+],
+[
+"B58",
+"5 août 2026",
+3
+],
+[
+"C58",
+"Creusage et tranchées, 3406 boul. Métropolitain est — chantier Eurovia",
+3
+],
+[
+"D58",
+"3 à 18",
+15
+],
+[
+"E58",
+"Fiche renseignée aux sections 1 et 2 seulement, les sections 3 à 18 sont vides",
+3
+],
+[
+"F58",
+2,
+12
+],
+[
+"G58",
+"R-32",
+16
+],
+[
+"A59",
+"29632342",
+15
+],
+[
+"B59",
+"9 septembre 2026",
+3
+],
+[
+"C59",
+"Dépôt de la rue Grenache, cour Anjou — visite de cour, 9 zones, 66 photographies",
+3
+],
+[
+"D59",
+"Cour",
+15
+],
+[
+"E59",
+"Aucun passage piéton, aucun sens de priorité, aucun marquage au sol; circulation à pied avant le lever du jour, en partie sans veste réfléchissante",
+3
+],
+[
+"F59",
+1,
+10
+],
+[
+"G59",
+"R-34",
+16
+],
+[
+"A60",
+"29632342",
+15
+],
+[
+"B60",
+"9 septembre 2026",
+3
+],
+[
+"C60",
+"Dépôt de la rue Grenache, cour Anjou — visite de cour, 9 zones, 66 photographies",
+3
+],
+[
+"D60",
+"09:31",
+15
+],
+[
+"E60",
+"Paniers de nacelle entreposés sur le toit du conteneur TRJ-CONT-08, à 2,6 m, sans accès fixe ni garde-corps",
+3
+],
+[
+"F60",
+1,
+10
+],
+[
+"G60",
+"R-35",
+16
+],
+[
+"A61",
+"29632342",
+15
+],
+[
+"B61",
+"9 septembre 2026",
+3
+],
+[
+"C61",
+"Dépôt de la rue Grenache, cour Anjou — visite de cour, 9 zones, 66 photographies",
+3
+],
+[
+"D61",
+"09:30",
+15
+],
+[
+"E61",
+"Plaque d’identification de la cage à bidons d’essence entièrement vierge",
+3
+],
+[
+"F61",
+2,
+12
+],
+[
+"G61",
+"R-36",
+16
+],
+[
+"A62",
+"29632342",
+15
+],
+[
+"B62",
+"9 septembre 2026",
+3
+],
+[
+"C62",
+"Dépôt de la rue Grenache, cour Anjou — visite de cour, 9 zones, 66 photographies",
+3
+],
+[
+"D62",
+"10:20",
+15
+],
+[
+"E62",
+"Pompe 1 hors service signalée par une note manuscrite plutôt que par une étiquette normalisée",
+3
+],
+[
+"F62",
+2,
+12
+],
+[
+"G62",
+"R-36",
+16
+],
+[
+"A63",
+"29632342",
+15
+],
+[
+"B63",
+"9 septembre 2026",
+3
+],
+[
+"C63",
+"Dépôt de la rue Grenache, cour Anjou — visite de cour, 9 zones, 66 photographies",
+3
+],
+[
+"D63",
+"10:20",
+15
+],
+[
+"E63",
+"Extincteur retenu à une borne par un fil métallique, sans support de fixation, au point le plus inflammable du site",
+3
+],
+[
+"F63",
+2,
+12
+],
+[
+"G63",
+"R-37",
+16
+],
+[
+"A64",
+"29632342",
+15
+],
+[
+"B64",
+"9 septembre 2026",
+3
+],
+[
+"C64",
+"Dépôt de la rue Grenache, cour Anjou — visite de cour, 9 zones, 66 photographies",
+3
+],
+[
+"D64",
+"09:28",
+15
+],
+[
+"E64",
+"Gravier détrempé, ornières et flaques sur l’aire de manœuvre; empilage de matériaux sans zonage; éclairage nocturne non vérifié",
+3
+],
+[
+"F64",
+2,
+12
+],
+[
+"G64",
+"R-38",
+16
+],
+[
+"A65",
+"Parasols",
+15
+],
+[
+"B65",
+"10 août 2026",
+3
+],
+[
+"C65",
+"Évaluation de risque SST-2026-PARASOL-001 — protection solaire des fusionneurs",
+3
+],
+[
+"D65",
+"—",
+15
+],
+[
+"E65",
+"Évaluation Gravité × Probabilité : contact ou amorçage électrique coté 12, critique",
+3
+],
+[
+"F65",
+1,
+10
+],
+[
+"G65",
+"R-22",
+16
+],
+[
+"A66",
+"Décret 63-2025",
+15
+],
+[
+"B66",
+"20 février 2025",
+3
+],
+[
+"C66",
+"Modification du Code de sécurité pour les travaux de construction — sauvetage après une chute",
+3
+],
+[
+"D66",
+"2.9.5.2",
+15
+],
+[
+"E66",
+"Présence en tout temps d’au moins un intervenant en sauvetage formé, apte à intervenir rapidement",
+3
+],
+[
+"F66",
+1,
+10
+],
+[
+"G66",
+"R-39",
+16
+],
+[
+"A67",
+"Décret 63-2025",
+15
+],
+[
+"B67",
+"20 février 2025",
+3
+],
+[
+"C67",
+"Modification du Code de sécurité pour les travaux de construction — sauvetage après une chute",
+3
+],
+[
+"D67",
+"2.9.5",
+15
+],
+[
+"E67",
+"Dégagement en 15 minutes, priorité aux appareils de levage, procédure élaborée avant les travaux",
+3
+],
+[
+"F67",
+1,
+10
+],
+[
+"G67",
+"R-06",
+16
+]
+]
+}
