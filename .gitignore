@@ -2,7 +2,9 @@
 prive/
 # Livrables générés : se régénèrent, ne se versent pas.
 sortie/
-# Exports bruts eCompliance et fichiers de travail
+# Exports bruts eCompliance et fichiers de travail : ils contiennent des noms
+ingest/
+rapports/
 exports/
 Public_Inspections*
 Report_On_*

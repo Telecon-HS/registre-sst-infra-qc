@@ -1,5 +1,13 @@
 # Journal
 
+## 20 septembre 2026 — ingestion des exports
+
+`scripts/ingerer_exports.py` lit les exports déposés dans `ingest/`, dédoublonne par identifiant de fiche et écrit un rapport daté dans `rapports/` : volumes par type et par mois, fiches non fermées, fiches sans signature, statuts rencontrés, réserves. Cinq tests de plus (`pytest -q` : 10 au total).
+
+Le script n'écrit jamais dans `donnees/` et ne recopie aucun nom. `ingest/` et `rapports/` sont ignorés par Git, parce que les exports contiennent des noms de personnes.
+
+Premier passage sur les deux exports du 20 septembre : 165 fiches de février à septembre 2026, dont 51 non fermées — 27 inspections avant départ, 7 camion-nacelle, 4 visites SST du partenaire d'affaires.
+
 ## 20 septembre 2026 — contrôle des citations, jonction avec ANCRAGE
 
 `scripts/verifier_citations.py` croise les champs « norme » des 39 risques avec `corpus/index-procedures.csv` du dépôt Telecon-SST-Agents (ANCRAGE). Les préfixes SSE- et HSE- sont traités comme équivalents : seul le numéro compte. Cinq tests (`pytest -q`).

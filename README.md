@@ -45,6 +45,15 @@ python scripts/tout_generer.py --sans-prive    # version sans données privées
 
 Les livrables sont écrits dans `sortie/`, qui n'est jamais versé au dépôt. Les formules du classeur se recalculent à l'ouverture dans Excel.
 
+## Ingérer un export eCompliance
+
+```bash
+# déposer les .xlsx ou .csv dans ingest/ (ignoré par Git : ils contiennent des noms)
+python scripts/ingerer_exports.py          # → rapports/rapport_ingestion_AAAA-MM-JJ.md
+```
+
+Le rapport donne les volumes par type et par mois, les fiches non fermées et les fiches sans signature. Il ne contient aucun nom, n'écrit jamais dans `donnees/` et ne porte aucun verdict : ce qu'il faut retenir s'inscrit au registre à la main, sourcé.
+
 ## Modifier le registre
 
 | Pour changer… | Éditer |
