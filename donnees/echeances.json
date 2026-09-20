@@ -1,0 +1,5 @@
+{
+ "_note": "Point de départ des délais du registre et échéances ajoutées à la main. Les délais des risques courent à compter de la décision du comité : tant que date_decision_comite est null, aucune date n'est calculée.",
+ "date_decision_comite": null,
+ "echeances_ajoutees": []
+}

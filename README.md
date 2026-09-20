@@ -54,6 +54,17 @@ python scripts/ingerer_exports.py          # → rapports/rapport_ingestion_AAAA
 
 Le rapport donne les volumes par type et par mois, les fiches non fermées et les fiches sans signature. Il ne contient aucun nom, n'écrit jamais dans `donnees/` et ne porte aucun verdict : ce qu'il faut retenir s'inscrit au registre à la main, sourcé.
 
+## Alertes d'échéances
+
+```bash
+python scripts/alertes.py               # → rapports/alertes_AAAA-MM-JJ.md
+python scripts/alertes.py --date 2026-10-05
+```
+
+Quatre familles : échéances réglementaires, jalons datés des dossiers, actions du registre et recertifications d'EPI. Trois horizons : dépassé, 7 jours, 30 jours.
+
+Les délais du registre courent **à compter de la décision du comité**. Tant que `donnees/echeances.json` ne porte pas cette date, aucune échéance de risque n'est calculée : le rapport compte les actions par délai et le dit. La liste HSE-601 n'étant pas dans ce dépôt, la section EPI se remplit seulement si `prive/epi_recertification.json` existe.
+
 ## Modifier le registre
 
 | Pour changer… | Éditer |

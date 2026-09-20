@@ -1,5 +1,15 @@
 # Journal
 
+## 20 septembre 2026 — alertes d'échéances
+
+`scripts/alertes.py` produit `rapports/alertes_AAAA-MM-JJ.md` : échéances réglementaires, jalons datés des dossiers, actions du registre, documents du comité à produire, recertifications d'EPI. Trois horizons : dépassé, 7 jours, 30 jours. Sept tests de plus (17 au total).
+
+Deux refus d'inventer, inscrits dans le code et couverts par des tests :
+- les délais des risques ne sont pas convertis en dates tant que `donnees/echeances.json` ne porte pas la date de décision du comité ; le rapport compte alors les actions par délai et explique pourquoi ;
+- une date de version trouvée dans le champ « état » d'un dossier n'est pas traitée comme un jalon.
+
+Au 20 septembre : rien de dépassé, rien sous 7 jours, deux échéances réglementaires au 1er octobre, 15 documents du comité à produire, section EPI marquée « à confirmer » faute de la liste HSE-601.
+
 ## 20 septembre 2026 — ingestion des exports
 
 `scripts/ingerer_exports.py` lit les exports déposés dans `ingest/`, dédoublonne par identifiant de fiche et écrit un rapport daté dans `rapports/` : volumes par type et par mois, fiches non fermées, fiches sans signature, statuts rencontrés, réserves. Cinq tests de plus (`pytest -q` : 10 au total).
