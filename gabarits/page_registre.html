@@ -1034,13 +1034,13 @@ function ouvrirSeance(){
   renderSeance();
   document.body.classList.add('en-seance');
   document.getElementById('seance').setAttribute('aria-hidden','false');
-  if(location.hash!=='#seance') history.replaceState(null,'','#seance');
+  try{ if(location.hash!=='#seance') history.replaceState(null,'','#seance'); }catch(e){}
   document.querySelector('#seance .s-quit').focus();
 }
 function fermerSeance(){
   document.body.classList.remove('en-seance');
   document.getElementById('seance').setAttribute('aria-hidden','true');
-  if(location.hash==='#seance') history.replaceState(null,'',location.pathname+location.search);
+  try{ if(location.hash==='#seance') history.replaceState(null,'',location.pathname+location.search); }catch(e){}
 }
 document.getElementById('ouvrir-seance').addEventListener('click', ouvrirSeance);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape' && document.body.classList.contains('en-seance')) fermerSeance(); });
