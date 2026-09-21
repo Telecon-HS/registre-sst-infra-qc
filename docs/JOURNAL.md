@@ -1,5 +1,16 @@
 # Journal
 
+## 20 septembre 2026 — mode séance
+
+Gabarit seulement, aucune donnée modifiée (vérifié : contenu de la page identique avant et après). Nouveau bouton « Mode séance » dans la lecture Comité, ou adresse terminée par `#seance` : une page plein écran, projetable, sans navigation, quittée par Échap.
+
+- **Décisions à prendre** (18) : les six décisions de constitution du comité, les sept risques à trancher en séance, les cinq dossiers dont l'échéance tombe à la séance.
+- **Actions en retard** : aucune ne peut l'être, les délais courant à compter de la décision du comité ; la page le dit et montre ce que cette décision déclenchera, par délai.
+- **Documents du comité** : 3 tenus, 12 en gabarit ou à confirmer, 3 absents — même classement que le plan d'action et le tableau de bord. Le premier essai en comptait 4 absents : corrigé pour ne pas créer une nouvelle contradiction.
+- **Échéances réglementaires**, avec le nombre de jours restants, et **réserves** visibles : les cinq questions bloquantes.
+
+Testé en 1920 × 1080 et 1366 × 768, en mode clair et sombre ; sur téléphone, la vue passe en une colonne défilante. Aucun nom de personne.
+
 ## 20 septembre 2026 — registre des recommandations au comité
 
 Nouvel onglet du classeur, « Recommandations au comité », alimenté par `donnees/recommandations.json` : date, objet, risque rattaché, procès-verbal, échéance de réponse, réponse de l'employeur, date de la réponse, jours écoulés, statut. Cinq tests de plus (46 au total). Les risques cités par une recommandation sont vérifiés par le contrôle de cohérence.

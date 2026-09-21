@@ -237,6 +237,47 @@ footer{max-width:1500px;margin:0 auto;padding:18px 20px 40px;font-size:12px;colo
 .legende .leg{display:inline-flex;align-items:center;gap:6px}
 .legende i{width:11px;height:11px;border-radius:2px;display:inline-block}
 .version{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+
+/* ---------- mode séance : une page projetable, sans navigation ---------- */
+.seance-btn{display:none;margin-left:6px}
+body[data-role="comite"] .seance-btn{display:inline-block}
+#seance{display:none;position:fixed;inset:0;z-index:60;background:var(--paper);color:var(--ink);
+  padding:1.6vh 1.6vw;grid-template-columns:1.15fr 1fr;grid-template-rows:auto auto 1fr auto;gap:1.3vh 1.2vw;
+  font-size:clamp(12px,1.02vw,22px);line-height:1.32}
+body.en-seance #seance{display:grid}
+body.en-seance{overflow:hidden}
+#seance .s-tete{grid-column:1/3;display:flex;align-items:center;gap:1.2vw;background:var(--band);color:#fff;padding:1vh 1.2vw;border-radius:6px}
+#seance .s-tete h2{margin:0;font-size:1.55em;letter-spacing:-.2px}
+#seance .s-tete .s-meta{font-size:.82em;opacity:.85}
+#seance .s-tete .s-quit{margin-left:auto;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:.35em 1em;font-size:.85em;min-height:40px}
+#seance .s-bloc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.1vh 1vw;overflow:auto;min-height:0}
+#seance .s-bloc h3{margin:0 0 .5em;font-size:1.02em;text-transform:uppercase;letter-spacing:.4px;color:var(--navy);display:flex;justify-content:space-between;align-items:baseline}
+#seance .s-bloc h3 b{font-size:1.5em;letter-spacing:0}
+#seance .s-dec{grid-row:2/4}
+#seance .s-groupe{font-size:.78em;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;margin:.7em 0 .25em}
+#seance ol{margin:0;padding-left:1.4em}
+#seance li{margin:.18em 0}
+#seance li small{color:var(--muted);font-size:.84em}
+#seance .s-p{display:inline-block;font-size:.72em;font-weight:700;color:var(--paper);border-radius:3px;padding:0 .4em;margin-right:.35em;vertical-align:.08em}
+#seance .s-texte{margin:0 0 .6em}
+#seance .s-barres{display:grid;grid-template-columns:auto 1fr auto;gap:.3em .6em;align-items:center;font-size:.9em}
+#seance .s-barre{height:.7em;background:var(--line-soft);border-radius:2px;overflow:hidden}
+#seance .s-barre span{display:block;height:100%}
+#seance .s-puces{display:flex;flex-wrap:wrap;gap:.3em;margin-top:.5em}
+#seance .s-puce{font-size:.8em;font-weight:700;border:1px solid var(--line);border-radius:3px;padding:.05em .45em;color:var(--navy)}
+#seance .s-docs{display:grid;grid-template-columns:repeat(3,auto);gap:.2em 1.2em;justify-content:start;margin-bottom:.5em;font-size:.95em}
+#seance .s-docs b{font-size:1.4em}
+#seance table{width:100%;border-collapse:collapse;font-size:.95em}
+#seance td{padding:.28em .3em;border-bottom:1px solid var(--line-soft);vertical-align:top}
+#seance td.s-j{text-align:right;white-space:nowrap;font-weight:700}
+#seance .s-pied{grid-column:1/3;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--p2);border-radius:6px;padding:.8vh 1vw;font-size:.9em}
+#seance .s-pied b{color:var(--p2)}
+@media (max-width:900px){
+  #seance{grid-template-columns:1fr;grid-template-rows:auto;overflow:auto;display:none}
+  body.en-seance #seance{display:block}
+  #seance .s-bloc,#seance .s-pied{margin-top:10px}
+}
+@media print{ body.en-seance #seance{position:static;display:grid;height:auto} body.en-seance > :not(#seance){display:none !important} }
 .apropos{display:none}
 /* 7 — le nom de l'auteur disparaît des lectures terrain */
 body[data-role="superviseurs"] .who-nom, body[data-role="travailleurs"] .who-nom{display:none}
@@ -320,6 +361,7 @@ header.top{position:relative}
     <button role="tab" id="r-superviseurs" aria-selected="false">Superviseurs</button>
     <button role="tab" id="r-travailleurs" aria-selected="false">Travailleurs</button>
   </div>
+  <button class="theme seance-btn" id="ouvrir-seance" type="button" style="position:static">Mode séance</button>
 </header>
 
 <div class="stats" id="stats"></div>
@@ -390,6 +432,8 @@ header.top{position:relative}
 
   <p class="version">__VERSION__</p>
 </footer>
+
+<section id="seance" aria-label="Vue de séance du comité" aria-hidden="true"></section>
 
 <button id="haut" type="button" aria-label="Revenir en haut de la page">↑</button>
 <div id="loupe" role="dialog" aria-modal="true" aria-label="Photographie agrandie">
@@ -888,7 +932,96 @@ document.getElementById('photos').addEventListener('click',e=>{
 loupe.addEventListener('click',e=>{ if(e.target===loupe||e.target.closest('.fermer')) fermerLoupe(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') fermerLoupe(); });
 
+
+/* ---------- mode séance ---------- */
+const MOIS_SEANCE = {janvier:0,février:1,mars:2,avril:3,mai:4,juin:5,juillet:6,août:7,septembre:8,octobre:9,novembre:10,décembre:11};
+function dateFr(t){
+  const m = String(t||'').toLowerCase().match(/(\d{1,2})\s*(?:er)?\s+([a-zéû]+)\s+(\d{4})/);
+  return (m && m[2] in MOIS_SEANCE) ? new Date(+m[3], MOIS_SEANCE[m[2]], +m[1]) : null;
+}
+function etatDoc(e){
+  const t = String(e||'').toLowerCase();
+  if(/tenu|tient lieu/.test(t)) return 'tenu';
+  if(/absent|non produit|à créer/.test(t)) return 'absent';
+  return 'gabarit';
+}
+function renderSeance(){
+  const auj = new Date(); auj.setHours(0,0,0,0);
+  const libDate = auj.toLocaleDateString('fr-CA',{day:'numeric',month:'long',year:'numeric'});
+  const pcoul = p => `var(--p${p})`;
+  const seance = R.filter(r=>r.bucket==='seance');
+  const dossiers = DATA.initiatives.filter(i=>/séance|immédiat|rencontre du comité/i.test(i.echeance||''));
+  const decComite = DATA.comite.decisions;
+  const nDec = decComite.length + seance.length + dossiers.length;
+
+  const delais = [['immediat','Immédiat'],['j30','30 jours'],['j60','60 jours'],['j90','90 jours'],['seance','Séance']];
+  const compte = k => R.filter(r=>r.bucket===k).length;
+  const maxD = Math.max(...delais.map(([k])=>compte(k)),1);
+  const immediats = R.filter(r=>r.bucket==='immediat');
+
+  const docs = DATA.documents.map(d=>({...d, cat:etatDoc(d.etat)}));
+  const nb = c => docs.filter(d=>d.cat===c).length;
+  const aProduire = docs.filter(d=>d.cat!=='tenu');
+
+  const ech = DATA.comite.echeances.map(e=>{
+    const d = dateFr(e.date); const j = d ? Math.round((d-auj)/86400000) : null;
+    return {...e, j};
+  });
+  const libJ = j => j===null ? 'date à confirmer' : j<0 ? `date passée de ${-j} j` : j===0 ? 'aujourd’hui' : `dans ${j} j`;
+
+  document.getElementById('seance').innerHTML = `
+  <div class="s-tete"><div><h2>Séance du comité SST — Infra Québec</h2>
+    <div class="s-meta">${esc(libDate)} · document préparatoire, aucun verdict de conformité · Échap pour quitter</div></div>
+    <button class="s-quit" type="button">Quitter la séance</button></div>
+
+  <div class="s-bloc s-dec"><h3>Décisions à prendre <b>${nDec}</b></h3>
+    <div class="s-groupe">Constitution du comité · ${decComite.length}</div>
+    <ol>${decComite.map(d=>`<li>${esc(d.d)} <small>— ${esc(d.options)}</small></li>`).join('')}</ol>
+    <div class="s-groupe">Risques à trancher en séance · ${seance.length}</div>
+    <ol>${seance.map(r=>`<li><span class="s-p" style="background:${pcoul(r.prio)}">P${r.prio}</span><b>${esc(r.ref)}</b> ${esc(r.titre)}</li>`).join('')}</ol>
+    <div class="s-groupe">Dossiers dont l’échéance tombe à la séance · ${dossiers.length}</div>
+    <ol>${dossiers.map(i=>`<li><b>${esc(i.ref)}</b> ${esc(i.titre)} <small>— ${esc(i.echeance)}</small></li>`).join('')}</ol>
+  </div>
+
+  <div class="s-bloc"><h3>Actions en retard <b>—</b></h3>
+    <p class="s-texte">Aucune action ne peut être dite en retard : les délais du registre courent <b>à compter de la décision du comité</b>, qui n’a pas eu lieu. Voici ce que cette décision déclenchera.</p>
+    <div class="s-barres">${delais.map(([k,l])=>`<span>${l}</span><div class="s-barre"><span style="width:${100*compte(k)/maxD}%;background:${k==='immediat'?'var(--p1)':'var(--navy)'}"></span></div><b>${compte(k)}</b>`).join('')}</div>
+    <div class="s-puces">${immediats.map(r=>`<span class="s-puce">${esc(r.ref)}</span>`).join('')}</div>
+  </div>
+
+  <div class="s-bloc"><h3>Documents du comité <b>${aProduire.length}/${docs.length}</b></h3>
+    <div class="s-docs"><span><b style="color:var(--p3)">${nb('tenu')}</b> tenus</span><span><b style="color:var(--p2)">${nb('gabarit')}</b> en gabarit ou à confirmer</span><span><b style="color:var(--p1)">${nb('absent')}</b> absents</span></div>
+    <div class="s-groupe">Absents · ${nb('absent')}</div>
+    <ol>${docs.filter(d=>d.cat==='absent').map(d=>`<li><b>${esc(d.doc)}</b> <small>— ${esc(d.etat)}</small></li>`).join('')}</ol>
+    <div class="s-groupe">En gabarit ou à confirmer · ${nb('gabarit')}</div>
+    <p class="s-texte"><small>${docs.filter(d=>d.cat==='gabarit').map(d=>esc(d.doc)).join(' · ')}</small></p>
+    <p class="s-texte" style="margin-top:.4em"><small>Relevé indicatif, à confirmer auprès de la CNESST : ce n’est pas un avis juridique.</small></p>
+  </div>
+
+  <div class="s-pied"><b>Échéances réglementaires.</b>
+    ${ech.map(e=>`${esc(e.date)} — ${esc(e.quoi)} <b style="color:${e.j!==null&&e.j<=30?'var(--p1)':'var(--muted)'}">(${libJ(e.j)})</b>`).join(' · ')}
+    <br><b>Réserves.</b> ${DATA.comite.bloquantes.length} questions bloquantes restent ouvertes : ${DATA.comite.bloquantes.map(q=>esc(q.q)).join(' · ')}
+  </div>`;
+  document.querySelector('#seance .s-quit').addEventListener('click', fermerSeance);
+}
+function ouvrirSeance(){
+  if(role!=='comite') setRole('comite');
+  renderSeance();
+  document.body.classList.add('en-seance');
+  document.getElementById('seance').setAttribute('aria-hidden','false');
+  if(location.hash!=='#seance') history.replaceState(null,'','#seance');
+  document.querySelector('#seance .s-quit').focus();
+}
+function fermerSeance(){
+  document.body.classList.remove('en-seance');
+  document.getElementById('seance').setAttribute('aria-hidden','true');
+  if(location.hash==='#seance') history.replaceState(null,'',location.pathname+location.search);
+}
+document.getElementById('ouvrir-seance').addEventListener('click', ouvrirSeance);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && document.body.classList.contains('en-seance')) fermerSeance(); });
+
 drawFilters(); drawRail(); drawRecord(); setRole('comite');
+if(location.hash==='#seance') ouvrirSeance();
 </script>
 </body>
 </html>
