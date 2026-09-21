@@ -12,10 +12,39 @@ ne contient que les consignes (décision du 20 septembre 2026).
 """
 import base64
 import json
+from pathlib import Path
 
 from commun import (DONNEES, GABARITS, PRIVE, SORTIE, incidents_prives, ligne_version,
                     lire_json, mode, nom_versionne, prive_disponible, remplacer_jetons,
                     table_des_noms)
+
+def confiance_des_risques(risques, chemin_index=None):
+    """Niveau de confiance de chaque procédure citée, lu dans l'index ANCRAGE à la génération.
+    Renvoie {ref: {...}}. Si l'index est inaccessible, disponible=False : la page affiche « à confirmer »."""
+    import os
+    import verifier_citations as vc
+    chemin = Path(chemin_index or os.environ.get("ANCRAGE_INDEX") or vc.INDEX_DEFAUT)
+    if not chemin.exists():
+        return {r["ref"]: {"disponible": False} for r in risques}
+    index = vc.index_procedures(chemin)
+    correspondances = vc.alias()
+    sortie = {}
+    for r in risques:
+        norme = r.get("norme", "")
+        procedures, vues = [], set()
+        for n in vc.citations(norme):
+            cible = correspondances.get(n, n)
+            if cible in vues:
+                continue
+            vues.add(cible)
+            e = index.get(cible)
+            procedures.append({"cite": n, "numero": e["numero"] if e else None,
+                               "niveau": e["niveau_confiance"] if e else "absent",
+                               "titre": e["titre"] if e else ""})
+        sortie[r["ref"]] = {"disponible": True, "procedures": procedures,
+                            "hors_index": bool(vc.EXTERNE.search(norme)), "taille_index": len(index)}
+    return sortie
+
 
 ORDRE_INCIDENT = ["id", "date", "titre", "type", "stky", "prepare", "lieu", "gest", "ref", "lecture"]
 REPLI_INCIDENT = {"type": "", "stky": "", "prepare": "", "lieu": "", "gest": "",
@@ -45,6 +74,10 @@ def generer(avec_prive=True, sortie=None):
                 ph["src"] = base64.b64encode(f.read_bytes()).decode("ascii")
                 garder.append(ph)
         site["photos"] = garder
+
+    confiance = confiance_des_risques(data["risques"])
+    for r in data["risques"]:
+        r["confiance"] = confiance[r["ref"]]
 
     data = remplacer_jetons(data, table)
     gabarit = remplacer_jetons((GABARITS / "page_registre.html").read_text(encoding="utf-8"), table)

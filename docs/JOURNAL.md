@@ -1,5 +1,11 @@
 # Journal
 
+## 21 septembre 2026 — niveau de confiance dans chaque fiche
+
+La fiche de chaque risque de la page Comité affiche maintenant le niveau de confiance de chaque procédure citée : confirmé, partiel, à valider, ou absent de l'index. Il est lu dans l'index ANCRAGE **au moment de la génération** (variable `ANCRAGE_INDEX`), avec les correspondances de `donnees/alias_procedures.json` ; un même document cité sous deux numéros ne compte qu'une fois. Une référence externe au manuel (CSTC, décret) est signalée comme hors index. Si l'index est inaccessible, la fiche affiche « à confirmer » plutôt qu'un niveau.
+
+Chaque bloc rappelle que l'index confirme l'existence d'une procédure et son niveau de confiance, jamais le contenu d'une section. Aucune donnée de `donnees/` n'est modifiée : le niveau est ajouté à la page produite, pas au registre. Mode sombre, mode séance et affichage téléphone vérifiés. Cinq tests de plus (54 au total).
+
 ## 21 septembre 2026 — contrôle des citations corrigé, correspondances de numéros
 
 **Erreur corrigée, inscrite ici.** Le contrôle du 20 septembre annonçait six citations « absentes de l'index ANCRAGE », dont 403 et 601. C'était en bonne partie un défaut du contrôle : il ramenait `SSE-501.1` à `501`, lisait mal `SSE-601-NOR`, et ignorait qu'un même document peut porter deux numéros. La vérification faite dans ANCRAGE l'a montré (constats 3 et 4).

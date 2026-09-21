@@ -99,6 +99,17 @@ main{max-width:1500px;margin:0 auto;padding:0 14px 40px}
 .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .pill{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:3px}
 .pill.pr1{background:var(--p1-bg);color:var(--p1)}
+/* niveau de confiance d'une procédure citée, lu dans l'index ANCRAGE */
+.conf-liste{list-style:none;margin:6px 0 0;padding:0}
+.conf-liste li{display:flex;gap:8px;align-items:baseline;padding:4px 0;border-bottom:1px solid var(--line-soft);font-size:13.5px}
+.conf-liste li small{color:var(--muted)}
+.pill.conf{flex:0 0 auto;min-width:92px;text-align:center}
+.pill.conf-confirme{background:var(--p3-bg);color:var(--p3)}
+.pill.conf-partiel{background:var(--p2-bg);color:var(--p2)}
+.pill.conf-a_valider{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.pill.conf-absent{background:var(--p1-bg);color:var(--p1)}
+.pill.conf-inconnu{background:transparent;color:var(--muted);border:1px dashed var(--line)}
+.conf-note{font-size:12.5px;color:var(--muted);margin-top:6px}
 .pill.pr2{background:var(--p2-bg);color:var(--p2)}
 .pill.pr3{background:var(--p3-bg);color:var(--p3)}
 .pill.neutral{background:var(--line-soft);color:var(--muted)}
@@ -505,6 +516,19 @@ document.getElementById('rail').addEventListener('click',e=>{
 });
 
 /* dossier */
+const LIB_CONF = {confirme:'Confirmé', partiel:'Partiel', a_valider:'À valider', absent:'Absent de l’index'};
+function confianceHTML(r){
+  const c = r.confiance;
+  if(!c) return '';
+  const rappel = `<div class="conf-note">L’index ANCRAGE confirme qu’une procédure existe et à quel niveau de confiance, jamais le contenu d’une section : les § cités restent à vérifier au manuel. Validation humaine requise.</div>`;
+  if(!c.disponible) return `<div class="block"><h3>Niveau de confiance des procédures citées</h3>
+    <ul class="conf-liste"><li><span class="pill conf conf-inconnu">À confirmer</span><span>Index ANCRAGE non accessible au moment de la génération de cette page.</span></li></ul>${rappel}</div>`;
+  const lignes = c.procedures.map(p=>`<li><span class="pill conf conf-${p.niveau}">${LIB_CONF[p.niveau]||esc(p.niveau)}</span>
+      <span><b>${esc(p.numero||p.cite)}</b>${p.numero && p.numero.replace(/^(SSE|HSE)-/,'')!==p.cite?` <small>(cité ${esc(p.cite)})</small>`:''}${p.titre?` — ${esc(p.titre)}`:''}</span></li>`).join('');
+  const vide = !c.procedures.length ? `<li><span class="pill conf conf-inconnu">—</span><span>${c.hors_index?'Référence hors du manuel Telecon (code, décret ou norme externe) : non couverte par l’index.':'Aucune procédure Telecon citée.'}</span></li>` : '';
+  const externe = c.procedures.length && c.hors_index ? `<li><span class="pill conf conf-inconnu">Hors index</span><span>La citation comprend aussi une référence externe au manuel Telecon.</span></li>` : '';
+  return `<div class="block"><h3>Niveau de confiance des procédures citées</h3><ul class="conf-liste">${lignes}${vide}${externe}</ul>${rappel}</div>`;
+}
 function drawRecord(){
   const r = R.find(x=>x.ref===sel);
   const bkLabel = BK.find(b=>b[0]===r.bucket)[1];
@@ -534,6 +558,7 @@ function drawRecord(){
       <div class="field"><div class="k">Échéance proposée</div><div class="v">${esc(r.echeance)}</div></div>
       <div class="field"><div class="k">Référence normative</div><div class="v">${esc(r.norme)}</div></div>
     </div></div>
+    ${confianceHTML(r)}
     <div class="block"><h3>D’où vient ce risque</h3><ul class="chain">${chain}</ul></div>
     ${incs?`<div class="block"><h3>Incidents rattachés</h3>${incs}</div>`:''}
     ${r.note?`<div class="block"><h3>Réserves et lecture</h3><div class="note">${esc(r.note)}</div></div>`:''}
