@@ -7,6 +7,7 @@ Ce dépôt sert à produire les livrables du comité SST d'Infra Québec à part
 | Classeur Excel, 15 onglets | `scripts/generer_classeur.py` | Registre de 39 risques, traçabilité, incidents, visites, inspections, initiatives, documents du comité, prévention, photos, dossier du comité, projets, CAPA, synthèse, lecture |
 | Plan d'action PDF, 3 pages | `scripts/generer_plan_action.py` | Risques et calendrier · dossiers et documents du comité · prévention et reconnaissance |
 | Page HTML **Comité** | `scripts/generer_page.py` | Sélecteur de rôle et neuf vues. Contient noms, photos et incidents : à partager **au comité seulement** |
+| Tableau de bord **Direction**, PDF 4 pages | `scripts/generer_tableau_bord.py` | Priorités, familles, visites, incidents, trois relevés de volume, gouvernance. Graphiques SVG. Plus des tables CSV pour Power BI dans `sortie/powerbi/` |
 | Page HTML **Terrain** | `scripts/generer_page.py` | Consignes Superviseurs et Travailleurs seulement. Aucun nom, aucune photo, aucun incident : peut être partagée sur le terrain |
 
 **État actuel : version 7 du 19 septembre 2026, reconstruite le 20 septembre.** Des constats relevés depuis ne sont pas encore appliqués : voir [`docs/A_CORRIGER.md`](docs/A_CORRIGER.md).
@@ -39,7 +40,7 @@ playwright install chromium            # une seule fois, pour le PDF
 # placer le dossier privé à côté du dépôt : ../prive
 # (ou indiquer son chemin : export REGISTRE_PRIVE=/chemin/vers/prive)
 
-python scripts/tout_generer.py                 # les quatre livrables → sortie/
+python scripts/tout_generer.py                 # les cinq livrables → sortie/
 python scripts/tout_generer.py --sans-prive    # version sans données privées
 ```
 
@@ -53,6 +54,14 @@ python scripts/ingerer_exports.py          # → rapports/rapport_ingestion_AAAA
 ```
 
 Le rapport donne les volumes par type et par mois, les fiches non fermées et les fiches sans signature. Il ne contient aucun nom, n'écrit jamais dans `donnees/` et ne porte aucun verdict : ce qu'il faut retenir s'inscrit au registre à la main, sourcé.
+
+## Rapport hebdomadaire
+
+```bash
+python scripts/rapport_hebdo.py         # → rapports/rapport_hebdo_AAAA-MM-JJ.md
+```
+
+Un seul rapport : ce qui a bougé depuis la semaine dernière, ce qui est en retard, ce qui ne concorde pas entre les sources. Il assemble l'ingestion, les alertes et le contrôle des citations sans les remplacer. Pour le lancer chaque lundi : [`docs/TACHE_PLANIFIEE.md`](docs/TACHE_PLANIFIEE.md).
 
 ## Alertes d'échéances
 
@@ -105,6 +114,7 @@ docs/           doctrine, note de transfert, journal, constats à appliquer
 - [`docs/DOCTRINE.md`](docs/DOCTRINE.md) — les règles qui rendent le dossier défendable, et les corrections à ne pas défaire
 - [`docs/A_CORRIGER.md`](docs/A_CORRIGER.md) — constats du 20 septembre 2026, pas encore appliqués
 - [`docs/PROGRAMME_PREVENTION_STRUCTURE.md`](docs/PROGRAMME_PREVENTION_STRUCTURE.md) — charpente du programme de prévention : ce qui existe, ce qui manque
+- [`docs/TACHE_PLANIFIEE.md`](docs/TACHE_PLANIFIEE.md) — lancer le rapport hebdomadaire automatiquement
 - [`docs/DIFFUSION.md`](docs/DIFFUSION.md) — quelle forme fait foi, qui reçoit quoi, ce qui se conserve
 - [`docs/JOURNAL.md`](docs/JOURNAL.md) — historique et vérifications
 - [`docs/NOTE_TRANSFERT_2026-09-19.md`](docs/NOTE_TRANSFERT_2026-09-19.md) — note de reprise du dossier

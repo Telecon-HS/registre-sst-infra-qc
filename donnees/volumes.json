@@ -163,30 +163,86 @@
    "registre": 28,
    "export": 91,
    "tableau": 581,
-   "court": "Avant départ"
+   "court": "Avant départ",
+   "motif": "avant départ"
   },
   {
    "type": "Inspection quotidienne — pelle mécanique",
    "registre": 14,
    "export": 30,
    "tableau": 231,
-   "court": "Pelle"
+   "court": "Pelle",
+   "motif": "pelle"
   },
   {
    "type": "Inspection mensuelle du véhicule",
    "registre": 3,
    "export": 9,
    "tableau": 58,
-   "court": "Mensuelle"
+   "court": "Mensuelle",
+   "motif": "mensuelle"
   },
   {
    "type": "Visite ou inspection SST de site",
    "registre": 6,
    "export": 14,
    "tableau": 418,
-   "court": "Visite SST"
+   "court": "Visite SST",
+   "motif": "visite de"
   }
  ],
  "reserve": "Les courbes ne portent que sur l’export daté de 165 fiches : c’est le seul relevé qui donne des dates. Le tableau de bord en compte 1 837 pour 2026 mais n’offre ni dates ni statuts, donc aucune tendance ne peut en être tirée. L’écart entre les trois relevés n’est pas expliqué : question posée à l’administrateur eCompliance. À ne pas lire comme le volume réel d’activité.",
- "lecture": "Sur l’export daté, l’activité culmine en avril (30 fiches) et creuse en juillet (12). Les inspections avant départ portent le volume; l’inspection mensuelle du véhicule tient une ou deux fiches par mois de mars à septembre, sans interruption après le 16 juillet, contrairement à ce que laissait croire le relevé du registre v7."
+ "lecture": "Sur l’export daté, l’activité culmine en avril (30 fiches) et creuse en juillet (12). Les inspections avant départ portent le volume; l’inspection mensuelle du véhicule tient une ou deux fiches par mois de mars à septembre, sans interruption après le 16 juillet, contrairement à ce que laissait croire le relevé du registre v7.",
+ "non_fermees": {
+  "source": "Exports « Public Inspections » du 20 septembre 2026, 165 fiches, statut autre que verrouillé",
+  "total": 51,
+  "par_type": [
+   [
+    "Inspection avant départ — véhicule léger",
+    27
+   ],
+   [
+    "Inspection quotidienne — camion-nacelle et de ligne",
+    7
+   ],
+   [
+    "Rapport de visite de sites de travail",
+    4
+   ],
+   [
+    "Rapport de visite de chantier",
+    3
+   ],
+   [
+    "Inspection quotidienne — pelle mécanique",
+    3
+   ],
+   [
+    "Inspection — superviseurs",
+    3
+   ],
+   [
+    "Inspection mensuelle du véhicule",
+    2
+   ],
+   [
+    "Évaluation des risques — travail en hauteur",
+    1
+   ],
+   [
+    "Inspection — chariot élévateur",
+    1
+   ]
+  ]
+ },
+ "hauteur": {
+  "source": "Page Rapports d'inspection mobile, eCompliance, 20 septembre 2026",
+  "total": 57,
+  "ouvertes": 44
+ },
+ "ast": {
+  "source": "Tableau de bord Safety Intelligence, figure 2, 20 septembre 2026 — formulaire d'origine à confirmer",
+  "non": 57,
+  "reponses": 305
+ }
 }

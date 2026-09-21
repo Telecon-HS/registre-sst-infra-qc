@@ -10,6 +10,7 @@ import sys
 import generer_classeur
 import generer_page
 import generer_plan_action
+import generer_tableau_bord
 import verifier_confidentialite
 from commun import mode, prive_disponible
 
@@ -21,4 +22,5 @@ generer_classeur.generer(avec_prive)
 generer_page.generer(avec_prive)
 generer_page.generer_terrain()
 generer_plan_action.generer(avec_prive)
+generer_tableau_bord.generer(avec_prive)
 verifier_confidentialite.main()

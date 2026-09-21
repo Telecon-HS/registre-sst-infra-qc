@@ -1,5 +1,28 @@
 # Journal
 
+## 20 septembre 2026 — tableau de bord de direction
+
+Cinquième livrable, `scripts/generer_tableau_bord.py` : quatre pages en lettre paysage, inspirées du tableau de bord opérationnel du 12 septembre, mais calculées à partir des données du registre v8 — aucun chiffre n'est saisi dans le script.
+
+1. Niveau de risque : priorités, familles, délais, éléments par visite, matrice familles × visites.
+2. Incidents : les neuf incidents au dossier, catégories STKY normalisées (français et anglais), rattachement aux risques.
+3. Prévention : les trois relevés de volume, la tendance mensuelle, les 51 fiches non fermées, les 44 évaluations en hauteur ouvertes.
+4. Gouvernance : dossiers en cours, documents du comité, échéances réglementaires.
+
+Tables CSV pour Power BI dans `sortie/powerbi/`, sans aucun nom. Cinq tests de plus (31 au total).
+
+Ce qui n'a pas été repris du tableau du 12 septembre, faute de source dans le dépôt : les huit contrôles critiques et leur état par situation, la sévérité de chaque écart, les 26 incidents de tout Infra QC, l'avancement en pourcentage des chantiers et le diagramme de déploiement. La page 2 explique l'écart de périmètre (9 incidents au registre, 26 sur tout Infra QC). Décomptes agrégés ajoutés à `donnees/volumes.json` : fiches non fermées par type, évaluations en hauteur, question de l'AST.
+
+## 20 septembre 2026 — rapport hebdomadaire
+
+`scripts/rapport_hebdo.py` assemble l'ingestion, les alertes et le contrôle des citations en un seul rapport : ce qui a bougé, ce qui est en retard, ce qui ne concorde pas. L'état de la semaine est conservé dans `rapports/etat.json`. Huit tests de plus (25 au total). `docs/TACHE_PLANIFIEE.md` documente la tâche Windows du lundi matin.
+
+Deux pièges relevés en écrivant le script, corrigés et couverts par des tests :
+- une fiche absente de l'export de la semaine n'est **pas** une fiche fermée ; elle est comptée à part, statut inconnu, à confirmer ;
+- le rapprochement entre un type d'activité du registre et un titre de formulaire passe par un motif explicite inscrit dans `donnees/volumes.json`, et non par un mot deviné : le premier essai confondait « inspection avant départ » et « inspection quotidienne avant utilisation ».
+
+Aucun seuil d'écart n'est appliqué : les volumes des quatre sources sont présentés côte à côte, sans jugement.
+
 ## 20 septembre 2026 — alertes d'échéances
 
 `scripts/alertes.py` produit `rapports/alertes_AAAA-MM-JJ.md` : échéances réglementaires, jalons datés des dossiers, actions du registre, documents du comité à produire, recertifications d'EPI. Trois horizons : dépassé, 7 jours, 30 jours. Sept tests de plus (17 au total).
