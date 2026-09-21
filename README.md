@@ -8,6 +8,7 @@ Ce dépôt sert à produire les livrables du comité SST d'Infra Québec à part
 | Plan d'action PDF, 3 pages | `scripts/generer_plan_action.py` | Risques et calendrier · dossiers et documents du comité · prévention et reconnaissance |
 | Page HTML **Comité** | `scripts/generer_page.py` | Sélecteur de rôle et neuf vues. Contient noms, photos et incidents : à partager **au comité seulement** |
 | Tableau de bord **Direction**, PDF 4 pages | `scripts/generer_tableau_bord.py` | Priorités, familles, visites, incidents, trois relevés de volume, gouvernance. Graphiques SVG. Plus des tables CSV pour Power BI dans `sortie/powerbi/` |
+| **Présentation par acteur**, HTML et PDF | `scripts/generer_presentation.py` | Directeur SST, comité, direction des opérations, TI, terrain : ce qui est demandé à chacun et les questions attendues. Chiffres lus dans les données |
 | Page HTML **Terrain** | `scripts/generer_page.py` | Consignes Superviseurs et Travailleurs seulement. Aucun nom, aucune photo, aucun incident : peut être partagée sur le terrain |
 
 **État actuel : version 7 du 19 septembre 2026, reconstruite le 20 septembre.** Des constats relevés depuis ne sont pas encore appliqués : voir [`docs/A_CORRIGER.md`](docs/A_CORRIGER.md).
@@ -40,7 +41,7 @@ playwright install chromium            # une seule fois, pour le PDF
 # placer le dossier privé à côté du dépôt : ../prive
 # (ou indiquer son chemin : export REGISTRE_PRIVE=/chemin/vers/prive)
 
-python scripts/tout_generer.py                 # les cinq livrables → sortie/
+python scripts/tout_generer.py                 # tous les livrables → sortie/
 python scripts/tout_generer.py --sans-prive    # version sans données privées
 ```
 

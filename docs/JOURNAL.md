@@ -1,5 +1,11 @@
 # Journal
 
+## 21 septembre 2026 — présentation par acteur
+
+La présentation du 20 septembre avait pris du retard sur le dossier en une soirée (16 onglets au lieu de 17, automatisation présentée comme une proposition alors qu'elle tournait). Elle devient un livrable généré, `scripts/generer_presentation.py`, dont tous les chiffres sont lus dans `donnees/` à chaque génération, et elle fait partie de `tout_generer.py`.
+
+Une partie commune, puis une section par auditoire, chacune avec ce qui lui est demandé et les questions attendues : directeur SST (cinq décisions, dont trois qui ne peuvent pas attendre le 1er octobre), comité (ordre du jour, mode séance, registre des recommandations), direction des opérations (les dix actions immédiates et leurs porteurs proposés, trois informations manquantes), TI (où sont les données, ce qui reste à régulariser), terrain (consignes, accès, constats positifs). HTML avec sélecteur d'acteur, PDF d'une section par page. Aucun nom. Cinq tests de plus (59 au total).
+
 ## 21 septembre 2026 — niveau de confiance dans chaque fiche
 
 La fiche de chaque risque de la page Comité affiche maintenant le niveau de confiance de chaque procédure citée : confirmé, partiel, à valider, ou absent de l'index. Il est lu dans l'index ANCRAGE **au moment de la génération** (variable `ANCRAGE_INDEX`), avec les correspondances de `donnees/alias_procedures.json` ; un même document cité sous deux numéros ne compte qu'une fois. Une référence externe au manuel (CSTC, décret) est signalée comme hors index. Si l'index est inaccessible, la fiche affiche « à confirmer » plutôt qu'un niveau.
