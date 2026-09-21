@@ -1,0 +1,10 @@
+{
+ "_note": "Écarts connus et inscrits à A_CORRIGER.md. Ils restent affichés par verifier_coherence.py, mais ne le font pas échouer. Retirer une entrée dès que l'écart est tranché.",
+ "ecarts": [
+  {
+   "cle": "page_visites_consolidees",
+   "motif": "la visite 29632342 du dépôt Grenache (9 septembre) est consolidée au registre mais absente de la liste des visites de la page ; son statut eCompliance est à confirmer avant de l'ajouter",
+   "renvoi": "A_CORRIGER.md §7"
+  }
+ ]
+}

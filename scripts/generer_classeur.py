@@ -143,6 +143,9 @@ def generer(avec_prive=True, sortie=None):
             c = ws[coord]
             cle = f"{f['titre']}!{coord}"
             v = cellules_privees.get(cle, v)
+            if isinstance(v, str) and "__DATE_VERSION__" in v:      # version unique : donnees/version.json
+                ver = lire_json(DONNEES / "version.json")
+                v = v.replace("__DATE_VERSION__", f"{ver['date_longue']} — version {ver['version']}")
             c.value = valeur(remplacer_jetons(v, table))
             c.font, c.fill, c.border, c.alignment, c.number_format = styles[si]
         for col, largeur in f["colonnes"].items():

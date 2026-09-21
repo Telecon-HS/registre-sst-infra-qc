@@ -1,5 +1,13 @@
 # Journal
 
+## 20 septembre 2026 — contrôle de cohérence
+
+`scripts/verifier_coherence.py` vérifie que les livrables disent la même chose : nombre de risques, de priorités 1, d'incidents, d'éléments source et de visites entre `registre_html.json`, `plan_action.json` et le classeur ; calendrier et pastilles du PDF contre les délais du registre ; plages des formules du classeur ; existence de chaque R-xx cité ; source, porteur et échéance pour chaque risque. Code de sortie 1 au premier écart non connu. Aucun seuil de tolérance. Cinq tests de plus (36 au total).
+
+Premier passage, deux écarts trouvés :
+- **Corrigé** — la page de garde du classeur affichait encore « version 3 ». Elle lit maintenant `donnees/version.json`, comme les autres livrables.
+- **Inscrit comme écart connu** (`donnees/ecarts_connus.json`, renvoi `A_CORRIGER.md` §7) — la page Comité compte 9 visites consolidées, le registre 10 : la visite 29632342 du dépôt Grenache est consolidée mais absente de la liste des visites. Son statut eCompliance est à confirmer avant de l'ajouter.
+
 ## 20 septembre 2026 — tableau de bord de direction
 
 Cinquième livrable, `scripts/generer_tableau_bord.py` : quatre pages en lettre paysage, inspirées du tableau de bord opérationnel du 12 septembre, mais calculées à partir des données du registre v8 — aucun chiffre n'est saisi dans le script.

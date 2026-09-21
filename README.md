@@ -93,6 +93,7 @@ Une même information peut figurer dans plusieurs fichiers (par exemple un risqu
 ```bash
 python scripts/verifier_confidentialite.py
 python scripts/verifier_citations.py    # citations normatives contre l'index ANCRAGE
+python scripts/verifier_coherence.py    # les livrables disent-ils la même chose ?
 pytest -q
 ```
 
