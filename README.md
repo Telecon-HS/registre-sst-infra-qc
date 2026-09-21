@@ -63,6 +63,14 @@ python scripts/rapport_hebdo.py         # → rapports/rapport_hebdo_AAAA-MM-JJ.
 
 Un seul rapport : ce qui a bougé depuis la semaine dernière, ce qui est en retard, ce qui ne concorde pas entre les sources. Il assemble l'ingestion, les alertes et le contrôle des citations sans les remplacer. Pour le lancer chaque lundi : [`docs/TACHE_PLANIFIEE.md`](docs/TACHE_PLANIFIEE.md).
 
+## Ordre du jour du comité
+
+```bash
+python scripts/ordre_du_jour.py         # → sortie/Ordre_du_jour_comite_SST_projet_v8_….md et .pdf
+```
+
+Points tirés des données : dossiers dont le jalon tombe à la séance, risques à trancher en séance, réserves, documents absents. Date, lieu et durées restent « à confirmer » tant que `donnees/ordre_du_jour.json` ne les fixe pas.
+
 ## Alertes d'échéances
 
 ```bash

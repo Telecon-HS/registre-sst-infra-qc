@@ -1,0 +1,6 @@
+{
+ "_note": "Paramètres de la prochaine séance. Tant qu'une valeur est null, l'ordre du jour l'affiche « à confirmer ». Durées en minutes, par type de point : ouverture, decision, information.",
+ "date_seance": null,
+ "lieu": null,
+ "durees": {"ouverture": null, "decision": null, "information": null}
+}

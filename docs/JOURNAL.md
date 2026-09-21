@@ -1,5 +1,11 @@
 # Journal
 
+## 20 septembre 2026 — projet d'ordre du jour
+
+`scripts/ordre_du_jour.py` produit un projet d'ordre du jour en markdown et en PDF : ouverture, dossiers dont le jalon tombe à la séance (5), risques à trancher en séance (7), réserves (4), documents du comité absents (3), clôture — 23 points. Cinq tests de plus (41 au total).
+
+Aucune durée n'existe dans les données : chaque point et la durée totale restent « à confirmer » tant que `donnees/ordre_du_jour.json` ne fixe pas une durée par type de point. Même chose pour la date, le lieu et la composition, puisque la charte du comité n'est pas adoptée. Les porteurs sont désignés par leur rôle.
+
 ## 20 septembre 2026 — contrôle de cohérence
 
 `scripts/verifier_coherence.py` vérifie que les livrables disent la même chose : nombre de risques, de priorités 1, d'incidents, d'éléments source et de visites entre `registre_html.json`, `plan_action.json` et le classeur ; calendrier et pastilles du PDF contre les délais du registre ; plages des formules du classeur ; existence de chaque R-xx cité ; source, porteur et échéance pour chaque risque. Code de sortie 1 au premier écart non connu. Aucun seuil de tolérance. Cinq tests de plus (36 au total).
