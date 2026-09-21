@@ -1,5 +1,7 @@
 # Constats à appliquer au registre
 
+> **20 septembre 2026** — appliqués : R-15 reformulé (§2), page 3 refaite en relevé partiel avec réserve (§1), cohérence des chiffres rétablie à 39 risques et 12 priorités 1 (§7), rapports de visite de chantier ajoutés en lecture (§4). Restent ouverts : la question à l'administrateur eCompliance (§1), les fiches jamais fermées (§3), la question de l'AST (§4), le nombre de visites (§7), les réponses eCompliance (§5) et les incohérences internes du v7 (§6).
+
 Relevés le **20 septembre 2026**, à partir d'exports eCompliance versés ce jour-là. **Aucun n'est encore appliqué** aux données : le dépôt reproduit l'état du 19 septembre (version 7). Chaque correction appliquée doit faire l'objet d'un dépôt daté qui renvoie à la ligne correspondante ci-dessous.
 
 Les exports eux-mêmes contiennent des noms : ils sont conservés hors dépôt.
@@ -53,3 +55,7 @@ La liste « Public Inspections » ne montre qu'une partie des fiches. La page 3 
 ## 8. Suite de l'audit UX/UI
 
 Points 6 à 17 : traités le 20 septembre 2026. Voir `JOURNAL.md`. Il ne reste rien d'ouvert du côté de l'interface.
+
+## 9. Citations hors index (mise à jour du 21 septembre 2026)
+
+Le constat du 20 septembre sur « quatre procédures absentes de l'index ANCRAGE » (403, 501, 601, F01) était en partie faux ; voir `JOURNAL.md` du 21 septembre. Restent réellement absentes de l'index : `SSE.TEL.FOR-103.2` (R-11) et `HSE-300.1` (R-12). À vérifier au manuel avant de les ajouter à ANCRAGE ou de corriger la citation.

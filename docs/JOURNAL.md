@@ -1,5 +1,15 @@
 # Journal
 
+## 21 septembre 2026 — contrôle des citations corrigé, correspondances de numéros
+
+**Erreur corrigée, inscrite ici.** Le contrôle du 20 septembre annonçait six citations « absentes de l'index ANCRAGE », dont 403 et 601. C'était en bonne partie un défaut du contrôle : il ramenait `SSE-501.1` à `501`, lisait mal `SSE-601-NOR`, et ignorait qu'un même document peut porter deux numéros. La vérification faite dans ANCRAGE l'a montré (constats 3 et 4).
+
+- Le contrôle garde maintenant le sous-numéro (501.1) et le type NOR (601-NOR).
+- `donnees/alias_procedures.json` porte les correspondances, chacune avec sa source : HSE.TEL-PRO-403 → SSE-1303 (constat 3), HSE-601 → SSE-601-NOR, HSE-1309.1 à .3 → SSE-501.1 à .3 (constat 4).
+- Côté ANCRAGE, commit 8d39140 : ajout de SSE-501.1, 501.2 et 501.3 à l'index, en `a_valider`, et constat 7.
+
+Nouveau passage, avec l'index à jour : 33 citations confirmées, 19 partielles, 5 à valider, 2 absentes — `SSE.TEL.FOR-103.2` et `HSE-300.1`, deux documents à sous-numéro que l'index ne connaît pas. Aucune n'est ramenée d'office à sa procédure parente. Quatre tests de plus (49 au total).
+
 ## 20 septembre 2026 — mode séance
 
 Gabarit seulement, aucune donnée modifiée (vérifié : contenu de la page identique avant et après). Nouveau bouton « Mode séance » dans la lecture Comité, ou adresse terminée par `#seance` : une page plein écran, projetable, sans navigation, quittée par Échap.

@@ -1,0 +1,10 @@
+{
+ "_note": "Un même document peut porter deux numéros dans le manuel agrégé. Clé : numéro tel que cité par le registre ; valeur : numéro tel qu'inscrit à l'index ANCRAGE. Chaque correspondance cite le constat d'ANCRAGE qui l'établit. Ne rien ajouter sans source.",
+ "alias": {
+  "403":    {"index": "1303",    "source": "ANCRAGE, docs/07-constats-corpus.md, constat 3 — en-têtes HSE.TEL-PRO-403 des pages 263 à 276"},
+  "601":    {"index": "601-NOR", "source": "ANCRAGE, index SSE-601-NOR ; agent AG-TEL-I-00 : HSE-601 et SSE-601 désignent la même liste"},
+  "1309.1": {"index": "501.1",   "source": "ANCRAGE, constat 4 — SSE-1309 §7 p. 295 nomme SSE-501.1 à 501.3, cités ailleurs sous HSE-1309.1 à .3"},
+  "1309.2": {"index": "501.2",   "source": "ANCRAGE, constat 4"},
+  "1309.3": {"index": "501.3",   "source": "ANCRAGE, constat 4"}
+ }
+}

@@ -12,7 +12,10 @@ Ce que le contrôle fait, et ne fait pas :
   - il dit si la procédure citée existe à l'index, et à quel niveau de confiance ;
   - il ne vérifie PAS le contenu d'une section. L'index ne descend pas à ce niveau.
     Une section reste donc à vérifier au manuel, comme les 18 et 19 septembre 2026.
-Les préfixes SSE- et HSE- désignent la même procédure : seul le numéro compte.
+Les préfixes SSE- et HSE- désignent la même procédure : seul le numéro compte, avec son
+sous-numéro (501.1 n'est pas 501) et son suffixe de type (601-NOR). Quand un même document
+porte deux numéros, la correspondance vient de donnees/alias_procedures.json, qui cite le
+constat d'ANCRAGE qui l'établit.
 """
 import argparse
 import csv
@@ -27,10 +30,16 @@ from commun import DONNEES, lire_json  # noqa: E402
 
 INDEX_DEFAUT = Path(__file__).resolve().parent.parent.parent / "Telecon-SST-Agents" / "corpus" / "index-procedures.csv"
 
-# SSE-1801, HSE-1302, SSE.TEL-PRG-600, HSE-600-F01… : on retient le numéro de procédure
-PROCEDURE = re.compile(r"\b(?:SSE|HSE)[.\-](?:TEL[.\-])?(?:[A-Z]{3}[.\-])?(\d{3,4})(?:\.\d+)?\b")
+# SSE-1801, HSE-1302, SSE.TEL-PRG-600, HSE-600-F01, SSE-501.1, SSE.TEL-NOR-601…
+# On garde le numéro, le sous-numéro éventuel, et le type NOR, qui distingue une norme.
+PROCEDURE = re.compile(r"\b(?:SSE|HSE)[.\-](?:TEL[.\-])?(?:([A-Z]{3})[.\-])?(\d{3,4})(\.\d+)?")
 # ce qui ne vient pas du manuel Telecon et ne peut donc pas être vérifié ici
 EXTERNE = re.compile(r"\b(CSTC|décret|RSST|LSST|LMRSST|RMPPE|CNESST|CSA|ISO|ASTM|ANSI|Altec|Hilti|Fluke)\b", re.I)
+
+
+def cle_index(numero):
+    """« SSE-1303 » → « 1303 » ; « SSE-601-NOR » → « 601-NOR » ; « SSE-501.1 » → « 501.1 »."""
+    return re.sub(r"^(?:SSE|HSE)-", "", numero.strip())
 
 
 def index_procedures(chemin):
@@ -38,19 +47,28 @@ def index_procedures(chemin):
     if not chemin.exists():
         sys.exit(f"Index introuvable : {chemin}\nDonnez son chemin avec --index ou la variable ANCRAGE_INDEX.")
     with open(chemin, encoding="utf-8-sig") as f:
-        return {l["numero"].split("-")[-1]: l for l in csv.DictReader(f)}
+        return {cle_index(l["numero"]): l for l in csv.DictReader(f)}
+
+
+def alias():
+    f = DONNEES / "alias_procedures.json"
+    return {k: v["index"] for k, v in lire_json(f)["alias"].items()} if f.exists() else {}
 
 
 def citations(texte):
-    """Numéros de procédure cités dans un champ « norme », dans l'ordre d'apparition."""
+    """Numéros de procédure cités, dans l'ordre d'apparition : « 1302 », « 501.1 », « 601-NOR »."""
     vus = []
     for m in PROCEDURE.finditer(texte or ""):
-        if m.group(1) not in vus:
-            vus.append(m.group(1))
+        cle = m.group(2) + (m.group(3) or "")
+        if m.group(1) == "NOR":
+            cle += "-NOR"
+        if cle not in vus:
+            vus.append(cle)
     return vus
 
 
-def verifier(index, risques):
+def verifier(index, risques, correspondances=None):
+    correspondances = alias() if correspondances is None else correspondances
     lignes = []
     for r in risques:
         norme = r.get("norme", "")
@@ -59,12 +77,18 @@ def verifier(index, risques):
             etat = "hors index" if EXTERNE.search(norme) else "aucune procédure citée"
             lignes.append((r["ref"], "—", etat, norme[:70]))
             continue
+        cibles_vues = set()
         for n in numeros:
-            entree = index.get(n)
+            cible = correspondances.get(n, n)
+            if cible in cibles_vues:          # deux numéros du même document dans une même citation
+                continue
+            cibles_vues.add(cible)
+            entree = index.get(cible)
+            via = f" (cité {n})" if cible != n else ""
             if entree is None:
                 lignes.append((r["ref"], n, "ABSENTE DE L'INDEX", norme[:70]))
             else:
-                lignes.append((r["ref"], f"{entree['numero']}", entree["niveau_confiance"], entree["titre"][:70]))
+                lignes.append((r["ref"], f"{entree['numero']}{via}", entree["niveau_confiance"], entree["titre"][:70]))
     return lignes
 
 
