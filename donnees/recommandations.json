@@ -1,0 +1,11 @@
+{
+ "_note": "Registre des recommandations écrites du comité à l'employeur. Une entrée par recommandation. Les dates au format AAAA-MM-JJ. Aucun nom : le porteur de la réponse est désigné par son rôle.",
+ "delai_reponse": {
+  "jours": null,
+  "jours_arret_de_travail": null,
+  "statut": "à confirmer",
+  "source": "Aucun délai chiffré n'est adopté. La politique SSE-200-TEL-POL art. 4.3 h) exige une réponse « en temps opportun » sans la chiffrer ; aucun délai n'est prescrit au Québec, ce qui reste à confirmer. R-29 propose 21 jours civils, et 7 jours pour un déclencheur d'arrêt de travail : proposition soumise au comité, non adoptée.",
+  "renvoi": "R-29"
+ },
+ "recommandations": []
+}

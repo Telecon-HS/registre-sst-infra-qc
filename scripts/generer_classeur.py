@@ -128,6 +128,73 @@ def onglet_volumes(wb, styles):
         ws.column_dimensions[chr(67 + j)].width = 9
 
 
+def lire_date_iso(texte):
+    try:
+        return dt.date.fromisoformat(str(texte)) if texte else None
+    except ValueError:
+        return None
+
+
+def lignes_recommandations(R):
+    """Calcule, pour chaque recommandation, le délai écoulé et l'échéance de réponse.
+    L'échéance n'est calculée que si un délai de réponse a été adopté."""
+    delai = R["delai_reponse"]
+    lignes = []
+    for i, rec in enumerate(R["recommandations"], 1):
+        emise = lire_date_iso(rec.get("date"))
+        reponse = lire_date_iso(rec.get("date_reponse"))
+        jours = delai.get("jours_arret_de_travail") if rec.get("arret_de_travail") else delai.get("jours")
+        echeance = emise + dt.timedelta(days=jours) if emise and isinstance(jours, int) else None
+        lignes.append({
+            "no": rec.get("no") or f"REC-{i:02d}",
+            "date": emise.isoformat() if emise else "à confirmer",
+            "objet": rec.get("objet", ""),
+            "risque": rec.get("risque", "") or "—",
+            "pv": rec.get("proces_verbal", "") or "à confirmer",
+            "echeance": echeance.isoformat() if echeance else "à confirmer",
+            "reponse": rec.get("reponse", "") or "—",
+            "date_reponse": reponse.isoformat() if reponse else "—",
+            "ecoule": (reponse - emise).days if emise and reponse else "—",
+            "statut": "Réponse écrite reçue" if reponse else "En attente de réponse",
+        })
+    return lignes
+
+
+def onglet_recommandations(wb, styles):
+    """Onglet « Recommandations au comité » : une ligne par recommandation écrite à l'employeur."""
+    R = lire_json(DONNEES / "recommandations.json")
+    ws = wb.create_sheet("Recommandations au comité")
+    ws.sheet_view.showGridLines = False
+    titre, gras, normal, petit = styles
+    ws["B2"] = "Recommandations écrites du comité à l’employeur"
+    ws["B2"]._style = copy(titre._style)
+    ws["B3"] = ("Une ligne par recommandation. C’est ce registre qui déclenche l’obligation de réponse écrite "
+                "de l’employeur. Relevé indicatif, à confirmer auprès de la CNESST : ce n’est pas un avis juridique.")
+    ws["B3"]._style = copy(petit._style)
+    d = R["delai_reponse"]
+    ws["B4"] = (f"Délai de réponse : {d['jours']} jours" if isinstance(d.get("jours"), int)
+                else "Délai de réponse : à confirmer — " + d["source"])
+    ws["B4"]._style = copy(petit._style)
+    entetes = ["N°", "Date de la recommandation", "Objet", "Risque rattaché", "Procès-verbal",
+               "Échéance de réponse", "Réponse de l’employeur", "Date de la réponse", "Jours écoulés", "Statut"]
+    for j, t in enumerate(entetes):
+        ws.cell(6, 2 + j, t)._style = copy(gras._style)
+    lignes = lignes_recommandations(R)
+    if not lignes:
+        ws["B7"] = ("Aucune recommandation écrite à ce jour : le comité ne siège pas depuis le 18 décembre 2024. "
+                    "Le registre est prêt à recevoir la première.")
+        ws["B7"]._style = copy(normal._style)
+    for i, l in enumerate(lignes):
+        for j, k in enumerate(["no", "date", "objet", "risque", "pv", "echeance", "reponse", "date_reponse", "ecoule", "statut"]):
+            ws.cell(7 + i, 2 + j, l[k])._style = copy(normal._style)
+    bas = 9 + len(lignes)
+    ws[f"B{bas}"] = ("Validation humaine requise. Le statut indique seulement si une réponse écrite a été reçue ; "
+                     "il ne juge ni la réponse ni le respect d’un délai. Aucun verdict de conformité.")
+    ws[f"B{bas}"]._style = copy(petit._style)
+    for lettre, largeur in zip("ABCDEFGHIJK", [2.5, 10, 14, 44, 12, 14, 14, 40, 14, 10, 20]):
+        ws.column_dimensions[lettre].width = largeur
+
+
 def generer(avec_prive=True, sortie=None):
     avec_prive = avec_prive and prive_disponible()
     table = table_des_noms(avec_prive)
@@ -170,6 +237,7 @@ def generer(avec_prive=True, sortie=None):
 
     g = wb["Garde"]
     onglet_volumes(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]))
+    onglet_recommandations(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]))
 
     garde = wb["Garde"]
     modele = garde["B34"]            # note de bas de page de la garde

@@ -89,6 +89,7 @@ Les délais du registre courent **à compter de la décision du comité**. Tant 
 | un risque, un incident rattaché, un site, une vue de la page | `donnees/registre_html.json` |
 | une cellule du classeur | `donnees/classeur/NN_Onglet.json` (coordonnée, valeur, style) |
 | le texte du plan d'action PDF | `donnees/plan_action.json` |
+| une recommandation écrite du comité, ou le délai de réponse adopté | `donnees/recommandations.json` (onglet « Recommandations au comité » du classeur) |
 | la version et la date des livrables | `donnees/version.json` (elles apparaissent dans les quatre livrables et dans les noms de fichiers) |
 | la priorité d'un risque dans le PDF | `donnees/registre_html.json` (le PDF la lit là) |
 | l'apparence des pages HTML | `gabarits/page_registre.html` (son CSS sert aussi à la page Terrain) |

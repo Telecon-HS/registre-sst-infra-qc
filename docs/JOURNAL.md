@@ -1,5 +1,11 @@
 # Journal
 
+## 20 septembre 2026 — registre des recommandations au comité
+
+Nouvel onglet du classeur, « Recommandations au comité », alimenté par `donnees/recommandations.json` : date, objet, risque rattaché, procès-verbal, échéance de réponse, réponse de l'employeur, date de la réponse, jours écoulés, statut. Cinq tests de plus (46 au total). Les risques cités par une recommandation sont vérifiés par le contrôle de cohérence.
+
+Le registre part vide : le comité ne siège pas depuis le 18 décembre 2024. Le délai de réponse reste **à confirmer** : la politique SSE-200-TEL-POL art. 4.3 h) ne le chiffre pas, aucun délai n'est prescrit au Québec selon le dossier (à confirmer), et les 21 jours de R-29 sont une proposition soumise au comité, non adoptée. Tant qu'aucun délai n'est inscrit, aucune échéance de réponse n'est calculée. Le statut dit seulement si une réponse écrite a été reçue ; il ne juge ni la réponse ni le respect d'un délai.
+
 ## 20 septembre 2026 — projet d'ordre du jour
 
 `scripts/ordre_du_jour.py` produit un projet d'ordre du jour en markdown et en PDF : ouverture, dossiers dont le jalon tombe à la séance (5), risques à trancher en séance (7), réserves (4), documents du comité absents (3), clôture — 23 points. Cinq tests de plus (41 au total).

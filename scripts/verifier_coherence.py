@@ -119,6 +119,8 @@ def verifier():
     # ---------------------------------------------------------------- B · références
     cites = set()
     sources_texte = [("registre_html.json", D), ("plan_action.json", P)]
+    if (DONNEES / "recommandations.json").exists():
+        sources_texte.append(("recommandations.json", lire_json(DONNEES / "recommandations.json")["recommandations"]))
     for nom in (CLASSEUR).glob("*.json"):
         if not nom.name.startswith("_"):
             sources_texte.append((nom.name, lire_json(nom)))
