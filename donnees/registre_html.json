@@ -1153,28 +1153,32 @@
      "registre": 28,
      "export": 91,
      "tableau": 581,
-     "court": "Avant départ"
+     "court": "Avant départ",
+     "motif": "avant départ"
     },
     {
      "type": "Inspection quotidienne — pelle mécanique",
      "registre": 14,
      "export": 30,
      "tableau": 231,
-     "court": "Pelle"
+     "court": "Pelle",
+     "motif": "pelle"
     },
     {
      "type": "Inspection mensuelle du véhicule",
      "registre": 3,
      "export": 9,
      "tableau": 58,
-     "court": "Mensuelle"
+     "court": "Mensuelle",
+     "motif": "mensuelle"
     },
     {
      "type": "Visite ou inspection SST de site",
      "registre": 6,
      "export": 14,
      "tableau": 418,
-     "court": "Visite SST"
+     "court": "Visite SST",
+     "motif": "visite de"
     }
    ],
    "lecture": "Sur l’export daté, l’activité culmine en avril (30 fiches) et creuse en juillet (12). Les inspections avant départ portent le volume; l’inspection mensuelle du véhicule tient une ou deux fiches par mois de mars à septembre, sans interruption après le 16 juillet, contrairement à ce que laissait croire le relevé du registre v7."
