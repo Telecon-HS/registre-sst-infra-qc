@@ -1,0 +1,86 @@
+﻿{
+    "_lecture":  [
+                     "Registre des lieux inspectés. Aucun nom de personne : les responsables sont",
+                     "des jetons ⟦Pnn⟧ dont la correspondance vit dans prive/noms.json.",
+                     "Le code de lieu se lit DIVISION-REGION-SITE-ESPACE. Il est stable : une fois",
+                     "inscrit, il ne change plus, sinon l\u0027historique des visites se rompt.",
+                     "Les fréquences sont des règles de gestion, adoptées par le comité SST.",
+                     "Document préparatoire. Aucun verdict de conformité."
+                 ],
+    "sites":  [
+                  {
+                      "code":  "INF-QC-ANJOU",
+                      "nom":  "Dépôt de la rue Grenache",
+                      "adresse":  "9500, boulevard Parkway, Ville d\u0027Anjou (Québec) H1J 1N9",
+                      "division":  "Infrastructure",
+                      "region":  "Québec",
+                      "espaces":  [
+                                      "INF-QC-ANJOU-COUR",
+                                      "INF-QC-ANJOU-ENTREPOT"
+                                  ],
+                      "responsable_site":  null,
+                      "bail":  "à confirmer",
+                      "note":  "L\u0027atelier mécanique n\u0027a pas été visité le 9 septembre 2026. S\u0027il devient un lieu à part, prévoir INF-QC-ANJOU-ATELIER."
+                  }
+              ],
+    "lieux":  [
+                  {
+                      "code":  "INF-QC-ANJOU-COUR",
+                      "site":  "INF-QC-ANJOU",
+                      "nom":  "Cour",
+                      "type":  "cour",
+                      "classe_risque":  "eleve",
+                      "frequence_base":  "mensuelle",
+                      "frequence_source":  "règle de gestion proposée, à adopter par le comité SST",
+                      "responsable":  null,
+                      "responsable_note":  "Direction de l\u0027entrepot pour les deux lieux. Jeton a inscrire quand prive/noms.json sera retrouve ou reconstruit : le nom porte probablement deja un jeton parmi P01-P44, et en creer un nouveau ferait doublon.",
+                      "reference_gps":  null,
+                      "reference_gps_note":  "Renseigner pour que l\u0027ingestion propose le lieu d\u0027après l\u0027EXIF des photos.",
+                      "sections_formulaire":  [
+                                                  "2A",
+                                                  "5"
+                                              ],
+                      "vigilances":  [
+                                         "Circulation piétons et véhicules au départ des équipes",
+                                         "Gaz comprimé et liquides inflammables",
+                                         "Entreposage sur les toits de conteneurs",
+                                         "Station de ravitaillement",
+                                         "Déneigement et glace d\u0027octobre à avril"
+                                     ],
+                      "derniere_visite":  "2026-09-09"
+                  },
+                  {
+                      "code":  "INF-QC-ANJOU-ENTREPOT",
+                      "site":  "INF-QC-ANJOU",
+                      "nom":  "Entrepôt",
+                      "type":  "entrepot",
+                      "classe_risque":  "moyen",
+                      "frequence_base":  "mensuelle",
+                      "frequence_source":  "règle de gestion proposée, à adopter par le comité SST",
+                      "frequences_particulieres":  [
+                                                       {
+                                                           "objet":  "palettiers",
+                                                           "frequence":  "à fixer, plus rapprochée que la visite du lieu",
+                                                           "reference":  "CSA A344.1, guide d\u0027utilisation des rayonnages en acier — édition applicable à vérifier",
+                                                           "note":  "Toute vérification déclenchée par un choc signalé s\u0027ajoute à la fréquence de base."
+                                                       }
+                                                   ],
+                      "responsable":  null,
+                      "responsable_note":  "Direction de l\u0027entrepot pour les deux lieux. Jeton a inscrire quand prive/noms.json sera retrouve ou reconstruit : le nom porte probablement deja un jeton parmi P01-P44, et en creer un nouveau ferait doublon.",
+                      "reference_gps":  null,
+                      "sections_formulaire":  [
+                                                  "2A",
+                                                  "2B",
+                                                  "4",
+                                                  "6"
+                                              ],
+                      "vigilances":  [
+                                         "Issues de secours dégagées",
+                                         "Charges et capacités des palettiers",
+                                         "Allées de circulation, chariots élévateurs",
+                                         "Accessoires de levage"
+                                     ],
+                      "derniere_visite":  "2026-09-09"
+                  }
+              ]
+}
