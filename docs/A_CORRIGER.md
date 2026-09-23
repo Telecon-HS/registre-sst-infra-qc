@@ -59,3 +59,8 @@ Points 6 à 17 : traités le 20 septembre 2026. Voir `JOURNAL.md`. Il ne reste r
 ## 9. Citations hors index (mise à jour du 21 septembre 2026)
 
 Le constat du 20 septembre sur « quatre procédures absentes de l'index ANCRAGE » (403, 501, 601, F01) était en partie faux ; voir `JOURNAL.md` du 21 septembre. Restent réellement absentes de l'index : `SSE.TEL.FOR-103.2` (R-11) et `HSE-300.1` (R-12). À vérifier au manuel avant de les ajouter à ANCRAGE ou de corriger la citation.
+
+## Dossier prive introuvable - 23 septembre 2026
+
+Le dossier prive n'est ni sur le poste, ni dans OneDrive, ni dans la bibliotheque Health & Safety synchronisee, ni dans les sites SharePoint accessibles. 44 jetons utilises dans les donnees restent sans correspondance nominative. Les livrables se generent avec les replis ; seule la version nominative pour le comite est indisponible. A verifier aupres des TI : ancien poste et sauvegardes. A defaut, reconstruire a partir des exports eCompliance.
+
