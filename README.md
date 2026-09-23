@@ -56,6 +56,43 @@ python scripts/ingerer_exports.py          # → rapports/rapport_ingestion_AAAA
 
 Le rapport donne les volumes par type et par mois, les fiches non fermées et les fiches sans signature. Il ne contient aucun nom, n'écrit jamais dans `donnees/` et ne porte aucun verdict : ce qu'il faut retenir s'inscrit au registre à la main, sourcé.
 
+## Volet REGARD — lecture de photos de visite
+
+**Registre · Écarts · Gestion · Actions · Risques · Décisions**
+
+Un agent lit les photos d'une visite et propose des constats ; l'inspecteur
+tranche. Aucune image n'entre dans le dépôt : seules l'empreinte et la lecture
+y figurent.
+
+```
+python scripts/ingerer_photos.py /chemin/vers/photos --lieu INF-QC-ANJOU-COUR
+# → rapports/rapport_photos_AAAA-MM-JJ.md et rapports/index_photos_AAAA-MM-JJ.json
+
+# l'agent lit l'index et propose des constats (invites/lecture_photos_v1.md)
+
+python scripts/verifier_constats.py rapports/constats_AAAA-MM-JJ.json \
+       --photos rapports/index_photos_AAAA-MM-JJ.json
+# → rapports/rapport_constats_AAAA-MM-JJ.md · code de retour 1 si bloquant
+```
+
+Comme l'ingestion des exports eCompliance, ces scripts lisent et rapportent :
+ils n'écrivent jamais dans `donnees/` et ne portent aucun verdict. Ce qu'il
+faut retenir s'inscrit au registre à la main, sourcé.
+
+Règles et raisons : [`docs/DOCTRINE_REGARD.md`](docs/DOCTRINE_REGARD.md).
+
+**À ajouter au `.gitignore` :**
+
+```
+photos/
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.mp4
+rapports/index_photos_*.json
+```
+
 ## Rapport hebdomadaire
 
 ```bash

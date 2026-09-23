@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Photo indexée d'une visite SST",
+  "description": "Une photo n'est jamais versée au dépôt. Seules son empreinte et sa lecture le sont. Les fichiers eux-mêmes restent dans les systèmes de Telecon.",
+  "type": "object",
+  "required": ["id", "empreinte", "pris_le", "lieu", "sequence"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Nom du fichier d'origine, inchangé. Exemple : 20260909_093022.jpg"
+    },
+    "empreinte": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 du fichier. Permet de prouver qu'une photo citée est bien celle qui a été lue."
+    },
+    "pris_le": {
+      "type": "string",
+      "description": "Horodatage ISO 8601, lu dans l'EXIF, ou à défaut dans le nom du fichier. La source est indiquée dans horodatage_source."
+    },
+    "horodatage_source": {
+      "enum": ["exif", "nom_fichier"],
+      "default": "nom_fichier"
+    },
+    "lieu": {
+      "type": "string",
+      "description": "Code du lieu, tel qu'il figure dans donnees/lieux.json."
+    },
+    "sequence": {
+      "type": "string",
+      "description": "Séquence de prise de vue, calculée par ingerer_photos.py. Exemple : S01"
+    },
+    "zone_presumee": {
+      "type": ["string", "null"],
+      "description": "Zone déduite par l'agent. Présumée tant qu'une photo de repère ne la confirme pas."
+    },
+    "objets": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Ce qui est visible. Jamais ce qui est absent."
+    },
+    "texte_lu": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Texte effectivement lisible dans l'image : plaques, étiquettes, codes d'unité."
+    },
+    "visibilite_zone_critique": {
+      "type": ["boolean", "null"],
+      "default": null,
+      "description": "Vrai seulement si la photo montre, dégagé et net, l'endroit où un dispositif devrait se trouver. C'est la seule condition qui autorise un constat d'absence.",
+      "$comment": "Règle née de l'erreur mesurée sur la cage à bidons du dépôt Grenache, 9 septembre 2026."
+    },
+    "qualite": {
+      "enum": ["nette", "acceptable", "floue", "sous-exposee", "surexposee"]
+    },
+    "sol_examine": {
+      "type": "boolean",
+      "default": false,
+      "description": "L'agent a-t-il examiné le sol : ornières, flaques, glace, taches, débris. Angle mort connu."
+    },
+    "passage_examine": {
+      "type": "boolean",
+      "default": false,
+      "description": "L'agent a-t-il examiné ce qui dépasse dans une voie de circulation : timons, béquilles, boyaux, câbles, barres. Angle mort connu."
+    },
+    "renseignement_personnel": {
+      "type": "boolean",
+      "default": false,
+      "description": "Visage, nom, numéro de téléphone, plaque d'immatriculation. Si vrai, la photo relève du dossier privé."
+    },
+    "confiance": {
+      "enum": ["elevee", "moyenne", "faible"]
+    },
+    "constats": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Identifiants des constats auxquels cette photo sert de preuve."
+    },
+    "non_traitee": {
+      "type": ["string", "null"],
+      "default": null,
+      "description": "Motif si la photo n'a pas été lue. Exemple : fichier de plus de 5 Mo."
+    }
+  }
+}

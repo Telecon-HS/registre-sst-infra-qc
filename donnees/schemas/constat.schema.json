@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constat proposé à partir d'une visite",
+  "description": "Un constat est une proposition. Il n'entre au registre qu'après validation humaine, et sourcé. Aucun verdict de conformité n'est produit par la machine.",
+  "type": "object",
+  "required": ["id", "lieu", "enonce", "statut", "photos", "source", "affirme_absence"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^C-\\d{4}-\\d{2}-\\d{2}-\\d{2}$",
+      "description": "Exemple : C-2026-09-09-07"
+    },
+    "lieu": {"type": "string"},
+    "code_item": {
+      "type": ["string", "null"],
+      "description": "Code stable de l'item du formulaire, tel qu'il figure dans donnees/items.json. Null si aucun item ne couvre le constat : c'est alors une lacune du formulaire, à remonter."
+    },
+    "enonce": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Énoncé affirmatif de ce qui est observé. Pas de verdict réglementaire."
+    },
+    "statut": {
+      "enum": ["non_conforme", "a_verifier", "conforme", "observation"],
+      "description": "conforme exige validation_humaine = true. La machine ne déclare jamais la conformité."
+    },
+    "affirme_absence": {
+      "type": "boolean",
+      "description": "Le constat affirme-t-il qu'un dispositif est absent : cadenas, sangle, chaîne, plaque, garde-corps, extincteur, protecteur."
+    },
+    "dispositif_absent": {
+      "type": ["string", "null"],
+      "default": null,
+      "description": "Lequel. Obligatoire si affirme_absence est vrai."
+    },
+    "photos": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Identifiants des photos servant de preuve."
+    },
+    "source": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"enum": ["photo", "note_vocale", "entrevue", "historique", "document"]},
+      "description": "D'où vient l'information. Un constat d'exposition ne peut pas venir d'une photo seule."
+    },
+    "criticite_proposee": {
+      "enum": ["critique", "elevee", "moyenne", "faible", "sans_objet"],
+      "description": "Proposition. La criticité finale est humaine."
+    },
+    "a_verifier": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Ce que ni la photo ni l'agent ne peuvent trancher."
+    },
+    "confiance": {"enum": ["elevee", "moyenne", "faible"]},
+    "fragile": {
+      "type": "boolean",
+      "default": false,
+      "description": "Posé par verifier_constats.py : constat reposant sur une seule photo."
+    },
+    "action_proposee": {"type": ["string", "null"], "default": null},
+    "recurrence": {
+      "type": ["string", "null"],
+      "default": null,
+      "description": "Rapprochement avec l'historique du même lieu et du même code d'item."
+    },
+    "validation_humaine": {
+      "type": "boolean",
+      "default": false,
+      "description": "Faux tant qu'un inspecteur n'a pas tranché. Rien n'entre au registre à faux."
+    },
+    "valide_par": {"type": ["string", "null"], "default": null},
+    "journal": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Trace des rétrogradations et des avertissements. On inscrit et on date, on n'efface pas."
+    }
+  }
+}

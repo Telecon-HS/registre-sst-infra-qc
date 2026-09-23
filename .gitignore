@@ -25,3 +25,12 @@ dashboard-*
 __pycache__/
 *.pyc
 .venv/
+
+# REGARD : aucune image, jamais
+photos/
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.mp4
+rapports/index_photos_*.json
