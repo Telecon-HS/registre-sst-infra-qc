@@ -107,7 +107,7 @@ Un seul rapport : ce qui a bougé depuis la semaine dernière, ce qui est en ret
 python scripts/ordre_du_jour.py         # → sortie/Ordre_du_jour_comite_SST_projet_v8_….md et .pdf
 ```
 
-Points tirés des données : dossiers dont le jalon tombe à la séance, risques à trancher en séance, réserves, documents absents. Date, lieu et durées restent « à confirmer » tant que `donnees/ordre_du_jour.json` ne les fixe pas.
+Points tirés des données : dossiers dont le jalon tombe à la séance, dossiers transférés au comité (tableau par dossier — état, mesures, dont en retard, ce que le comité doit décider — puis ses points à trancher, lus dans `donnees/dossiers_comite.json`, clé `points_a_trancher`), risques à trancher en séance, réserves, documents absents. Le même bloc figure au mode séance de la page Comité. Date, lieu et durées restent « à confirmer » tant que `donnees/ordre_du_jour.json` ne les fixe pas.
 
 ## Alertes d'échéances
 
@@ -116,7 +116,7 @@ python scripts/alertes.py               # → rapports/alertes_AAAA-MM-JJ.md
 python scripts/alertes.py --date 2026-10-05
 ```
 
-Quatre familles : échéances réglementaires, jalons datés des dossiers, actions du registre et recertifications d'EPI. Trois horizons : dépassé, 7 jours, 30 jours.
+Cinq familles : échéances réglementaires, jalons datés des dossiers, actions du registre, recertifications d'EPI et mesures correctives des dossiers transférés au comité (responsable par jeton, état tel qu'inscrit, jamais modifié par le retard). Trois horizons : dépassé, 7 jours, 30 jours.
 
 Les délais du registre courent **à compter de la décision du comité**. Tant que `donnees/echeances.json` ne porte pas cette date, aucune échéance de risque n'est calculée : le rapport compte les actions par délai et le dit. La liste HSE-601 n'étant pas dans ce dépôt, la section EPI se remplit seulement si `prive/epi_recertification.json` existe.
 

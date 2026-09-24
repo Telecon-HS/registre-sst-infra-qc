@@ -7,10 +7,14 @@
 Les points viennent des données, dans cet ordre :
   1. Ouverture — quorum, adoption de l'ordre du jour.
   2. Dossiers dont le jalon tombe avant ou à la séance (plan d'action, page 2).
-  3. Risques dont le délai proposé est « prochaine séance ».
-  4. Réserves à trancher (plan d'action, page 1).
-  5. Documents du comité absents.
-  6. Varia et date de la prochaine séance.
+  3. Dossiers transférés au comité (donnees/dossiers_comite.json) : un tableau par
+     dossier — état, nombre de mesures, dont en retard, ce que le comité doit décider —
+     puis ses points à trancher. Le retard se compte à la date de la séance si elle est
+     fixée, sinon au jour de la génération ; il ne modifie jamais l'état d'une mesure.
+  4. Risques dont le délai proposé est « prochaine séance ».
+  5. Réserves à trancher (plan d'action, page 1).
+  6. Documents du comité absents.
+  7. Varia et date de la prochaine séance.
 
 Durées : aucune n'existe dans les données. Elles restent « à confirmer » tant que
 donnees/ordre_du_jour.json ne fixe pas une durée par type de point. Même chose pour
@@ -19,13 +23,15 @@ la date, le lieu et la composition du comité.
 Aucun nom de personne : les porteurs sont désignés par leur rôle.
 """
 import base64
+import datetime as dt
 import html
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from alertes import lire_date  # noqa: E402
 from commun import (DONNEES, GABARITS, SORTIE, lire_json, ligne_version, nom_versionne,  # noqa: E402
-                    remplacer_jetons, table_des_noms)
+                    remplacer_jetons, resume_dossiers, table_des_noms)
 
 JALONS_SEANCE = ("avant la séance", "prochaine séance", "immédiat")
 A_CONFIRMER = "à confirmer"
@@ -41,17 +47,25 @@ def duree(type_point, cfg):
     return d if isinstance(d, (int, float)) and d > 0 else None
 
 
-def construire_points(cfg=None):
-    """Liste de points : {num, section, titre, type, decision, renvoi, duree}."""
+def jour_de_reference(cfg, jour=None):
+    """Date à laquelle on compte les retards : celle de la séance si elle est fixée."""
+    return jour or lire_date(cfg.get("date_seance")) or dt.date.today()
+
+
+SECTION_DOSSIERS = "Dossiers transférés au comité"
+
+
+def construire_points(cfg=None, jour=None):
+    """Liste de points : {num, section, titre, type, decision, renvoi, duree, dossier}."""
     cfg = cfg if cfg is not None else config()
     sans_noms = table_des_noms(avec_prive=False)
     D = remplacer_jetons(lire_json(DONNEES / "registre_html.json"), sans_noms)
     P = remplacer_jetons(lire_json(DONNEES / "plan_action.json"), sans_noms)
     points = []
 
-    def ajouter(section, titre, type_point, decision, renvoi=""):
+    def ajouter(section, titre, type_point, decision, renvoi="", dossier=None):
         points.append({"section": section, "titre": titre, "type": type_point, "decision": decision,
-                       "renvoi": renvoi, "duree": duree(type_point, cfg)})
+                       "renvoi": renvoi, "duree": duree(type_point, cfg), "dossier": dossier})
 
     ajouter("Ouverture", "Constat du quorum", "ouverture",
             "Constater la composition présente. La composition du comité n'est pas arrêtée : à confirmer.")
@@ -62,6 +76,12 @@ def construire_points(cfg=None):
             porteur = c["porteur"].replace("[nom retiré], ", "").replace("[nom retiré]", "rôle à confirmer")
             ajouter("Dossiers en cours", f"{c['id']} — {c['titre']}", "decision",
                     f"{c['prochaine']}. État : {c['etat']}. Porteur : {porteur}.", c["refs"])
+
+    for d in resume_dossiers(jour_de_reference(cfg, jour)):
+        for x in d["points"]:
+            x = remplacer_jetons(x, sans_noms)
+            ajouter(SECTION_DOSSIERS, x["titre"], "decision", x["decision"],
+                    " · ".join(filter(None, [f"Dossier {d['numero']}", x.get("renvoi")])), d["numero"])
 
     for r in D["risques"]:
         if r["bucket"] == "seance":
@@ -87,6 +107,25 @@ def construire_points(cfg=None):
     return points
 
 
+def tableau_dossiers(points, cfg=None, jour=None):
+    """Une ligne par dossier transféré : dossier, état, mesures, dont en retard, à décider."""
+    cfg = cfg if cfg is not None else config()
+    j = jour_de_reference(cfg, jour)
+    lignes = []
+    for d in resume_dossiers(j):
+        nums = [p["num"] for p in points if p.get("dossier") == d["numero"]]
+        a_decider = []
+        if d["accuse_en_attente"]:
+            a_decider.append("accuser réception" + (f" ({d['mention_pv']})" if d["mention_pv"] else ""))
+        if nums:
+            a_decider.append(f"trancher les points {nums[0]} à {nums[-1]}" if len(nums) > 1 else f"trancher le point {nums[0]}")
+        retard = d["en_retard"]
+        lignes.append({"dossier": d["numero"], "etat": d["etat"], "mesures": d["n_mesures"],
+                       "en_retard": f"{len(retard)} (mesures {', '.join(map(str, retard))})" if retard else "0",
+                       "a_decider": " ; ".join(a_decider) or "rien à ce jour"})
+    return j, lignes
+
+
 def total(points):
     if any(p["duree"] is None for p in points):
         return None
@@ -110,6 +149,12 @@ def markdown(points, cfg=None):
         if p["section"] != section:
             section = p["section"]
             t += [f"## {section}", ""]
+            if section == SECTION_DOSSIERS:
+                j, lignes = tableau_dossiers(points, cfg)
+                t += ["| Dossier | État | Mesures | Dont en retard | Ce que le comité doit décider |", "|---|---|---|---|---|"]
+                t += [f"| {l['dossier']} | {l['etat']} | {l['mesures']} | {l['en_retard']} | {l['a_decider']} |" for l in lignes]
+                t += ["", f"Retard compté au {j.isoformat()} : date visée passée et état différent de « réalisée ». "
+                      "C'est une vue ; l'état inscrit des mesures n'est pas modifié.", ""]
         t.append(f"**{p['num']}. {p['titre']}** — {fmt_duree(p['duree'])}")
         t.append(f"  {'Décision demandée' if p['type'] == 'decision' else 'Objet'} : {p['decision']}")
         if p["renvoi"]:
@@ -136,6 +181,8 @@ td{border-bottom:1px solid #E3E7EC;padding:5px 4px;vertical-align:top}
 td.n{width:24px;font-weight:700;color:#1F3864}td.d{width:70px;text-align:right;white-space:nowrap;color:#5C6B7A}
 td b{display:block;font-size:10.6px}.dec{color:#2A3540}.ren{color:#7A8796;font-size:9px;margin-top:1px}
 .conf{color:#B3261E;font-style:italic}
+table.dos{margin:2px 0 3px}table.dos th{text-align:left;font-size:9px;color:#5C6B7A;font-weight:700;border-bottom:1px solid #D9DDE3;padding:3px 4px}
+table.dos td{font-size:9.8px}
 .fin{margin-top:14px;padding-top:8px;border-top:1px solid #D9DDE3;font-size:9.2px;color:#5C6B7A}
 .fin b{color:#16202A}
 """
@@ -152,7 +199,16 @@ def page_html(points, cfg=None):
             if section is not None:
                 corps.append("</table>")
             section = p["section"]
-            corps.append(f"<h2>{e(section)}</h2><table>")
+            corps.append(f"<h2>{e(section)}</h2>")
+            if section == SECTION_DOSSIERS:
+                j, lignes = tableau_dossiers(points, cfg)
+                corps.append('<table class="dos"><tr><th>Dossier</th><th>État</th><th>Mesures</th><th>Dont en retard</th>'
+                             '<th>Ce que le comité doit décider</th></tr>'
+                             + "".join(f'<tr><td><b>{e(l["dossier"])}</b></td><td>{e(l["etat"])}</td><td>{l["mesures"]}</td>'
+                                       f'<td>{e(l["en_retard"])}</td><td>{e(l["a_decider"])}</td></tr>' for l in lignes)
+                             + f'</table><p class="ren">Retard compté au {j.isoformat()} : date visée passée et état différent '
+                             'de « réalisée ». C’est une vue ; l’état inscrit des mesures n’est pas modifié.</p>')
+            corps.append("<table>")
         lib = "Décision demandée" if p["type"] == "decision" else "Objet"
         corps.append(f'<tr><td class="n">{p["num"]}</td><td><b>{e(p["titre"])}</b><div class="dec">{lib} : {e(p["decision"])}</div>'
                      + (f'<div class="ren">{e(p["renvoi"])}</div>' if p["renvoi"] else "") + f'</td><td class="d">{d(p["duree"])}</td></tr>')

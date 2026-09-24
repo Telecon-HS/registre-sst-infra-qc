@@ -109,3 +109,30 @@ def test_onglet_de_suivi_genere(tmp_path):
     texte = " ".join(str(c.value) for row in ws.iter_rows() for c in row if c.value is not None)
     assert "En retard" in texte and "Par responsable" in texte and "Efficacité non vérifiée" in texte
     assert "⟦" not in texte
+
+
+# --- Mode séance de la page Comité ---
+import generer_page as gp  # noqa: E402
+from commun import GABARITS  # noqa: E402
+
+
+def test_page_recoit_le_dossier_sans_retard_precalcule():
+    d = next(x for x in gp.dossiers_pour_la_page() if x["numero"] == "29384431")
+    assert len(d["mesures"]) == 8 and len(d["points"]) == 5 and d["accuse_en_attente"]
+    assert set(d["mesures"][0]) == {"numero", "date_visee", "etat"}   # le retard se calcule dans la page, au jour de la séance
+    assert "en_retard" not in d
+
+
+def test_gabarit_mode_seance_bloc_dossiers():
+    g = (GABARITS / "page_registre.html").read_text(encoding="utf-8")
+    debut = g.index("const blocDossiers")
+    bloc = g[debut:g.index("document.getElementById('seance').innerHTML", debut)]
+    assert "Ce que le comité doit décider" in bloc and "en retard" in bloc
+    assert "m.etat !== 'réalisée'" in g                      # même règle que le classeur et les alertes
+    assert "#" not in bloc.replace("${", "")                 # aucune couleur codée en dur : variables du thème seulement
+    assert "#seance .s-gauche{display:block;overflow:visible}" in g   # affichage téléphone
+
+
+def test_page_terrain_ne_recoit_pas_les_dossiers(tmp_path):
+    t = gp.generer_terrain(tmp_path / "terrain.html").read_text(encoding="utf-8")
+    assert "29384431" not in t and "dossiers_transferes" not in t

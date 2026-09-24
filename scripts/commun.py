@@ -79,3 +79,36 @@ def nom_versionne(base, extension):
 
 def mode():
     return "complet (dossier privé trouvé)" if prive_disponible() else "sans données privées"
+
+
+def mesure_en_retard(mesure, jour):
+    """Date visée passée (ISO) et état différent de « réalisée ». C'est une vue :
+    l'état inscrit n'est ni lu autrement ni modifié."""
+    import datetime as dt
+    try:
+        visee = dt.date.fromisoformat(str(mesure.get("date_visee")))
+    except ValueError:
+        return False
+    return visee < jour and mesure.get("etat") != "réalisée"
+
+
+def resume_dossiers(jour, D=None):
+    """Un résumé par dossier transféré au comité : état, mesures, mesures en retard au
+    jour donné, accusé de réception en attente et points à trancher."""
+    if D is None:
+        f = DONNEES / "dossiers_comite.json"
+        D = lire_json(f) if f.exists() else {"dossiers": []}
+    resumes = []
+    for d in D.get("dossiers", []):
+        mesures = d.get("mesures", [])
+        accuse = d.get("accuse_reception") or {}
+        resumes.append({
+            "numero": d["numero"],
+            "etat": d.get("etat") or "à confirmer",
+            "n_mesures": len(mesures),
+            "en_retard": [m["numero"] for m in mesures if mesure_en_retard(m, jour)],
+            "accuse_en_attente": str(accuse.get("recu_par", "à confirmer")).startswith("à confirmer"),
+            "mention_pv": str(accuse.get("mention_proces_verbal", "")).removeprefix("à confirmer — "),
+            "points": d.get("points_a_trancher", []),
+        })
+    return resumes

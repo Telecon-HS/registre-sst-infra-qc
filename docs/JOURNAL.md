@@ -1,5 +1,19 @@
 # Journal
 
+## 24 septembre 2026 — dossiers transférés à l'ordre du jour et au mode séance
+
+Le dossier 29384431 porte cinq points à trancher (`points_a_trancher`) : l'écart de délais entre SSE-900 rév. 7 (enquête achevée à 6 jours, leçons apprises diffusées à 10 jours) et HSP-SS-001 rév. 1 (15 jours ouvrables), la lacune de norme sur la manutention des godets et accessoires de machinerie compacte, le signalement des douleurs d'apparition progressive, la recherche de tendance sur 24 mois dans eCompliance (lésions dorsales, manutention manuelle) et le défaut de traduction du formulaire eCompliance. Chacun appelle une décision du comité — recommander, demander, consigner — jamais une décision réservée à l'employeur. Le point sur les délais sépare deux gestes : consigner au procès-verbal que les échéances de SSE-900 sont dépassées se fait dès la séance, sans attendre la demande au HSE corporatif. La recherche de tendance rappelle qu'un caractère répétitif établi changerait la priorité du plan d'action ; le point sur la traduction cite les termes touchés (« Sprains » rendu par « Bénédictions », « Strains » par « Folures »), qui servent à la classification de la lésion.
+
+`scripts/ordre_du_jour.py` ajoute la section « Dossiers transférés au comité » : un tableau par dossier (état, mesures, dont en retard, ce que le comité doit décider), puis les points. L'accusé de réception en attente figure dans « ce que le comité doit décider », pas comme point numéroté. Le retard se compte à la date de la séance si `ordre_du_jour.json` la fixe, sinon au jour de la génération. Le résumé est calculé une fois, dans `commun.resume_dossiers`.
+
+Le mode séance de la page Comité reçoit le même bloc, calculé dans la page au jour de la projection. Couleurs du thème seulement : mode sombre et affichage téléphone vérifiés à la capture. En 16:9, l'écran était déjà plein ; la colonne de gauche (Décisions, puis Dossiers transférés) défile d'un seul tenant. La page Terrain ne reçoit rien du dossier. Sept tests de plus.
+
+## 24 septembre 2026 — alertes des mesures correctives, jetons lus dans le dossier privé
+
+`scripts/alertes.py` (et donc `rapport_hebdo.py`) suit les mesures correctives de `donnees/dossiers_comite.json`. Une mesure dont la date visée est passée et qui n'est pas « réalisée » tombe dans « dépassé » ; les autres suivent les horizons de 7 et 30 jours ; une mesure réalisée n'apparaît pas. Chaque ligne donne le dossier d'origine, le responsable par son jeton et l'état tel qu'inscrit : le retard est une vue, il ne modifie jamais l'état. Au 24 septembre : 4 mesures dépassées (1, 6, 7, 8), 3 dans les 7 jours (2, 3, 4).
+
+Le dossier privé est retrouvé, en version 2 : `incidents.json` et `classeur_prive.json` utilisent désormais les jetons. `verifier_coherence.py` lit `prive/` (hors `noms.json`) quand il est disponible : un jeton cité seulement là n'est plus orphelin. Les sept écarts connus P05, P09, P11, P16, P17, P23 et P26 se résolvent et sont retirés de `ecarts_connus.json`. Sans le dossier privé, un jeton cité nulle part dans `donnees/` s'affiche « à vérifier » sans faire échouer le contrôle. P45 reste ouvert (voir `A_CORRIGER.md`). Dix tests de plus.
+
 ## 24 septembre 2026 — jetons P46 à P48 rapprochés, contrôle des jetons
 
 Les trois jetons créés le matin même pour les responsables des mesures correctives doublaient des jetons existants du dossier privé : P46 = P06, P47 = P18, P48 = P21. Remplacés dans `donnees/dossiers_comite.json`, retirés de `donnees/personnes.json`. P45 reste à vérifier (voir `A_CORRIGER.md`).

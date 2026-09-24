@@ -16,7 +16,7 @@ from pathlib import Path
 
 from commun import (DONNEES, GABARITS, PRIVE, SORTIE, incidents_prives, ligne_version,
                     lire_json, mode, nom_versionne, prive_disponible, remplacer_jetons,
-                    table_des_noms)
+                    resume_dossiers, table_des_noms)
 
 def confiance_des_risques(risques, chemin_index=None):
     """Niveau de confiance de chaque procédure citée, lu dans l'index ANCRAGE à la génération.
@@ -56,6 +56,20 @@ def completer_incident(inc, detail):
     return {k: complet[k] for k in ORDRE_INCIDENT}
 
 
+def dossiers_pour_la_page():
+    """Dossiers transférés au comité, pour le mode séance : état, mesures (numéro, date
+    visée, état inscrit), accusé de réception en attente et points à trancher. Le retard
+    est calculé dans la page, au jour de la séance ; il ne modifie jamais l'état."""
+    import datetime as dt
+    D = lire_json(DONNEES / "dossiers_comite.json") if (DONNEES / "dossiers_comite.json").exists() else {"dossiers": []}
+    mesures = {d["numero"]: d.get("mesures", []) for d in D["dossiers"]}
+    return [{"numero": r["numero"], "etat": r["etat"],
+             "mesures": [{k: m.get(k) for k in ("numero", "date_visee", "etat")} for m in mesures[r["numero"]]],
+             "accuse_en_attente": r["accuse_en_attente"], "mention_pv": r["mention_pv"],
+             "points": [{"titre": x["titre"], "decision": x["decision"]} for x in r["points"]]}
+            for r in resume_dossiers(dt.date.today(), D)]
+
+
 def generer(avec_prive=True, sortie=None):
     avec_prive = avec_prive and prive_disponible()
     data = lire_json(DONNEES / "registre_html.json")
@@ -74,6 +88,8 @@ def generer(avec_prive=True, sortie=None):
                 ph["src"] = base64.b64encode(f.read_bytes()).decode("ascii")
                 garder.append(ph)
         site["photos"] = garder
+
+    data["dossiers_transferes"] = dossiers_pour_la_page()
 
     confiance = confiance_des_risques(data["risques"])
     for r in data["risques"]:

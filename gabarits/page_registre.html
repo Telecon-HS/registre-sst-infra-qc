@@ -264,7 +264,15 @@ body.en-seance{overflow:hidden}
 #seance .s-bloc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.1vh 1vw;overflow:auto;min-height:0}
 #seance .s-bloc h3{margin:0 0 .5em;font-size:1.02em;text-transform:uppercase;letter-spacing:.4px;color:var(--navy);display:flex;justify-content:space-between;align-items:baseline}
 #seance .s-bloc h3 b{font-size:1.5em;letter-spacing:0}
-#seance .s-dec{grid-row:2/4}
+/* colonne de gauche : un seul défilement si Décisions et Dossiers transférés dépassent l'écran */
+#seance .s-gauche{grid-row:2/4;display:flex;flex-direction:column;gap:1.3vh;min-height:0;overflow:auto}
+#seance .s-gauche .s-bloc{flex:none;overflow:visible}
+#seance .s-dossier + .s-dossier{border-top:1px solid var(--line-soft);margin-top:.6em;padding-top:.6em}
+#seance .s-puce.s-retard{color:var(--p1);border-color:var(--p1)}
+#seance .s-dos ol{columns:2;column-gap:1.8em}
+#seance .s-dos li{break-inside:avoid}
+#seance .s-dos .s-entete{display:flex;flex-wrap:wrap;align-items:center;gap:.3em .8em}
+#seance .s-dos .s-puces{margin-top:0}
 #seance .s-groupe{font-size:.78em;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;margin:.7em 0 .25em}
 #seance ol{margin:0;padding-left:1.4em}
 #seance li{margin:.18em 0}
@@ -287,6 +295,8 @@ body.en-seance{overflow:hidden}
   #seance{grid-template-columns:1fr;grid-template-rows:auto;overflow:auto;display:none}
   body.en-seance #seance{display:block}
   #seance .s-bloc,#seance .s-pied{margin-top:10px}
+  #seance .s-gauche{display:block;overflow:visible}
+  #seance .s-dos ol{columns:1}
 }
 @media print{ body.en-seance #seance{position:static;display:grid;height:auto} body.en-seance > :not(#seance){display:none !important} }
 .apropos{display:none}
@@ -978,6 +988,19 @@ function renderSeance(){
   const dossiers = DATA.initiatives.filter(i=>/séance|immédiat|rencontre du comité/i.test(i.echeance||''));
   const decComite = DATA.comite.decisions;
   const nDec = decComite.length + seance.length + dossiers.length;
+  const dosT = DATA.dossiers_transferes || [];
+  const isoJ = t => { const m = String(t||'').match(/^(\d{4})-(\d{2})-(\d{2})$/); return m ? new Date(+m[1], m[2]-1, +m[3]) : null; };
+  // retard : date visée passée et état différent de « réalisée ». Une vue : l'état n'est pas modifié.
+  const enRetard = m => { const d = isoJ(m.date_visee); return !!d && d < auj && m.etat !== 'réalisée'; };
+  const blocDossiers = !dosT.length ? '' : `
+  <div class="s-bloc s-dos"><h3>Dossiers transférés <b>${dosT.length}</b></h3>
+    ${dosT.map(d=>{ const r = d.mesures.filter(enRetard).map(m=>m.numero);
+      return `<div class="s-dossier"><div class="s-entete"><span><b>${esc(d.numero)}</b> <small>— ${esc(d.etat)}</small></span>
+      <span class="s-puces"><span class="s-puce">${d.mesures.length} mesures</span><span class="s-puce${r.length?' s-retard':''}">dont ${r.length} en retard${r.length?` (${r.join(', ')})`:''}</span></span></div>
+      <div class="s-groupe">Ce que le comité doit décider</div>
+      <ol>${d.accuse_en_attente?`<li>Accuser réception${d.mention_pv?` <small>— ${esc(d.mention_pv)}</small>`:''}</li>`:''}${d.points.map(x=>`<li>${esc(x.titre)}</li>`).join('')}</ol></div>`; }).join('')}
+    <p class="s-texte" style="margin:.4em 0 0"><small>Retard au ${esc(libDate)} : date visée passée, état autre que « réalisée ». Une vue : l’état inscrit n’est pas modifié.</small></p>
+  </div>`;
 
   const delais = [['immediat','Immédiat'],['j30','30 jours'],['j60','60 jours'],['j90','90 jours'],['seance','Séance']];
   const compte = k => R.filter(r=>r.bucket===k).length;
@@ -999,14 +1022,14 @@ function renderSeance(){
     <div class="s-meta">${esc(libDate)} · document préparatoire, aucun verdict de conformité · Échap pour quitter</div></div>
     <button class="s-quit" type="button">Quitter la séance</button></div>
 
-  <div class="s-bloc s-dec"><h3>Décisions à prendre <b>${nDec}</b></h3>
+  <div class="s-gauche"><div class="s-bloc s-dec"><h3>Décisions à prendre <b>${nDec}</b></h3>
     <div class="s-groupe">Constitution du comité · ${decComite.length}</div>
     <ol>${decComite.map(d=>`<li>${esc(d.d)} <small>— ${esc(d.options)}</small></li>`).join('')}</ol>
     <div class="s-groupe">Risques à trancher en séance · ${seance.length}</div>
     <ol>${seance.map(r=>`<li><span class="s-p" style="background:${pcoul(r.prio)}">P${r.prio}</span><b>${esc(r.ref)}</b> ${esc(r.titre)}</li>`).join('')}</ol>
     <div class="s-groupe">Dossiers dont l’échéance tombe à la séance · ${dossiers.length}</div>
     <ol>${dossiers.map(i=>`<li><b>${esc(i.ref)}</b> ${esc(i.titre)} <small>— ${esc(i.echeance)}</small></li>`).join('')}</ol>
-  </div>
+  </div>${blocDossiers}</div>
 
   <div class="s-bloc"><h3>Actions en retard <b>—</b></h3>
     <p class="s-texte">Aucune action ne peut être dite en retard : les délais du registre courent <b>à compter de la décision du comité</b>, qui n’a pas eu lieu. Voici ce que cette décision déclenchera.</p>
