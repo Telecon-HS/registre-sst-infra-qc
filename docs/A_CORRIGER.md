@@ -66,4 +66,8 @@ Le dossier prive n'est ni sur le poste, ni dans OneDrive, ni dans la bibliothequ
 
 ## Jetons P46 a P48 a rapprocher - 24 septembre 2026
 
-Attribues aux responsables des mesures correctives du dossier 29384431 alors que le dossier prive etait introuvable. Chacun peut correspondre a une personne qui a deja un jeton. Au retour du dossier prive : ajouter les trois noms a `prive/noms.json`, et si une personne avait deja un jeton, remplacer le nouveau par l'ancien dans `donnees/dossiers_comite.json` et retirer l'entree de `donnees/personnes.json`.
+**Regle le 24 septembre 2026.** Les trois jetons attribues aux responsables des mesures correctives du dossier 29384431 doublaient des jetons existants : P46 = P06, P47 = P18, P48 = P21. Les jetons existants les remplacent dans `donnees/dossiers_comite.json` ; P46 a P48 sont retires de `donnees/personnes.json`.
+
+Reste a verifier quand le dossier prive sera retrouve : **P45** (direction de l'entrepot, responsable des deux lieux de `donnees/lieux.json`), attribue le 23 septembre sans le dossier prive, peut lui aussi doubler un jeton existant.
+
+Jetons inutilises dans `donnees/` : **P05, P09, P11, P16, P17, P23, P26**. Ces personnes figurent en clair dans `prive/incidents.json`, ou l'extraction du 20 septembre a deplace les colonnes privees de l'onglet Incidents ; leur jeton est donc inutilise mais sans consequence. Inscrits dans `donnees/ecarts_connus.json` (un ecart par jeton). A trancher avec P45 au retour du dossier prive : soit retirer ces jetons de `donnees/personnes.json`, soit tokeniser le fichier prive.

@@ -6,7 +6,9 @@ Trois familles de contrôles :
   A. Compteurs — nombre de risques, de priorités 1, d'incidents, d'éléments source et de
      visites, tels qu'affichés par registre_html.json, plan_action.json et le classeur ;
      délais du calendrier du PDF contre ceux du registre ; plages des formules du classeur.
-  B. Références — chaque R-xx cité quelque part existe au registre.
+  B. Références — chaque R-xx cité quelque part existe au registre ; chaque jeton de
+     personne cité dans donnees/ existe dans personnes.json, et chaque jeton de
+     personnes.json est cité quelque part dans donnees/.
   C. Complétude — chaque risque a au moins une source, un porteur et une échéance.
 
 Un écart déjà inscrit dans donnees/ecarts_connus.json, avec son renvoi à A_CORRIGER.md,
@@ -23,6 +25,8 @@ from commun import DONNEES, GABARITS, lire_json  # noqa: E402
 
 CLASSEUR = DONNEES / "classeur"
 REF = re.compile(r"\bR-(\d{2})\b")
+JETON = re.compile(r"⟦(P\d{2})(?:~\d+)?⟧")
+JETON_NU = re.compile(r"P\d{2}")          # forme sans crochets, seulement sous « responsable » (lieux.json)
 NOMBRES = {"trente-huit": 38, "trente-neuf": 39, "quarante": 40, "trente-sept": 37, "quarante et un": 41,
            "dix": 10, "onze": 11, "douze": 12, "neuf": 9, "treize": 13}
 BUCKET_CALENDRIER = {"IMMÉDIAT": "immediat", "30 JOURS": "j30", "60 JOURS": "j60", "90 JOURS": "j90",
@@ -45,6 +49,38 @@ def textes(obj):
     elif isinstance(obj, dict):
         for x in obj.values():
             yield from textes(x)
+
+
+def jetons_cites(obj):
+    """Jetons de personnes cités dans une structure JSON : ⟦Pnn⟧ dans le texte, ou un
+    jeton nu (« P45 ») comme valeur d'une clé « responsable ». Ailleurs, « P45 » est
+    une coordonnée de cellule du classeur, pas une personne."""
+    trouves = {j for t in textes(obj) for j in JETON.findall(t)}
+    pile = [obj]
+    while pile:
+        x = pile.pop()
+        if isinstance(x, dict):
+            v = x.get("responsable")
+            if isinstance(v, str) and JETON_NU.fullmatch(v):
+                trouves.add(v)
+            pile.extend(x.values())
+        elif isinstance(x, list):
+            pile.extend(x)
+    return trouves
+
+
+def controle_jetons(declares, cites):
+    """Compare les jetons déclarés dans personnes.json à ceux cités ailleurs dans donnees/."""
+    inconnus = sorted(set(cites) - set(declares))
+    orphelins = sorted(set(declares) - set(cites))
+    res = [("jetons_inconnus", "ok" if not inconnus else "ecart",
+            f"Jetons cités dans donnees/ : {len(set(cites))} distincts"
+            + ("" if not inconnus else f" — absents de personnes.json : {', '.join(f'{j} ({cites[j]})' for j in inconnus)}"))]
+    # un écart par jeton orphelin : un écart connu n'en couvre qu'un, un nouvel orphelin échoue
+    res += [(f"jeton_orphelin_{j}", "ecart", f"Jeton {j} de personnes.json cité dans aucune donnée") for j in orphelins]
+    if not orphelins:
+        res.append(("jetons_orphelins", "ok", f"Les {len(declares)} jetons de personnes.json sont tous cités"))
+    return res
 
 
 def verifier():
@@ -132,6 +168,14 @@ def verifier():
     res.append(("references", "ok" if not inconnues else "ecart",
                 f"Références R-xx citées : {len({r for r, _ in cites})} distinctes"
                 + ("" if not inconnues else f" — inexistantes : {', '.join(f'{r} ({n})' for r, n in inconnues)}")))
+
+    personnes = DONNEES / "personnes.json"
+    cites_par = {}
+    for f in sorted(DONNEES.rglob("*.json")):
+        if f != personnes:
+            for j in jetons_cites(lire_json(f)):
+                cites_par.setdefault(j, f.relative_to(DONNEES).as_posix())
+    res += controle_jetons(set(lire_json(personnes)["personnes"]), cites_par)
 
     # ---------------------------------------------------------------- C · complétude
     for r in R:

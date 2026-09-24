@@ -91,7 +91,7 @@ def test_vue_en_retard():
 def test_vue_par_responsable_ne_confond_pas_les_replis():
     v = gc.vues_suivi(gc.lignes_mesures(D), dt.date(2026, 9, 24))
     assert {k: [l["numero"] for l in g] for k, g in v["par_responsable"].items()} == {
-        "⟦P46⟧": [1, 6], "⟦P47⟧": [2, 8], "⟦P48⟧": [3, 7], "à désigner": [4, 5]}
+        "⟦P06⟧": [1, 6], "⟦P18⟧": [2, 8], "⟦P21⟧": [3, 7], "à désigner": [4, 5]}
 
 
 def test_vue_efficacite_non_verifiee():

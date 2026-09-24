@@ -84,18 +84,6 @@
   },
   "P45": {
    "repli": "Direction de l entrepot"
-  },
-  "P46": {
-   "repli": "[nom retiré]",
-   "note": "Attribué le 24 septembre 2026 sans le dossier privé, introuvable : peut doubler un jeton existant pour la même personne. À rapprocher dans prive/noms.json."
-  },
-  "P47": {
-   "repli": "[nom retiré]",
-   "note": "Attribué le 24 septembre 2026 sans le dossier privé, introuvable : peut doubler un jeton existant pour la même personne. À rapprocher dans prive/noms.json."
-  },
-  "P48": {
-   "repli": "[nom retiré]",
-   "note": "Attribué le 24 septembre 2026 sans le dossier privé, introuvable : peut doubler un jeton existant pour la même personne. À rapprocher dans prive/noms.json."
   }
  }
 }

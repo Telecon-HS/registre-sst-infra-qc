@@ -1,5 +1,11 @@
 # Journal
 
+## 24 septembre 2026 — jetons P46 à P48 rapprochés, contrôle des jetons
+
+Les trois jetons créés le matin même pour les responsables des mesures correctives doublaient des jetons existants du dossier privé : P46 = P06, P47 = P18, P48 = P21. Remplacés dans `donnees/dossiers_comite.json`, retirés de `donnees/personnes.json`. P45 reste à vérifier (voir `A_CORRIGER.md`).
+
+`verifier_coherence.py` compare désormais les jetons de `personnes.json` à ceux cités dans `donnees/` (forme ⟦Pnn⟧, ou jeton nu sous une clé « responsable ») : un jeton cité mais non déclaré, ou déclaré mais jamais cité, est un écart, un par jeton orphelin. Les sept jetons inutilisés (P05, P09, P11, P16, P17, P23, P26) sont inscrits comme écarts connus, à trancher avec P45 au retour du dossier privé. Quatre tests de plus.
+
 ## 24 septembre 2026 — mesures correctives du dossier 29384431
 
 `donnees/dossiers_comite.json` reçoit, sous le dossier 29384431, les huit mesures correctives de GAB-03 : numéro, libellé, cause rattachée, type de contrôle, responsable proposé (par jeton), date visée, état et efficacité. L'état n'est jamais déduit d'une date : tant que personne ne l'a inscrit (`etat_inscrit_par`, `etat_date`), il vaut « à confirmer ». Les huit sont à « à confirmer ».

@@ -5,6 +5,41 @@
    "cle": "page_visites_consolidees",
    "motif": "la visite 29632342 du dépôt Grenache (9 septembre) est consolidée au registre mais absente de la liste des visites de la page ; son statut eCompliance est à confirmer avant de l'ajouter",
    "renvoi": "A_CORRIGER.md §7"
+  },
+  {
+   "cle": "jeton_orphelin_P05",
+   "motif": "ces personnes figurent en clair dans prive/incidents.json, où l'extraction du 20 septembre a déplacé les colonnes privées de l'onglet Incidents ; leur jeton est donc inutilisé mais sans conséquence. À trancher avec P45 au retour du dossier privé : soit retirer ces jetons, soit tokeniser le fichier privé",
+   "renvoi": "A_CORRIGER.md"
+  },
+  {
+   "cle": "jeton_orphelin_P09",
+   "motif": "ces personnes figurent en clair dans prive/incidents.json, où l'extraction du 20 septembre a déplacé les colonnes privées de l'onglet Incidents ; leur jeton est donc inutilisé mais sans conséquence. À trancher avec P45 au retour du dossier privé : soit retirer ces jetons, soit tokeniser le fichier privé",
+   "renvoi": "A_CORRIGER.md"
+  },
+  {
+   "cle": "jeton_orphelin_P11",
+   "motif": "ces personnes figurent en clair dans prive/incidents.json, où l'extraction du 20 septembre a déplacé les colonnes privées de l'onglet Incidents ; leur jeton est donc inutilisé mais sans conséquence. À trancher avec P45 au retour du dossier privé : soit retirer ces jetons, soit tokeniser le fichier privé",
+   "renvoi": "A_CORRIGER.md"
+  },
+  {
+   "cle": "jeton_orphelin_P16",
+   "motif": "ces personnes figurent en clair dans prive/incidents.json, où l'extraction du 20 septembre a déplacé les colonnes privées de l'onglet Incidents ; leur jeton est donc inutilisé mais sans conséquence. À trancher avec P45 au retour du dossier privé : soit retirer ces jetons, soit tokeniser le fichier privé",
+   "renvoi": "A_CORRIGER.md"
+  },
+  {
+   "cle": "jeton_orphelin_P17",
+   "motif": "ces personnes figurent en clair dans prive/incidents.json, où l'extraction du 20 septembre a déplacé les colonnes privées de l'onglet Incidents ; leur jeton est donc inutilisé mais sans conséquence. À trancher avec P45 au retour du dossier privé : soit retirer ces jetons, soit tokeniser le fichier privé",
+   "renvoi": "A_CORRIGER.md"
+  },
+  {
+   "cle": "jeton_orphelin_P23",
+   "motif": "ces personnes figurent en clair dans prive/incidents.json, où l'extraction du 20 septembre a déplacé les colonnes privées de l'onglet Incidents ; leur jeton est donc inutilisé mais sans conséquence. À trancher avec P45 au retour du dossier privé : soit retirer ces jetons, soit tokeniser le fichier privé",
+   "renvoi": "A_CORRIGER.md"
+  },
+  {
+   "cle": "jeton_orphelin_P26",
+   "motif": "ces personnes figurent en clair dans prive/incidents.json, où l'extraction du 20 septembre a déplacé les colonnes privées de l'onglet Incidents ; leur jeton est donc inutilisé mais sans conséquence. À trancher avec P45 au retour du dossier privé : soit retirer ces jetons, soit tokeniser le fichier privé",
+   "renvoi": "A_CORRIGER.md"
   }
  ]
 }
