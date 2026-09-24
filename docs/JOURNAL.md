@@ -1,5 +1,13 @@
 # Journal
 
+## 23 septembre 2026 — dossiers transférés au comité
+
+`donnees/dossiers_comite.json` et l'onglet « Dossiers transférés au comité » du classeur : un dossier par entrée, avec numéro eCompliance, date, lieu, unité, type, classification, état, pièces transférées, ce qui ne se transfère pas, accusé de réception et règle de confidentialité. Cinq tests de plus.
+
+Premier dossier versé : **29384431**, événement de manutention manuelle du 19 août 2026, projet Bell00105017, boulevard Laurentien à Montréal. État : ouvert, enquête non terminée — la section 15 du formulaire n'est pas complétée. Trois pièces sur sept sont transmises ; quatre restent à obtenir, dont l'export du formulaire, la fiche technique de la minipelle et l'AST du projet. L'accusé de réception, la date de transfert et le risque rattaché sont à confirmer : rien n'a été supposé.
+
+Ce qui ne se transfère pas est listé sans son contenu : pièces médicales, diagnostic, suivi thérapeutique, décision sur le caractère enregistrable, réclamation CNESST, conduite de l'enquête. Le document source, qui contient des noms et des mentions de traitements, reste hors du dépôt.
+
 ## 21 septembre 2026 — présentation par acteur
 
 La présentation du 20 septembre avait pris du retard sur le dossier en une soirée (16 onglets au lieu de 17, automatisation présentée comme une proposition alors qu'elle tournait). Elle devient un livrable généré, `scripts/generer_presentation.py`, dont tous les chiffres sont lus dans `donnees/` à chaque génération, et elle fait partie de `tout_generer.py`.

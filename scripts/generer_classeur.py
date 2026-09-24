@@ -195,6 +195,83 @@ def onglet_recommandations(wb, styles):
         ws.column_dimensions[lettre].width = largeur
 
 
+def lignes_dossiers(D):
+    """Une ligne de tableau par dossier transféré, avec le compte des pièces."""
+    lignes = []
+    for d in D["dossiers"]:
+        pieces = d.get("pieces", [])
+        recues = sum(1 for x in pieces if x["etat"] == "transmise")
+        lignes.append({
+            "numero": d["numero"], "date": d.get("date_evenement", "à confirmer"),
+            "lieu": d.get("lieu", "à confirmer"), "unite": d.get("unite", "à confirmer"),
+            "type": d.get("type_evenement", "à confirmer"), "classification": d.get("classification", "à confirmer"),
+            "etat": d.get("etat", "à confirmer"),
+            "pieces": f"{recues} sur {len(pieces)}",
+            "a_obtenir": sum(1 for x in pieces if x["etat"] != "transmise"),
+            "risque": d.get("risque_rattache") or "à confirmer",
+            "accuse": (d.get("accuse_reception") or {}).get("recu_par", "à confirmer"),
+            "date_accuse": (d.get("accuse_reception") or {}).get("date", "à confirmer"),
+        })
+    return lignes
+
+
+def onglet_dossiers_comite(wb, styles, table):
+    """Onglet « Dossiers transférés au comité » : ce que le comité a reçu, et ce qui manque encore."""
+    fichier = DONNEES / "dossiers_comite.json"
+    if not fichier.exists():
+        return
+    D = remplacer_jetons(lire_json(fichier), table)
+    ws = wb.create_sheet("Dossiers transférés au comité")
+    ws.sheet_view.showGridLines = False
+    titre, gras, normal, petit = styles
+
+    ws["B2"] = "Dossiers d’événement transférés au comité pour suivi"
+    ws["B2"]._style = copy(titre._style)
+    ws["B3"] = ("Le comité reçoit l’événement, les causes et les correctifs. Il ne reçoit ni pièce médicale, "
+                "ni diagnostic, ni décision réservée au partenaire d’affaires SSE. Aucun verdict de conformité.")
+    ws["B3"]._style = copy(petit._style)
+
+    entetes = ["Dossier", "Date", "Lieu", "Unité", "Type d’événement", "Classification", "État",
+               "Pièces reçues", "À obtenir", "Risque rattaché", "Reçu par", "Date de réception"]
+    for j, t in enumerate(entetes):
+        ws.cell(5, 2 + j, t)._style = copy(gras._style)
+    lignes = lignes_dossiers(D)
+    for i, l in enumerate(lignes):
+        for j, k in enumerate(["numero", "date", "lieu", "unite", "type", "classification", "etat",
+                               "pieces", "a_obtenir", "risque", "accuse", "date_accuse"]):
+            ws.cell(6 + i, 2 + j, l[k])._style = copy(normal._style)
+
+    r = 7 + len(lignes)
+    for d in D["dossiers"]:
+        ws.cell(r, 2, f"Dossier {d['numero']} — pièces")._style = copy(gras._style)
+        r += 1
+        for j, t in enumerate(["Pièce", "Nature", "État", "Note"]):
+            ws.cell(r, 2 + j, t)._style = copy(gras._style)
+        r += 1
+        for x in d.get("pieces", []):
+            for j, k in enumerate(["nom", "nature", "etat", "note"]):
+                ws.cell(r, 2 + j, x[k])._style = copy(normal._style)
+            r += 1
+        r += 1
+        ws.cell(r, 2, f"Dossier {d['numero']} — ce qui ne se transfère pas")._style = copy(gras._style)
+        r += 1
+        for j, t in enumerate(["Élément", "Responsable", "Pourquoi"]):
+            ws.cell(r, 2 + j, t)._style = copy(gras._style)
+        r += 1
+        for x in d.get("ne_se_transfere_pas", []):
+            for j, k in enumerate(["element", "responsable", "motif"]):
+                ws.cell(r, 2 + j, x[k])._style = copy(normal._style)
+            r += 1
+        r += 1
+        ws.cell(r, 2, "Règle de confidentialité — " + d.get("regle_confidentialite", "à confirmer"))._style = copy(petit._style)
+        r += 2
+
+    ws.cell(r, 2, "Validation humaine requise. Cet onglet consigne un transfert et son suivi ; "
+                  "il ne clôt aucun dossier et ne rend aucune décision.")._style = copy(petit._style)
+    for lettre, largeur in zip("ABCDEFGHIJKLMN", [2.5, 14, 12, 34, 30, 30, 22, 30, 13, 10, 16, 16, 16]):
+        ws.column_dimensions[lettre].width = largeur
+
+
 def generer(avec_prive=True, sortie=None):
     avec_prive = avec_prive and prive_disponible()
     table = table_des_noms(avec_prive)
@@ -238,6 +315,7 @@ def generer(avec_prive=True, sortie=None):
     g = wb["Garde"]
     onglet_volumes(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]))
     onglet_recommandations(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]))
+    onglet_dossiers_comite(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]), table)
 
     garde = wb["Garde"]
     modele = garde["B34"]            # note de bas de page de la garde

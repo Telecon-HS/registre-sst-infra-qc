@@ -1,0 +1,48 @@
+{
+ "_note": "Dossiers d'événement transférés au comité SST pour suivi. Un objet par dossier. Les personnes passent par des jetons (⟦Pnn⟧), comme partout ailleurs. Aucune pièce médicale, aucun diagnostic : ce qui ne se transfère pas est listé à part, sans son contenu. Une valeur inconnue s'écrit « à confirmer », jamais une valeur plausible.",
+ "etats": ["ouvert — enquête non terminée", "ouvert — enquête terminée", "clos"],
+ "dossiers": [
+  {
+   "numero": "29384431",
+   "date_evenement": "2026-08-19",
+   "lieu": "2800, boul. Laurentien, Montréal",
+   "projet": "Bell00105017",
+   "unite": "Minipelle — numéro d'unité à confirmer",
+   "unite_note": "La colonne « Unité » du registre des accidents a été conçue pour des véhicules routiers ; elle accueille ici un équipement de chantier.",
+   "type_evenement": "Manutention manuelle — effort excessif",
+   "type_note": "Valeur à ajouter à la liste de choix, qui ne contient à ce jour que des types liés aux véhicules.",
+   "classification": "Gravité moyenne (provisoire)",
+   "classification_note": "Valeur à ajouter à la liste de choix, qui ne contient que « Haut potentiel (HiPo) ».",
+   "etat": "ouvert — enquête non terminée",
+   "etat_note": "Collecte de preuves en cours. La section 15 du formulaire eCompliance n'est pas complétée. Échéances de SSE-900 (6 et 10 jours) dépassées ; voir la réserve sur l'écart entre SSE-900 et HSP-SS-001.",
+   "incident_registre": "29384431",
+   "risque_rattache": "à confirmer",
+   "transfere_par": "⟦P01⟧",
+   "date_transfert": "à confirmer",
+   "objet": "Verser au comité l'analyse de l'événement et lui confier le suivi des huit mesures correctives qui en découlent.",
+   "pieces": [
+    {"nom": "GAB-01_Triage_29384431", "nature": "Fiche de triage et calendrier réglementaire", "etat": "transmise", "note": "Brouillon. Gravité moyenne provisoire ; échéances échues documentées."},
+    {"nom": "GAB-03_SCAT_29384431", "nature": "Analyse des causes fondamentales et plan d'action", "etat": "transmise", "note": "Brouillon. Source des huit mesures correctives."},
+    {"nom": "Feuille_saisie_eCompliance_29384431", "nature": "Réponse champ par champ du formulaire", "etat": "transmise", "note": "Outil de saisie à usage interne, pas une pièce de comité."},
+    {"nom": "Export du formulaire eCompliance 29384431", "nature": "Pièce source", "etat": "à obtenir", "note": "À récupérer depuis eCompliance ; non joint à ce jour."},
+    {"nom": "Fiche technique de la minipelle (poids du godet)", "nature": "Pièce de preuve", "etat": "à obtenir", "note": "Détermine si les causes 1 et 2 tiennent."},
+    {"nom": "AST du projet Bell00105017", "nature": "Pièce de preuve", "etat": "à obtenir", "note": "Conditionne la cause 4, restée réservée."},
+    {"nom": "Déclaration de témoin (F06)", "nature": "Pièce de preuve", "etat": "à obtenir", "note": "Présence d'un témoin non établie."}
+   ],
+   "ne_se_transfere_pas": [
+    {"element": "Décision sur le caractère enregistrable", "responsable": "Partenaire d'affaires SSE", "motif": "Champ réservé par le formulaire. Le comité en est informé ; il ne rend pas cette décision."},
+    {"element": "Pièces médicales, diagnostic, suivi thérapeutique", "responsable": "Spécialiste, gestion des lésions professionnelles", "motif": "Renseignement personnel de santé."},
+    {"element": "Réclamation CNESST, le cas échéant", "responsable": "Spécialiste, gestion des lésions professionnelles", "motif": "Dossier distinct."},
+    {"element": "Assignation temporaire, s'il y a lieu", "responsable": "Coordonnateur et Spécialiste, lésions professionnelles", "motif": "Aucune restriction documentée à ce jour ; processus distinct."},
+    {"element": "Conduite de l'enquête et complétion de la section 15", "responsable": "Unité Infra-QC et partenaire d'affaires SSE", "motif": "Le transfert confie le suivi des correctifs, pas l'enquête."}
+   ],
+   "accuse_reception": {
+    "recu_par": "à confirmer",
+    "role": "à confirmer",
+    "date": "à confirmer",
+    "mention_proces_verbal": "à confirmer — le procès-verbal doit mentionner que le dossier est ouvert et l'enquête non terminée"
+   },
+   "regle_confidentialite": "Le nom du travailleur figure au dossier d'enquête remis aux membres tenus à la confidentialité ; il est retiré de toute pièce destinée à l'affichage, au registre et aux leçons apprises. Règle à valider auprès du partenaire d'affaires SSE avant diffusion ; ce n'est pas un avis juridique."
+  }
+ ]
+}
