@@ -4,7 +4,7 @@
     python scripts/alertes.py --date 2026-10-05        # se placer à une date donnée
     python scripts/alertes.py --sortie rapports
 
-Quatre familles :
+Cinq familles :
   1. Échéances réglementaires — dates fixes, lues au dossier du comité.
   2. Jalons des dossiers en cours — seulement ceux qui portent une date réelle.
   3. Actions du registre — leurs délais courent **à compter de la décision du comité**.
@@ -13,6 +13,11 @@ Quatre familles :
   4. Recertifications d'EPI — la liste HSE-601 n'est pas dans ce dépôt. Si le fichier
      prive/epi_recertification.json existe, il est lu ; sinon la section est marquée
      « à confirmer ».
+  5. Mesures correctives des dossiers transférés au comité (donnees/dossiers_comite.json).
+     Une mesure dont la date visée est passée et qui n'est pas « réalisée » tombe dans
+     « dépassé » ; les autres suivent les horizons de 7 et 30 jours. Une mesure réalisée
+     n'apparaît pas. Le retard est une vue : l'état inscrit n'est jamais modifié.
+     Le responsable est affiché par son jeton, jamais par son nom.
 
 Le script ne porte aucun verdict et n'écrit jamais dans donnees/.
 """
@@ -59,9 +64,33 @@ def horizon(echeance, aujourdhui):
     return "plus tard", jours
 
 
-def collecter(aujourdhui, data, config, epi):
-    """Renvoie la liste des éléments datés, avec leur horizon."""
+def lire_dossiers():
+    """Dossiers transférés au comité, ou {} si le fichier est absent."""
+    f = DONNEES / "dossiers_comite.json"
+    return lire_json(f) if f.exists() else {}
+
+
+def mesures_a_suivre(dossiers):
+    """(date visée, famille, quoi, détail) pour chaque mesure datée et non réalisée.
+    L'état est lu tel qu'inscrit ; rien ici ne le déduit d'une date ni ne l'écrit."""
     items = []
+    for d in dossiers.get("dossiers", []):
+        for m in d.get("mesures", []):
+            date_visee = lire_date(m.get("date_visee"))
+            if not date_visee or m.get("etat") == "réalisée":
+                continue
+            resp = m.get("responsable") or "à désigner"
+            if m.get("responsable_role"):
+                resp = f"{resp} ({m['responsable_role']})"
+            items.append((date_visee, "Mesure corrective",
+                          f"Dossier {d['numero']} · mesure {m['numero']} — {m.get('libelle', '')}",
+                          f"Responsable : {resp} · état inscrit : {m.get('etat') or 'à confirmer'}"))
+    return items
+
+
+def collecter(aujourdhui, data, config, epi, dossiers=None):
+    """Renvoie la liste des éléments datés, avec leur horizon."""
+    items = mesures_a_suivre(dossiers or {})
     for e in data["comite"]["echeances"]:
         d = lire_date(e["date"])
         if d:
@@ -93,7 +122,9 @@ def collecter(aujourdhui, data, config, epi):
 
 def markdown(aujourdhui, alertes, data, config, epi_disponible):
     t = [f"# Alertes SST — Infra Québec, au {aujourdhui.isoformat()}", "",
-         "Relevé automatique. Aucun verdict de conformité : ce sont des dates, pas des constats.", ""]
+         "Relevé automatique. Aucun verdict de conformité : ce sont des dates, pas des constats.",
+         "Pour une mesure corrective, « dépassé » compare la date visée au jour : l'état inscrit "
+         "n'est pas modifié, et la mesure n'est pas pour autant constatée non faite.", ""]
 
     for titre, cle in [("Dépassé", "dépassé"), ("Dans les 7 jours", "7 jours"), ("Dans les 30 jours", "30 jours")]:
         lot = [a for a in alertes if a["horizon"] == cle]
@@ -174,7 +205,7 @@ def main():
     fichier_epi = PRIVE / "epi_recertification.json"
     epi = lire_json(fichier_epi).get("articles", []) if fichier_epi.exists() else []
 
-    alertes = collecter(aujourdhui, data, config, epi)
+    alertes = collecter(aujourdhui, data, config, epi, lire_dossiers())
     texte = markdown(aujourdhui, alertes, data, config, bool(epi))
 
     sortie = Path(a.sortie)

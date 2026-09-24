@@ -8,7 +8,10 @@ Trois familles de contrôles :
      délais du calendrier du PDF contre ceux du registre ; plages des formules du classeur.
   B. Références — chaque R-xx cité quelque part existe au registre ; chaque jeton de
      personne cité dans donnees/ existe dans personnes.json, et chaque jeton de
-     personnes.json est cité quelque part dans donnees/.
+     personnes.json est cité quelque part dans donnees/ ou, si le dossier privé est
+     disponible, dans prive/ (noms.json excepté). Sans le dossier privé, un jeton qui
+     n'est cité nulle part dans donnees/ est marqué « à vérifier » : on ne peut pas savoir
+     s'il sert dans prive/, et le contrôle n'échoue pas pour autant.
   C. Complétude — chaque risque a au moins une source, un porteur et une échéance.
 
 Un écart déjà inscrit dans donnees/ecarts_connus.json, avec son renvoi à A_CORRIGER.md,
@@ -21,7 +24,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from commun import DONNEES, GABARITS, lire_json  # noqa: E402
+from commun import DONNEES, GABARITS, PRIVE, lire_json, prive_disponible  # noqa: E402
 
 CLASSEUR = DONNEES / "classeur"
 REF = re.compile(r"\bR-(\d{2})\b")
@@ -69,17 +72,38 @@ def jetons_cites(obj):
     return trouves
 
 
-def controle_jetons(declares, cites):
-    """Compare les jetons déclarés dans personnes.json à ceux cités ailleurs dans donnees/."""
+def jetons_prives():
+    """Jeton → fichier, pour les jetons cités dans prive/ (hors noms.json, qui les déclare
+    tous). None si le dossier privé est introuvable. Seuls les jetons sortent d'ici."""
+    if not prive_disponible():
+        return None
+    cites = {}
+    for f in sorted(PRIVE.glob("*.json")):
+        if f.name != "noms.json":
+            for j in jetons_cites(lire_json(f)):
+                cites.setdefault(j, f"prive/{f.name}")
+    return cites
+
+
+def controle_jetons(declares, cites, cites_prive=None):
+    """Compare les jetons déclarés dans personnes.json à ceux cités dans donnees/ et,
+    quand cites_prive n'est pas None, dans prive/."""
     inconnus = sorted(set(cites) - set(declares))
-    orphelins = sorted(set(declares) - set(cites))
+    orphelins = sorted(set(declares) - set(cites) - set(cites_prive or {}))
     res = [("jetons_inconnus", "ok" if not inconnus else "ecart",
             f"Jetons cités dans donnees/ : {len(set(cites))} distincts"
             + ("" if not inconnus else f" — absents de personnes.json : {', '.join(f'{j} ({cites[j]})' for j in inconnus)}"))]
     # un écart par jeton orphelin : un écart connu n'en couvre qu'un, un nouvel orphelin échoue
-    res += [(f"jeton_orphelin_{j}", "ecart", f"Jeton {j} de personnes.json cité dans aucune donnée") for j in orphelins]
+    if cites_prive is None:
+        res += [(f"jeton_orphelin_{j}", "a_verifier",
+                 f"Jeton {j} de personnes.json cité dans aucune donnée du dépôt — dossier privé introuvable, "
+                 "son usage dans prive/ n'a pas pu être vérifié") for j in orphelins]
+    else:
+        res += [(f"jeton_orphelin_{j}", "ecart", f"Jeton {j} de personnes.json cité ni dans donnees/ ni dans prive/")
+                for j in orphelins]
     if not orphelins:
-        res.append(("jetons_orphelins", "ok", f"Les {len(declares)} jetons de personnes.json sont tous cités"))
+        ou = "donnees/" if cites_prive is None else "donnees/ ou prive/"
+        res.append(("jetons_orphelins", "ok", f"Les {len(declares)} jetons de personnes.json sont tous cités dans {ou}"))
     return res
 
 
@@ -175,7 +199,7 @@ def verifier():
         if f != personnes:
             for j in jetons_cites(lire_json(f)):
                 cites_par.setdefault(j, f.relative_to(DONNEES).as_posix())
-    res += controle_jetons(set(lire_json(personnes)["personnes"]), cites_par)
+    res += controle_jetons(set(lire_json(personnes)["personnes"]), cites_par, jetons_prives())
 
     # ---------------------------------------------------------------- C · complétude
     for r in R:
@@ -202,12 +226,14 @@ def appliquer_connus(res):
 
 def main():
     res = appliquer_connus(verifier())
-    marque = {"ok": "  ok    ", "ecart": "  ÉCART ", "connu": "  connu "}
+    marque = {"ok": "  ok    ", "ecart": "  ÉCART ", "connu": "  connu ", "a_verifier": "  ?     "}
     for _, statut, detail in res:
         print(f"{marque[statut]} {detail}")
     ecarts = [r for r in res if r[1] == "ecart"]
     connus = [r for r in res if r[1] == "connu"]
-    print(f"\n{len(res)} contrôles · {len(ecarts)} écarts · {len(connus)} écarts connus, à trancher")
+    a_verifier = [r for r in res if r[1] == "a_verifier"]
+    print(f"\n{len(res)} contrôles · {len(ecarts)} écarts · {len(connus)} écarts connus, à trancher"
+          + (f" · {len(a_verifier)} à vérifier avec le dossier privé" if a_verifier else ""))
     print("Validation humaine requise : un écart signale une contradiction entre livrables, "
           "pas un manquement. La correction se fait à la main, dans les données, puis se journalise.")
     sys.exit(1 if ecarts else 0)

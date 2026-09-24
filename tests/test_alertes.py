@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from alertes import collecter, horizon, lire_date, markdown  # noqa: E402
+from alertes import collecter, horizon, lire_date, lire_dossiers, markdown  # noqa: E402
 
 DATA = {
     "comite": {"echeances": [{"date": "1er octobre 2026", "quoi": "Programmes de prévention", "portee": "5 sites"}]},
@@ -61,3 +61,57 @@ def test_epi_absent_marque_a_confirmer():
     t = markdown(date(2026, 9, 20), [], DATA, {}, False)
     assert "À confirmer" in t and "HSE-601" in t
     assert "Validation humaine requise" in t
+
+
+DOSSIERS = {"dossiers": [{"numero": "29384431", "mesures": [
+    {"numero": 1, "libelle": "Collecte de preuves", "responsable": "⟦P06⟧", "date_visee": "2026-09-15", "etat": "à confirmer"},
+    {"numero": 2, "libelle": "Seuil de charge", "responsable": "⟦P18⟧", "date_visee": "2026-09-30", "etat": "en cours"},
+    {"numero": 4, "libelle": "Moyen mécanique", "responsable": "à désigner", "responsable_role": "Gestionnaire des équipements",
+     "date_visee": "2026-10-20", "etat": "à confirmer"},
+    {"numero": 5, "libelle": "Support de changement", "responsable": "à désigner", "date_visee": "2026-12-31", "etat": "à confirmer"},
+    {"numero": 8, "libelle": "Classification", "responsable": "⟦P18⟧", "date_visee": "2026-09-15", "etat": "réalisée"},
+]}]}
+
+
+def mesures(jour):
+    return {x["quoi"].split(" — ")[0]: x for x in collecter(jour, DATA, {}, [], DOSSIERS) if x["famille"] == "Mesure corrective"}
+
+
+def test_mesure_passee_non_realisee_est_depassee():
+    m = mesures(date(2026, 9, 24))
+    assert m["Dossier 29384431 · mesure 1"]["horizon"] == "dépassé"
+
+
+def test_mesures_futures_suivent_les_horizons():
+    m = mesures(date(2026, 9, 24))
+    assert m["Dossier 29384431 · mesure 2"]["horizon"] == "7 jours"
+    assert m["Dossier 29384431 · mesure 4"]["horizon"] == "30 jours"
+    assert "Dossier 29384431 · mesure 5" not in m              # plus tard
+
+
+def test_mesure_realisee_n_apparait_pas_meme_date_passee():
+    assert "Dossier 29384431 · mesure 8" not in mesures(date(2026, 9, 24))
+
+
+def test_le_retard_ne_modifie_pas_l_etat():
+    etats = [m["etat"] for m in DOSSIERS["dossiers"][0]["mesures"]]
+    mesures(date(2027, 1, 1))
+    assert [m["etat"] for m in DOSSIERS["dossiers"][0]["mesures"]] == etats
+    assert "état inscrit : à confirmer" in mesures(date(2027, 1, 1))["Dossier 29384431 · mesure 1"]["detail"]
+
+
+def test_dossier_et_responsable_par_jeton():
+    m = mesures(date(2026, 9, 24))
+    assert m["Dossier 29384431 · mesure 1"]["detail"].startswith("Responsable : ⟦P06⟧")
+    assert "à désigner (Gestionnaire des équipements)" in m["Dossier 29384431 · mesure 4"]["detail"]
+    t = markdown(date(2026, 9, 24), collecter(date(2026, 9, 24), DATA, {}, [], DOSSIERS), DATA, {}, False)
+    assert "Dossier 29384431 · mesure 1" in t and "⟦P06⟧" in t
+
+
+def test_donnees_reelles_au_24_septembre():
+    m = {x["quoi"].split(" — ")[0]: x["horizon"]
+         for x in collecter(date(2026, 9, 24), DATA, {}, [], lire_dossiers()) if x["famille"] == "Mesure corrective"}
+    assert sorted(k for k, h in m.items() if h == "dépassé") == [
+        f"Dossier 29384431 · mesure {n}" for n in (1, 6, 7, 8)]
+    assert sorted(k for k, h in m.items() if h == "7 jours") == [
+        f"Dossier 29384431 · mesure {n}" for n in (2, 3, 4)]

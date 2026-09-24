@@ -189,7 +189,7 @@ def main():
     data = lire_json(DONNEES / "registre_html.json")
     config = lire_json(DONNEES / "echeances.json") if (DONNEES / "echeances.json").exists() else {}
     epi = lire_json(PRIVE / "epi_recertification.json").get("articles", []) if (PRIVE / "epi_recertification.json").exists() else []
-    liste = mod_alertes.collecter(jour, data, config, epi)
+    liste = mod_alertes.collecter(jour, data, config, epi, mod_alertes.lire_dossiers())
     (sortie / f"alertes_{jour.isoformat()}.md").write_text(
         mod_alertes.markdown(jour, liste, data, config, bool(epi)), encoding="utf-8")
     resume_alertes = {h: len([x for x in liste if x["horizon"] == h]) for h in ("dépassé", "7 jours", "30 jours")}
