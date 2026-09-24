@@ -272,6 +272,107 @@ def onglet_dossiers_comite(wb, styles, table):
         ws.column_dimensions[lettre].width = largeur
 
 
+def lignes_mesures(D):
+    """Une ligne par mesure corrective, tous dossiers confondus. L'état est lu tel
+    qu'inscrit : il n'est jamais déduit d'une date. Les jetons restent en place."""
+    lignes = []
+    for d in D["dossiers"]:
+        for m in d.get("mesures", []):
+            resp = m.get("responsable") or "à désigner"
+            if m.get("responsable_role"):
+                resp = f"{m['responsable_role']} — {resp}"
+            if m.get("collaboration"):
+                resp = f"{resp}, avec : {m['collaboration']}"
+            lignes.append({
+                "dossier": d["numero"], "numero": m["numero"], "libelle": m["libelle"],
+                "cause": f"Cause {m['cause']}" if m.get("cause") else "aucune",
+                "controle": m.get("type_controle", "à confirmer"),
+                "cle_responsable": m.get("responsable") or "à désigner",
+                "responsable": resp,
+                "date_visee": m.get("date_visee") or "à confirmer",
+                "etat": m.get("etat") or "à confirmer",
+                "efficacite": m.get("efficacite") or "",
+                "porte_le_plan": "oui" if m.get("porte_le_plan") else "",
+                "prealable": m.get("prealable", ""),
+            })
+    return lignes
+
+
+def vues_suivi(lignes, aujourdhui):
+    """Les trois vues demandées par le dossier : en retard, par responsable,
+    efficacité non vérifiée. Le retard compare la date visée à la date du jour ;
+    il ne change jamais l'état."""
+    en_retard = [l for l in lignes
+                 if (d := lire_date_iso(l["date_visee"])) and d < aujourdhui and l["etat"] != "réalisée"]
+    par_responsable = {}
+    for l in lignes:
+        par_responsable.setdefault(l["cle_responsable"], []).append(l)
+    non_verifiee = [l for l in lignes if l["etat"] == "réalisée" and not l["efficacite"]]
+    return {"en_retard": en_retard, "par_responsable": par_responsable, "non_verifiee": non_verifiee}
+
+
+def onglet_suivi_mesures(wb, styles, table, aujourdhui=None):
+    """Onglet « Suivi des mesures correctives » : la liste, puis les trois vues."""
+    fichier = DONNEES / "dossiers_comite.json"
+    if not fichier.exists():
+        return
+    D = lire_json(fichier)
+    lignes = lignes_mesures(D)
+    if not lignes:
+        return
+    aujourdhui = aujourdhui or dt.date.today()
+    vues = vues_suivi(lignes, aujourdhui)
+    nom = lambda cle: remplacer_jetons(cle, table) + (f" ({cle.strip('⟦⟧')})" if cle.startswith("⟦") else "")  # noqa: E731
+    ws = wb.create_sheet("Suivi des mesures correctives")
+    ws.sheet_view.showGridLines = False
+    titre, gras, normal, petit = styles
+
+    ws["B2"] = "Suivi des mesures correctives"
+    ws["B2"]._style = copy(titre._style)
+    ws["B3"] = (f"Au {aujourdhui.isoformat()}. L’état est celui qui a été inscrit ; il n’est jamais déduit d’une date. "
+                "Tant que personne ne l’a inscrit, il vaut « à confirmer ».")
+    ws["B3"]._style = copy(petit._style)
+    r = 4
+    for d in D["dossiers"]:
+        if d.get("mesures_note"):
+            ws.cell(r, 2, f"Dossier {d['numero']} — {d['mesures_note']}")._style = copy(petit._style)
+            r += 1
+
+    cles = ["dossier", "numero", "libelle", "cause", "controle", "responsable", "date_visee", "etat", "efficacite"]
+    entetes = ["Dossier", "N°", "Mesure", "Cause", "Contrôle", "Responsable", "Date visée", "État", "Efficacité"]
+
+    def tableau(r, titre_vue, rangees, vide):
+        ws.cell(r, 2, titre_vue)._style = copy(gras._style)
+        r += 1
+        if not rangees:
+            ws.cell(r, 2, vide)._style = copy(normal._style)
+            return r + 2
+        for j, t in enumerate(entetes + ["Porte le plan", "Préalable"]):
+            ws.cell(r, 2 + j, t)._style = copy(gras._style)
+        r += 1
+        for l in rangees:
+            for j, k in enumerate(cles + ["porte_le_plan", "prealable"]):
+                v = l[k]
+                ws.cell(r, 2 + j, remplacer_jetons(v, table) if isinstance(v, str) else v)._style = copy(normal._style)
+            r += 1
+        return r + 1
+
+    r = tableau(r + 1, "Toutes les mesures", lignes, "")
+    r = tableau(r, "En retard — date visée passée et état différent de « réalisée »",
+                vues["en_retard"], "Aucune mesure en retard.")
+    ws.cell(r, 2, "Par responsable")._style = copy(titre._style)
+    r += 1
+    for cle, rangees in vues["par_responsable"].items():
+        r = tableau(r, f"{nom(cle)} — {len(rangees)} mesure{'s' if len(rangees) > 1 else ''}", rangees, "")
+    r = tableau(r, "Efficacité non vérifiée — état « réalisée » et champ efficacité vide",
+                vues["non_verifiee"], "Aucune mesure inscrite comme réalisée à ce jour.")
+
+    ws.cell(r, 2, "Validation humaine requise. Cet onglet suit des mesures ; il n’en déclare aucune réalisée "
+                  "ni efficace. Aucun verdict de conformité.")._style = copy(petit._style)
+    for lettre, largeur in zip("ABCDEFGHIJKL", [2.5, 11, 5, 60, 10, 14, 36, 12, 13, 24, 12, 36]):
+        ws.column_dimensions[lettre].width = largeur
+
+
 def generer(avec_prive=True, sortie=None):
     avec_prive = avec_prive and prive_disponible()
     table = table_des_noms(avec_prive)
@@ -316,6 +417,7 @@ def generer(avec_prive=True, sortie=None):
     onglet_volumes(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]))
     onglet_recommandations(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]))
     onglet_dossiers_comite(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]), table)
+    onglet_suivi_mesures(wb, (g["B2"], g["B20"] if g["B20"].value else g["B2"], g["C20"] if g["C20"].value else g["B34"], g["B34"]), table)
 
     garde = wb["Garde"]
     modele = garde["B34"]            # note de bas de page de la garde

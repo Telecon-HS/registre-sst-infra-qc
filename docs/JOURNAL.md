@@ -1,5 +1,15 @@
 # Journal
 
+## 24 septembre 2026 — mesures correctives du dossier 29384431
+
+`donnees/dossiers_comite.json` reçoit, sous le dossier 29384431, les huit mesures correctives de GAB-03 : numéro, libellé, cause rattachée, type de contrôle, responsable proposé (par jeton), date visée, état et efficacité. L'état n'est jamais déduit d'une date : tant que personne ne l'a inscrit (`etat_inscrit_par`, `etat_date`), il vaut « à confirmer ». Les huit sont à « à confirmer ».
+
+Les mesures 4 (élimination) et 5 (ingénierie) portent le plan : si elles ne se font pas, les autres ne suffisent pas. Leur responsable, le gestionnaire des équipements, reste à désigner ; c'est un préalable à leur exécution.
+
+Nouvel onglet « Suivi des mesures correctives » : la liste, puis les trois vues demandées — en retard (date visée passée, état différent de « réalisée »), par responsable, efficacité non vérifiée (état « réalisée », efficacité vide). Au 24 septembre, quatre mesures sont en retard : 1 et 8 (visées le 15), 6 et 7 (visées le 22). Sept tests de plus.
+
+Trois jetons nouveaux, P46 à P48, pour les responsables proposés. Ils ont été attribués sans le dossier privé : ils peuvent doubler un jeton existant. Voir `A_CORRIGER.md`.
+
 ## 23 septembre 2026 — dossiers transférés au comité
 
 `donnees/dossiers_comite.json` et l'onglet « Dossiers transférés au comité » du classeur : un dossier par entrée, avec numéro eCompliance, date, lieu, unité, type, classification, état, pièces transférées, ce qui ne se transfère pas, accusé de réception et règle de confidentialité. Cinq tests de plus.

@@ -1,6 +1,9 @@
 {
  "_note": "Dossiers d'événement transférés au comité SST pour suivi. Un objet par dossier. Les personnes passent par des jetons (⟦Pnn⟧), comme partout ailleurs. Aucune pièce médicale, aucun diagnostic : ce qui ne se transfère pas est listé à part, sans son contenu. Une valeur inconnue s'écrit « à confirmer », jamais une valeur plausible.",
  "etats": ["ouvert — enquête non terminée", "ouvert — enquête terminée", "clos"],
+ "etats_mesure": ["à confirmer", "à faire", "en cours", "réalisée"],
+ "etats_mesure_note": "L'état d'une mesure n'est jamais déduit d'une date. Tant que personne ne l'a inscrit (etat_inscrit_par, etat_date), il vaut « à confirmer ». Le retard, lui, se lit à part : date visée passée et état différent de « réalisée ». Le champ efficacite reste vide (null) tant que l'efficacité d'une mesure réalisée n'a pas été vérifiée.",
+ "types_controle": ["élimination", "ingénierie", "administratif", "préalable", "documentaire"],
  "dossiers": [
   {
    "numero": "29384431",
@@ -42,7 +45,18 @@
     "date": "à confirmer",
     "mention_proces_verbal": "à confirmer — le procès-verbal doit mentionner que le dossier est ouvert et l'enquête non terminée"
    },
-   "regle_confidentialite": "Le nom du travailleur figure au dossier d'enquête remis aux membres tenus à la confidentialité ; il est retiré de toute pièce destinée à l'affichage, au registre et aux leçons apprises. Règle à valider auprès du partenaire d'affaires SSE avant diffusion ; ce n'est pas un avis juridique."
+   "regle_confidentialite": "Le nom du travailleur figure au dossier d'enquête remis aux membres tenus à la confidentialité ; il est retiré de toute pièce destinée à l'affichage, au registre et aux leçons apprises. Règle à valider auprès du partenaire d'affaires SSE avant diffusion ; ce n'est pas un avis juridique.",
+   "mesures_note": "Les mesures 4 et 5 portent le plan : si elles ne se font pas, les autres ne suffisent pas. Leur responsable, le gestionnaire des équipements, reste à désigner ; cette désignation est un préalable à leur exécution.",
+   "mesures": [
+    {"numero": 1, "libelle": "Compléter la collecte de preuves : entrevue du travailleur (F06), poids et modèle du godet, disponibilité d'un moyen d'aide, obtention de l'AST.", "cause": null, "type_controle": "préalable", "responsable": "⟦P46⟧", "date_visee": "2026-09-15", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null},
+    {"numero": 2, "libelle": "Établir un seuil de charge au-delà duquel le déplacement manuel d'un godet ou d'un accessoire est interdit, et rédiger l'instruction de travail.", "cause": 1, "type_controle": "administratif", "responsable": "⟦P47⟧", "collaboration": "Opérations", "date_visee": "2026-09-30", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null},
+    {"numero": 3, "libelle": "Intégrer la manutention des godets et accessoires aux AST des chantiers utilisant de la machinerie compacte.", "cause": 1, "type_controle": "administratif", "responsable": "⟦P48⟧", "date_visee": "2026-09-30", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null},
+    {"numero": 4, "libelle": "Prescrire l'utilisation de la machine porteuse ou d'un moyen mécanique pour tout déplacement de godet ; proscrire le levage manuel.", "cause": 2, "type_controle": "élimination", "responsable": "à désigner", "responsable_role": "Gestionnaire des équipements", "date_visee": "2026-09-30", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null, "porte_le_plan": true, "prealable": "Désigner le gestionnaire des équipements responsable de la mesure."},
+    {"numero": 5, "libelle": "Doter les chantiers de machinerie compacte d'un support de changement à hauteur de travail et d'un moyen de déplacement ; inventorier d'abord l'existant.", "cause": 2, "type_controle": "ingénierie", "responsable": "à désigner", "responsable_role": "Gestionnaire des équipements", "date_visee": "2026-10-31", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null, "porte_le_plan": true, "prealable": "Désigner le gestionnaire des équipements responsable de la mesure."},
+    {"numero": 6, "libelle": "Toolbox signée sur la déclaration immédiate de toute douleur apparue en cours de tâche, avec message explicite que l'arrêt de tâche est attendu.", "cause": 3, "type_controle": "administratif", "responsable": "⟦P46⟧", "date_visee": "2026-09-22", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null},
+    {"numero": 7, "libelle": "Porter le sujet à la réunion SST hebdomadaire d'Infra-QC et consigner les signatures des participants.", "cause": 3, "type_controle": "administratif", "responsable": "⟦P48⟧", "date_visee": "2026-09-22", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null},
+    {"numero": 8, "libelle": "Revoir la classification du champ 5.7 à réception des pièces médicales et corriger la justification du champ 5.8.", "cause": null, "type_controle": "documentaire", "responsable": "⟦P47⟧", "date_visee": "2026-09-15", "etat": "à confirmer", "etat_inscrit_par": null, "etat_date": null, "efficacite": null}
+   ]
   }
  ]
 }
